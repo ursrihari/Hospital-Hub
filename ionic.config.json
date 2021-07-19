@@ -1,0 +1,8 @@
+{
+  "name": "Clinic.KWT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "608a8cfe"
+}

@@ -1,0 +1,40 @@
+ <ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-img class="slider-image" src="assets/slides/1.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img class="slider-image" src="assets/slides/2.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img class="slider-image" src="assets/slides/3.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img class="slider-image" src="assets/slides/4.jpg"></ion-img>
+    </ion-slide>
+    
+  </ion-slides>
+  <div id="form">
+    <!-- <app-input type="number" placeholder="Enter Mobile Number" [(ngModel)]="mobilenumber"></app-input> -->
+    <ion-label>Let's get started Enter your mobile number</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" col-xl-2 col-lg-3 col-md-4>
+          <ion-item class="ion-margin-bottom" (click)="presentModal()">
+            <ion-input type="pin" [(ngModel)]="countrycode"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="9" col-12 col-xl-2 col-lg-3 col-md-4>
+          <ion-item class="ion-margin-bottom">
+            <ion-input type="pin" placeholder="Mobile Number" [(ngModel)]="mobilenumber"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-button expand="block" (click)="loginUser()">Continue</ion-button>
+  </ion-toolbar>
+</ion-footer>

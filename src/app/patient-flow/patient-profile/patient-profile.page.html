@@ -1,5 +1,9 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button color="primary" *ngIf="canGoBack"></ion-back-button>
+      <ion-menu-button color="primary" *ngIf="!canGoBack"></ion-menu-button>
+    </ion-buttons>
     <ion-title>patient-profile</ion-title>
   </ion-toolbar>
 </ion-header>

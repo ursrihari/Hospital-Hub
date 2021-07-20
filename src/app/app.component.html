@@ -1,28 +1,31 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-
     <ion-menu contentId="main-content" type="overlay">
-
-      <ion-content>
-
-        <ion-list id="inbox-list">
-          <ion-list-header>Hello! John</ion-list-header>
-          <ion-note>johndoe@gmail.com</ion-note>
-
-          <ion-menu-toggle auto-hide="false" *ngFor="let page of pages; let i = index">
-            <ion-item (click)="activeIndex = i" routerDirection="root" [routerLink]="[page.url]" lines="none"
-              detail="false" [class.selected]="activeIndex == i">
-              <ion-icon slot="start" [ios]="page.icon + '-outline'" [md]="page.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ page.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+      <ion-content class="menu-content">
+        <div (click)="openProfile()">
+        <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="../assets/patient/1.jfif">
+          <ion-label>
+            <h2>Fatima Mohammed Ali</h2>
+            <p>Age: 55 Years</p>
+          </ion-label>
+        </div>
+      </div>
+        <ion-list lines="none" class="side-menu-list">
+          <ion-menu-toggle auto-hide="false">
+          <ion-item color="#f5f5f3"  *ngFor="let page of pages; let i = index" (click)="activeIndex = i" routerDirection="root" [routerLink]="[page.url]" lines="none"
+          detail="false" [class.selected]="activeIndex == i">
+            <ion-icon class="sidemenu-icon" slot="start" color="primary" [name]="page.icon"></ion-icon>
+            <ion-label style="background: #f5f5f3;">{{ page.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
         </ion-list>
-
       </ion-content>
-
+<ion-footer color="primary" class="sidemenu-footer">
+  <p>Version 1.0.0</p>
+</ion-footer >
     </ion-menu>
-
     <ion-router-outlet id="main-content"></ion-router-outlet>
-
   </ion-split-pane>
 </ion-app>

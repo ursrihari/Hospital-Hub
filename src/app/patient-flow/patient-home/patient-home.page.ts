@@ -30,5 +30,8 @@ export class PatientHomePage implements OnInit {
   openVideoCallingPage(){
     alert("coming soon");
   }
+  openNotificationsPage(){
+    this.router.navigateByUrl('/notifications');
+  }
 
 }

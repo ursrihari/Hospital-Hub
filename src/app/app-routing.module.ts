@@ -70,6 +70,22 @@ const routes: Routes = [
   {
     path: 'country-code-modal',
     loadChildren: () => import('./modal-pages/country-code-modal/country-code-modal.module').then( m => m.CountryCodeModalPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'patient-hospitals-list',
+    loadChildren: () => import('./patient-flow/patient-hospitals-list/patient-hospitals-list.module').then( m => m.PatientHospitalsListPageModule)
+  },
+  {
+    path: 'patient-favourites',
+    loadChildren: () => import('./patient-flow/patient-favourites/patient-favourites.module').then( m => m.PatientFavouritesPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
   }
 ];
 

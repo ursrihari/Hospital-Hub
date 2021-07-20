@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { IonRouterOutlet } from '@ionic/angular';
 
 @Component({
-  selector: 'app-patient-profile',
-  templateUrl: './patient-profile.page.html',
-  styleUrls: ['./patient-profile.page.scss'],
+  selector: 'app-patient-favourites',
+  templateUrl: './patient-favourites.page.html',
+  styleUrls: ['./patient-favourites.page.scss'],
 })
-export class PatientProfilePage implements OnInit {
+export class PatientFavouritesPage implements OnInit {
 
   canGoBack: boolean = false;
   constructor(private routerOutlet: IonRouterOutlet) { }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 import { AuthService } from './services/auth.service';
 
 
@@ -12,9 +12,11 @@ export class AppComponent {
   activePageTitle = 'appointment-details';
   pages=[];
   constructor(private authService: AuthService,
-    private menuCtrl:MenuController
+    private menuCtrl:MenuController,
+    private navCtrl: NavController
     ){
       this.authService.getUser().subscribe(user=> {
+        user = {name: "", mobile: 1111111111, role: 0};
         if(user){
           if(user.role == 0){
             this.initializeApp('patient');
@@ -29,12 +31,18 @@ export class AppComponent {
   }
   
   initializeApp(role){
+    role= 'patient';
     switch(role) { 
       case 'patient': { 
         this.pages = [
-          {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'home'},
-          {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'home'},
-          {title: 'Profile', page: 'PatientProfilePage', url:'patient-profile', icon:'home'}
+          {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'home-outline'},
+          {title: 'Book Appointment', page: 'PatientAppointmentBookingPage', url:'patient-appointment-booking', icon:'alarm-outline'},
+          {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'document-text-outline'},
+          {title: 'Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fitness-outline'},
+          {title: 'Hospitals', page: 'PatientHospitalsListPage', url:'patient-hospitals-list', icon:'trail-sign-outline'},
+          {title: 'Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
+          {title: 'Notificaions', page: 'NotificationsPage', url:'notifications', icon:'notifications-circle-outline'},
+          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'settings-outline'}
         ];
          break; 
       } 
@@ -53,5 +61,9 @@ export class AppComponent {
          break; 
       } 
    }
+  }
+  openProfile(){
+    this.menuCtrl.close();
+    this.navCtrl.navigateRoot('patient-profile');
   }
 }

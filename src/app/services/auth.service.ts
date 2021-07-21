@@ -73,12 +73,12 @@ export class AuthService {
       lastName: '',
       token: ''
     }));
-    this.currentUser =null;
+    //this.currentUser =null;
   }
   getUser() {
     if(localStorage.getItem('user')!=''){
       let user_data = JSON.parse(localStorage.getItem('user'));
-      console.log(user_data);
+      //console.log(user_data);
       this.currentUser.next(user_data);
     }else{
       this.currentUser.next('');

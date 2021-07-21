@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, IonMenu,MenuController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { Router,ActivatedRoute } from '@angular/router';
-import { User } from '../models/User';
+import { User } from '../model/User';
 import { ActionSheetController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { CountryCodeModalPage } from '../modal-pages/country-code-modal/country-code-modal.page';

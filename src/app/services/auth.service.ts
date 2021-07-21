@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/User';
+import { User } from '@app/model';
 import { BehaviorSubject, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -15,22 +15,41 @@ export class AuthService {
         if(mobile == 1111111111 && pwd == 12345){
           userObj={
             name:'',
-            mobile: 1111111111,
-            role: 0
+            mobile:1111111111,
+            role: 0,
+            id: '',
+            username: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            token: ''
           }
         }else if(mobile == 2222222222 && pwd == 12345){
           userObj={
-            name: '',
-            mobile: 2222222222,
-            role: 1
+            name:'',
+            mobile:2222222222,
+            role: 1,
+            id: '',
+            username: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            token: ''
           }
         }else if(mobile == 3333333333 && pwd == 12345){
           userObj={
-            name: '',
-            mobile: mobile,
-            role: 2
+            name:'',
+            mobile:3333333333,
+            role: 2,
+            id: '',
+            username: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            token: ''
           }
         }
+        localStorage.setItem('user',JSON.stringify(userObj));
       return of(userObj).pipe(
         tap(user => {
           this.currentUser.next(user);
@@ -43,9 +62,29 @@ export class AuthService {
   }
 
   logout(){
+    localStorage.setItem('user',JSON.stringify({
+      name:'',
+      mobile:'',
+      role: '4',
+      id: '',
+      username: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      token: ''
+    }));
     this.currentUser =null;
   }
   getUser() {
+    if(localStorage.getItem('user')!=''){
+      let user_data = JSON.parse(localStorage.getItem('user'));
+      console.log(user_data);
+      this.currentUser.next(user_data);
+    }else{
+      this.currentUser.next('');
+    }
+    
+    
     return this.currentUser.asObservable();
   }
   isPatient(){

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
-import { AuthService } from './services/auth.service';
-
+import { AuthService,AccountService } from '@app/services';
+import { User } from '@app/model';
 
 @Component({
   selector: 'app-root',
@@ -11,19 +11,29 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   activePageTitle = 'appointment-details';
   pages=[];
+  user: User;
+  user_role;
   constructor(private authService: AuthService,
     private menuCtrl:MenuController,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private accountService: AccountService
     ){
+
+      this.accountService.user.subscribe(x => this.user = x);
+
       this.authService.getUser().subscribe(user=> {
-        user = {name: "", mobile: 1111111111, role: 0};
+        //user = {name: "", mobile: 2222222222, role: 1};
+
         if(user){
           if(user.role == 0){
             this.initializeApp('patient');
+            this.user_role = 0;
           }else if(user.role == 1){
             this.initializeApp('doctor');
+            this.user_role = 1;
           }else if(user.role == 2){
             this.initializeApp('receptionist');
+            this.user_role = 2;
           }
           this.menuCtrl.enable(true);
         }
@@ -31,7 +41,7 @@ export class AppComponent {
   }
   
   initializeApp(role){
-    role= 'patient';
+    //role= 'doctor';
     switch(role) { 
       case 'patient': { 
         this.pages = [
@@ -66,4 +76,7 @@ export class AppComponent {
     this.menuCtrl.close();
     this.navCtrl.navigateRoot('patient-profile');
   }
+  logout() {
+    this.accountService.logout();
+}
 }

@@ -2,32 +2,7 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
-@font-face {
-  font-family: 'brandon-grotesque-light';
-  font-style: normal;
-  font-weight: normal;
-  src: url('../assets/fonts/Brandon-Grotesque-Font-Family/brandon-grotesque-light-58a8a4b38001d.otf');
-}
-@font-face {
-  font-family: 'brandon-grotesque-light';
-  font-style: normal;
-  font-weight: bold;
-  src: url('../assets/fonts/Brandon-Grotesque-Font-Family/brandon-grotesque-black-58a8a3e824392.otf');
-}
 
-@font-face {
-  font-family: 'brandon-grotesque-light';
-  font-style: italic;
-  font-weight: normal;
-  src: url('../assets/fonts/Brandon-Grotesque-Font-Family/brandon-grotesque-regular-italic-58a8a456c4724.otf');
-}
-
-@font-face {
-  font-family: 'brandon-grotesque-light';
-  font-style: italic;
-  font-weight: bold;
-  src: url('../assets/fonts/Brandon-Grotesque-Font-Family/brandon-grotesque-bold-italic-58a8a48221563.otf');
-}
 :root {
   /** primary **/
   --ion-color-primary: #43cebb;
@@ -100,7 +75,7 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
-  --ion-font-family: 'brandon-grotesque-light normal bold';
+  
 }
 
 @media (prefers-color-scheme: dark) {

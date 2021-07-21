@@ -2,7 +2,8 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content class="menu-content">
-        <div (click)="openProfile()">
+        <!-- Patient Login -->
+        <div *ngIf="user_role==0" (click)="openProfile()">
         <div class="menu-header-bg"></div>
         <div class="header-content">
           <img src="../assets/patient/1.jfif">
@@ -12,6 +13,32 @@
           </ion-label>
         </div>
       </div>
+      <!-- Patient Login -->
+      <!-- Doctor Login -->
+      <div *ngIf="user_role==1" (click)="openProfile()">
+        <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="../assets/profile/doctor-2.jfif">
+          <ion-label>
+            <h2>Dr. Seema Vazeer</h2>
+            <h3>Central Hospital</h3>
+            <p>Cardiologist</p>
+          </ion-label>
+        </div>
+      </div>
+      <!-- Receptionist Login -->
+      <div *ngIf="user_role==2" (click)="openProfile()">
+        <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="https://www.moh.gov.bh/Content/Upload/Image/637526916400505076-dr-fatima-al-owanati.jpg">
+          <ion-label>
+            <h2>Raja Ahmed Saleh Noaimi</h2>
+            <h3>Al Salam International Hospital</h3>
+            <p>Receptionist</p>
+          </ion-label>
+        </div>
+      </div>
+      <!-- Receptionist Login -->
         <ion-list lines="none" class="side-menu-list">
           <ion-menu-toggle auto-hide="false">
           <ion-item color="#f5f5f3"  *ngFor="let page of pages; let i = index" (click)="activeIndex = i" routerDirection="root" [routerLink]="[page.url]" lines="none"

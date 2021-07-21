@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { NavController, IonMenu,MenuController } from '@ionic/angular';
 import { Router,ActivatedRoute } from '@angular/router';
-import { User } from '../models/User';
+import { User } from '../model/User';
 
 @Component({
   selector: 'app-otp-verification',

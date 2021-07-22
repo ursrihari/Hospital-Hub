@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rating.component.scss'],
 })
 export class RatingComponent implements OnInit {
-
+  @Input() fontSize: number;
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.fontSize);
+  }
 
 }

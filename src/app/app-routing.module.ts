@@ -88,6 +88,10 @@ const routes: Routes = [
   {
     path: 'notifications',
     loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
+  {
+    path: 'doctor-view',
+    loadChildren: () => import('./doctor-view/doctor-view.module').then( m => m.DoctorViewPageModule)
   }
 ];
 

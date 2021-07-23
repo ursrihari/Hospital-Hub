@@ -1,8 +1,11 @@
 ion-label{
-    font-size: 25px;
+    font-size: 18px;
+}
+.item-native{
+  overflow: initial;
+  padding: 0;
 }
 ion-item {
-    
     height: 55px;
     box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.08);
     --highlight-height: 0px;
@@ -21,7 +24,42 @@ ion-item {
     }
   }
   .otp-pin-input{
-    border: black 1px solid;
+    border: #cccccc 1px solid;
     border-radius: 15px;
     max-width: 70px;
   }
+  ion-button {
+    margin-top: 10px;
+    height: 48px;
+    font-size: 18px;
+    text-transform: initial;
+    border-radius: 50px;
+    box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.05);
+    --box-shadow: none;
+    font-family: 'Lato', sans-serif !important;
+  }
+  ion-item[_ngcontent-crb-c137] {
+    padding: 0px 5px;
+}
+.ion-padding{
+  padding: 0;
+}
+ion-label.code-head{
+  font-size: 13px;
+  text-transform: none;
+}
+ion-item .item-native .item-inner{
+  padding: 0;
+}
+ion-item[_ngcontent-cdl-c137] .otp-pin-input .item-native{
+  padding: 0 !important;
+}
+ion-item[_ngcontent-cdl-c137] .otp-pin-input .item-inner{
+  padding: 0 !important;
+}
+ion-input .native-input.sc-ion-input-md{
+  line-height: 33px;
+  font-size: 15px !important;
+  width: 100%;
+  font-weight: 600;
+}

@@ -23,3 +23,82 @@
     top: 17px;
     position: relative;
 }
+
+.appointments .appointment-list,
+.appointment-list .profile-info-widget {
+	text-align: center;
+}
+.appointment-list .profile-info-widget {
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+.appointment-list .profile-info-widget .booking-doc-img {
+	margin: 0 0 15px;
+}
+.appointment-list .profile-info-widget .booking-doc-img img {
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+}
+.appointment-list .profile-det-info {
+	margin-bottom: 15px;
+}
+.profile-det-info h3 {
+	font-size: 17px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.patient-details h5 {
+	color: #757575;
+	font-size: 13px;
+	font-weight: normal;
+	margin-bottom: 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.patient-details h5 i {
+	width: 18px;
+	margin-right: 3px;
+}
+.appointments {
+    padding: 15px;
+}
+.appointments .appointment-list {
+	background-color: #fff;
+	border: 1px solid #f0f0f0;
+	border-radius: 4px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+.bg-success-light {
+	background-color: rgba(15, 183, 107,0.12) !important;
+	color: #26af48 !important;
+}
+.bg-danger-light {
+	background-color: rgba(242, 17, 54,0.12) !important;
+	color: #e63c3c !important;
+}
+.appointment-action a + a {
+	margin-left: 5px;
+}
+
+.appointments .appointment-action {
+	margin-top: 0;
+}
+.appointment-action a {
+	font-size: 13px;
+}
+.bg-info-light {
+	background-color: rgba(2, 182, 179,0.12) !important;
+	color: #1db9aa !important;
+}
+.btn-group-sm > .btn, .btn-sm {
+	padding: .25rem .5rem;
+	font-size: .875rem;
+	line-height: 1.5;
+	border-radius: .2rem;
+}

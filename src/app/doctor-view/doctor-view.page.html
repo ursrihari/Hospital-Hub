@@ -1,22 +1,20 @@
-<ion-content>
-    <div class="header">
+<ion-header>
+    <ion-toolbar color="primary">
         <ion-buttons slot="start">
             <ion-back-button *ngIf="canGoBack"></ion-back-button>
             <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
         </ion-buttons>
-        <ion-title></ion-title>
-    </div>
-    <div class="card-image">
-        <div class="row no-gutters row-image">
-            <img src="https://www.moh.gov.bh/Content/Upload/Image/636724316230300000-%D8%AF.%D9%8A%D9%88%D8%B3%D9%81-%D8%A7%D8%AD%D9%85%D8%AF-%D9%86%D9%88%D8%AD.jpg" class="img-fluid" alt="">
-        </div>
-        <div class="row no-gutters row-details">
-            <div class="card-block px-2">
-                <h4 class="card-title">Dr. Aadam</h4>
-                <p class="card-text">Cardiologist</p>
-                <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
+        <ion-title>
+            <div class="ion-tile-text">
+                <h4 class="p-0 m-0">Dr. Aadam</h4>
+                <p class="p-0 m-0">Cardiologist</p>
             </div>
-        </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="card doctor-image-card">
+        <img src="https://www.moh.gov.bh/Content/Upload/Image/636724316230300000-%D8%AF.%D9%8A%D9%88%D8%B3%D9%81-%D8%A7%D8%AD%D9%85%D8%AF-%D9%86%D9%88%D8%AD.jpg" class="img-fluid" alt="">
     </div>
     <div class="pt-2">
         <div class="doctor-reviews">

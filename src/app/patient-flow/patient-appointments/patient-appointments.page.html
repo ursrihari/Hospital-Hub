@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>My Appointments</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>My Appointments</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <!-- <ion-card  (click)="openAppointment()">
+<ion-content>
+    <!-- <ion-card  (click)="openAppointment()">
     <ion-row>
       <ion-col size="3" class="ion-padding-5">
           <img class="card-avatar-image" src="assets/profile/doctor-2.jfif"/>
@@ -219,370 +219,370 @@
     </ion-row>
   </ion-card> -->
 
-  <div class="appointments">
+    <div class="appointments">
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Richard Wilson</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 14 Nov 2019, 10.00 AM</h5>
-            <h5><i class="ti-location-pin"></i> Newyork, United States</h5>
-            <h5><i class="ti-email"></i> richard@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +965 782 4575</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Richard Wilson</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 14 Nov 2019, 10.00 AM</h5>
+                        <h5><i class="ti-location-pin"></i> Newyork, United States</h5>
+                        <h5><i class="ti-email"></i> richard@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +965 782 4575</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient1.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Charlene Reed </a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 12 Nov 2019, 5.00 PM</h5>
-            <h5><i class="ti-location-pin"></i> North Carolina, United States</h5>
-            <h5><i class="ti-email"></i> charlenereed@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 828 632 9170</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient1.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Charlene Reed </a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 12 Nov 2019, 5.00 PM</h5>
+                        <h5><i class="ti-location-pin"></i> North Carolina, United States</h5>
+                        <h5><i class="ti-email"></i> charlenereed@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 828 632 9170</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient2.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Travis Trimble</a></h3>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient2.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Travis Trimble</a></h3>
 
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 11 Nov 2019, 8.00 PM</h5>
-            <h5><i class="ti-location-pin"></i> Maine, United States</h5>
-            <h5><i class="ti-email"></i> travistrimble@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 207 729 9974</h5>
-          </div>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 11 Nov 2019, 8.00 PM</h5>
+                        <h5><i class="ti-location-pin"></i> Maine, United States</h5>
+                        <h5><i class="ti-email"></i> travistrimble@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 207 729 9974</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
+        <!-- /Appointment List -->
 
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
-
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient3.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Carl Kelly</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 9 Nov 2019, 9.00 AM</h5>
-            <h5><i class="ti-location-pin"></i> Newyork, United States</h5>
-            <h5><i class="ti-email"></i> carlkelly@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 260 724 7769</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient3.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Carl Kelly</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 9 Nov 2019, 9.00 AM</h5>
+                        <h5><i class="ti-location-pin"></i> Newyork, United States</h5>
+                        <h5><i class="ti-email"></i> carlkelly@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 260 724 7769</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient4.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Michelle Fairfax</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 9 Nov 2019, 1.00 PM</h5>
-            <h5><i class="ti-location-pin"></i> Indiana, United States</h5>
-            <h5><i class="ti-email"></i> michellefairfax@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 504 368 6874</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient4.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Michelle Fairfax</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 9 Nov 2019, 1.00 PM</h5>
+                        <h5><i class="ti-location-pin"></i> Indiana, United States</h5>
+                        <h5><i class="ti-email"></i> michellefairfax@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 504 368 6874</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient5.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Gina Moore</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 8 Nov 2019, 3.00 PM</h5>
-            <h5><i class="ti-location-pin"></i> Florida, United States</h5>
-            <h5><i class="ti-email"></i> ginamoore@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 954 820 7887</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient5.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Gina Moore</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 8 Nov 2019, 3.00 PM</h5>
+                        <h5><i class="ti-location-pin"></i> Florida, United States</h5>
+                        <h5><i class="ti-email"></i> ginamoore@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 954 820 7887</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient6.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Elsie Gilley</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 6 Nov 2019, 9.00 AM</h5>
-            <h5><i class="ti-location-pin"></i> Kentucky, United States</h5>
-            <h5><i class="ti-email"></i> elsiegilley@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 315 384 4562</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient6.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Elsie Gilley</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 6 Nov 2019, 9.00 AM</h5>
+                        <h5><i class="ti-location-pin"></i> Kentucky, United States</h5>
+                        <h5><i class="ti-email"></i> elsiegilley@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 315 384 4562</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient7.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Joan Gardner</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 5 Nov 2019, 12.00 PM</h5>
-            <h5><i class="ti-location-pin"></i> California, United States</h5>
-            <h5><i class="ti-email"></i> joangardner@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 707 2202 603</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient7.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Joan Gardner</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 5 Nov 2019, 12.00 PM</h5>
+                        <h5><i class="ti-location-pin"></i> California, United States</h5>
+                        <h5><i class="ti-email"></i> joangardner@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 707 2202 603</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient8.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Daniel Griffing</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 5 Nov 2019, 7.00 PM</h5>
-            <h5><i class="ti-location-pin"></i> New Jersey, United States</h5>
-            <h5><i class="ti-email"></i> danielgriffing@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 973 773 9497</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient8.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Daniel Griffing</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 5 Nov 2019, 7.00 PM</h5>
+                        <h5><i class="ti-location-pin"></i> New Jersey, United States</h5>
+                        <h5><i class="ti-email"></i> danielgriffing@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 973 773 9497</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient9.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Walter Roberson</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 4 Nov 2019, 10.00 AM</h5>
-            <h5><i class="ti-location-pin"></i> Florida, United States</h5>
-            <h5><i class="ti-email"></i> walterroberson@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 850 358 4445</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient9.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Walter Roberson</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 4 Nov 2019, 10.00 AM</h5>
+                        <h5><i class="ti-location-pin"></i> Florida, United States</h5>
+                        <h5><i class="ti-email"></i> walterroberson@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 850 358 4445</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient10.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Robert Rhodes</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 4 Nov 2019, 11.00 AM</h5>
-            <h5><i class="ti-location-pin"></i> California, United States</h5>
-            <h5><i class="ti-email"></i> robertrhodes@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 858 259 5285</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient10.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Robert Rhodes</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 4 Nov 2019, 11.00 AM</h5>
+                        <h5><i class="ti-location-pin"></i> California, United States</h5>
+                        <h5><i class="ti-email"></i> robertrhodes@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 858 259 5285</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-    <!-- Appointment List -->
-    <div class="appointment-list">
-      <div class="profile-info-widget">
-        <a href="patient-profile.html" class="booking-doc-img">
-          <img src="assets/images/patient11.jpg" alt="User Image">
-        </a>
-        <div class="profile-det-info">
-          <h3><a href="patient-profile.html">Harry Williams</a></h3>
-          <div class="patient-details">
-            <h5><i class="ti-time"></i> 3 Nov 2019, 6.00 PM</h5>
-            <h5><i class="ti-location-pin"></i> Colorado, United States</h5>
-            <h5><i class="ti-email"></i> harrywilliams@example.com</h5>
-            <h5 class="mb-0"><i class="ti-mobile"></i> +1 303 607 7075</h5>
-          </div>
+        <!-- Appointment List -->
+        <div class="appointment-list" (click)="openAppointment()">
+            <div class="profile-info-widget">
+                <a class="booking-doc-img">
+                    <img src="assets/images/patient11.jpg" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3><a>Harry Williams</a></h3>
+                    <div class="patient-details">
+                        <h5><i class="ti-time"></i> 3 Nov 2019, 6.00 PM</h5>
+                        <h5><i class="ti-location-pin"></i> Colorado, United States</h5>
+                        <h5><i class="ti-email"></i> harrywilliams@example.com</h5>
+                        <h5 class="mb-0"><i class="ti-mobile"></i> +1 303 607 7075</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-action">
+                <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    <i class="far fa-eye"></i> View
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+                    <i class="fas fa-check"></i> Accept
+                </a>
+                <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="appointment-action">
-        <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-          <i class="far fa-eye"></i> View
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-          <i class="fas fa-check"></i> Accept
-        </a>
-        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-          <i class="fas fa-times"></i> Cancel
-        </a>
-      </div>
-    </div>
-    <!-- /Appointment List -->
+        <!-- /Appointment List -->
 
-  </div>
+    </div>
 
 </ion-content>

@@ -92,6 +92,10 @@ const routes: Routes = [
   {
     path: 'doctor-view',
     loadChildren: () => import('./doctor-view/doctor-view.module').then( m => m.DoctorViewPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   }
 ];
 

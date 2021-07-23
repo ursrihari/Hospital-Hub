@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-patient-appointment-details',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patient-appointment-details.page.scss'],
 })
 export class PatientAppointmentDetailsPage implements OnInit {
-
-  constructor() { }
+  canGoBack: boolean = false;
+  constructor(private routerOutlet: IonRouterOutlet) { }
 
   ngOnInit() {
-  }
+    this.canGoBack = this.routerOutlet &&
+                     this.routerOutlet.canGoBack();
+}
 
 }

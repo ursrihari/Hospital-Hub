@@ -1,4 +1,4 @@
-.card-avatar-image{
+.card-avatar-image {
     max-width: 130px;
     max-height: 95px;
     width: 100%;
@@ -6,30 +6,76 @@
     border-radius: 6px;
     object-fit: cover;
 }
-.up-appointment-text{
+
+.up-appointment-text {
     text-align: left;
     position: relative;
     padding: 2px 0;
 }
-.upcomming-appointment-div{
-    background-color: #e6eaff;
-    border: 2px solid #e6eaff;
-    border-radius: 20px;
-    padding:16px 0 16px 0;
+
+.upcomming-appointment-div {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    margin-top: 5px;
 }
-.book-arrow{
-    font-size: 30px;
-    padding: 15px 54px;
+
+.find-doctors {
+    //padding: 5px 0 0 0;
 }
-.find-doctors{
-    padding: 10px 0 0 0;
+
+.find-doctors-card {
+    //max-height: 300px;
+    //height: 100%;
 }
-.find-doctors-card{
-    max-height: 300px;
-    height: 100%;
-}
-.find-doctors-card-image{
+
+.find-doctors-card-image {
     max-height: 150px;
-    width:100%;
+    width: 100%;
     height: 100%;
+}
+
+.find-doctors-card-text {
+    padding: 10px;
+    h5 {
+        font-size: 15px;
+        padding: 0px 5px;
+        margin: 0px;
+    }
+    h6 {
+        font-size: 12px;
+        padding: 5px 5px;
+        margin: 0px;
+    }
+}
+
+.review-li {
+    display: flex;
+    .image-parent {
+        display: flex;
+        .image-parent-image {
+            max-height: 50px;
+        }
+        .reviewer-name {
+            margin-left: 10px;
+            line-height: 20px;
+            margin-top: 4px;
+            .label-style {
+                font-size: 90%;
+                font-weight: 500;
+            }
+        }
+        img {
+            max-height: 50px;
+            max-width: 50px;
+            height: 100%;
+            width: 100%;
+            border-radius: 12%;
+        }
+    }
+    p {
+        font-size: 10px;
+        line-height: 15px;
+        margin-bottom: 0px;
+    }
 }

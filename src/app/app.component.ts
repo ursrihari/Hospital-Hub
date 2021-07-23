@@ -47,12 +47,13 @@ export class AppComponent {
         this.pages = [
           {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'home-outline'},
           {title: 'Book Appointment', page: 'PatientAppointmentBookingPage', url:'patient-appointment-booking', icon:'alarm-outline'},
-          {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'document-text-outline'},
-          {title: 'Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fitness-outline'},
-          {title: 'Hospitals', page: 'PatientHospitalsListPage', url:'patient-hospitals-list', icon:'trail-sign-outline'},
-          {title: 'Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
-          {title: 'Notificaions', page: 'NotificationsPage', url:'notifications', icon:'notifications-circle-outline'},
-          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'settings-outline'}
+          {title: 'My Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'document-text-outline'},
+          {title: 'Find Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fitness-outline'},
+          {title: 'Find Hospitals', page: 'PatientHospitalsListPage', url:'patient-hospitals-list', icon:'trail-sign-outline'},
+          {title: 'My Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
+         // {title: 'Notificaions', page: 'NotificationsPage', url:'notifications', icon:'notifications-circle-outline'},
+         {title: 'Chat', page: 'ChatPage', url:'chat', icon:'chatbubbles-outline'}, 
+         {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'settings-outline'}
         ];
          break; 
       } 

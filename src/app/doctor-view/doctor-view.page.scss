@@ -1,0 +1,109 @@
+ion-content {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0.5rem;
+        color: #43cebb;
+    }
+    .card-image {
+        .row-image {
+            position: absolute;
+            top: 3rem;
+            width: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            img {
+                border-radius: 20%;
+                border: 2px #5e7ccc solid;
+            }
+        }
+        .row-details {
+            position: relative;
+            width: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 80px;
+            padding-left: 6px;
+            line-height: 1px;
+        }
+    }
+    .personal-details {
+        position: relative;
+        top: 70px;
+        border-radius: 10px;
+        background-color: #f0f2f8;
+        .card-header {
+            padding: 0;
+            height: 35px;
+            .header-tile {
+                margin-top: 2px;
+            }
+        }
+        ion-button {
+            float: right;
+            height: 16px;
+            width: 48px;
+            ion-icon {
+                font-size: 16px;
+                left: -7px;
+                bottom: 5px;
+            }
+        }
+        .card-header {
+            padding: 0.3rem 0.3rem;
+        }
+        .personal-details-content {
+            padding: 10px 5px;
+            font-size: 10px;
+            p {
+                margin: 0px 0px 4px 0px;
+            }
+        }
+    }
+    .doctor-reviews {
+        padding: 0 0.5rem 0 0.5rem;
+        .rating-div {
+            display: flex;
+            span {
+                font-size: 25px;
+            }
+            app-rating {
+                margin-left: 10px;
+                margin-top: -11px;
+            }
+        }
+    }
+    .review-li {
+        .image-parent {
+            display: flex;
+            .image-parent-image {
+                max-height: 50px;
+            }
+            .reviewer-name {
+                float: left;
+                margin-left: 10px;
+                line-height: 15px;
+                margin-top: 11px;
+                .div-rating {
+                    float: left;
+                }
+            }
+            img {
+                max-height: 50px;
+                max-width: 50px;
+                height: 100%;
+                width: 100%;
+                border-radius: 12%;
+            }
+        }
+        p {
+            font-size: 10px;
+            line-height: 15px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.rate-write {
+    padding-left: 10px;
+}

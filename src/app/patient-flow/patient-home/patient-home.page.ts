@@ -22,10 +22,10 @@ export class PatientHomePage implements OnInit {
     this.router.navigateByUrl('/patient-appointment-booking');
   }
   openLabReportsPage(){
-    alert("comming soon...");
+    this.router.navigateByUrl('/patient-hospitals-list');
   }
   openChattingPage(){
-    alert("coming soon");
+    this.router.navigateByUrl('/chat');
   }
   openVideoCallingPage(){
     alert("coming soon");

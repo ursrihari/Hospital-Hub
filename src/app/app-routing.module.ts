@@ -100,6 +100,10 @@ const routes: Routes = [
   {
     path: 'chat-users',
     loadChildren: () => import('./chat-users/chat-users.module').then( m => m.ChatUsersPageModule)
+  },
+  {
+    path: 'doctor-booking',
+    loadChildren: () => import('./patient-flow/doctor-booking/doctor-booking.module').then( m => m.DoctorBookingPageModule)
   }
 ];
 

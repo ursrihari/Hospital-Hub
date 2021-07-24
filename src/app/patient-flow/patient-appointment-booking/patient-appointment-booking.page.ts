@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {IonRouterOutlet} from '@ionic/angular';
 
 @Component({
@@ -8,7 +9,9 @@ import {IonRouterOutlet} from '@ionic/angular';
 })
 export class PatientAppointmentBookingPage implements OnInit {
   canGoBack: boolean = false;
-  constructor(private routerOutlet: IonRouterOutlet) {
+  constructor(private routerOutlet: IonRouterOutlet,
+    private router:Router
+    ) {
 
   }
 
@@ -16,5 +19,8 @@ export class PatientAppointmentBookingPage implements OnInit {
       this.canGoBack = this.routerOutlet &&
                        this.routerOutlet.canGoBack();
   }
-
+  
+  openDoctorBookingPage(){
+    this.router.navigateByUrl('/doctor-booking');
+  }
 }

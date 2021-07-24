@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+import { IonRouterOutlet } from '@ionic/angular';
+
+@Component({
+  selector: 'app-doctor-booking',
+  templateUrl: './doctor-booking.page.html',
+  styleUrls: ['./doctor-booking.page.scss'],
+})
+export class DoctorBookingPage implements OnInit {
+
+  canGoBack: boolean = false;
+  constructor(private routerOutlet: IonRouterOutlet) { }
+  ngOnInit() {
+    this.canGoBack = this.routerOutlet &&
+                     this.routerOutlet.canGoBack();
+}
+
+}

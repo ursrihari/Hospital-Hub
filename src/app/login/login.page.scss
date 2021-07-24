@@ -1,46 +1,76 @@
-  #form {
-    margin-top: 15%;
-    padding-left: 30px;
-    padding-right: 30px;
+ion-card-title {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #080808;
+    text-align: center;
+    font-weight: 600;
+}
 
-    ion-button {
-      margin-top: 35px;
-      height: 48px;
-      font-size: 18px;
-      text-transform: initial;
-      border-radius: 50px;
-      box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.05);
-      --box-shadow: none;
-    }
-  }
+ion-card-subtitle {
+    padding-top: 15px;
+    font-size: 11px;
+    color: #898585;
+    text-align: center;
+    font-weight: 300;
+}
 
-  ion-item {
-    height: 55px;
-    box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.08);
-    --highlight-height: 0px;
-  
-    ion-input {
-      font-size: 18px;
-      --padding-top: 20px;
-      --padding-bottom: 15px;
-      --padding-start: 5px;
+ion-header {
+    position: absolute;
+}
+
+ion-card {
+    --ion-background-color: transparent;
+    box-shadow: none !important;
+}
+
+.signin-btns {
+    margin-top: 35px;
+    text-align: center;
+    color: #F0F4FA;
+}
+
+.menu-header-bg {
+    height: 207px;
+    width: 450px;
+    background: #0069b4;
+    background: linear-gradient(90deg, #0069b4 0%, #0069b4 100%);
+    box-shadow: 0px 1px 10px rgb(98 140 255 / 50%);
+    transform: rotate( -25deg);
+    margin-left: -87px;
+    margin-top: -55px;
+}
+
+.menu-header-bg-2 {
+    position: absolute;
+    height: 207px;
+    width: 450px;
+    background: #ccd7e8;
+    background: linear-gradient( 90deg, #ccd7e8 0%, #ccd7e8 100%);
+    transform: rotate( 25deg);
+    margin-top: -22px;
+}
+
+.header-content {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 4px solid #5e7ccc;
+        margin-right: 14px;
     }
-  
-    a {
-      font-size: 17px;
-      letter-spacing: 0.5px;
-      text-decoration: none;
+    h2 {
+        font-weight: 500;
+        color: #fff;
     }
-  }
-  ion-slides {
-    height: 65%;
-  }
-  .slider-image{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-  ion-label{
-      font-size: 30px;
-  }
-  
+    p {
+        font-size: 12px;
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 0.4px;
+    }
+}

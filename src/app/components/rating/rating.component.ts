@@ -10,7 +10,7 @@ export class RatingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.fontSize);
+    //console.log(this.fontSize);
   }
 
 }

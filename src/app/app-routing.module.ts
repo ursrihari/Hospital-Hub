@@ -104,6 +104,10 @@ const routes: Routes = [
   {
     path: 'doctor-booking',
     loadChildren: () => import('./patient-flow/doctor-booking/doctor-booking.module').then( m => m.DoctorBookingPageModule)
+  },
+  {
+    path: 'doctor-consult',
+    loadChildren: () => import('./doctor-consult/doctor-consult.module').then( m => m.DoctorConsultPageModule)
   }
 ];
 

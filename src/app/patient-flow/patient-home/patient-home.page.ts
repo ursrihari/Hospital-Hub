@@ -27,8 +27,8 @@ export class PatientHomePage implements OnInit {
   openChattingPage(){
     this.router.navigateByUrl('/chat');
   }
-  openVideoCallingPage(){
-    alert("coming soon");
+  openDoctorConsultationPage(){
+    this.router.navigateByUrl('/doctor-consult');
   }
   openNotificationsPage(){
     this.router.navigateByUrl('/notifications');

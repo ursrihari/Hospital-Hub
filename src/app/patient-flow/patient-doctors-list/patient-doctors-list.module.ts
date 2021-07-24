@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { PatientDoctorsListPageRoutingModule } from './patient-doctors-list-routing.module';
 import { PatientDoctorsListPage } from './patient-doctors-list.page';
 import { RatingModule } from '../../components/rating/rating.module';
+import { PopoverModule } from '../../components/popover/popover.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    PopoverModule,
     PatientDoctorsListPageRoutingModule,
     RatingModule
   ],

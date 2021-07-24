@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonRouterOutlet } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponent } from '../../components/popover/popover.component';
 
 @Component({
   selector: 'app-patient-doctors-list',
@@ -10,6 +12,7 @@ import { Router } from '@angular/router';
 export class PatientDoctorsListPage implements OnInit {
   canGoBack: boolean = false;
   constructor(private routerOutlet: IonRouterOutlet,
+    public popoverController: PopoverController,
     private router:Router) { }
 
   ngOnInit() {
@@ -18,6 +21,18 @@ export class PatientDoctorsListPage implements OnInit {
 }
 openDoctorViewPage(){
   this.router.navigateByUrl('/doctor-view');
+}
+async presentPopover(ev: any) {
+  const popover = await this.popoverController.create({
+    component: PopoverComponent,
+    cssClass: 'my-custom-class',
+    event: ev,
+    translucent: true
+  });
+  await popover.present();
+
+  const { role } = await popover.onDidDismiss();
+  console.log('onDidDismiss resolved with role', role);
 }
 
 }

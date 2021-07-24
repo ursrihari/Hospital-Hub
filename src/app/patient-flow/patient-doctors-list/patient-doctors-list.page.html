@@ -9,12 +9,12 @@
 </ion-header>
 
 <ion-content>
-    <div class="card p-1 doctor-card" (click)="openDoctorViewPage()">
+    <div class="card p-1 doctor-card">
         <div class="row no-gutters">
-            <div class="col-3">
+            <div class="col-3" (click)="openDoctorViewPage()">
                 <img src="https://www.moh.gov.bh/Content/Upload/Image/636724316230300000-%D8%AF.%D9%8A%D9%88%D8%B3%D9%81-%D8%A7%D8%AD%D9%85%D8%AF-%D9%86%D9%88%D8%AD.jpg" class="doctor-image" alt="">
             </div>
-            <div class="col-8 doctor-details mt-2">
+            <div class="col-8 doctor-details mt-2" (click)="openDoctorViewPage()">
                 <div class="card-block px-2">
                     <p class="card-text">Dr. Aadam </p>
                     <h6 class="card-text mt-1">Cardiologist</h6>
@@ -22,7 +22,8 @@
                     <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
                 </div>
             </div>
-            <div class="col-1 doctor-more-btn">
+
+            <div class="col-1 doctor-more-btn" (click)="presentPopover()">
                 <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
             </div>
         </div>

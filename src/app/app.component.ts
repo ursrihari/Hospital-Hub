@@ -52,7 +52,7 @@ export class AppComponent {
           {title: 'Find Hospitals', page: 'PatientHospitalsListPage', url:'patient-hospitals-list', icon:'trail-sign-outline'},
           {title: 'My Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
          // {title: 'Notificaions', page: 'NotificationsPage', url:'notifications', icon:'notifications-circle-outline'},
-         {title: 'Chat', page: 'ChatPage', url:'chat', icon:'chatbubbles-outline'}, 
+         {title: 'Chat', page: 'ChatUsersPage', url:'chat-users', icon:'chatbubbles-outline'}, 
          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'settings-outline'}
         ];
          break; 

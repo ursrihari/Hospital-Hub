@@ -1,24 +1,24 @@
-ion-content{
-    --background:#44cfbc;
-    .header{
+ion-content {
+    --background: #0069b4;
+    .header {
         display: flex;
         justify-content: space-between;
         padding: 1rem 0.5rem;
-        color:#fff;
+        color: #fff;
     }
-    .card-image{
+    .card-image {
         height: 87%;
         width: 100%;
         background: #fff;
         position: absolute;
         bottom: 0;
         border-radius: 3rem 3rem 0 0;
-        padding:2rem;
-        .image{
+        padding: 2rem;
+        .image {
             position: absolute;
-            top:-4rem;
+            top: -4rem;
             width: 35%;
-            left:50%;
+            left: 50%;
             transform: translateX(-50%);
             img {
                 border-radius: 20%;
@@ -26,15 +26,15 @@ ion-content{
             }
         }
     }
-    .personal-details{
+    .personal-details {
         position: relative;
         top: 70px;
         border-radius: 10px;
         background-color: #f0f2f8;
-        .card-header{
+        .card-header {
             padding: 0;
             height: 35px;
-            .header-tile{
+            .header-tile {
                 margin-top: 2px;
             }
         }
@@ -45,16 +45,16 @@ ion-content{
             ion-icon {
                 font-size: 16px;
                 left: -7px;
-                bottom: 5px;  
+                bottom: 5px;
             }
         }
-        .card-header{
+        .card-header {
             padding: 0.3rem 0.3rem;
         }
-        .personal-details-content{
+        .personal-details-content {
             padding: 10px 5px;
             font-size: 10px;
-            p{
+            p {
                 margin: 0px 0px 4px 0px;
             }
         }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IonRouterOutlet } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-view',
@@ -8,11 +9,15 @@ import { IonRouterOutlet } from '@ionic/angular';
 })
 export class DoctorViewPage implements OnInit {
   canGoBack: boolean = false;
-  constructor(private routerOutlet: IonRouterOutlet) { }
+  constructor(private routerOutlet: IonRouterOutlet,
+    private router:Router) { }
   
   ngOnInit() {
     this.canGoBack = this.routerOutlet &&
                      this.routerOutlet.canGoBack();
+  }
+  openBookAppointmentPage(){
+    this.router.navigateByUrl('/doctor-booking');
   }
 
 }

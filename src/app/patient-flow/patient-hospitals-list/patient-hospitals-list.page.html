@@ -6,13 +6,33 @@
         </ion-buttons>
 
         <ion-title>Hospitals</ion-title>
+        <ion-buttons slot="end" (click)="presentAlertCheckbox()">
+            <ion-icon style="font-size: 25px;margin-right:10px;" name="funnel-outline"></ion-icon>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <div class="card p-1 doctor-card">
+    <div class="container p-1">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <form class="card card-sm">
+                    <div class="card-body row no-gutters align-items-center pt-1 pr-0 pb-1 pl-1">
+                        <div class="col-auto">
+                            <ion-icon class="large" name="search-outline"></ion-icon>
+                        </div>
+                        <div class="col">
+                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
-            <div class="col-3" (click)="openDoctorViewPage()">
+            <div class="col-3">
                 <img src="assets/images/hospitals/hospital1.jpg" class="doctor-image" alt="">
             </div>
             <div class="col-8 doctor-details mt-2">
@@ -29,7 +49,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-1 doctor-card">
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
             <div class="col-3">
                 <img src="assets/images/hospitals/hospital2.jpg" class="doctor-image" alt="">
@@ -47,7 +67,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-1 doctor-card">
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
             <div class="col-3">
                 <img src="assets/images/hospitals/hospital3.jpg" class="doctor-image" alt="">
@@ -65,7 +85,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-1 doctor-card">
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
             <div class="col-3">
                 <img src="assets/images/hospitals/hospital1.jpg" class="doctor-image" alt="">
@@ -83,7 +103,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-1 doctor-card">
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
             <div class="col-3">
                 <img src="assets/images/hospitals/hospital2.jpg" class="doctor-image" alt="">
@@ -101,7 +121,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-1 doctor-card">
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
             <div class="col-3">
                 <img src="assets/images/hospitals/hospital3.jpg" class="doctor-image" alt="">
@@ -119,7 +139,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-1 doctor-card">
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
             <div class="col-3">
                 <img src="assets/images/hospitals/hospital1.jpg" class="doctor-image" alt="">
@@ -137,7 +157,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-1 doctor-card">
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
             <div class="col-3">
                 <img src="assets/images/hospitals/hospital2.jpg" class="doctor-image" alt="">
@@ -155,7 +175,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-1 doctor-card">
+    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
         <div class="row no-gutters">
             <div class="col-3">
                 <img src="assets/images/hospitals/hospital3.jpg" class="doctor-image" alt="">

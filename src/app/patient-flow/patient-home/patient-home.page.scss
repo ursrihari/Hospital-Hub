@@ -87,3 +87,19 @@
         width: 100%;
     }
 }
+
+.choose-from-top-specilist {
+    .col-data {
+        padding: 0px -5px 7px 19px;
+    }
+    .col-text {
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        padding-left: 4px;
+    }
+    .img {
+        max-height: 50px;
+        max-width: 50px;
+    }
+}

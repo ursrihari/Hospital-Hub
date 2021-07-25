@@ -1,0 +1,40 @@
+.icons-main {
+    text-align: center;
+    margin: 20px 0 0;
+}
+.icons-main h4{
+    color:#0069B4;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0 0 16px;
+}
+.icons-main img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.icons-main a p{
+    color: #000000;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 600;
+    word-wrap: anywhere;
+    margin: 8px 0;
+}
+.icons-main a p.viewall-cir{
+    color: #0069B4;
+    font-size: 8px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border:solid 1px #cccccc;
+}
+a:hover{
+    text-decoration:none;
+}

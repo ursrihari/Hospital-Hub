@@ -10,111 +10,524 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <div class="p-1">
-        <div class="upcomming-appointment-div" (click)="openAppointment()">
-            <ion-row>
-                <ion-col size="3" class="ion-padding-5">
-                    <img class="card-avatar-image" src="assets/profile/doctor-2.jfif" />
-                </ion-col>
-                <ion-col size="9" class="padding-5 ion-no-margin">
-                    <div class="up-appointment-text">
-                        <ion-card-content class="no-padding">
-                            <ion-card-title>
-                                <ion-label class="small">Upcomming Appointment</ion-label>
-                            </ion-card-title>
-                            <ion-label class="small">Dr. Seema Vazeer</ion-label><br>
-                            <ion-label class="small">2:30 PM, Central Hospital</ion-label>
-                        </ion-card-content>
-                    </div>
-                </ion-col>
-                <!-- <ion-col size="2" class="padding-5 ion-no-margin">
-                <ion-card-content class="no-padding">
-                    <ion-button fill="clear" (click)="openAppointment()">
-                        <ion-icon color="danger" class="font-size-35" slot="icon-only" name="notifications-circle-outline"></ion-icon>
-                    </ion-button>
-                </ion-card-content>
-            </ion-col> -->
-            </ion-row>
-        </div>
-        <div class="what-looking-for-div">
-            <div class="pt-2">
-                <ion-label class="font-size-15">What you are looking for?</ion-label>
+    <div class="content">
+        <div class="container">
+            <div class="covid-assist">
+                <a><img src="assets/new_design/images/covid-assist-img.jpg" /></a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item justify-content-between align-items-center p-2 review-li" (click)="openBookAppointmentPage()">
-                    <div class="image-parent">
-                        <img src="https://image.shutterstock.com/image-vector/blue-alarm-clock-icon-isolated-600w-1507433870.jpg" class="img-fluid" alt="quixote">
-                        <div class="reviewer-name">
-                            <div>
-                                <ion-label class="label-style">Book Appointment</ion-label>
-                            </div>
-                            <div>
-                                <ion-label class="small"> 6 Doctors Available</ion-label>
-                            </div>
-                        </div>
+            <div class="find-doc-main">
+                <div class="find-doc-inn">
+                    <a (click)="openDoctorsPage()">
+                        <img src="assets/new_design/images/find-docs-img.jpg" />
+                        <h3>Find Doctors Near You</h3>
+                        <p>Book Video or in-clinic appointments</p>
+                    </a>
+                </div>
+                <div class="find-doc-inn">
+                    <a (click)="openHospitalsPage()">
+                        <img src="assets/new_design/images/hospital-img.jpg" />
+                        <h3>Find Hospitals Near You</h3>
+                        <p>Connect with experienced doctors in 60secs</p>
+                    </a>
+                </div>
+            </div>
+            <div class="lab-test-main">
+                <a>
+                    <p>Lab tests & health checkup packages</p>
+                    <div class="lab-test-img">
+                        <img src="assets/new_design/images/lab-test-img.jpg" />
                     </div>
-                    <div>
-                        <ion-icon color="secondary" name="chevron-forward-outline"></ion-icon>
-                    </div>
-                </li>
-                <li class="list-group-item justify-content-between align-items-center p-2 review-li" (click)="openLabReportsPage()">
-                    <div class="image-parent">
-                        <div class="image-parent-image">
-                            <img src="https://decenthl.com/wp-content/uploads/2020/12/labTest.png" class="img-fluid" alt="quixote">
-                        </div>
-                        <div class="reviewer-name">
-                            <div>
-                                <ion-label class="label-style">Lab Tests at Home</ion-label>
-                            </div>
-                            <div>
-                                <ion-label class="small">92 Diagnostics are available</ion-label>
-                            </div>
-                        </div>
+                </a>
+            </div>
 
+            <div class="icons-main">
+                <h5>Instant Video Consultation for COVID-19 Sympotoms
+                    <span>Connect with top medical experts, 24/7</span>
+                </h5>
+                <div class="row">
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img1.jpg" />
+                            <p>Fever</p>
+                        </a>
                     </div>
-                    <div>
-                        <ion-icon color="secondary" name="chevron-forward-outline"></ion-icon>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img2.jpg" />
+                            <p>Dry Cough</p>
+                        </a>
                     </div>
-                </li>
-                <li class="list-group-item justify-content-between align-items-center p-2 review-li" (click)="openChattingPage()">
-                    <div class="image-parent">
-                        <img src="https://png.pngtree.com/element_our/png_detail/20181229/vector-chat-icon-png_302635.jpg" class="img-fluid" alt="quixote">
-                        <div class="reviewer-name">
-                            <div>
-                                <ion-label class="label-style">Online Health Consultant</ion-label>
-                            </div>
-                            <div>
-                                <ion-label class="small">+12 Consultants</ion-label>
-                            </div>
-                        </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img3.jpg" />
+                            <p>Tiredness</p>
+                        </a>
                     </div>
-                    <div>
-                        <ion-icon color="secondary" name="chevron-forward-outline"></ion-icon>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img4.jpg" />
+                            <p>Runny Nose</p>
+                        </a>
                     </div>
-                </li>
-            </ul>
-        </div>
-        <div class="grid-find-doctors">
-            <div class="row m-0">
-                <div class="col-6 p-1" col-xl-2 col-lg-3 col-md-4>
-                    <div class="card m-0" (click)="openDoctorsPage()">
-                        <img class="card-img-top" src="https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/68/2017/08/02210448/smiling-doctor-standing-arms-crossed-in-front-of-medical-team-picture-id503524567-1.jpg" alt="Card image cap">
-                        <div class="card-body find-doctors-card-text">
-                            <h5 class="card-title">Find Doctors Near You</h5>
-                            <h6 class="card-text">Book video or in-clinic appointments</h6>
-                        </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img5.jpg" />
+                            <p>Sore Throat</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img6.jpg" />
+                            <p>Pneumonia</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img7.jpg" />
+                            <p>Corona Virus</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img7.jpg" />
+                            <p>Breathing Dif..</p>
+                        </a>
                     </div>
                 </div>
-                <div class="col-6 p-1" col-xl-2 col-lg-3 col-md-4>
-                    <div class="card m-0" (click)="openDoctorConsultationPage()">
-                        <img class="card-img-top" src="https://ayurvedaglobe.com/wp-content/uploads/2020/04/iStock_24963928_SMALL-20160706104547180.jpg" alt="Card image cap">
-                        <div class="card-body find-doctors-card-text">
-                            <h5 class="card-title">Consult a doctor</h5>
-                            <h6 class="card-text">Connect with experienced doctors in 60 sec</h6>
+            </div>
+
+            <div class="rt-pcr-main">
+                <img src="assets/new_design/images/covid-test-img.jpg" />
+                <h3>RT-PCR Test</h3>
+                <p>RT-PCR is the preferred test for detecting Covid infection in the body</p>
+                <ul>
+                    <li>Certified Labs</li>
+                    <li><span>Get your</span> results within 48 hours</li>
+                    <li><span class="li-red">10% HealthCash back</span></li>
+                </ul>
+                <a>View Details</a>
+            </div>
+
+        </div>
+
+        <div class="brand-wrapper">
+            <div class="sec-title text-center mb-0">
+                <h2>In the Spotlight</h2>
+                <p>Explore deals, offers, health updates and more</p>
+                <span class="decor"><span class="inner"></span></span>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="owl-carousel owl-theme brand-slider">
+                        <div class="item">
+                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/new_design/images/spotlight-carousel/img1.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/new_design/images/spotlight-carousel/img2.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/new_design/images/spotlight-carousel/img3.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/new_design/images/spotlight-carousel/img4.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/new_design/images/spotlight-carousel/img2.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/new_design/images/spotlight-carousel/img3.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/new_design/images/spotlight-carousel/img4.jpg" alt="" title=""></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <div class="container">
+
+            <div class="icons-main">
+                <h5>Not feeling too well?
+                    <span>Treat common symptoms instantly via video consultation</span>
+                </h5>
+                <div class="row">
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img1.jpg" />
+                            <p>Fever</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img2.jpg" />
+                            <p>Dry Cough</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img3.jpg" />
+                            <p>Tiredness</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img4.jpg" />
+                            <p>Runny Nose</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img5.jpg" />
+                            <p>Sore Throat</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img6.jpg" />
+                            <p>Pneumonia</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img7.jpg" />
+                            <p>Corona Virus</p>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a>
+                            <img src="assets/new_design/images/corona-symp/img7.jpg" />
+                            <p>Breathing Dif..</p>
+                        </a>
+                    </div>
+                </div>
+                <a class="view-all-symp">View All Symptoms</a>
+            </div>
+
+            <div class="brand-wrapper docs-nearyou">
+                <div class="sec-title text-center mb-0">
+                    <h2>Find Doctors Available Near You</h2>
+                    <p>Book assured appointments even during the COVID-19 pandemic</p>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="owl-carousel owl-theme brand-slider near-doctors-slider">
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/doctors/img1.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Dr.James Adult</h3>
+                                        <p>Geriatrician<span>HSR Layout</span></p>
+                                        <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
+                                    </div>
+                                </a>
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/doctors/img2.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Dr.James Alison</h3>
+                                        <p>Geriatrician<span>HSR Layout</span></p>
+                                        <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>80% . 19 Years Exp</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/doctors/img3.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Dr.Sharat Honnat</h3>
+                                        <p>Geriatrician<span>HSR Layout</span></p>
+                                        <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
+                                    </div>
+                                </a>
+
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/doctors/img4.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Dr.Sharat Honnat</h3>
+                                        <p>Geriatrician<span>HSR Layout</span></p>
+                                        <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/doctors/img3.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Dr.Sharat Honnat</h3>
+                                        <p>Geriatrician<span>HSR Layout</span></p>
+                                        <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
+                                    </div>
+                                </a>
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/doctors/img2.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Dr.Sharat Honnat</h3>
+                                        <p>Geriatrician<span>HSR Layout</span></p>
+                                        <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="view-all-symp">See All Doctors</a>
+            </div>
+
+            <div class="brand-wrapper hosp-nearyou">
+                <div class="sec-title text-center mb-0">
+                    <h2>Top Hospitals that are open and safe</h2>
+                    <p>Maximum safety followed for you and your family</p>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="owl-carousel owl-theme brand-slider near-doctors-slider">
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/hospitals/img1.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Motherhood Hospital</h3>
+                                        <p>Multispeciality Hospital<span>Indiranagar</span></p>
+                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
+                                    </div>
+                                </a>
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/hospitals/img2.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Koshys Hospital</h3>
+                                        <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
+                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/hospitals/img2.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Koshys Hospital</h3>
+                                        <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
+                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
+                                    </div>
+                                </a>
+
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/hospitals/img1.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Motherhood Hospital</h3>
+                                        <p>Multispeciality Hospital<span>Indiranagar</span></p>
+                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/hospitals/img1.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Koshys Hospital</h3>
+                                        <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
+                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
+                                    </div>
+                                </a>
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="doc-img">
+                                        <img src="assets/new_design/images/hospitals/img2.jpg" alt="" title="">
+                                    </div>
+                                    <div class="doc-details">
+                                        <h3>Motherhood Hospital</h3>
+                                        <p>Multispeciality Hospital<span>Indiranagar</span></p>
+                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="view-all-symp">See All Hospitals</a>
+            </div>
+
+
+
+            <div class="banner-img">
+                <a><img src="assets/new_design/images/card1.jpg" /></a>
+            </div>
+
+            <div class="brand-wrapper hosp-nearyou">
+                <div class="sec-title text-center mb-0">
+                    <h2>Book appointments with top specialists in your city</h2>
+                    <p>Over 40 lakh patient stories to help you choose</p>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+                <div class="row book-appointment">
+                    <div class="col">
+                        <img src="assets/new_design/images/book-appoin/img2.jpg" />
+                        <h3>Orthopedist</h3>
+                        <p>Visit your doctor for joint pains, sprains, arthiri...</p>
+                        <h6><i class="fa fa-user" aria-hidden="true"></i>431 Doctors a...</h6>
+                    </div>
+                    <div class="col">
+                        <img src="assets/new_design/images/book-appoin/img1.jpg" />
+                        <h3>Dentist</h3>
+                        <p>Book appointments for bleeding gum...</p>
+                        <h6><i class="fa fa-user" aria-hidden="true"></i>2.6k Doctors a...</h6>
+                    </div>
+                </div>
+                <div class="row book-appointment">
+                    <div class="col">
+                        <img src="assets/new_design/images/book-appoin/img3.jpg" />
+                        <h3>Orthopedist</h3>
+                        <p>Visit your doctor for joint pains, sprains, arthiri...</p>
+                        <h6><i class="fa fa-user" aria-hidden="true"></i>431 Doctors a...</h6>
+                    </div>
+                    <div class="col">
+                        <img src="assets/new_design/images/book-appoin/img4.jpg" />
+                        <h3>Dentist</h3>
+                        <p>Book appointments for bleeding gum...</p>
+                        <h6><i class="fa fa-user" aria-hidden="true"></i>2.6k Doctors a...</h6>
+                    </div>
+                </div>
+                <a class="view-all-symp">View All Specialists</a>
+            </div>
+
+
+            <div class="brand-wrapper test-wrapper">
+                <div class="sec-title text-center mb-0">
+                    <h2>Free expert answers to your health questions</h2>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+                <div class="row justify-content-center test-wrapper-inn">
+                    <div class="col-lg-10">
+                        <div class="owl-carousel owl-theme brand-slider">
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="test-top">
+                                        <img src="assets/new_design/images/testimonial-icon.jpg" />
+                                        <p>Asked for Fe...</p>
+                                        <p><span>1h ago</span></p>
+                                    </div>
+                                    <div class="test-mid">
+                                        <h2><span>CLAMP SUSPENSION an...</span></h2>
+                                        <p>Hello Doctor,<br>Baby 4.5 months old weighing 7.3kgs. He has got cold and mild cough. Doctor has given CLAMP SUSPENSION (3...</p>
+                                    </div>
+                                    <div class="test-btm">
+                                        <p>2 answers from doctors <img src="assets/new_design/images/doctors/doctor-thumb-01.jpg" /><img src="assets/new_design/images/doctors/doctor-thumb-02.jpg" /></p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="test-top">
+                                        <img src="assets/new_design/images/testimonial-icon.jpg" />
+                                        <p>Asked for Fe...</p>
+                                        <p><span>1h ago</span></p>
+                                    </div>
+                                    <div class="test-mid">
+                                        <h2><span>Acne, irregular perio...</span></h2>
+                                        <p>I have acne problem it is spreading on my cheeks and neck as well i ususally get hand cramps and now a days its very frequent can you advice me if isotr...</p>
+                                    </div>
+                                    <div class="test-btm">
+                                        <p>2 answers from doctors <img src="assets/new_design/images/doctors/doctor-thumb-01.jpg" /><img src="assets/new_design/images/doctors/doctor-thumb-02.jpg" /></p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="test-top">
+                                        <img src="assets/new_design/images/testimonial-icon.jpg" />
+                                        <p>Asked for Fe...</p>
+                                        <p><span>1h ago</span></p>
+                                    </div>
+                                    <div class="test-mid">
+                                        <h2><span>CLAMP SUSPENSION an...</span></h2>
+                                        <p>Hello Doctor,<br>Baby 4.5 months old weighing 7.3kgs. He has got cold and mild cough. Doctor has given CLAMP SUSPENSION (3...</p>
+                                    </div>
+                                    <div class="test-btm">
+                                        <p>2 answers from doctors <img src="assets/new_design/images/doctors/doctor-thumb-01.jpg" /><img src="assets/new_design/images/doctors/doctor-thumb-02.jpg" /></p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="JavaScript:Void(0)">
+                                    <div class="test-top">
+                                        <img src="assets/new_design/images/testimonial-icon.jpg" />
+                                        <p>Asked for Fe...</p>
+                                        <p><span>1h ago</span></p>
+                                    </div>
+                                    <div class="test-mid">
+                                        <h2><span>Acne, irregular perio...</span></h2>
+                                        <p>I have acne problem it is spreading on my cheeks and neck as well i ususally get hand cramps and now a days its very frequent can you advice me if isotr...</p>
+                                    </div>
+                                    <div class="test-btm">
+                                        <p>2 answers from doctors <img src="assets/new_design/images/doctors/doctor-thumb-01.jpg" /><img src="assets/new_design/images/doctors/doctor-thumb-02.jpg" /></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="view-all-symp">Ask a Free Question</a>
+                <a class="read-trnd">Read trending questions</a>
+            </div>
+        </div>
+
+        <div class="count-main">
+            <p>Our Community of doctors and patients drive us to create technologies for better and affordable healthcare</p>
+            <div class="count-main-inn">
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <p>Our Users</p>
+                        <h3>30 Crores</h3>
+                    </div>
+                    <div class="col">
+                        <i class="fa fa-medkit" aria-hidden="true"></i>
+                        <p>Our Doctors</p>
+                        <h3>1 Lakh</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-medkit" aria-hidden="true"></i>
+                        <p>Hospitals</p>
+                        <h3>20,000</h3>
+                    </div>
+                    <div class="col">
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                        <p>Patient Stories</p>
+                        <h3>40 Lakh</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-logo-img">Logo Here</p>
+            <p>Our vision is to help mankind live healthier, longer lives by making quality healthcare accessible, affordable and convenient.<span>Made by ClinicKWT @ Kuwait.</span></p>
+        </footer>
+
     </div>
 </ion-content>

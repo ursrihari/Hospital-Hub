@@ -46,14 +46,14 @@ export class AppComponent {
       case 'patient': { 
         this.pages = [
           {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'home-outline'},
-          {title: 'Book Appointment', page: 'PatientAppointmentBookingPage', url:'patient-appointment-booking', icon:'alarm-outline'},
-          {title: 'My Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'document-text-outline'},
+          // {title: 'Book Appointment', page: 'PatientAppointmentBookingPage', url:'patient-appointment-booking', icon:'alarm-outline'},
+          // {title: 'My Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'document-text-outline'},
           {title: 'Find Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fitness-outline'},
           {title: 'Find Hospitals', page: 'PatientHospitalsListPage', url:'patient-hospitals-list', icon:'trail-sign-outline'},
-          {title: 'My Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
+          // {title: 'My Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
          // {title: 'Notificaions', page: 'NotificationsPage', url:'notifications', icon:'notifications-circle-outline'},
-         {title: 'Chat', page: 'ChatUsersPage', url:'chat-users', icon:'chatbubbles-outline'}, 
-         {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'settings-outline'}
+        //  {title: 'Chat', page: 'ChatUsersPage', url:'chat-users', icon:'chatbubbles-outline'}, 
+        //  {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'settings-outline'}
         ];
          break; 
       } 

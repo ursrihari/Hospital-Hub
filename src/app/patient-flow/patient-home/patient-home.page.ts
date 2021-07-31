@@ -33,5 +33,8 @@ export class PatientHomePage implements OnInit {
   openNotificationsPage(){
     this.router.navigateByUrl('/notifications');
   }
+  openHospitalsPage(){
+    this.router.navigateByUrl('/patient-hospitals-list');
+  }
 
 }

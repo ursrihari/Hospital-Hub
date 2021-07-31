@@ -5,192 +5,219 @@
             <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
         </ion-buttons>
 
-        <ion-title>Hospitals</ion-title>
+        <!--<ion-title>Hospitals</ion-title>
         <ion-buttons slot="end" (click)="presentAlertCheckbox()">
             <ion-icon style="font-size: 25px;margin-right:10px;" name="funnel-outline"></ion-icon>
-        </ion-buttons>
+        </ion-buttons> -->
+        <div class="find-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ion-title>Find & Book</ion-title>
+                        <!-- <h3>Find & Book</h3> -->
+                    </div>
+
+                    <div class="col">
+                        <p>LOCATION</p>
+                        <form>
+                            <select>
+                                <option>Banglore</option>
+                                <option>Hyderabad</option>
+                                <option>Delhi</option>
+                                <option>Mumbai</option>
+                                <option>Pune</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <div class="container p-1">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-                <form class="card card-sm">
-                    <div class="card-body row no-gutters align-items-center pt-1 pr-0 pb-1 pl-1">
-                        <div class="col-auto">
-                            <ion-icon class="large" name="search-outline"></ion-icon>
-                        </div>
-                        <div class="col">
-                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search">
-                        </div>
+    <div class="content-finddoc-page">
+        <!-- <div class="find-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <a href="index.html"><i class="ti-arrow-left"></i></a>
+                        <h3>Find & Book</h3>
                     </div>
-                </form>
+                    <div class="col">
+                        <p>LOCATION</p>
+                        <form>
+                            <select>
+                                <option>Banglore</option>
+                                <option>Hyderabad</option>
+                                <option>Delhi</option>
+                                <option>Mumbai</option>
+                                <option>Pune</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </div> -->
 
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital1.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital1 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
+        <div class="find-searchbar">
+            <form>
+                <div class="form-group">
+                    <label><i class="fa fa-search"></i></label>
+                    <input type="text" class="form-control" placeholder="Search hospitals, specialities etc...">
+                </div>
+            </form>
+        </div>
+
+        <div class="health-concern">
+            <h3>Search by Health concern<a>Explore More</a></h3>
+            <div class="row healthcon-icons hospitals-img">
+                <div class="col">
+                    <img src="assets/new_design/images/find-hospitals-near/img1.jpg" />
+                    <p>Gynaecology</p>
+                </div>
+                <div class="col">
+                    <a>
+                        <img src="assets/new_design/images/find-hospitals-near/img2.jpg" />
+                        <p>Neurology</p>
+                    </a>
+                </div>
+                <div class="col">
+                    <a>
+                        <img src="assets/new_design/images/find-hospitals-near/img3.jpg" />
+                        <p>ENT</p>
+                    </a>
                 </div>
             </div>
 
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
-        </div>
-    </div>
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital2.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital2 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
+            <div class="row healthcon-icons hospitals-img">
+                <div class="col">
+                    <a>
+                        <img src="assets/new_design/images/find-hospitals-near/img4.jpg" />
+                        <p>Dental</p>
+                    </a>
+                </div>
+                <div class="col">
+                    <a>
+                        <img src="assets/new_design/images/find-hospitals-near/img5.jpg" />
+                        <p>Sexology</p>
+                    </a>
+                </div>
+                <div class="col">
+                    <a>
+                        <img src="assets/new_design/images/find-hospitals-near/img6.jpg" />
+                        <p>Urology</p>
+                    </a>
                 </div>
             </div>
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
+            <hr>
         </div>
-    </div>
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital3.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital3 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
+
+        <div class="health-concern">
+            <h3>Search by Speciality</h3>
+            <div class="healthcon-spec">
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img1.jpg" />
+                        <p>Women's<br/>Health</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img2.jpg" />
+                        <p>Skin & Hair</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img3.jpg" />
+                        <p>Child<br/>Specialist</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img4.jpg" />
+                        <p>General<br/>Physician</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img5.jpg" />
+                        <p>Brain and<br/>Nerves</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img6.jpg" />
+                        <p>Uriniary<br/>Issues</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img7.jpg" />
+                        <p>Kidney<br/>Issues</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img8.jpg" />
+                        <p>Ayurveda</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img1.jpg" />
+                        <p>Women's<br/>Health</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img2.jpg" />
+                        <p>Skin & Hair</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img3.jpg" />
+                        <p>Child<br/>Specialist</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img4.jpg" />
+                        <p>General<br/>Physician</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img5.jpg" />
+                        <p>Brain and<br/>Nerves</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img6.jpg" />
+                        <p>Uriniary<br/>Issues</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img7.jpg" />
+                        <p>Kidney<br/>Issues</p>
+                    </a>
+                </div>
+                <div class="healthcon-spec-bg">
+                    <a>
+                        <img src="assets/new_design/images/speciality/img8.jpg" />
+                        <p>Ayurveda</p>
+                    </a>
                 </div>
             </div>
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
+
+
+            <div class="looking-search"><a>Looking for more? Search</a></div>
         </div>
-    </div>
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital1.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital4 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
-                </div>
-            </div>
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
-        </div>
-    </div>
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital2.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital5 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
-                </div>
-            </div>
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
-        </div>
-    </div>
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital3.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital6 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
-                </div>
-            </div>
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
-        </div>
-    </div>
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital1.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital7 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
-                </div>
-            </div>
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
-        </div>
-    </div>
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital2.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital8 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
-                </div>
-            </div>
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
-        </div>
-    </div>
-    <div class="card p-1 doctor-card" (click)="openDoctorsListPage()">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <img src="assets/images/hospitals/hospital3.jpg" class="doctor-image" alt="">
-            </div>
-            <div class="col-8 doctor-details mt-2">
-                <div class="card-block px-2">
-                    <p class="card-text">Kuwait Best Hospital9 </p>
-                    <h6 class="card-text mt-1">ABCDEF</h6>
-                    <app-rating fontSize="20" class="doctor-rating"></app-rating>
-                    <!-- <a href="#" class="btn btn-primary">BUTTON</a> -->
-                </div>
-            </div>
-            <div class="col-1 doctor-more-btn">
-                <ion-icon color="secondary" name="ellipsis-vertical-outline"></ion-icon>
-            </div>
-        </div>
+
+
     </div>
 </ion-content>

@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class PatientHomePage implements OnInit {
   spotlightSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.5, spaceBetween: 10 };
-  doctorsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.4, spaceBetween: 20 };
-  hospitalsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.2, spaceBetween: 5 };
-  questionsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.4, spaceBetween: 5 };
+  doctorsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.4, spaceBetween: 20, pagination: false };
+  hospitalsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.2, spaceBetween: 5, pagination: false };
+  questionsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.4, spaceBetween: 5, pagination: false };
   
   
   constructor(private router:Router) { }

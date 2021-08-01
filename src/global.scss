@@ -148,3 +148,13 @@ ion-content {
 //         margin-right: 20px;
 //     }
 // }
+
+.swiper-pagination-bullet {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+}
+
+swiper-pagination-bullets {
+    bottom: -4px !important;
+}

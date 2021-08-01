@@ -3,7 +3,7 @@
         <ion-menu contentId="main-content" type="overlay">
             <ion-content class="menu-content">
                 <!-- Patient Login -->
-                <div *ngIf="user_role==0" (click)="openProfile()">
+                <div *ngIf="user_role==0">
                     <div class="menu-header-bg"></div>
                     <div class="header-content">
                         <img src="../assets/patient/1.jfif">
@@ -48,9 +48,9 @@
                     </ion-menu-toggle>
                 </ion-list>
             </ion-content>
-            <ion-footer color="primary" class="sidemenu-footer">
+            <!-- <ion-footer color="primary" class="sidemenu-footer">
                 <p>Version 1.0.0</p>
-            </ion-footer>
+            </ion-footer> -->
         </ion-menu>
         <ion-router-outlet id="main-content"></ion-router-outlet>
     </ion-split-pane>

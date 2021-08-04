@@ -1,85 +1,24 @@
-<ion-content>
-  <div class="header">  
-    <ion-buttons slot="start" >
-      <ion-back-button *ngIf="canGoBack"></ion-back-button>
-      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+<ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-button (click)="backToHomePage()">
+            <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
     </ion-buttons>
-    <ion-title></ion-title>
-</div>
+    <ion-title>Fatima Mohmad Ali</ion-title>
+</ion-toolbar>
 
-<div class="card-image">
-  <div class="image">
-      <img src="../assets/patient/1.jfif"/>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-6">
-    <div class="p-1">
-      <div class="card personal-details">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-10"><h6 class="header-tile">Personal Information</h6></div>
-            <div class="col-2"><ion-button color="primary" fill="clear">
-              <ion-icon name="pencil-sharp"></ion-icon>
-            </ion-button></div>
-          </div>
-        </div>
-        <div class="card-body personal-details-content">
-            <div class="row">
-              <div class="col-6">
-                <p><strong>Name:</strong> Fathima ahmad Ali</p> 
-                <p><strong>Date Of Birth:</strong> 3rd Feb 1996</p> 
-                <p><strong>Age:</strong> 55 Years</p> 
-                <p><strong>Gender:</strong> Male</p> 
-                <p><strong>Marital Status:</strong> Married</p> 
-                <p><strong>Blood Group:</strong> B+</p> 
-              </div>
-              <div class="col-6">
-                <p><strong>Phone:</strong> +965 8577633464</p> 
-                <p><strong>Immidiate Contact:</strong> +965 8948396935</p> 
-                <p><strong>City:</strong> Ahmadi</p> 
-                <p><strong>District:</strong> Kuwait</p> 
-                <p><strong>Zipcode:</strong> 60000</p> 
-                <p><strong>Address:</strong> 9-246, street 1</p> 
-              </div>
-            </div>
-        </div>
-      </div>
-      </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="p-1">
-      <div class="card personal-details">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-10"><h6 class="header-tile">Insurrance Information</h6></div>
-            <div class="col-2"><ion-button color="primary" fill="clear">
-              <ion-icon name="pencil-sharp"></ion-icon>
-            </ion-button></div>
-          </div>
-        </div>
-        <div class="card-body personal-details-content">
-            <div class="row">
-              <div class="col-6">
-                <p><strong>Primary Insurance:</strong></p> 
-                <p><strong>Pre CERT/REF#:</strong></p> 
-                <p><strong>Group No:</strong> </p> 
-                <p><strong>ID No:</strong> </p> 
-              </div>
-              <div class="col-6">
-                <p><strong>Birth Date:</strong></p> 
-                <p><strong>Relationship:</strong></p> 
-                <p><strong>Subscriber:</strong></p> 
-                <p><strong>Employer:</strong> </p> 
-              </div>
-            </div>
-        </div>
-      </div>
-      </div>
-  </div>
-</div>
-
-  
-  
+<ion-content>
+    <ion-tabs>
+        <ion-tab-bar slot="top" color="primary">
+            <ion-tab-button tab="personal">
+                <ion-label>Personal</ion-label>
+            </ion-tab-button>
+            <ion-tab-button tab="medical">
+                <ion-label>Medical</ion-label>
+            </ion-tab-button>
+            <ion-tab-button tab="lifestyle">
+                <ion-label>Lifestyle</ion-label>
+            </ion-tab-button>
+        </ion-tab-bar>
+    </ion-tabs>
 </ion-content>

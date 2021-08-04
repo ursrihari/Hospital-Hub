@@ -132,6 +132,14 @@ const routes: Routes = [
   {
     path: 'payments-health-cash',
     loadChildren: () => import('./patient-flow/payments-health-cash/payments-health-cash.module').then( m => m.PaymentsHealthCashPageModule)
+  },
+  {
+    path: 'location',
+    loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
+  },
+  {
+    path: 'explore-plus',
+    loadChildren: () => import('./explore-plus/explore-plus.module').then( m => m.ExplorePlusPageModule)
   }
 ];
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { LocationPage } from "../../location/location.page";
 
 @Component({
   selector: 'app-patient-home',
@@ -13,7 +15,8 @@ export class PatientHomePage implements OnInit {
   questionsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.4, spaceBetween: 5, pagination: false };
   
   
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+    public modalController: ModalController) { }
 
   ngOnInit() {
   }
@@ -41,5 +44,36 @@ export class PatientHomePage implements OnInit {
   openHospitalsPage(){
     this.router.navigateByUrl('/patient-hospitals-list');
   }
+  
+  openPaymentsPage(){
+    this.router.navigateByUrl('/payments-health-cash');
+  }
+  openExplorePlusPage(){
+    this.router.navigateByUrl('/explore-plus');
+  }
+
+
+
+ 
+    async openLocationsModal() {
+      const modal = await this.modalController.create({
+        component: LocationPage,
+        cssClass: 'location-modal',
+        componentProps: { value: '', name:'', iso_code:'' }
+      });
+      modal.onDidDismiss().then((data:any) => {
+        console.log(data.data);
+        // let selectedCountry = data.data.value;
+        // if(selectedCountry && selectedCountry.hasOwnProperty('country_code') && selectedCountry.country_code!=''){
+        //   console.log(selectedCountry);
+        //   this.country.country_code = '+'+selectedCountry.country_code;
+        //   this.country.iso_code = selectedCountry.iso_code;
+        // }
+        
+      })
+      
+      return await modal.present();
+    }
+  
 
 }

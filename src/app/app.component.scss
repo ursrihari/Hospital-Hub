@@ -2,39 +2,37 @@
     background: #ffffff !important;
 }
 
-ion-list.side-menu-list {
-    margin-top: 40px;
-}
-
-.menu-header-bg {
-    height: 180px;
-    width: 380px;
-    margin-left: -18px;
-    margin-top: -50px;
-    border-bottom:solid 1px #eaeaea;
+.sc-ion-label-md-h.sc-ion-label-md-s.md.hydrated {
+	display: grid;
+	margin: 12px 0 0 0;
+    font-weight: 600;
+    letter-spacing: 0px;
+    font-size: 14px;
 }
 
 .header-content {
-    position: absolute;
-    top: 30px;
-    left: 15px;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    float: left;
+    padding: 20px;
+    border-bottom: solid 2px #f2f2f2;
+
     img {       
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            /* border: 4px solid #5e7ccc; */
             margin-right: 15px;
+            float: left;
     }
     h2 {
         font-weight: 600;
         color: #2d2d32;
     }
     h2  i{
-        font-size: 11px;
+        font-size: 14px;
         font-weight: 600;
         color: #aaaaaa;
+        float: right;
+        margin: 5px 0 0 0;
     }
     p {
         font-size: 15px;
@@ -50,13 +48,23 @@ ion-list.side-menu-list {
     }
 }
 .health-plan-plus{
+    width: 100%;
+    display: inline-block;
     padding: 15px;
+    border-bottom: solid 12px #f2f2f2;
 }
 .health-plan-plus h3{
     font-size: 14px;
     font-weight: 600;
     color: #2d2d32;
     margin:0;
+}
+.health-plan-plus h3 i{
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    color: #aaaaaa;
+    margin: 2px 0 0 0;
 }
 .health-plan-plus h3 span{
     background: #e20c14;
@@ -69,5 +77,15 @@ ion-list.side-menu-list {
     font-size: 12px;
     font-weight: 600;
     color: #70707a;
-    margin:0;
+    margin:10px 0 0 0;
+}
+
+ion-icon.md.hydrated {
+	font-size: 14px;
+	color: #aaaaaa;
+}
+ion-item.ion-color.item-label i {
+    color: #0069B4;
+    font-size: 20px;
+    margin: 14px 12px 0 0;
 }

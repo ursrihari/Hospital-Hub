@@ -62,14 +62,13 @@ export class AppComponent {
       case 'patient': { 
         this.pages = [
           {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'fa fa-home'},
-          {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'fa fa-home'},
-          {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-home'},
+          {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'fa fa-calendar'},
+          {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-flask'},
           {title: 'Orders', page: 'OrdersPAge', url:'orders', icon:'fa fa-home'},
-          {title: 'Consulatations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-home'},
-          {title: 'My Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fa fa-home'},
+          {title: 'Consultations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-calendar'},
+          {title: 'My Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fa fa-user-md'},
           {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'},
-          {title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-home'},
-          {title: 'Payments & HealthCash', page: 'PaymentsHealthCashPage', url:'payments-health-cash', icon:'fa fa-home'}
+          {title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'}
 
           // {title: 'Book Appointment', page: 'PatientAppointmentBookingPage', url:'patient-appointment-booking', icon:'alarm-outline'},
           // {title: 'My Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},

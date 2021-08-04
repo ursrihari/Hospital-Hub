@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { MenuController, NavController } from '@ionic/angular';
+import { MenuController, NavController, Platform } from '@ionic/angular';
 import { AuthService,AccountService } from '@app/services';
+//import { StatusBar } from '@ionic-native/status-bar/ngx';
+//import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { User } from '@app/model';
 
 @Component({
@@ -16,7 +18,10 @@ export class AppComponent {
   constructor(private authService: AuthService,
     private menuCtrl:MenuController,
     private navCtrl: NavController,
-    private accountService: AccountService
+    private accountService: AccountService,
+     private platform: Platform
+    //private statusBar: StatusBar,
+     //private splashScreen: SplashScreen
     ){
 
       this.accountService.user.subscribe(x => this.user = x);
@@ -41,15 +46,31 @@ export class AppComponent {
   }
   
   initializeApp(role){
+   // this.platform.ready().then(() => {
+      //this.statusBar.overlaysWebView(true);
+      //this.statusBar.backgroundColorByHexString('#ffffff');
+      //this.statusBar.styleDefault();
+      // //this.splashScreen.hide();
+      // //this.splashScreen.show();
+      // this.splashScreen.show({
+      //   showDuration: 2000,
+      //   autoHide: true
+      // });
+    //});
     //role= 'doctor';
     switch(role) { 
       case 'patient': { 
         this.pages = [
-          {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'home-outline'},
+          {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'fa fa-home'},
+          {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'fa fa-home'},
+          {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-home'},
+          {title: 'Orders', page: 'OrdersPAge', url:'orders', icon:'fa fa-home'},
+          {title: 'Consulatations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-home'},
+          {title: 'My Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fa fa-home'},
+          {title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-home'},
+          {title: 'Payments & HealthCash', page: 'PaymentsHealthCashPage', url:'payments-health-cash', icon:'fa fa-home'}
+
           // {title: 'Book Appointment', page: 'PatientAppointmentBookingPage', url:'patient-appointment-booking', icon:'alarm-outline'},
-          // {title: 'My Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'document-text-outline'},
-          {title: 'Find Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fitness-outline'},
-          {title: 'Find Hospitals', page: 'PatientHospitalsListPage', url:'patient-hospitals-list', icon:'trail-sign-outline'},
           // {title: 'My Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
          // {title: 'Notificaions', page: 'NotificationsPage', url:'notifications', icon:'notifications-circle-outline'},
         //  {title: 'Chat', page: 'ChatUsersPage', url:'chat-users', icon:'chatbubbles-outline'}, 

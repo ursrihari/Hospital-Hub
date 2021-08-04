@@ -108,6 +108,30 @@ const routes: Routes = [
   {
     path: 'doctor-consult',
     loadChildren: () => import('./doctor-consult/doctor-consult.module').then( m => m.DoctorConsultPageModule)
+  },
+  {
+    path: 'test-bookings',
+    loadChildren: () => import('./patient-flow/test-bookings/test-bookings.module').then( m => m.TestBookingsPageModule)
+  },
+  {
+    path: 'orders',
+    loadChildren: () => import('./patient-flow/orders/orders.module').then( m => m.OrdersPageModule)
+  },
+  {
+    path: 'consultations',
+    loadChildren: () => import('./patient-flow/consultations/consultations.module').then( m => m.ConsultationsPageModule)
+  },
+  {
+    path: 'medical-records',
+    loadChildren: () => import('./patient-flow/medical-records/medical-records.module').then( m => m.MedicalRecordsPageModule)
+  },
+  {
+    path: 'reminders',
+    loadChildren: () => import('./patient-flow/reminders/reminders.module').then( m => m.RemindersPageModule)
+  },
+  {
+    path: 'payments-health-cash',
+    loadChildren: () => import('./patient-flow/payments-health-cash/payments-health-cash.module').then( m => m.PaymentsHealthCashPageModule)
   }
 ];
 

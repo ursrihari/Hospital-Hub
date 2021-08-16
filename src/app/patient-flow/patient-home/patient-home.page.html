@@ -4,13 +4,18 @@
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <!-- <ion-title>Home</ion-title> -->
-        <ion-buttons slot="end">
-            <ion-button (click)="openExplorePlusPage()">
-                <ion-badge>Explore plus</ion-badge>
+        <ion-buttons slot="end" >
+            <ion-button (click)="openExplorePlusPage()" class="explore">
+                <div>Explore<span class="plus">plus</span></div>
+              
             </ion-button>
-            <ion-button (click)="openPaymentsPage()">
-                <ion-badge>200</ion-badge>
-            </ion-button>
+            <div>
+                <img src="assets/card.png" class="card">
+                <ion-button (click)="openPaymentsPage()" class="card-no">
+                    <div> <span>200</span></div>
+                </ion-button>
+            </div>
+           
         </ion-buttons>
     </ion-toolbar>
     <ion-button fill="clear" size="small" (click)="openLocationsModal()">

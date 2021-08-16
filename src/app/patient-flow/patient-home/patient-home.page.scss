@@ -1,8 +1,58 @@
 .spot-slid-btm-pad {
-        padding: 0 0 40px;
-    }
-    ion-slides {
-        --bullet-background-active: #ffffff;
-        --bullet-width:6px;
-        --bullet-height:6px;
-    }
+padding: 0 0 40px;
+}
+ion-slides {
+--bullet-background-active: #ffffff;
+--bullet-width:6px;
+--bullet-height:6px;
+}
+
+.explore {
+background-color: #fddee0;
+text-transform: capitalize;
+font-size: 11px;
+min-width: 104px;
+text-align: left;
+border-radius: 4px;
+color: #212121;
+margin-right: 20px;
+}
+
+.explore .plus {
+text-align: center;
+background-color: #f13430;
+border-radius: 4px;
+min-width: 38px;
+display: inline-block;
+height: 18px;
+margin: 0px 0 0 8px;
+color: #fff;
+line-height: 18px;
+text-transform: uppercase;
+font-size: 10px;
+}
+.card-no {
+background-color: #1cbcf2;
+border-radius: 4px;
+position: relative;
+font-size: 13px !important;
+
+}
+.card-no span{
+color: #fff;
+}
+.sc-ion-buttons-md-s ion-button {
+height: 26px;
+}
+.card {
+color: #a09999;
+font-size: 24px;
+display: inline-block;
+margin: 8px -1px 0;
+width: 26px;
+border: 0;
+}
+::slotted(.buttons-last-slot) {
+margin-right: unset;
+margin-inline-end: 12px;
+}

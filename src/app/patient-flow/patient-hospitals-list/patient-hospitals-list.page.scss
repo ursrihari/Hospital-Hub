@@ -1,18 +1,75 @@
-.doctor-card{
-    .doctor-image{
-        max-height: 100px;
-        border-radius: 6%;
-        margin-top: 4px;
-    }
-    .doctor-details{
-        h6{margin: 0;}
-        p{margin:0px;}
-        .rating {margin: -5px;}
-    }
-    .doctor-more-btn{
-        padding-top: 15px;
-     }
-     .doctor-rating{
-         float: left;
-     }
+.content-finddoc-page {
+    margin: 0;
+    padding: 0;
+}
+
+.find-topbar {
+    background: #0069b3;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.find-topbar i {
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.find-topbar h3 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.find-topbar ion-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.find-topbar p {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    margin: 0;
+    text-align: right;
+}
+
+.find-topbar form {
+    float: right;
+    line-height: 10px;
+}
+
+.find-topbar form select {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+    text-align: right;
+    border: none;
+    background: #0069b3;
+}
+
+
+.looking-search {
+    border: solid 1px #53a6e0;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 12px 0;
+    color: #0069b3;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
 }

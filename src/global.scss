@@ -15,7 +15,7 @@
 @import "~@ionic/angular/css/core.css";
 //@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 /* Basic CSS for apps built with Ionic */
 
 @import "~@ionic/angular/css/normalize.css";
@@ -44,6 +44,7 @@ ion-content input {
 }
 
 ion-content {
+    
     font-family: 'Open Sans', sans-serif;
     #form {
         ion-button {
@@ -67,4 +68,119 @@ ion-content {
 
 swiper-pagination-bullets {
     bottom: -4px !important;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.find-searchbar {
+    background: #f1f0f5;
+    margin: 0;
+    padding: 15px;
+    position: relative;
+}
+
+.find-searchbar form .form-group {
+    position: relative;
+    margin-bottom: 0;
+}
+
+.find-searchbar form .form-group label {
+    z-index: 1;
+    display: block;
+    margin-bottom: 0;
+    position: absolute;
+    left: 15px;
+    color: #787878;
+    font-size: 12px;
+    top: 30%;
+}
+
+.find-searchbar form .form-group .form-control {
+    padding: 10px 10px 10px 38px;
+    color: #202647;
+    background-color: #ffffff;
+    border: 1px solid #ebecee;
+    font-size: 15px;
+    font-weight: 400;
+    height: 40px;
+    border-radius: 5px;
+}
+
+
+.two-three-grid{
+    padding: 20px 15px 0;
+	h3{
+        color: #787878;
+        font-size: 15px;
+        font-weight: 600;
+        .explore-more {
+            color: #0069b3;
+            float: right;
+        }
+    }
+	hr {
+        border-top: solid 1px #efefef;
+        margin-bottom: 0;
+    }
+   .healthcon-icons{
+    text-align: center;
+    margin: 20px 0 0;
+    img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+    p {
+        color: #2d2d32;
+        font-size: 13px;
+        font-weight: 400;
+        margin: 6px 0;
+    }
+    .hospitals-img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        a{
+            
+        }
+    }	
+   }
+   
+   
+
+
+   .healthcon-spec{
+    .healthcon-spec-bg {
+        background: #f6f6f8;
+        border-radius: 5px;
+        margin: 5px 12px 5px 0;
+        width: 46%;
+        float: left;
+
+        a {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 15px;
+        }
+        img {
+            display: inline-block;
+        }
+        p {
+            color: #2d2d32;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 16px;
+            margin: 0;
+            padding-left: 5px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .healthcon-spec-bg:nth-child(even) {
+        margin-right: 0;
+    }
+   }
+   
+
 }

@@ -2,7 +2,7 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 :root {
     /** primary **/
     --ion-color-primary: #0069b4;
@@ -67,6 +67,8 @@
     --ion-color-light-contrast-rgb: 0, 0, 0;
     --ion-color-light-shade: #d7d8da;
     --ion-color-light-tint: #f5f6f9;
+
+    --ion-font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

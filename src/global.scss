@@ -184,3 +184,74 @@ a:hover {
    
 
 }
+// View and Edit Profile
+
+.md.hydrated .tab-selected {
+    border-bottom: 2px solid #fff !important;
+}
+.md.hydrated .tab-has-label{
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+}
+.complate-profile p {
+    font-weight: lighter;
+    font-size: 14px;
+}
+.profile-main{
+    font-size: 14px;
+   
+    .title{
+        border-bottom: 1px solid #f5f5f5;
+        padding:15px 15px 0px;
+    }
+    .profile-list{
+        padding: 15px;
+       li{
+            font-size: 14px;
+            border-bottom: 1px solid #f5f5f5;
+            padding: 16px 0;
+        }
+    }
+}
+
+    .complate-profile-inner {
+       background-color: #14addb;
+       border: 1px solid #14addb;
+        border-radius: 2px;
+        padding: 5px;
+        color: #fff;
+        text-align: center;
+        margin: 0 15px 15px;
+
+        .complate-profile-inner:hover{
+           background-color: #168db3;
+           border: 1px solid #168db3;
+        }
+    
+    h4 {
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+    p{
+        font-size: 13px;
+        font-weight: 300;
+        
+    }
+        
+}
+}
+.complate-profile {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+}
+label, input, select, textarea {
+    font-family: inherit;
+    line-height: normal;
+    margin: 0;
+}
+
+

@@ -1,0 +1,105 @@
+
+.test-booking .package-page-img-gradient {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: -1px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),color-stop(55%,hsla(0,0%,100%,.85)),to(#fff));
+    background-image: -webkit-linear-gradient(top,hsla(0,0%,100%,0),hsla(0,0%,100%,.85) 55%,#fff);
+    background-image: -o-linear-gradient(top,hsla(0,0%,100%,0),hsla(0,0%,100%,.85) 55%,#fff);
+    background-image: linear-gradient(
+180deg
+,hsla(0,0%,100%,0),hsla(0,0%,100%,.85) 55%,#fff);
+}
+
+.test-booking .u-marginrl-std-half {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.test-booking .u-separator {
+    border-bottom: 1px solid #f0f0f5;
+    margin-bottom: 15px;
+}
+.test-booking .c-package-title-box {
+    min-height: 65px;
+    white-space: normal;
+}
+.test-booking .o-font-size-20 {
+    font-size: 20px;
+}
+.test-booking .o-f-color-subtle {
+    color: #787887;
+}
+.test-booking .c-package-footer-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.test-booking .o-font-size-20 {
+    font-size: 20px;
+    color: #414146;
+}
+.test-booking .c-breadcrumb-title, .test-booking .c-breadcrumb-title:visited, .test-booking .o-f-colo-light {
+    color: #b4b4be;
+}
+.test-booking .o-f-color-green-three {
+    color: #00a500;
+}
+.test-booking .c-package-book {
+    padding: 8px;
+    background: #14bef0;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.test-booking s.o-f-color-light {
+    color: #b4b4be;
+    font-size: 15px;
+    margin: 0 7px;
+}
+
+.test-booking .c-package-price {
+    font-weight: bold;
+}
+
+.test-booking .c-package-tests-details {
+    width: 85%;
+    border: 1px solid #f0f0f5;
+    border-radius: 20px;
+    max-width: 160px;
+    margin:0px 0 15px;
+}
+
+.test-booking .c-package-tests-details h4 {
+    font-size: 14px;
+    text-align: center;
+    color: #414146;
+    margin: 0;
+    padding: 13px;
+    font-weight: 600;
+}
+
+.test-booking span.u-font-bold {
+    font-weight: 600;
+}
+
+.test-booking .c-package-title-box h3 {
+    color: #414146;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.test-booking {
+    border-radius: 5px;
+    border: 1.5px solid #ebebeb;
+}
+.test-booking .o-flex {
+    font-size: 14px;
+    margin: 0 0 10px;
+}

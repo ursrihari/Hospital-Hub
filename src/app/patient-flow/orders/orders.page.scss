@@ -1,0 +1,61 @@
+
+.package-page-img-gradient {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: -1px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),color-stop(55%,hsla(0,0%,100%,.85)),to(#fff));
+    background-image: -webkit-linear-gradient(top,hsla(0,0%,100%,0),hsla(0,0%,100%,.85) 55%,#fff);
+    background-image: -o-linear-gradient(top,hsla(0,0%,100%,0),hsla(0,0%,100%,.85) 55%,#fff);
+    background-image: linear-gradient(
+180deg
+,hsla(0,0%,100%,0),hsla(0,0%,100%,.85) 55%,#fff);
+}
+
+.u-marginrl-std-half {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.u-separator {
+    border-bottom: 1px solid #f0f0f5;
+    margin-bottom: 15px;
+}
+.c-package-title-box {
+    height: 85px;
+    white-space: normal;
+}
+.o-font-size-20 {
+    font-size: 20px;
+}
+.o-f-color-subtle {
+    color: #787887;
+}
+
+
+.c-package-footer-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.o-font-size-20 {
+    font-size: 20px;
+}
+.c-breadcrumb-title, .c-breadcrumb-title:visited, .o-f-colo-light {
+    color: #b4b4be;
+}
+.o-f-color-green-three {
+    color: #00a500;
+}
+.c-package-book {
+    padding: 8px;
+    background: #14bef0;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+}

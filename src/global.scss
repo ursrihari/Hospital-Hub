@@ -254,4 +254,24 @@ label, input, select, textarea {
     margin: 0;
 }
 
+/*Loaar styles*/
+
+.loading-wrapper.sc-ion-loading-md {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    --background: transperent;
+}
+
+ion-spinner.sc-ion-loading-md.spinner-crescent {
+    color: #e30613;
+    height: 50px;
+    width: 50px;
+}
+
+ion-backdrop.sc-ion-loading-md {
+    display: none;
+}
+
+
+/*Loaar styles*/
 

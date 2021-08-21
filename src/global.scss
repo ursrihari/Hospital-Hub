@@ -277,6 +277,12 @@ ion-backdrop.sc-ion-loading-md {
     display: none;
 }
 
-
+.location-name {
+    visibility: inherit;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #212121;
+    font-family: 'Poppins', sans-serif;
+}
 /*Loaar styles*/
 

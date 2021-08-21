@@ -9,7 +9,7 @@ import { CountryCodeModalPage } from '../modal-pages/country-code-modal/country-
 import { first } from 'rxjs/operators';
 import { LoadingController } from '@ionic/angular';
 import { PhoneNumberValidatorService } from '../services/phone-number-validator.service';
-import { Globalization } from '@ionic-native/globalization/ngx';
+//import { Globalization } from '@ionic-native/globalization/ngx';
 
 
 @Component({
@@ -39,8 +39,8 @@ export class LoginPage implements OnInit {
     public modalController: ModalController,
     public loadingController: LoadingController,
     private phoneNumberValidator:PhoneNumberValidatorService,
-    private menuCtrl:MenuController,
-    private globalization:Globalization
+    private menuCtrl:MenuController
+  //  private globalization:Globalization
     ) { }
 
   ngOnInit() {

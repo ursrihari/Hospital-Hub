@@ -10,7 +10,7 @@ import { AuthService } from '@app/services';
 import { JwtInterceptor, ErrorInterceptor } from '@app/_helpers';
 
 //plugins
-import { Globalization } from '@ionic-native/globalization/ngx';
+//import { Globalization } from '@ionic-native/globalization/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,8 +20,8 @@ import { Globalization } from '@ionic-native/globalization/ngx';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService,
-    Globalization
+    AuthService
+  //  Globalization
   ],
   bootstrap: [AppComponent],
 })

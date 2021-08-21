@@ -132,6 +132,7 @@
     margin: 0;
     padding: 13px;
     font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .test-booking span.u-font-bold {
@@ -151,4 +152,22 @@
 .test-booking .o-flex {
     font-size: 14px;
     margin: 0 0 10px;
+}
+.u-marginrl-std-half{
+    margin-left: 15px;
+    margin-left: 15px;
+}
+
+.test-booking-cont {
+    margin: 0 0 26px;
+    h3{
+    font-size: 18px;
+    margin: 5px 0;
+    }
+    p{
+        font-size: 14px;
+        color: #716e6e;
+        margin: 0;
+        padding: 0;
+    }
 }

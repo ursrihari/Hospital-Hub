@@ -1,0 +1,26 @@
+.test-booknow{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+    text-align: center;
+    img{
+        width: 250px;
+        object-fit: cover;
+    }
+    p{
+        color: #212121;
+        font-size: 15px;
+        line-height: 30px;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .button{
+        text-transform: capitalize;
+        margin: 20px 0 0;
+    }
+}

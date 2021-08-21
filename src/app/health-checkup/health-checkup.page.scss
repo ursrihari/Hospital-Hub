@@ -171,3 +171,33 @@
         padding: 0;
     }
 }
+.location-name{
+    visibility: inherit;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #0069b4;
+    font-family: 'Poppins', sans-serif;
+}
+.testimonials-main {
+    text-align: center;
+    margin-bottom: 60px;
+    h3{
+        font-size: 16px;
+        margin: 40px 0 20px;
+        font-weight: 600;
+    }
+        p{
+            font-size: 15px;
+            margin: 0 20px;
+            padding-bottom: 40px;
+        }
+    
+}
+.testimonials-main .swiper-pagination-bullet {
+    background: #000000;
+}
+.testimonials-main .swiper-pagination-bullet {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}

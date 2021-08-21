@@ -19,6 +19,6 @@ export class OrdersPage implements OnInit {
                      this.routerOutlet.canGoBack();
 }
 orderMedicinePage(){
-  this.router.navigateByUrl('/patient-appointment-details');
+  this.router.navigateByUrl('/enter-delivery-pincode');
 }
 }

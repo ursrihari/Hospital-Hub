@@ -52,7 +52,7 @@
                 <!-- Receptionist Login -->
                 <ion-list lines="none" class="side-menu-list">
                     <ion-menu-toggle auto-hide="false">
-                        <ion-item color="#f5f5f3" *ngFor="let page of pages; let i = index" (click)="activeIndex = i" routerDirection="root" [routerLink]="[page.url]" lines="none" detail="false" [class.selected]="activeIndex == i">
+                        <ion-item color="#f5f5f3" *ngFor="let page of pages; let i = index" (click)="activeIndex = i" routerDirection="root" (click)="openMenuPage(page.url)" lines="none" detail="false" [class.selected]="activeIndex == i"> <!-- [routerLink]="[page.url]"-->
                             <!-- <ion-icon class="sidemenu-icon" slot="start" color="primary" [name]="page.icon"></ion-icon> -->
                         
                             <i [class]="page.icon" class="m-0 mr-3"></i>

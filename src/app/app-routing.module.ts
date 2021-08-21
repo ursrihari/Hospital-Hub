@@ -176,6 +176,14 @@ const routes: Routes = [
   {
     path: 'health-checkup',
     loadChildren: () => import('./health-checkup/health-checkup.module').then( m => m.HealthCheckupPageModule)
+  },
+  {
+    path: 'read-about-health',
+    loadChildren: () => import('./read-about-health/read-about-health.module').then( m => m.ReadAboutHealthPageModule)
+  },
+  {
+    path: 'help-center',
+    loadChildren: () => import('./help-center/help-center.module').then( m => m.HelpCenterPageModule)
   }
 ];
 

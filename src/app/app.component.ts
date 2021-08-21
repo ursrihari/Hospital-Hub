@@ -65,7 +65,7 @@ export class AppComponent {
           {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'fa fa-home'},
           {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'fa fa-calendar'},
           {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-flask'},
-          {title: 'Orders', page: 'OrdersPAge', url:'orders', icon:'fa fa-home'},
+          //{title: 'Orders', page: 'OrdersPAge', url:'orders', icon:'fa fa-home'},
           {title: 'Consultations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-calendar'},
           {title: 'My Doctors', page: 'MyDoctorsPage', url:'my-doctors', icon:'fa fa-user-md'},
           {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'},
@@ -75,7 +75,10 @@ export class AppComponent {
           // {title: 'My Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
          // {title: 'Notificaions', page: 'NotificationsPage', url:'notifications', icon:'notifications-circle-outline'},
         //  {title: 'Chat', page: 'ChatUsersPage', url:'chat-users', icon:'chatbubbles-outline'}, 
-            {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'settings-outline'}
+            {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
+            {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
+            {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
+            {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
         ];
          break; 
       } 
@@ -94,6 +97,14 @@ export class AppComponent {
          break; 
       } 
    }
+  }
+  openMenuPage(pageurl){
+    if(pageurl == 'like-us-give-5-star'){
+        alert("open playstore to give rating");
+    }else{
+      this.navCtrl.navigateRoot(pageurl);
+    }
+      
   }
   openProfile(){
     this.menuCtrl.close();

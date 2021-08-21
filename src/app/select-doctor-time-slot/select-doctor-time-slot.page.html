@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start" >
+      <ion-back-button *ngIf="canGoBack"></ion-back-button>
+      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Select a time slot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p>Doctor details & Time slots</p>
+<ion-card>
+  Tomorrow 22 Aug
+</ion-card>
+<ion-card (click)="openBookingConformationPage()">
+  10:30 AM
+</ion-card>
+</ion-content>

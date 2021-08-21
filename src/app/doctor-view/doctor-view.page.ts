@@ -17,7 +17,7 @@ export class DoctorViewPage implements OnInit {
                      this.routerOutlet.canGoBack();
   }
   openBookAppointmentPage(){
-    this.router.navigateByUrl('/doctor-booking');
+    this.router.navigateByUrl('/select-doctor-time-slot');
   }
 
 }

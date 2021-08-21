@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { NavController, IonMenu,MenuController } from '@ionic/angular';
 import { Router,ActivatedRoute } from '@angular/router';
 import { User } from '../model/User';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-otp-verification',
@@ -23,19 +24,43 @@ export class OtpVerificationPage implements OnInit {
     console.log(this.mobile);
   }
   verifyOtp(){
+    this.authService.setUser();
     console.log(this.route.snapshot.paramMap.get('mobile'));
-      this.authService.login(this.mobile,this.otp).subscribe(user=> {
-        console.log(user);
-      if(user){
-        if(user.role == 0){
-          this.router.navigateByUrl('/patient-home');
-      }else if(user.role == 1){
-        this.router.navigateByUrl('/doctor-appointments');
-      }else if(user.role == 2){
-        this.router.navigateByUrl('/receptionist-appointments');
-      }
-    }
-    });
+    //this.router.navigateByUrl('/patient-home');
+    this.navCtrl.navigateRoot('patient-home');
+    // this.authService.verifyOtp(this.mobile,this.otp)
+    //         .pipe(first())
+    //         .subscribe({
+    //             next: (user) => {
+    //               console.log(user);
+    //                 if(user){
+    //                   if(user.role == 0){
+    //                     this.router.navigateByUrl('/patient-home');
+    //                 }else if(user.role == 1){
+    //                   this.router.navigateByUrl('/doctor-appointments');
+    //                 }else if(user.role == 2){
+    //                   this.router.navigateByUrl('/receptionist-appointments');
+    //                 }
+    //               }
+    //             },
+    //             error: error => {
+    //                // this.alertService.error(error);
+    //                 //this.loading = false;
+    //             }
+    //         });
+
+    //   this.authService.verifyOtp(this.mobile,this.otp).subscribe(user=> {
+    //     console.log(user);
+    //   if(user){
+    //     if(user.role == 0){
+    //       this.router.navigateByUrl('/patient-home');
+    //   }else if(user.role == 1){
+    //     this.router.navigateByUrl('/doctor-appointments');
+    //   }else if(user.role == 2){
+    //     this.router.navigateByUrl('/receptionist-appointments');
+    //   }
+    // }
+    // });
   }
   backToLoginPage(){
     this.navCtrl.pop();

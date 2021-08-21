@@ -17,20 +17,21 @@
                 <ion-row>
                     <ion-col size="3" col-xl-2 col-lg-3 col-md-4>
                         <ion-item class="ion-margin-bottom" (click)="presentModal()">
-                            <ion-input type="pin" [(ngModel)]="countrycode"></ion-input>
+                            <ion-input type="pin" [(ngModel)]="country.country_code"></ion-input>
                         </ion-item>
                     </ion-col>
                     <ion-col size="9" col-12 col-xl-2 col-lg-3 col-md-4>
                         <ion-item class="ion-margin-bottom">
-                            <ion-input type="pin" placeholder="Mobile Number" [(ngModel)]="mobilenumber"></ion-input>
+                            <ion-input type="pin" placeholder="Mobile Number" maxlength="10" [(ngModel)]="country.mobile_number" (ionChange)="inputChange(country.mobile_number)"></ion-input>
                         </ion-item>
+                        <ion-label [hidden]="numberValidators.validNumber">Not a valid mobile number</ion-label>
                     </ion-col>
                 </ion-row>
             </ion-grid>
         </ion-card-header>
         <ion-card-content>
             <div class="signin-btns">
-                <ion-button expand="block" (click)="loginUser()">Continue</ion-button>
+                <ion-button expand="block" [disabled]="numberValidators.disableButton" (click)="loginUser()">Continue</ion-button>
             </div>
         </ion-card-content>
     </ion-card>

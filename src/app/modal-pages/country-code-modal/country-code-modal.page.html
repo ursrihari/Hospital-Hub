@@ -1,48 +1,79 @@
 <ion-toolbar>
-  <ion-buttons slot="end">
-    <ion-button (click)="closeModal()">
-      <ion-icon name="close"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Choose Country Code</ion-title>
+    <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">
+            <ion-icon name="close"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>Choose Country Code</ion-title>
 </ion-toolbar>
 <ion-content>
-<ion-list >
-  <ion-item>
-    +965 Kuwait
-  </ion-item>
-  <ion-item>
-    +	966 Saudi Arabia
-  </ion-item>
-  <ion-item>
-    +	967 Yemen
-  </ion-item>
-  <ion-item>
-    +968 Oman
-  </ion-item>
-  <ion-item>
-    +964 Iraq
-  </ion-item>
-  </ion-list>
-  All other countries
-  <ion-list>
-    <ion-item>+93 Afghanistan</ion-item>
-    <ion-item>+355 Albania</ion-item>
-    <ion-item>+213 Algeria</ion-item>
-    <ion-item>+1-684 American Samoa</ion-item>
-    <ion-item>+376 Andorra</ion-item>
-    <ion-item>+244 Angola</ion-item>
-    <ion-item>+1-264 Anguilla</ion-item>
-    <ion-item>+672 Antarctica</ion-item>
-    <ion-item>+1-268 Antigua and Barbuda</ion-item>
-    <ion-item>+54 Argentina</ion-item>
-    <ion-item>+374 Armenia</ion-item>
-    <ion-item>+297 Aruba</ion-item>
-    <ion-item>+61 Australia</ion-item>
-    <ion-item>+43 Austria</ion-item>
-    <ion-item>+994 Azerbaijan</ion-item>
-    <ion-item>+1-242 Bahamas</ion-item>
-  </ion-list>
+    <ion-list>
+        <ion-radio-group ngDefaultControl [(ngModel)]="countryCode" (ionChange)="radioGroupChange($event)">
+            <ion-item *ngFor="let item of radio_list" (ionSelect)="radioSelect($event)">
+                <ion-label>{{item.name}}</ion-label>
+                <ion-radio slot="end" name="{{item.name}}" value="{{item.value}}"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+    <!-- <ion-list radio-group ngDefaultControl [(ngModel)]="countryCode" (ionChange)="radioGroupChange($event)">
+        <ion-item *ngFor="let item of radio_list" (ionFocus)="radioFocus()" (ionSelect)="radioSelect($event)" (ionBlur)="radioBlur()">
+            <ion-label>{{item.name}}</ion-label>
+            <ion-radio slot="start" name="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></ion-radio>
+        </ion-item>
+    </ion-list> -->
+    <!-- <ion-radio-group allow-empty-selection="true" name="radio-group" (ionChange)="radioGroupChange($event)" #radioGroup>
+      <ion-list-header>
+        <ion-label>Name</ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let item of radio_list" (ionFocus)="radioFocus()" (ionSelect)="radioSelect($event)"
+        (ionBlur)="radioBlur()">
+        <ion-label>{{item.text}}</ion-label>
+        <ion-radio slot="start" name="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"
+          color="{{item.color}}" disabled="{{item.disabled}}"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group> -->
+
+
+    <!-- <ion-list>
+        <ion-item>
+            +965 Kuwait
+        </ion-item>
+        <ion-item>
+            + 91 India
+        </ion-item>
+        <ion-item>
+            + 966 Saudi Arabia
+        </ion-item>
+        <ion-item>
+            + 967 Yemen
+        </ion-item>
+        <ion-item>
+            +968 Oman
+        </ion-item>
+        <ion-item>
+            +964 Iraq
+        </ion-item>
+    </ion-list>
+    All other countries
+    <ion-list>
+        <ion-item>+93 Afghanistan</ion-item>
+        <ion-item>+355 Albania</ion-item>
+        <ion-item>+213 Algeria</ion-item>
+        <ion-item>+1-684 American Samoa</ion-item>
+        <ion-item>+376 Andorra</ion-item>
+        <ion-item>+244 Angola</ion-item>
+        <ion-item>+1-264 Anguilla</ion-item>
+        <ion-item>+672 Antarctica</ion-item>
+        <ion-item>+1-268 Antigua and Barbuda</ion-item>
+        <ion-item>+54 Argentina</ion-item>
+        <ion-item>+374 Armenia</ion-item>
+        <ion-item>+297 Aruba</ion-item>
+        <ion-item>+61 Australia</ion-item>
+        <ion-item>+43 Austria</ion-item>
+        <ion-item>+994 Azerbaijan</ion-item>
+        <ion-item>+1-242 Bahamas</ion-item>
+    </ion-list> -->
 
 </ion-content>
-

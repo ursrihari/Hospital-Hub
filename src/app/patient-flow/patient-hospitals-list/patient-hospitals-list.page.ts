@@ -88,7 +88,7 @@ async presentAlertCheckbox() {
   await alert.present();
 }
 
-openDoctorsListPage(){
-  this.router.navigateByUrl('/patient-doctors-list');
+openBookingPage(){
+  this.router.navigateByUrl('/select-doctor-time-slot');
 }
 }

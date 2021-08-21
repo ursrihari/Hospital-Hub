@@ -22,6 +22,9 @@ export class PatientDoctorsListPage implements OnInit {
 openDoctorViewPage(){
   this.router.navigateByUrl('/doctor-view');
 }
+openSelectDoctorTimeSlotPage(){
+  this.router.navigateByUrl('/select-doctor-time-slot');
+}
 
 
 async presentPopover(ev: any) {

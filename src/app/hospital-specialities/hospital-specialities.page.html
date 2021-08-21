@@ -1,0 +1,223 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button *ngIf="canGoBack"></ion-back-button>
+          <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+      </ion-buttons>
+
+      <!--<ion-title>Hospitals</ion-title>
+      <ion-buttons slot="end" (click)="presentAlertCheckbox()">
+          <ion-icon style="font-size: 25px;margin-right:10px;" name="funnel-outline"></ion-icon>
+      </ion-buttons> -->
+      <div class="find-topbar">
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <ion-title>Find & Book</ion-title>
+                      <!-- <h3>Find & Book</h3> -->
+                  </div>
+
+                  <div class="col">
+                      <p>LOCATION</p>
+                      <form>
+                          <select>
+                              <option>Banglore</option>
+                              <option>Hyderabad</option>
+                              <option>Delhi</option>
+                              <option>Mumbai</option>
+                              <option>Pune</option>
+                          </select>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-finddoc-page">
+      <!-- <div class="find-topbar">
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <a href="index.html"><i class="ti-arrow-left"></i></a>
+                      <h3>Find & Book</h3>
+                  </div>
+                  <div class="col">
+                      <p>LOCATION</p>
+                      <form>
+                          <select>
+                              <option>Banglore</option>
+                              <option>Hyderabad</option>
+                              <option>Delhi</option>
+                              <option>Mumbai</option>
+                              <option>Pune</option>
+                          </select>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+
+      <div class="find-searchbar">
+          <form>
+              <div class="form-group">
+                  <label><i class="fa fa-search"></i></label>
+                  <input type="text" class="form-control" placeholder="Search hospitals, specialities etc...">
+              </div>
+          </form>
+      </div>
+
+      <div class="two-three-grid">
+          <h3>Search by Health concern<a class="explore-more">Explore More</a></h3>
+          <div class="row healthcon-icons hospitals-img">
+              <div class="col" (click)="openHospitalsPage()">
+                  <img src="assets/images/find-hospitals-near/img1.jpg" />
+                  <p>Gynaecology</p>
+              </div>
+              <div class="col" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/find-hospitals-near/img2.jpg" />
+                      <p>Neurology</p>
+                  </a>
+              </div>
+              <div class="col" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/find-hospitals-near/img3.jpg" />
+                      <p>ENT</p>
+                  </a>
+              </div>
+          </div>
+
+          <div class="row healthcon-icons hospitals-img">
+              <div class="col" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/find-hospitals-near/img4.jpg" />
+                      <p>Dental</p>
+                  </a>
+              </div>
+              <div class="col" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/find-hospitals-near/img5.jpg" />
+                      <p>Sexology</p>
+                  </a>
+              </div>
+              <div class="col" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/find-hospitals-near/img6.jpg" />
+                      <p>Urology</p>
+                  </a>
+              </div>
+          </div>
+          <hr>
+      </div>
+
+      <div class="two-three-grid">
+          <h3>Search by Speciality</h3>
+          <div class="healthcon-spec">
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img1.jpg" />
+                      <p>Women's<br/>Health</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img2.jpg" />
+                      <p>Skin & Hair</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img3.jpg" />
+                      <p>Child<br/>Specialist</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img4.jpg" />
+                      <p>General<br/>Physician</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()"> 
+                  <a>
+                      <img src="assets/images/speciality/img5.jpg" />
+                      <p>Brain and<br/>Nerves</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img6.jpg" />
+                      <p>Uriniary<br/>Issues</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img7.jpg" />
+                      <p>Kidney<br/>Issues</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img8.jpg" />
+                      <p>Ayurveda</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()"> 
+                  <a>
+                      <img src="assets/images/speciality/img1.jpg" />
+                      <p>Women's<br/>Health</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img2.jpg" />
+                      <p>Skin & Hair</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img3.jpg" />
+                      <p>Child<br/>Specialist</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img4.jpg" />
+                      <p>General<br/>Physician</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img5.jpg" />
+                      <p>Brain and<br/>Nerves</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img6.jpg" />
+                      <p>Uriniary<br/>Issues</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img7.jpg" />
+                      <p>Kidney<br/>Issues</p>
+                  </a>
+              </div>
+              <div class="healthcon-spec-bg" (click)="openHospitalsPage()">
+                  <a>
+                      <img src="assets/images/speciality/img8.jpg" />
+                      <p>Ayurveda</p>
+                  </a>
+              </div>
+          </div>
+
+
+          <div class="looking-search"><a>Looking for more? Search</a></div>
+      </div>
+
+
+  </div>
+</ion-content>

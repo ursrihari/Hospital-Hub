@@ -140,6 +140,38 @@ const routes: Routes = [
   {
     path: 'explore-plus',
     loadChildren: () => import('./explore-plus/explore-plus.module').then( m => m.ExplorePlusPageModule)
+  },
+  {
+    path: 'doctors-speciality',
+    loadChildren: () => import('./doctors-speciality/doctors-speciality.module').then( m => m.DoctorsSpecialityPageModule)
+  },
+  {
+    path: 'select-doctor-time-slot',
+    loadChildren: () => import('./select-doctor-time-slot/select-doctor-time-slot.module').then( m => m.SelectDoctorTimeSlotPageModule)
+  },
+  {
+    path: 'appointment-booking-conformation',
+    loadChildren: () => import('./appointment-booking-conformation/appointment-booking-conformation.module').then( m => m.AppointmentBookingConformationPageModule)
+  },
+  {
+    path: 'hospital-specialities',
+    loadChildren: () => import('./hospital-specialities/hospital-specialities.module').then( m => m.HospitalSpecialitiesPageModule)
+  },
+  {
+    path: 'enter-delivery-pincode',
+    loadChildren: () => import('./enter-delivery-pincode/enter-delivery-pincode.module').then( m => m.EnterDeliveryPincodePageModule)
+  },
+  {
+    path: 'my-doctors',
+    loadChildren: () => import('./my-doctors/my-doctors.module').then( m => m.MyDoctorsPageModule)
+  },
+  {
+    path: 'doctor-profile',
+    loadChildren: () => import('./doctor-profile/doctor-profile.module').then( m => m.DoctorProfilePageModule)
+  },
+  {
+    path: 'upload-record',
+    loadChildren: () => import('./upload-record/upload-record.module').then( m => m.UploadRecordPageModule)
   }
 ];
 

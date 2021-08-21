@@ -13,7 +13,8 @@ export class PatientHomePage implements OnInit {
   doctorsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.4, spaceBetween: 20, pagination: false };
   hospitalsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.2, spaceBetween: 5, pagination: false };
   questionsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.4, spaceBetween: 5, pagination: false };
-  
+  canGoBack: boolean = false;
+
   
   constructor(private router:Router,
     public modalController: ModalController) { }
@@ -24,7 +25,8 @@ export class PatientHomePage implements OnInit {
     this.router.navigateByUrl('/patient-appointment-details');
   }
   openDoctorsPage(){
-    this.router.navigateByUrl('/patient-doctors-list');
+    //this.router.navigateByUrl('/patient-doctors-list');
+    this.router.navigateByUrl('/doctors-speciality');
   }
   openBookAppointmentPage(){
     this.router.navigateByUrl('/patient-appointment-booking');
@@ -42,7 +44,8 @@ export class PatientHomePage implements OnInit {
     this.router.navigateByUrl('/notifications');
   }
   openHospitalsPage(){
-    this.router.navigateByUrl('/patient-hospitals-list');
+    //this.router.navigateByUrl('/patient-hospitals-list');
+    this.router.navigateByUrl('/hospital-specialities');
   }
   
   openPaymentsPage(){

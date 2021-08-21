@@ -27,6 +27,7 @@ export class AppComponent {
       this.accountService.user.subscribe(x => this.user = x);
 
       this.authService.getUser().subscribe(user=> {
+        console.log(user);
         //user = {name: "", mobile: 2222222222, role: 1};
 
         if(user){
@@ -64,9 +65,9 @@ export class AppComponent {
           {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'fa fa-home'},
           {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'fa fa-calendar'},
           {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-flask'},
-          {title: 'Orders', page: 'OrdersPAge', url:'orders', icon:'fa fa-home'},
+          //{title: 'Orders', page: 'OrdersPAge', url:'orders', icon:'fa fa-home'},
           {title: 'Consultations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-calendar'},
-          {title: 'My Doctors', page: 'PatientDoctorsListPage', url:'patient-doctors-list', icon:'fa fa-user-md'},
+          {title: 'My Doctors', page: 'MyDoctorsPage', url:'my-doctors', icon:'fa fa-user-md'},
           {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'},
           {title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'}
 

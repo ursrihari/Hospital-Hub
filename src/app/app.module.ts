@@ -9,6 +9,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from '@app/services';
 import { JwtInterceptor, ErrorInterceptor } from '@app/_helpers';
 
+//plugins
+import { Globalization } from '@ionic-native/globalization/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,7 +20,8 @@ import { JwtInterceptor, ErrorInterceptor } from '@app/_helpers';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService
+    AuthService,
+    Globalization
   ],
   bootstrap: [AppComponent],
 })

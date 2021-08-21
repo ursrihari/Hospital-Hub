@@ -172,6 +172,10 @@ const routes: Routes = [
   {
     path: 'upload-record',
     loadChildren: () => import('./upload-record/upload-record.module').then( m => m.UploadRecordPageModule)
+  },
+  {
+    path: 'health-checkup',
+    loadChildren: () => import('./health-checkup/health-checkup.module').then( m => m.HealthCheckupPageModule)
   }
 ];
 

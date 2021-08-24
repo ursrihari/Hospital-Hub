@@ -1,0 +1,85 @@
+.appointments-list{
+    border-bottom:6px solid #eaeaea;
+    padding: 15px;
+    p{
+        padding: 0;
+        margin: 0 0 5px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .date{
+        color: #ccc;
+        color: #a5a5a5;
+        font-size:14px;
+    }
+    .appointments-list-img img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin: 5px 0 0;
+        object-fit: cover;
+    }
+
+}
+
+.appointments-list .rounded-circle {
+width: 60px;
+border-radius: 50%;
+object-fit: cover;
+height: 60px;
+margin-right: 10px;
+
+}
+
+.appointments-list .doctors-list h4 {
+font-size: 16px;
+margin: 0;
+}
+.date-sec {width:100%; padding: 20px 15px 0;border-bottom: 6px solid #eaeaea;}
+.date-sec small {color: #aeaeae; font-size: 15px; margin: 0 0 12px; display: block;}
+.date-sec h3 {font-weight: 600; color:#383838; font-size: 16px; margin:0 0 12px;}
+.date-sec h3 span {display: block; font-weight: 300; margin:5px 0 0; font-size: 15px;}
+.date-sec a {color: #27328e; font-size: 14px;}
+.date-sec a:hover {color: #000;}
+.date-sec p {font-size: 14px;}
+.date-sec .Procto-pro{border-top: 1px solid #e2e2e2;padding: 12px 0 0; }
+.Practo-sec {
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid #0069b4;
+    margin: 20px 15px;
+}
+
+.Practo-sec ul {
+    padding: 0;
+    list-style: none;
+}
+
+.Practo-sec h4 {}
+
+a {}
+
+.Practo-sec h4 {
+    margin: 0;
+    background-color: #0069b4;
+    font-size: 16px;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    font-weight: normal;
+}
+
+.Practo-sec ul li {
+    padding:10px 9px 5px;
+    font-size: 14px;
+}
+.Practo-sec ul li i{color: #0069b4; margin: 7px 16px 0 0;}
+.Practo-sec h4 i{height: 15px; width: 15px; border-radius: 50%; color: #fff;}
+
+.c-package-book {
+    padding: 8px;
+    background: #14bef0;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+}

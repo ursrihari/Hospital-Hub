@@ -293,3 +293,45 @@ ion-backdrop.sc-ion-loading-md {
     --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
     font-size: 14px;
 }
+.appointment-help{
+    padding: 15px;
+    h4 {
+        margin: 0 0 20px;
+        font-size: 16px;
+    }
+     p {
+        font-size: 14px;
+    }
+     .hydrated {
+        text-transform: capitalize;
+    }
+}
+/*** Appointment Cancellation Sec ***/
+.appointment-cancellation-sec .sec-head { border-bottom: 1px solid rgb(238, 238, 238); padding:15px ;}
+.appointment-cancellation-sec .sec-head h4 {color: #212121;font-size: 14px; font-weight: 500; padding: 0; margin: 0; }
+.single-appointment-cancellation-sec {padding: 15px;}
+.single-appointment-cancellation-sec h5 {font-size: 14px; font-weight: normal; margin: 0 0 20px;}
+.single-appointment-cancellation-sec h3 {    color: #464646;font-size: 14px;font-weight: normal;margin: 0 0 20px;}
+.single-appointment-cancellation-sec h3 span {display: block; margin: 4px 0 0; font-weight: 300;}
+.single-appointment-cancellation-sec h4 {color: #595959; font-size: 14px; font-weight: 500; margin: 0 0 20px;}
+.single-appointment-cancellation-sec h4 span {display: block; margin: 0 0 4PX; font-weight: normal; color: #bdbdbd; font-size: 13px;}
+.single-appointment-cancellation-sec p.sub-head {margin: 0 0 5px; color: #b1b1b1;}
+.single-appointment-cancellation-sec .bttn {border-radius: 8px; clear: both; float: left; margin: 26px 0 0;}
+.single-appointment-cancellation-sec form {padding: 0 0 20px; display: inline-block;}
+/* radio styles start */
+.customRadio .radio {margin-bottom: 0px;}
+.customRadio .radio-label span{color: #212121;position: relative;top: 1px;cursor: pointer;}
+.customRadio .radio input[type=radio] {position: absolute;opacity: 0;}
+.customRadio .radio input[type=radio] + .radio-label:before {content: "";background: #ECFAFF;border-radius: 100%;border: 1px solid #B1B9C1;display: inline-block;width: 20px;height: 20px;position: relative;top: 0;margin-right: 8px;vertical-align: middle;cursor: pointer;text-align: center;transition: all 250ms ease;}
+.customRadio .radio input[type=radio]:checked + .radio-label:before {background-color: #fff;box-shadow: inset 0 0 0 5px #f2604a;border:0px;}
+.customRadio .radio input[type=radio]:focus + .radio-label:before {outline: none;border-color: #3197EE;}
+.customRadio .radio input[type=radio]:disabled + .radio-label:before {box-shadow: inset 0 0 0 4px #f4f4f4;border-color: #B1B9C1;background: #B1B9C1;cursor: auto;}
+.customRadio .radio input[type=radio] + .radio-label:empty:before {margin-right: 0;}
+.customRadio.radio-inline .radio {display: inline-block; width: 100%;padding:15px 10px; border-bottom: 1px solid #e3e3e3; outline: none;}
+.bttn { outline: none; border: none; width: 100%;  background-color: #29318d; color: #fff; display: inline-block; font-size: 16px; font-weight: 500; box-shadow: none !important; line-height: 40px;}
+.bttn.disabled { background: #b1b9c1; pointer-events: none;}
+.single-appointment-cancellation-sec .customRadio {border: 1px solid #e3e3e3; border-radius: 8px;}
+/* radio styles end */
+
+
+

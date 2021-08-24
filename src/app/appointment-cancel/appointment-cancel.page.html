@@ -1,13 +1,43 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start" >
-      <ion-back-button *ngIf="canGoBack"></ion-back-button>
-      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Appointment Cancel</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+   <!-- Appointment Cancellation Sec  -->
+   <div class="appointment-details-sec appointment-cancellation-sec ">
+    <div class="sec-head">
+    <h4>Appointment Cancellation </h4>
+</div>
+<div class="single-appointment-cancellation-sec">
+    <h5>Appointment Details</h5>
+    <h3>Dotor Name <span>Hopsital Name</span></h3>
+    <h4><span>Date & Time</span>19 Jul, 2021, at 07:00 AM</h4>
+    <h4><span>Appoinntment ID</span>12822121</h4>
+    <p class="sub-head">Please help us know the reason for cancelling;</p>
+    <form>
+        <div class="customRadio radio-inline">
+            <div class="radio">
+                <input id="mobilePhoneCode" name="radio" type="radio" value="mobile">
+                <label for="mobilePhoneCode" class="radio-label"><span>I am busy</span></label>
+            </div>
+            <div class="radio">
+                <input id="emailPhoneCode" for="radio-6" name="radio" value="home" type="radio" checked="checked">
+                <label for="emailPhoneCode" class="radio-label"><span>For got about the appointment</span></label>
+            </div>
+            <div class="radio">
+                <input id="emailPhoneCode" for="radio-6" name="radio" value="home" type="radio" checked="checked">
+                <label for="emailPhoneCode" class="radio-label"><span>Changed my mind</span></label>
+            </div>
+            <div class="radio">
+                <input id="emailPhoneCode" for="radio-6" name="radio" value="home" type="radio" checked="checked">
+                <label for="emailPhoneCode" class="radio-label"><span>Visited another doctor</span></label>
+            </div>
+            <div class="radio">
+                <input id="emailPhoneCode" for="radio-6" name="radio" value="home" type="radio" checked="checked">
+                <label for="emailPhoneCode" class="radio-label"><span>Clinic/Hospital is far</span></label>
+            </div>
+            <div class="radio">
+                <input id="emailPhoneCode" for="radio-6" name="radio" value="home" type="radio" checked="checked">
+                <label for="emailPhoneCode" class="radio-label"><span>Docotr asked me to cancel</span></label>
+            </div>
+           
+        </div>
+        <button type="button" class="bttn disabled clearfix">Yes, I want to cancel</button>
+    </form>
+</div>
+</div>

@@ -287,3 +287,9 @@ ion-backdrop.sc-ion-loading-md {
 }
 /*Loaar styles*/
 
+.sc-ion-alert-md-h {
+    --background: var(--ion-overlay-background-color, var(--ion-background-color, #fff));
+    --max-width: 90%;
+    --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+    font-size: 14px;
+}

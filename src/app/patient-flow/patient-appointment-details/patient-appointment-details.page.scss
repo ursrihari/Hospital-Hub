@@ -26,3 +26,39 @@
 	background-color: rgba(15, 183, 107,0.12) !important;
 	color: #26af48 !important;
 }
+
+.appointment-details-sec {max-width: 100%;; width:100%;}
+.cover-sec {padding:8px 15px; background: #fff; box-shadow: 0px 20px 60px #6059bb12; border-top: 1px solid #6059bb12;}
+.cover-sec p {margin:0; font-size: 15px;}
+.cover-sec p span {color:#a20005;}
+.cover-sec p span i {font-size: 13px; background: #a20005; color: #fff;; width:25px; height: 25px; display: inline-block; border-radius: 100%; text-align: center; line-height: 25px;}
+.date-sec {width:100%; padding:20px 20px 0;}
+.date-sec small {color: #aeaeae; font-size: 15px; margin: 0 0 12px; display: block;}
+.date-sec h3 {font-weight: 600; color:#383838; font-size: 16px; margin:0 0 12px;}
+.date-sec h3 span {display: block; font-weight: 300; margin:5px 0 0; font-size: 15px;}
+.date-sec a {color: #27328e; font-size: 14px;}
+.date-sec a:hover {color: #000;}
+.cta-sec {padding:15px 0; text-align: center; margin: 15px 0 0;}
+.cta-sec img {width: 90%;;}
+.bt-2 {border-width: 1px 0; border-style: solid; border-color: #dedbdb;}
+.mob-consultation-sec {margin: 15px 0 0; padding-bottom: 10px;}
+.mob-consultation-sec.date-sec small {margin: 0 0 8px;}
+.benefits-sec-main {width:100%;padding: 15px;}
+.benefits-sec {width:100%;background: #f1f0f5; padding: 15px 0;}
+.benefits-sec h3 {color:#a20005; font-size: 18px; margin: 0 0 12px; padding: 0 15px 15px; border-bottom: 1px solid rgb(173, 171, 171);}
+.benefits-sec h3 i {font-size: 13px; background: #a20005; color: #fff;; width:30px; height: 30px; display: inline-block; border-radius: 100%; text-align: center; line-height: 30px;}
+.benefits-sec .list { width: 100%;	display: inline-block;	padding-top: 15px;	margin-bottom: 10px; padding-left: 10px;}
+.benefits-sec .list p {color:#8d8c91; font-size: 15px;}
+.benefits-sec .list .small { font-size: 13px; margin: 10px 0 0;}
+.benefits-sec .list .small a {display: block; text-decoration: underline; color: #c10e1a;}
+.benefits-sec .list .small a:hover {text-decoration: none;}
+.benefits-sec .list ul {margin: 0; padding: 0;   padding-bottom: 0px;padding-bottom: 7px;}
+.benefits-sec .list ul li {list-style-type: none; position: relative;padding-left: 43px;margin-bottom: 20px;} 
+.benefits-sec .list ul li:last-child{margin-bottom: 0;}
+.benefits-sec .list ul li::before {font-family: "FontAwesome"; font-weight: 900;content: "\f007";position: absolute;left: 0;
+top: -5px;display: inline-block;width: 35px;height: 35px;box-shadow: 0px 5px 20px 0px rgba(17, 180, 245, 0.15);text-align: center;
+line-height: 35px;font-size: 14px;color: #11b4f5;background-color: #fff; border-radius: 50%;}
+.booking-details-sec {padding:15px;}
+.booking-details-sec h4 {color: #282828; font-size: 16px; font-weight: 500; width:50%; position: relative;}
+.booking-details-sec h4.title:before {position: absolute; width: 1px; height:100%; background: #cacaca; left:-18px; top:0; content: "";}
+.booking-details-sec h4 span {color: #7d7d7d; font-weight: 300; margin: 0 0 10px; display: block;}

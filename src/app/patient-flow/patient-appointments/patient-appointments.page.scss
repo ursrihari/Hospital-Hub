@@ -111,11 +111,12 @@
     font-size: 16px;
 }
 .appointments-main{
-	.appointments-list-img{
+	.appointments-list-img img{
     width: 45px;
     height: 45px;
     border-radius: 50%;
     margin: 5px 0 0;
+	object-fit: cover;
 	}
 	.appointments-list{
 		padding: 15px;

@@ -18,5 +18,38 @@ scrollbar-width: none;}
 .single-appointment-sec h3 span {font-weight: 300;    color: #7d7d7d;}
 .single-appointment-sec a {display: inline-block;padding: 6px;font-size: 14px;color: #116fb5;margin: 5px 10px 5px 0;border: 1px solid #97c9d9;border-radius: 8px;min-width: 30.3%;text-align: center;min-height: 40px;line-height: 30px;} 
 .single-appointment-sec a:hover {background: #f9f9f9;}
+.appointments-list{
+    padding: 15px;
+    border-bottom:1px solid #eaeaea;
+    p{
+        padding: 0;
+        margin: 0 0 5px;
+        font-size: 14px;
+    }
+    .appointments-list-img img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin: 5px 0 0;
+        object-fit: cover;
+    }
+
+}
+
+.appointments-list .rounded-circle {
+width: 60px;
+border-radius: 50%;
+object-fit: cover;
+height: 60px;
+margin-right: 10px;
+
+}
+
+.appointments-list .doctors-list h4 {
+font-size: 16px;
+margin: 0;
+}
+
+
 
 

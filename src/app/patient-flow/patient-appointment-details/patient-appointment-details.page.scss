@@ -28,7 +28,7 @@
 }
 
 .appointment-details-sec {max-width: 100%;; width:100%;}
-.cover-sec {padding:8px 15px; background: #fff; box-shadow: 0px 20px 60px #6059bb12; border-top: 1px solid #6059bb12;}
+.cover-sec {padding:8px 15px; background: #fff; box-shadow: 0px 20px 60px #6059bb12; border-top: 1px solid #6059bb12;border-bottom: 1px solid #eaeaea;}
 .cover-sec p {margin:0; font-size: 15px;}
 .cover-sec p span {color:#a20005;}
 .cover-sec p span i {font-size: 13px; background: #a20005; color: #fff;; width:25px; height: 25px; display: inline-block; border-radius: 100%; text-align: center; line-height: 25px;}
@@ -46,7 +46,7 @@
 .benefits-sec-main {width:100%;padding: 15px;}
 .benefits-sec {width:100%;background: #f1f0f5; padding: 15px 0;}
 .benefits-sec h3 {color:#a20005; font-size: 18px; margin: 0 0 12px; padding: 0 15px 15px; border-bottom: 1px solid rgb(173, 171, 171);}
-.benefits-sec h3 i {font-size: 13px; background: #a20005; color: #fff;; width:30px; height: 30px; display: inline-block; border-radius: 100%; text-align: center; line-height: 30px;}
+.benefits-sec h3 i {font-size: 13px; background: #a20005; color: #fff;; width:25px; height: 25px; display: inline-block; border-radius: 100%; text-align: center; line-height: 25px;}
 .benefits-sec .list { width: 100%;	display: inline-block;	padding-top: 15px;	margin-bottom: 10px; padding-left: 10px;}
 .benefits-sec .list p {color:#8d8c91; font-size: 15px;}
 .benefits-sec .list .small { font-size: 13px; margin: 10px 0 0;}
@@ -62,3 +62,37 @@ line-height: 35px;font-size: 14px;color: #11b4f5;background-color: #fff; border-
 .booking-details-sec h4 {color: #282828; font-size: 16px; font-weight: 500; width:50%; position: relative;}
 .booking-details-sec h4.title:before {position: absolute; width: 1px; height:100%; background: #cacaca; left:-18px; top:0; content: "";}
 .booking-details-sec h4 span {color: #7d7d7d; font-weight: 300; margin: 0 0 10px; display: block;}
+
+
+	.appointments-list{
+		padding: 15px;
+		border-bottom:1px solid #eaeaea;
+		p{
+			padding: 0;
+			margin: 0 0 5px;
+			font-size: 14px;
+		}
+		.appointments-list-img img{
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			margin: 5px 0 0;
+			object-fit: cover;
+		}
+
+	}
+
+	.appointments-list .rounded-circle {
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 60px;
+    margin-right: 10px;
+
+}
+
+.appointments-list .doctors-list h4 {
+    font-size: 16px;
+    margin: 0;
+}
+

@@ -1,8 +1,19 @@
-   <!-- Appointment Cancellation Sec  -->
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start" >
+        <ion-back-button *ngIf="canGoBack"></ion-back-button>
+        <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Appointment Cancellation</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  <!-- Appointment Cancellation Sec  -->
    <div class="appointment-details-sec appointment-cancellation-sec ">
-    <div class="sec-head">
+    <!-- <div class="sec-head">
     <h4>Appointment Cancellation </h4>
-</div>
+</div> -->
 <div class="single-appointment-cancellation-sec">
     <h5>Appointment Details</h5>
     <h3>Dotor Name <span>Hopsital Name</span></h3>
@@ -41,3 +52,4 @@
     </form>
 </div>
 </div>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" >
+      <ion-back-button *ngIf="canGoBack"></ion-back-button>
+      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Appointment help</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!showReconfirmAppointmentComponent">
+  <h6>Help Center</h6>
+  <ion-list>
+  <ion-item (click)="openReschuleAppointmentPage()">
+    <ion-label>
+      I want to reschedule the appointment
+    </ion-label>
+    <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openCancelAppointmentPage()">
+    <ion-label>
+      I want to cancel the appointment
+    </ion-label>
+    <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openReconfirmMyAppointment()">
+    <ion-label>
+      I would like to re-confirm my appointment
+    </ion-label>
+    <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+  </ion-item>
+</ion-list>
+</div>
+<app-reconfirm-appointment *ngIf="showReconfirmAppointmentComponent"></app-reconfirm-appointment>
+</ion-content>

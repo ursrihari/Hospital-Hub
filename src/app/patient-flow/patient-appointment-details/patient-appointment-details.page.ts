@@ -25,32 +25,35 @@ openDoctorTimeSlotPage(){
   this.router.navigateByUrl('/select-doctor-time-slot');
 }
 cancelAppointment(){
-      this.presentAlertConfirm();
+      //this.presentAlertConfirm();
+}
+openAppointmentHelpPage(){
+  this.router.navigateByUrl('/appointment-help');
 }
 
-async presentAlertConfirm() {
-  const alert = await this.alertController.create({
-    cssClass: 'my-custom-class',
-    header: 'Cancel Appointment!',
-    message: 'Are you want to cancel the Appointment?',
-    buttons: [
-      {
-        text: 'No',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: (blah) => {
-          console.log('Confirm Cancel: blah');
-        }
-      }, {
-        text: 'Yes',
-        handler: () => {
-          console.log('Confirm Okay');
-        }
-      }
-    ]
-  });
+// async presentAlertConfirm() {
+//   const alert = await this.alertController.create({
+//     cssClass: 'my-custom-class',
+//     header: 'Cancel Appointment!',
+//     message: 'Are you want to cancel the Appointment?',
+//     buttons: [
+//       {
+//         text: 'No',
+//         role: 'cancel',
+//         cssClass: 'secondary',
+//         handler: (blah) => {
+//           console.log('Confirm Cancel: blah');
+//         }
+//       }, {
+//         text: 'Yes',
+//         handler: () => {
+//           console.log('Confirm Okay');
+//         }
+//       }
+//     ]
+//   });
 
-  await alert.present();
-}
+//   await alert.present();
+// }
 
 }

@@ -9,14 +9,6 @@
 </ion-header>
 
 <ion-content>
-
-<div class="container">
-    <ion-button (click)="openGoogleMap()">Get Directions</ion-button>
-    <ion-button (click)="openDoctorTimeSlotPage()">Reschedule Appointment</ion-button>
-    <ion-button (click)="cancelAppointment()">Cancel Appointment</ion-button>
-    
-</div>
-
  <!-- Appointment Details Sec  -->
  <div class="appointment-details-sec">
     <div class="appointments-list d-flex align-items-center"><div class="appointments-list-img mr-3"><img src="assets/images/appointments/doctor-12.jpg" alt=""></div><div class="appointments-list-text"><p><strong>DR. Tejaswini Nayak</strong></p></div></div>
@@ -26,7 +18,7 @@
      <div class="date-sec">
          <small>Date and Time</small>
          <h3>Mon, 15 Jan 2020, 10:15 AM <span>in 6 days</span></h3> 
-         <a>I need help with my appointment ></a>
+         <a (click)="openAppointmentHelpPage()">I need help with my appointment ></a>
      </div>
      <div class="cta-sec bt-2">
          <img src="assets/images/appointments/add1.png" alt="" >
@@ -35,7 +27,7 @@
          <small>Practice Detail</small>
          <h3>Prime Hospitals Clinic</h3> 
          <p>#509, NTR Gardens, Outer Ring Road, Hyderabad - 500018</p>
-         <a>Get Directions</a>
+         <a (click)="openGoogleMap()">Get Directions</a>
      </div>
      <div class="date-sec mob-consultation-sec bt-2">
          <small>Procedure</small>

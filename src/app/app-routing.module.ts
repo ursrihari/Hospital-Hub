@@ -184,7 +184,15 @@ const routes: Routes = [
   {
     path: 'help-center',
     loadChildren: () => import('./help-center/help-center.module').then( m => m.HelpCenterPageModule)
+  },  {
+    path: 'appointment-help',
+    loadChildren: () => import('./appointment-help/appointment-help.module').then( m => m.AppointmentHelpPageModule)
+  },
+  {
+    path: 'appointment-cancel',
+    loadChildren: () => import('./appointment-cancel/appointment-cancel.module').then( m => m.AppointmentCancelPageModule)
   }
+
 ];
 
 @NgModule({

@@ -12,7 +12,8 @@ import { User } from '@app/model';
 })
 export class AppComponent {
   activePageTitle = 'appointment-details';
-  pages=[];
+  UserPages=[];
+  MenuPages=[];
   user: User;
   user_role;
   constructor(private authService: AuthService,
@@ -61,20 +62,16 @@ export class AppComponent {
     //role= 'doctor';
     switch(role) { 
       case 'patient': { 
-        this.pages = [
+        this.UserPages = [
           {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'fa fa-home'},
           {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'fa fa-calendar'},
           {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-flask'},
-          //{title: 'Orders', page: 'OrdersPAge', url:'orders', icon:'fa fa-home'},
           {title: 'Consultations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-calendar'},
           {title: 'My Doctors', page: 'MyDoctorsPage', url:'my-doctors', icon:'fa fa-user-md'},
           {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'},
-          {title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'},
-
-          // {title: 'Book Appointment', page: 'PatientAppointmentBookingPage', url:'patient-appointment-booking', icon:'alarm-outline'},
-          // {title: 'My Favourites', page: 'PatientFavouritesPage', url:'patient-favourites', icon:'heart-outline'},
-         // {title: 'Notificaions', page: 'NotificationsPage', url:'notifications', icon:'notifications-circle-outline'},
-        //  {title: 'Chat', page: 'ChatUsersPage', url:'chat-users', icon:'chatbubbles-outline'}, 
+          {title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'}
+        ];
+        this.MenuPages = [
             {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
             {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
             {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
@@ -83,14 +80,14 @@ export class AppComponent {
          break; 
       } 
       case 'doctor': { 
-        this.pages = [
+        this.UserPages = [
           {title: 'Appointments', page: 'DoctorAppointmentsPage', url:'doctor-appointments', icon:'home'},
           {title: 'Profile', page: 'DoctorProfilePage', url:'doctor-profile', icon:'home'}
         ];
          break; 
       } 
       case 'receptionist': { 
-        this.pages = [
+        this.UserPages = [
           {title: 'Appointments', page: 'ReceptionistAppointmentsPage', url:'receptionist-appointments', icon:'home'},
           {title: 'Profile', page: 'ReceptionistProfilePage', url:'receptionist-profile', icon:'home'}
         ];

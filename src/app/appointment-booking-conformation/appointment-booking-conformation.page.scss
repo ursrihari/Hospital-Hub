@@ -61,9 +61,9 @@ a {}
 
 .Practo-sec h4 {
     margin: 0;
-    background-color: #0069b4;
+    background-color: #e5f4ff;
     font-size: 16px;
-    color: #fff;
+    color: #0069b4;
     padding: 15px;
     border-radius: 8px 8px 0 0;
     font-weight: normal;
@@ -74,7 +74,17 @@ a {}
     font-size: 14px;
 }
 .Practo-sec ul li i{color: #0069b4; margin: 7px 16px 0 0;}
-.Practo-sec h4 i{height: 15px; width: 15px; border-radius: 50%; color: #fff;}
+.Practo-sec h4 i{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: #0069b4;
+    display: inline-block;
+    text-align: center;
+    line-height: 25px;
+
+}
 
 .c-package-book {
     background: #0069b4;

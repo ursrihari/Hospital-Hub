@@ -117,8 +117,45 @@
             </div>
         </div>
 
-    </div> -->
-
+    </div>  scrollable   SwipedTabs-->
+    <!-- <ion-segment-button SwipedTabs *ngFor="let category of tabs ; let i = index"
+        value={{category}} (click)="selectTab(i)" **id="segment-{{i}}**">
+        <ion-label>{{category}}</ion-label>
+      </ion-segment-button> -->
+      
+    <!-- <ion-segment scrollable value="today">
+        <ion-segment-button value="today" checked>
+            <ion-label>Today</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="tomorrow" checked>
+            <ion-label>Tomorrow</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="tomorrow1" checked>
+            <ion-label>27 Aug</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="tomorrow2" checked>
+            <ion-label>28 Aug</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="tomorrow3" checked>
+            <ion-label>29 Aug</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="tomorrow4" checked>
+            <ion-label>30 Aug</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="tomorrow5" checked>
+            <ion-label>31 Aug</ion-label>
+          </ion-segment-button>
+      </ion-segment> -->
+      
+      
+      <ion-segment scrollable [(ngModel)]="currentTab">
+        <ion-segment-button value="subject" id="subject">
+          <ion-label>ASSUNTO</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="book" id="books">
+          <ion-label>LIVROS</ion-label>
+        </ion-segment-button>
+      </ion-segment>
 
 </ion-content>
 <ion-footer>

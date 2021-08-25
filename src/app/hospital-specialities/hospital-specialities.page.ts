@@ -16,8 +16,11 @@ export class HospitalSpecialitiesPage implements OnInit {
     this.canGoBack = this.routerOutlet &&
                      this.routerOutlet.canGoBack();
   }
-  openHospitalsPage(){
+  openHospitalsListPage(){
     this.router.navigateByUrl('/patient-hospitals-list');
+  }
+  openHospitalPage(){
+    this.router.navigateByUrl('/hospital');
   }
   
 

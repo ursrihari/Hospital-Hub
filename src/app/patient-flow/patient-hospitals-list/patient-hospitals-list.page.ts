@@ -91,4 +91,8 @@ async presentAlertCheckbox() {
 openBookingPage(){
   this.router.navigateByUrl('/select-doctor-time-slot');
 }
+openHospitalPage(){
+  this.router.navigateByUrl('/hospital');
 }
+}
+

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" >
+      <ion-back-button *ngIf="canGoBack"></ion-back-button>
+      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Hospital Name</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+        <div>Hospital Details</div>
+
+<ion-button (click)="openDoctorProfilePage()">Open Doctor Profile</ion-button>
+<ion-button (click)="bookAppointmentPage()">Book Appointment</ion-button>
+        
+</ion-content>

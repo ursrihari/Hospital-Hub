@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <ion-title>Find & Book</ion-title>
+                        <ion-title>Find Hospital</ion-title>
                         <!-- <h3>Find & Book</h3> -->
                     </div>
 
@@ -68,10 +68,18 @@
                 </div>
             </form>
         </div>
+        <ion-card (click)="openHospitalPage()">
+            <ion-card-header>
+                Hospital Name
+            </ion-card-header>
+            <ion-card-content>
+                    Appollo Hospital
+            </ion-card-content>
+        </ion-card>
 
-        <div class="two-three-grid">
+        <!-- <div class="two-three-grid">
             <ion-button (click)="openBookingPage()">Book Appointment</ion-button>
-        </div>
+        </div> -->
            
 
     </div>

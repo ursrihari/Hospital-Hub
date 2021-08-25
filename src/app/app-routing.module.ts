@@ -191,6 +191,10 @@ const routes: Routes = [
   {
     path: 'appointment-cancel',
     loadChildren: () => import('./appointment-cancel/appointment-cancel.module').then( m => m.AppointmentCancelPageModule)
+  },
+  {
+    path: 'hospital',
+    loadChildren: () => import('./hospital/hospital.module').then( m => m.HospitalPageModule)
   }
 
 ];

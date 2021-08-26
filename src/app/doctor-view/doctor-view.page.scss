@@ -243,6 +243,30 @@ ion-segment-button#segment-0 {
     font-size: 18px;
     margin-right: 4px;
     }
-    .footer-btn{
+    .footer-btn button {
+        background-color: #3880ff;
+        padding:15px;
+        color: #fff;
+        border-radius: 6px;
+        margin: 5px;
+    }
+    .footer-btn button:nth-child(1){
+      background-color: #e20c14;
+    }
+    .map-sec{
+        margin: 15px;
         
+        .map-sec-img{
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+        h5{
+            margin: 15px;
+        }
+        .map-sec img{
+            width: 100%;
+        }
+        p{
+            margin: 15px;
+        }
+    }
     }

@@ -98,7 +98,151 @@
 /*Accordian Styles*/
 
   
- 
+.doctors-main .rounded-circle {
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 100px;
+    margin-right: 10px;
+
+}
+
+.doctors-list h4 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.doctors-list p {
+    margin: 0px 0 10px;
+    font-size: 14px;
+    color: #868686;
+    line-height: 20px;
+}
+
+.prime{
+	color: #0069b4;
+	margin-right: 10px;
+}
+.doctor-list{
+	border-bottom: 1px solid #ccc;
+
+}
+.doctors-main {
+    margin: 15px 0;
+    border-bottom: 1px solid #f3f3f3;
+    padding-bottom: 15px;
+}
+.doctors-view{
+    padding: 15px;
+    h6, .doctors-list span {
+        margin:0px;
+        text-decoration: underline;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    
+}
   
-  
-  
+ion-segment-button#segment-0 {
+    text-transform: capitalize;
+}
+    .Practo-sec {
+        padding: 0;
+        border-radius: 8px;
+        border:1px solid #e6e6e6;
+        margin: 20px 15px;
+    }
+    
+    .Practo-sec ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+    }
+    
+    .Practo-sec h4 {
+        margin: 0;
+        background-color: #e5f4ff;
+        font-size: 16px;
+        color: #0069b4;
+        padding: 15px;
+        border-radius: 8px 8px 0 0;
+        font-weight: normal;
+    }
+    
+    .Practo-sec ul li {
+        padding:10px 9px 5px;
+        font-size: 14px;
+    }
+    .Practo-sec ul li i{
+        color: #000000;
+        margin: 7px 8px 0 0;
+        font-size: 22px;}
+    .Practo-sec h4 i{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        color: #ffffff;
+        background-color: #0069b4;
+        display: inline-block;
+        text-align: center;
+        line-height: 25px;
+        font-size: 14px;
+    
+    }
+    h4.text-center.bg-none {
+        background-color: transparent !important;
+        border: 0;
+    }
+.Practo-sec.highly-sec{
+    background-color: transparent;
+}
+.Practo-sec.highly-sec h5{
+    
+    font-size: 20px;
+    margin: 22px 15px 5px;
+    font-weight: 600;
+
+}
+.Practo-sec.highly-sec p {
+    margin-left: 15px;
+    font-size: 14px;
+}
+.acc-sec ul li {
+    font-size: 14px;
+    margin: 10px 0 0;
+}
+.review-chat {
+    font-size: 14px;
+    margin: 15px;
+    .name {
+        height: 35px;
+        width: 35px;
+        background-color: #444;
+        border-radius: 50%;
+        line-height: 35px;
+        text-align: center;
+        color: #fff;
+        margin-right: 15px;
+    }
+   
+    button {
+        border: 1px solid #ccc;
+        padding: 15px 16px;
+        border-radius: 6px;
+        background-color: #fff;
+        margin: 5px;
+        font-weight: 600;
+    }
+    
+}
+.border-bot{
+    border-bottom: solid 12px #f2f2f2;
+}
+.grren{
+    color: #01a400;
+    font-size: 18px;
+    margin-right: 4px;
+    }
+    .footer-btn{
+        
+    }

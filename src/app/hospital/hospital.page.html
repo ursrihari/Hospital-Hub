@@ -9,9 +9,263 @@
 </ion-header>
 
 <ion-content>
-        <div>Hospital Details</div>
+  <div class="hospital-list-main">
+    <div class="single-hospital-sec item">
+        <div class="icon">
+            <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+          </div>
+          <div class="title">
+            <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+            <div class="text">
+                <ul class="info-detail p-0">
+                    <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+                    <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+                </ul>
+              </div>
+          </div>
+      
+    </div>
+    <div class="single-hospital-sec item">
+      <div class="icon">
+          <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+        </div>
+        <div class="title">
+          <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+          <div class="text">
+              <ul class="info-detail p-0">
+                  <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+                  <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+                  <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+              </ul>
+            </div>
+        </div>
+    
+  </div>
+  <div class="single-hospital-sec item">
+    <div class="icon">
+        <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+      </div>
+      <div class="title">
+        <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+        <div class="text">
+            <ul class="info-detail p-0">
+                <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+                <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+            </ul>
+          </div>
+      </div>
+  
+</div>
+<div class="single-hospital-sec item">
+  <div class="icon">
+      <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+    </div>
+    <div class="title">
+      <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+      <div class="text">
+          <ul class="info-detail p-0">
+              <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+              <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+              <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+          </ul>
+        </div>
+    </div>
 
-<ion-button (click)="openDoctorProfilePage()">Open Doctor Profile</ion-button>
-<ion-button (click)="bookAppointmentPage()">Book Appointment</ion-button>
-        
+</div>
+    <!-- Hospital view -->
+
+    <div>
+
+    <div class="">
+        <div class="Practo-sec">
+          
+          <h4><i class="ti-home mr-1"></i> In-Clinic Appointment</h4>
+          <ul>
+            <li>
+                <div class="appointments-list-text">
+                    <p class="m-0"><strong>Chinmayi Child Care Clinic</strong></p>
+                    <p class="m-0">Bellandur</p>
+                    <p class="m-0 text-muted">Verified details</p>
+                  </div>
+            
+            </li>
+          </ul>
+          <div class="">
+            <ion-row>
+              <ion-toolbar >
+                <ion-segment (ionChange)="segmentChanged()" [(ngModel)]="segment" color="primary" scrollable>
+                  <ion-segment-button style="width:400px;" *ngFor="let category of tabs ; let i = index"
+                  value={{category}} (click)="selectTab(i)" id="segment-{{i}}">
+                  {{category}}
+                  </ion-segment-button>
+                  </ion-segment>
+              </ion-toolbar>
+              <ion-col>
+                  <div class="">
+                <div class="time-buttons-div">
+                    <ion-button (click)="openBookAppointmentConformationPage()">10:00 AM</ion-button>
+                    <ion-button (click)="openBookAppointmentConformationPage()">11:00 AM</ion-button>
+                    <ion-button (click)="openBookAppointmentConformationPage()">12:00 PM</ion-button>
+                    <ion-button (click)="openBookAppointmentConformationPage()">01:00 PM</ion-button>
+                    <ion-button (click)="openBookAppointmentConformationPage()">02:00 PM</ion-button>
+                    <ion-button (click)="openBookAppointmentConformationPage()">03:00 PM</ion-button>
+                    <ion-button (click)="openBookAppointmentConformationPage()">04:00 PM</ion-button>
+                    <ion-button (click)="openBookAppointmentConformationPage()">05:00 PM</ion-button>
+                </div>
+                <h4 class="text-center bg-none">View all Slots</h4>
+              </div>
+              </ion-col>
+          </ion-row>
+      </div>
+        </div>
+    <div class="Practo-sec highly-sec border-0">
+    <h5>
+        Highly Recommended for
+    </h5>
+    <ul>
+      <li class="d-flex">
+        <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <i class="fa fa-heart-o" aria-hidden="true"></i></span>
+          <div class="appointments-list-text">
+              <p class="m-0"><strong>Doctor Friendliness</strong></p>
+              <p class="m-0 text-muted">93% patients find the doctor friendly and approachable</p>
+            </div>
+      </li>
+      <li class="d-flex">
+            <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "><i class="fa fa-comments-o" aria-hidden="true"></i></span>
+            <div class="appointments-list-text">
+            <p class="m-0"><strong>Detailded Treatment Explanation</strong></p>
+            <p class="m-0 text-muted">89% patients recommend the doctor for in-depth explanation of their issues</p>
+        </div>
+      </li>
+    </ul>
+</div>
+<div class="Practo-sec highly-sec border-0">
+    <h5 class="mb-2">Patient Stories</h5>
+    <p class="text-muted">These stories represent patient opinions and experiences. They do not reflect the doctor's medical capabilities</p>
+    <p></p>
+</div>
+<div class="border-bot pb-3">
+<div class="review-chat">
+    <div class="mb-3 border-bottom">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <div class="name">V</div>
+              <div>
+                  <h5 class="m-0">Verified Patient</h5>
+                  <p class="m-0 text-muted">23 days ago</p>
+              </div>
+            </div>
+            <div><i class="fa fa-thumbs-up grren"></i></div>
+          </div>
+          <h5 class="mb-1">Visited for Adolescent Followup & Vaccinations</h5>
+          <p>Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple</p>
+    </div>
+    <div class="mb-3 border-bottom">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <div class="name">R</div>
+              <div>
+                  <h5 class="m-0">Ramalinga</h5>
+                  <p class="m-0 text-muted">23 days ago</p>
+              </div>
+            </div>
+            <div><i class="fa fa-thumbs-up grren"></i></div>
+          </div>
+          <h5 class="mb-3">Visited for Adolescent Followup & Vaccinations</h5>
+          <p>Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple</p>
+    </div>
+    <div class="mb-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <div class="name">V</div>
+              <div>
+                  <h5 class="m-0">Verified Patient</h5>
+                  <p class="m-0 text-muted">23 days ago</p>
+              </div>
+            </div>
+            <div><i class="fa fa-thumbs-up grren"></i></div>
+          </div>
+          <h5 class="mb-1">Visited for Adolescent Followup & Vaccinations</h5>
+          <p>Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple</p>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button>Share Your Story</button>
+        <button>Share Your Story</button>
+    </div>
+</div>
+</div>
+
+<div class="mb-3 map-sec">
+    <h5>Location</h5>
+    <div class="map-sec-img">
+        <img src="../assets/images/my-doctors/map.jpg">
+    <p class="text-muted">Tap on the map for complate address</p>
+    </div>
+</div>
+</div>
+<div class="p-1">
+    <div class="acc-sec mr-3">
+        <div>
+            <h5 class="border-bottom mt-0">More about Dr. Tejaswini Nayak</h5>
+            <p>Dr. Tejaswini Nayak is a pediatrician is Bellandur, bangalore and has an experience of 17 years in this field Dr. tejaswini nayak practices at chinmayi</p>
+        </div>
+    <ion-list>
+            <div>
+            <ion-item data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              <ion-label><strong>Specializations</strong></ion-label>
+              <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+            </ion-item>
+            <div id="faq1" class="collapse hide" aria-labelledby="faqhead1" data-parent="#faq">
+              <ul>
+                  <li>Oral and maxilloFacial Surgeon</li>
+                  <li>Implantologist</li>
+                  <li>Hair Transplant Surgoen</li>
+              </ul>
+            </div>
+        </div>
+            <ion-item data-toggle="collapse" data-target="#faq2" aria-expanded="true" aria-controls="faq2">
+              <ion-label><strong>Education</strong></ion-label>
+              <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+            </ion-item>
+            <div id="faq2" class="collapse hide" aria-labelledby="faqhead1" data-parent="#faq">
+                <ul>
+                    <li>BDS - Ragiv Gandhi University of Health Sciences, Bengalore, India -2009</li>
+                    <li>MDS - Oral & Maxillofacial Surgery - Vydehi Institute Of Dental Sciences Research -2015</li>
+                    
+                </ul>
+            </div>
+          
+            <ion-item data-toggle="collapse" data-target="#faq3" aria-expanded="true" aria-controls="faq3">
+              <ion-label><strong>Experience</strong></ion-label>
+              <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+            </ion-item>
+            <div id="faq3" class="collapse hide" aria-labelledby="faqhead1" data-parent="#faq">
+                <ul>
+                    <li>2010 - 2012 Senior Dental Surgeon at 32 Smiles Dental Clinic</li>
+                    <li>2012 -2015 Oral Surgeon at Vydehi Dental Hospital</li>
+                    
+                </ul>
+            </div>
+            <ion-item data-toggle="collapse" data-target="#faq4" aria-expanded="true" aria-controls="faq4">
+                <ion-label><strong>Registration</strong></ion-label>
+                <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+              </ion-item>
+              <div id="faq4" class="collapse hide" aria-labelledby="faqhead1" data-parent="#faq">
+                <ul>
+                    <li>26101-A Karnataka State Dental Council, 2010</li>
+                    
+                </ul>
+              </div>
+         
+</ion-list>
+    </div>
+    </div>
+    </div>
+</div>
+<footer>
+<ion-button class="w-100 mb-2" (click)="openDoctorProfilePage()">Open Doctor Profile</ion-button>
+<ion-button class="w-100 mb-2" (click)="bookAppointmentPage()">Book Appointment</ion-button>
+</footer>   
 </ion-content>

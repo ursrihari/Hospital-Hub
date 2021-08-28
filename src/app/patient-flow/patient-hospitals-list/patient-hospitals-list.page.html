@@ -4,19 +4,12 @@
             <ion-back-button *ngIf="canGoBack"></ion-back-button>
             <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
         </ion-buttons>
-
-        <!--<ion-title>Hospitals</ion-title>
-        <ion-buttons slot="end" (click)="presentAlertCheckbox()">
-            <ion-icon style="font-size: 25px;margin-right:10px;" name="funnel-outline"></ion-icon>
-        </ion-buttons> -->
         <div class="find-topbar">
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <ion-title>Find Hospital</ion-title>
-                        <!-- <h3>Find & Book</h3> -->
                     </div>
-
                     <div class="col">
                         <p>LOCATION</p>
                         <form>
@@ -37,29 +30,6 @@
 
 <ion-content>
     <div class="content-finddoc-page">
-        <!-- <div class="find-topbar">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <a href="index.html"><i class="ti-arrow-left"></i></a>
-                        <h3>Find & Book</h3>
-                    </div>
-                    <div class="col">
-                        <p>LOCATION</p>
-                        <form>
-                            <select>
-                                <option>Banglore</option>
-                                <option>Hyderabad</option>
-                                <option>Delhi</option>
-                                <option>Mumbai</option>
-                                <option>Pune</option>
-                            </select>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <div class="find-searchbar">
             <form>
                 <div class="form-group">
@@ -68,19 +38,150 @@
                 </div>
             </form>
         </div>
-        <ion-card (click)="openHospitalPage()">
-            <ion-card-header>
-                Hospital Name
-            </ion-card-header>
-            <ion-card-content>
-                    Appollo Hospital
-            </ion-card-content>
-        </ion-card>
-
-        <!-- <div class="two-three-grid">
-            <ion-button (click)="openBookingPage()">Book Appointment</ion-button>
-        </div> -->
-           
-
     </div>
+    <div class="hospital-list-main">
+    <div class="single-hospital-sec item" (click)="openHospitalPage()">
+        <div class="icon">
+            <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+          </div>
+          <div class="title">
+            <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+            <div class="text">
+                <ul class="info-detail p-0">
+                    <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+                    <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+                </ul>
+              </div>
+          </div>
+      
+    </div>
+    <div class="single-hospital-sec item">
+      <div class="icon">
+          <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+        </div>
+        <div class="title">
+          <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+          <div class="text">
+              <ul class="info-detail p-0">
+                  <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+                  <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+                  <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+              </ul>
+            </div>
+        </div>
+  </div>
+  <div class="single-hospital-sec item">
+    <div class="icon">
+        <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+      </div>
+      <div class="title">
+        <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+        <div class="text">
+            <ul class="info-detail p-0">
+                <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+                <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+            </ul>
+          </div>
+      </div>
+  
+</div>
+<div class="single-hospital-sec item">
+    <div class="icon">
+        <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+      </div>
+      <div class="title">
+        <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+        <div class="text">
+            <ul class="info-detail p-0">
+                <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+                <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+            </ul>
+          </div>
+      </div>
+  
+</div>
+<div class="single-hospital-sec item">
+  <div class="icon">
+      <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+    </div>
+    <div class="title">
+      <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+      <div class="text">
+          <ul class="info-detail p-0">
+              <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+              <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+              <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+          </ul>
+        </div>
+    </div>
+</div>
+<div class="single-hospital-sec item">
+<div class="icon">
+    <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+  </div>
+  <div class="title">
+    <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+    <div class="text">
+        <ul class="info-detail p-0">
+            <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+            <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+        </ul>
+      </div>
+  </div>
+
+</div>
+<div class="single-hospital-sec item">
+    <div class="icon">
+        <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+      </div>
+      <div class="title">
+        <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+        <div class="text">
+            <ul class="info-detail p-0">
+                <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+                <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+            </ul>
+          </div>
+      </div>
+  
+</div>
+<div class="single-hospital-sec item">
+  <div class="icon">
+      <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+    </div>
+    <div class="title">
+      <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+      <div class="text">
+          <ul class="info-detail p-0">
+              <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+              <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+              <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+          </ul>
+        </div>
+    </div>
+</div>
+<div class="single-hospital-sec item">
+<div class="icon">
+    <div class="icon"><img  src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
+  </div>
+  <div class="title">
+    <h3><a href="javascript:void(0)">Strategy &amp; Research</a></h3>
+    <div class="text">
+        <ul class="info-detail p-0">
+            <li><i class="fa fa-phone-volume" aria-hidden="true"></i>+1 (800) 581 3645 11</li>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i>sola.seo@mail.com</li>
+            <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i>28 Green Tower, Street Name, New York</li>
+        </ul>
+      </div>
+  </div>
+
+</div>
+</div>
+
+    
 </ion-content>

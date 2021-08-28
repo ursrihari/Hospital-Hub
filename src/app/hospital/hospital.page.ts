@@ -26,6 +26,10 @@ openDoctorProfilePage(){
 bookAppointmentPage(){
   this.router.navigateByUrl('/select-doctor-time-slot');
 }
+openDoctorsListPage(){
+  this.router.navigateByUrl('/patient-doctors-list');
+}
+
 selectTab(index){
   this.activeIndex = index;
   console.log(this.activeIndex);

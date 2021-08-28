@@ -67,156 +67,77 @@
                 </div>
             </form>
         </div>
-        Doctors List with Filters
-        <!-- <div class="two-three-grid">
-            <h3>Search by Health concern<a>Explore More</a></h3>
-            <div class="row healthcon-icons">
-                <div class="col">
-                    <img src="assets/images/find-docs-near/health-concern1.jpg" />
-                    <p>Piles Surgery</p>
+        <div class="mb-4 col-sm-12">
+            <div class="d-flex align-items-center justify-content-between doctors-main">
+                <div class="ms-3 d-flex align-items-center doctors-list" (click)="openDoctorViewPage()">
+                  <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/my-doctors/doctor-12.jpg" class="rounded-circle"></span>
+                  <div>
+                    <h4>Dr. Tejaswini Nayak</h4>
+                  <p>Pediatrician<br/>Chinmayi Child Care Clinic</p>
+                  <div class="d-flex d-flex align-items-center"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
+                  </div>
                 </div>
-                <div class="col">
-                    <a>
-                        <img src="assets/images/find-docs-near/health-concern2.jpg" />
-                        <p>Hair Loss</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a>
-                        <img src="assets/images/find-docs-near/health-concern3.jpg" />
-                        <p>Ear Wax</p>
-                    </a>
-                </div>
+                <div class="button" (click)="openSelectDoctorTimeSlotPage()">Book</div>
             </div>
-
-            <div class="row healthcon-icons">
-                <div class="col">
-                    <a>
-                        <img src="assets/images/find-docs-near/health-concern4.jpg" />
-                        <p>Cold & Cough</p>
-                    </a>
+            <div class="d-flex align-items-center justify-content-between doctors-main">
+              <div class="ms-3 d-flex align-items-center doctors-list" (click)="openDoctorViewPage()">
+                <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/my-doctors/doctor-12.jpg" class="rounded-circle"></span>
+                <div>
+                  <h4>Dr. Tejaswini Nayak</h4>
+                <p>Pediatrician<br/>Chinmayi Child Care Clinic</p>
+                <div class="d-flex d-flex align-items-center"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
                 </div>
-                <div class="col">
-                    <a>
-                        <img src="assets/images/find-docs-near/health-concern5.jpg" />
-                        <p>Sexual Health</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a>
-                        <img src="assets/images/find-docs-near/health-concern6.jpg" />
-                        <p>Stomach Pain</p>
-                    </a>
-                </div>
+              </div>
+              <div class="button" (click)="openSelectDoctorTimeSlotPage()">Book</div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between doctors-main">
+            <div class="ms-3 d-flex align-items-center doctors-list" (click)="openDoctorViewPage()">
+              <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/my-doctors/doctor-12.jpg" class="rounded-circle"></span>
+              <div>
+                <h4>Dr. Tejaswini Nayak</h4>
+              <p>Pediatrician<br/>Chinmayi Child Care Clinic</p>
+              <div class="d-flex d-flex align-items-center"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
+              </div>
             </div>
-            <hr>
-        </div>
-
-        <div class="two-three-grid">
-            <h3>Search by Speciality</h3>
-            <div class="healthcon-spec">
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img1.jpg" />
-                        <p>Women's<br/>Health</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img2.jpg" />
-                        <p>Skin & Hair</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img3.jpg" />
-                        <p>Child<br/>Specialist</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img4.jpg" />
-                        <p>General<br/>Physician</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img5.jpg" />
-                        <p>Brain and<br/>Nerves</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img6.jpg" />
-                        <p>Uriniary<br/>Issues</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img7.jpg" />
-                        <p>Kidney<br/>Issues</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img8.jpg" />
-                        <p>Ayurveda</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img1.jpg" />
-                        <p>Women's<br/>Health</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img2.jpg" />
-                        <p>Skin & Hair</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img3.jpg" />
-                        <p>Child<br/>Specialist</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img4.jpg" />
-                        <p>General<br/>Physician</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img5.jpg" />
-                        <p>Brain and<br/>Nerves</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img6.jpg" />
-                        <p>Uriniary<br/>Issues</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img7.jpg" />
-                        <p>Kidney<br/>Issues</p>
-                    </a>
-                </div>
-                <div class="healthcon-spec-bg">
-                    <a>
-                        <img src="assets/images/speciality/img8.jpg" />
-                        <p>Ayurveda</p>
-                    </a>
-                </div>
+            <div class="button" (click)="openSelectDoctorTimeSlotPage()">Book</div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between doctors-main">
+            <div class="ms-3 d-flex align-items-center doctors-list" (click)="openDoctorViewPage()">
+              <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/my-doctors/doctor-12.jpg" class="rounded-circle"></span>
+              <div>
+                <h4>Dr. Tejaswini Nayak</h4>
+              <p>Pediatrician<br/>Chinmayi Child Care Clinic</p>
+              <div class="d-flex d-flex align-items-center"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
+              </div>
             </div>
+            <div class="button" (click)="openSelectDoctorTimeSlotPage()">Book</div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between doctors-main">
+            <div class="ms-3 d-flex align-items-center doctors-list" (click)="openDoctorViewPage()">
+              <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/my-doctors/doctor-12.jpg" class="rounded-circle"></span>
+              <div>
+                <h4>Dr. Tejaswini Nayak</h4>
+              <p>Pediatrician<br/>Chinmayi Child Care Clinic</p>
+              <div class="d-flex d-flex align-items-center"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
+              </div>
+            </div>
+            <div class="button" (click)="openSelectDoctorTimeSlotPage()">Book</div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between doctors-main">
+            <div class="ms-3 d-flex align-items-center doctors-list" (click)="openDoctorViewPage()">
+              <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/my-doctors/doctor-12.jpg" class="rounded-circle"></span>
+              <div>
+                <h4>Dr. Tejaswini Nayak</h4>
+              <p>Pediatrician<br/>Chinmayi Child Care Clinic</p>
+              <div class="d-flex d-flex align-items-center"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
+              </div>
+            </div>
+            <div class="button" (click)="openSelectDoctorTimeSlotPage()">Book</div>
+          </div>
+          
+          </div>
+        
 
-
-            <div class="looking-search"><a>Looking for more? Search</a></div>
-        </div> -->
-
-        <ion-button expand="block" (click)="openSelectDoctorTimeSlotPage()">Book Appointment</ion-button>
+        <!-- <ion-button expand="block" (click)="openSelectDoctorTimeSlotPage()">Book Appointment</ion-button> -->
     </div>
 </ion-content>

@@ -10,7 +10,62 @@
 </ion-header>
 
 <ion-content>
-
+<div class="upload-record-sec">
+  <div class="upload-img">
+    <ul>
+      <li><img src="assets/images/medical-records/records03.jpg" alt=""></li>
+      <li><img src="assets/images/medical-records/records02.jpg" alt=""></li>
+    </ul>
+  </div>
+  <!-- Record for -->
+  <div class="d-flex align-items-center record-cont">
+    <div class="">
+      <h4 class="text-muted">Record for</h4>
+      <h5 class="mt-2">Srinivas</h5>
+    </div>
+    <div class="ml-auto">
+      <i class="fa fa-pencil text-muted" aria-hidden="true"></i>
+     </div>
+  </div>
+  <!-- Type of record -->
+  <div class="record-cont">
+    <div class="">
+      <h4 class="text-muted">Type of record</h4>
+    </div>
+    <div>
+      <ul class="d-flex justify-content-center record-cont-list">
+        <li>
+         <a class="active">
+          <p><i class="fa fa-file-code-o text-muted active" aria-hidden="true"></i></p>
+          <h6> Report</h6>
+         </a>
+        </li>
+        <li>
+         <a>
+          <p><i class="fa fa-file-code-o text-muted" aria-hidden="true"></i></p>
+          <h6> Report</h6>
+         </a>
+         </li>
+         <li>
+         <a>
+          <p><i class="fa fa-file-code-o text-muted" aria-hidden="true"></i></p>
+          <h6> Report</h6>
+         </a>
+         </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Record create on -->
+  <div class="d-flex align-items-center record-cont">
+    <div class="">
+      <h4 class="text-muted">Record created on</h4>
+      <h5 class="mt-2">20 Aug, 2021</h5>
+    </div>
+    <div class="ml-auto">
+      <i class="fa fa-pencil text-muted" aria-hidden="true"></i>
+     </div>
+  </div>
+</div>
 </ion-content>
 <ion-footer>
   <ion-button expand="block" (click)="uploadRecord()">Upload Record</ion-button>

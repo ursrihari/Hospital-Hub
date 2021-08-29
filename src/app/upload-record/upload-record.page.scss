@@ -1,0 +1,60 @@
+.upload-record-sec h4, .upload-record-sec h5{
+    padding: 0;
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.upload-img ul {
+    background-color: #f1f0f5;
+    min-height: 300px;
+    li {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 10px 0px 10px 10px;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+}
+.record-cont {
+    padding: 30px 15px;
+    border-bottom: 1px solid #f3f2f2;
+    h4 {
+        font-size: 1rem;
+        font-weight: 300;
+        display: inline-block;
+    }
+    h5 {
+        color: #0069b4;
+        font-size: 1.2rem;
+    }
+       
+}
+
+.record-cont-list{
+        li{
+            text-align: center;
+            a{
+                text-align: center;
+                padding: 30px;
+                display: inline-block;
+                text-align: center;
+                font-size: 1rem;
+               
+                i{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+}
+.active{
+    color: #0069b4 !important; 
+}
+

@@ -1,0 +1,40 @@
+.view-record-sec{
+    .title{
+        padding: 15px;
+        border-bottom: 1px solid #e2e2e2;
+        p{
+            font-size: 0.8rem;
+            margin: 0px;
+        }
+        h5{
+            margin: 5px 0px;
+            font-size: 1rem;
+        }
+    }
+}
+.Prescription{
+    h5{
+        padding: 0 15px 5px;
+    }
+    .Prescription-img{
+        width: 100%;
+        height: 250px;
+        background-color: #ccc;
+        .Prescription-inner{
+            text-align: center;
+            width: 150px;
+            height: 200px;
+            background-color: #212121;
+            margin: 20px 0px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            text-align: center;
+        }
+
+    }
+    
+   
+}

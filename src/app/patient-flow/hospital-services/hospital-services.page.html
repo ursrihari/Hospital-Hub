@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" >
+      <ion-back-button *ngIf="canGoBack"></ion-back-button>
+      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Find Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="find-searchbar">
+    <form>
+        <div class="form-group">
+            <label><i class="fa fa-search"></i></label>
+            <input type="text" class="form-control" placeholder="Search services etc...">
+        </div>
+    </form>
+</div>
+
+<ion-list lines="full">
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+      <img src="assets/images/find-docs-near/health-concern1.jpg" />
+    </ion-avatar>
+    <ion-label>Women's Health</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+       <img src="assets/images/find-docs-near/health-concern2.jpg" />
+    </ion-avatar>
+    <ion-label>Skin & Hair</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+      <img src="assets/images/find-docs-near/health-concern3.jpg" />
+    </ion-avatar>
+    <ion-label>Child Specialist</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+      <img src="assets/images/find-docs-near/health-concern4.jpg" />
+    </ion-avatar>
+    <ion-label>General Physician</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+      <img src="assets/images/find-docs-near/health-concern5.jpg" />
+    </ion-avatar>
+    <ion-label>Brain and Nerves</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+      <img src="assets/images/find-docs-near/health-concern6.jpg" />
+    </ion-avatar>
+    <ion-label>Uriniary Issues</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+      <img src="assets/images/find-docs-near/health-concern1.jpg" />
+    </ion-avatar>
+    <ion-label>Kidney Issues</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+      <img src="assets/images/find-docs-near/health-concern2.jpg" />
+    </ion-avatar>
+    <ion-label>Ayurveda</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+      <img src="assets/images/find-docs-near/health-concern3.jpg" />
+    </ion-avatar>
+    <ion-label>Child Specialist</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+       <img src="assets/images/find-docs-near/health-concern4.jpg" />
+    </ion-avatar>
+    <ion-label>General Physician</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+       <img src="assets/images/find-docs-near/health-concern5.jpg" />
+    </ion-avatar>
+    <ion-label>Brain and Nerves</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+       <img src="assets/images/find-docs-near/health-concern6.jpg" />
+    </ion-avatar>
+    <ion-label>Uriniary Issues</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="openDoctorsListPage()">
+    <ion-avatar class="avatar-img" slot="start">
+       <img src="assets/images/find-docs-near/health-concern1.jpg" />
+    </ion-avatar>
+    <ion-label>Kidney Issues</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  
+</ion-list>
+</ion-content>

@@ -29,6 +29,9 @@ bookAppointmentPage(){
 openDoctorsListPage(){
   this.router.navigateByUrl('/patient-doctors-list');
 }
+openServicesListPage(){
+  this.router.navigateByUrl('/hospital-services');
+}
 
 selectTab(index){
   this.activeIndex = index;

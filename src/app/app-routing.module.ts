@@ -219,6 +219,10 @@ const routes: Routes = [
   {
     path: 'view-record',
     loadChildren: () => import('./patient-flow/view-record/view-record.module').then( m => m.ViewRecordPageModule)
+  },
+  {
+    path: 'hospital-services',
+    loadChildren: () => import('./patient-flow/hospital-services/hospital-services.module').then( m => m.HospitalServicesPageModule)
   }
 
 

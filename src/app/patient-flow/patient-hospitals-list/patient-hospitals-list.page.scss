@@ -8,19 +8,15 @@
  .hospital-list-main .item > .icon > .icon {width:80px; height:80px; ;}
  .hospital-list-main .item > .icon > .icon img {width:100%; height: 100%; display: inline-block; border-radius: 50%;}
  .hospital-list-main .item .title h3 {	margin: 5px 0px; font-size: 23px; font-weight: 600; }
-.hospital-list-main .item .title h3 a {	color: #116fb5;	transition: all 700ms ease; font-size:1rem;}
+.hospital-list-main .item .title h3 a {	transition: all 700ms ease;font-size: 1rem;color: #212121;font-weight: 500;text-align: left;margin: 0;}
 .hospital-list-main .item .title h3 a:hover {	color: #c10e1a;	transition: all 700ms ease;}
 .hospital-list-main .item .text p {	font-size: 16px;color: #606060;	line-height: 28px;	padding-right: 20px;}
 .hospital-list-main .item .text p span {	color: #c10e1a;	font-weight: 500;	transition: all 700ms e ase;}
 .hospital-list-main .item:hover .text p span {	color: #c10e1a;	transition: all 700ms ease;}
-.info-detail li {width:100%; display: inline-flex; margin: 0px; padding: 0px; font-size: 0.9rem;}
+.info-detail li {width: 100%;display: inline-flex;padding: 0px;font-size: 0.9rem;color: #787878;font-weight: 400;text-align: left;margin: 0;}
 .info-detail li i { margin:5px 10px 0 0;}
 ul.info-detail{margin: 0;}
-.content-finddoc-page {
-    margin: 0;
-    padding: 0;
-}
-
+.content-finddoc-page {margin: 0;padding: 0;}
 .find-topbar {
     background: #0069b3;
     width: 100%;

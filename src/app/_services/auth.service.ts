@@ -19,11 +19,14 @@ export class AuthService {
     //headers.set('Content-Type', 'application/json; charset=utf-8');
     headers.set('Access-Control-Allow-Origin', '*');
    // headers.set('Access-Control-Allow-Headers', 'X-Requested-With');
-    let params={
-      phoneno: mobile
+    let params= {
+      phoneno: mobile,
+      hashCode: "//gtjDse+ce"
     }
+    //`${environment.apiUrl}/send-sms/phpsendsms.php?phoneno=${mobile}
     ////this.http.post<User>(`${environment.apiUrl}/user/otp-login.php`, params, { headers: headers }
-      return this.http.post<User>(`${environment.apiUrl}/send-sms/phpsendsms.php?phoneno=${mobile}`, { headers: headers })
+      return this.http.post<User>(`${environment.apiUrl}/user/otp-login.php`, {phoneno: mobile,
+        hashCode: "//gtjDse+ce"}, { headers: headers })
           .pipe(map(user => {
               // user['role'] = 0;
               // user['mobile'] = mobile;

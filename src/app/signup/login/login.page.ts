@@ -99,6 +99,19 @@ export class LoginPage implements OnInit {
   }
 
   loginUser(){
+
+    // this.authService.login(this.country.country_code+this.country.mobile_number)
+    //               .pipe(first())
+    //               .subscribe({
+    //                   next: () => {
+    //                       this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
+    //                   },
+    //                   error: error => {
+    //                      // this.alertService.error(error);
+    //                       //this.loading = false;
+    //                   }
+    //               });
+
     this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
     //console.log(this.authService.isApp());
     // if(this.authService.isApp()){
@@ -141,7 +154,7 @@ export class LoginPage implements OnInit {
       let selectedCountry = data.data.value;
       if(selectedCountry && selectedCountry.hasOwnProperty('country_code') && selectedCountry.country_code!=''){
         console.log(selectedCountry);
-        this.country.country_code = '+'+selectedCountry.country_code;
+        this.country.country_code = selectedCountry.country_code;
         this.country.iso_code = selectedCountry.iso_code;
       }
       
@@ -164,7 +177,7 @@ export class LoginPage implements OnInit {
       this.country.country_code=obj.value;
       this.country.iso_code=obj.iso_code;
       this.country.name=obj.name;
-      this.country.country_code = '+'+obj.value;
+      this.country.country_code = obj.value;
       this.inputChange(this.country.mobile_number); 
      };
   });

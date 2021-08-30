@@ -8,7 +8,7 @@ import { IonRouterOutlet } from '@ionic/angular';
   styleUrls: ['./hospital.page.scss'],
 })
 export class HospitalPage implements OnInit {
-
+  doctorsSlideOpts = { initialSlide: 0, speed: 400, loop:true, slidesPerView: 1.4, spaceBetween: 20, pagination: false };
   canGoBack: boolean = false;
   constructor(private routerOutlet: IonRouterOutlet,private router:Router) { }
   tabs:any=[];

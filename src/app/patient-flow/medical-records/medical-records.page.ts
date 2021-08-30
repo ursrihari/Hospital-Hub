@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonRouterOutlet } from '@ionic/angular';
+import { IonRouterOutlet, PopoverController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
+import { MedicalRecordPopoverComponent } from '@app/components/medical-record-popover/medical-record-popover.component';
+
 @Component({
   selector: 'app-medical-records',
   templateUrl: './medical-records.page.html',
@@ -11,7 +13,8 @@ export class MedicalRecordsPage implements OnInit {
 
   canGoBack: boolean = false;
   constructor(private routerOutlet: IonRouterOutlet, private router:Router,
-    public actionSheetController: ActionSheetController) { }
+    public actionSheetController: ActionSheetController,
+    public popoverController: PopoverController) { }
 
   ngOnInit() {
     this.canGoBack = this.routerOutlet &&
@@ -61,6 +64,24 @@ async presentActionSheet() {
   const { role } = await actionSheet.onDidDismiss();
   console.log('onDidDismiss resolved with role', role);
 }
+
+async presentPopover(ev: any) {
+  const popover = await this.popoverController.create({
+    component: MedicalRecordPopoverComponent,
+    cssClass: 'my-custom-class',
+    event: ev,
+    translucent: true
+  });
+  await popover.present();
+
+  const { role } = await popover.onDidDismiss();
+  console.log('onDidDismiss resolved with role', role);
+}
+viewRecord(){
+ 
+  this.router.navigateByUrl('/view-record');
+}
+
 
 
 }

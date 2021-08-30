@@ -67,8 +67,8 @@ export class AppComponent {
           {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-flask'},
           {title: 'Consultations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-calendar'},
           {title: 'My Doctors', page: 'MyDoctorsPage', url:'my-doctors', icon:'fa fa-user-md'},
-          {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'},
-          {title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'}
+          {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'}
+          //{title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'}
         ];
         this.MenuPages = [
             {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
@@ -97,9 +97,16 @@ export class AppComponent {
       } 
       case 'receptionist': { 
         this.UserPages = [
-          {title: 'Appointments', page: 'ReceptionistAppointmentsPage', url:'receptionist-appointments', icon:'home'},
-          {title: 'Profile', page: 'ReceptionistProfilePage', url:'receptionist-profile', icon:'home'}
+          {title: 'Home', page: 'ReceptionistHomePage', url:'receptionist-home', icon:'fa fa-home'},
+          {title: 'Appointments', page: 'ReceptionistAppointmentsPage', url:'receptionist-appointments', icon:'fa fa-calendar'},
+
         ];
+        this.MenuPages = [
+          {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
+          {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
+          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
+          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
+      ];
          break; 
       } 
    }
@@ -118,5 +125,8 @@ export class AppComponent {
   }
   logout() {
     this.accountService.logout();
+}
+closeSidemenu(){
+  this.menuCtrl.close();
 }
 }

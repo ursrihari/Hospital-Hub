@@ -208,7 +208,19 @@ const routes: Routes = [
   {
     path: 'social-media',
     loadChildren: () => import('./doctor-flow/social-media/social-media.module').then( m => m.SocialMediaPageModule)
+  },  {
+    path: 'receptionist-home',
+    loadChildren: () => import('./receptioist-flow/receptionist-home/receptionist-home.module').then( m => m.ReceptionistHomePageModule)
+  },
+  {
+    path: 'share-record',
+    loadChildren: () => import('./patient-flow/share-record/share-record.module').then( m => m.ShareRecordPageModule)
+  },
+  {
+    path: 'view-record',
+    loadChildren: () => import('./patient-flow/view-record/view-record.module').then( m => m.ViewRecordPageModule)
   }
+
 
 
 ];

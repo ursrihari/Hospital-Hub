@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { MenuController, NavController, Platform } from '@ionic/angular';
-import { AuthService,AccountService } from '@app/services';
+import { AuthService,AccountService } from '@app/_services';
 //import { StatusBar } from '@ionic-native/status-bar/ngx';
 //import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { User } from '@app/model';
+import { User } from '@app/_model';
 
 @Component({
   selector: 'app-root',
@@ -48,6 +48,7 @@ export class AppComponent {
   }
   
   initializeApp(role){
+    
    // this.platform.ready().then(() => {
       //this.statusBar.overlaysWebView(true);
       //this.statusBar.backgroundColorByHexString('#ffffff');

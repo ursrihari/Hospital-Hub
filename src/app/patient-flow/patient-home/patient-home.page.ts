@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { LocationPage } from "../../location/location.page";
+import { LocationPage } from "../location/location.page";
 
 @Component({
   selector: 'app-patient-home',

@@ -23,32 +23,32 @@
             <ion-row class="ion-padding">
                 <ion-col size="2">
                     <ion-item class="otp-pin-input">
-                        <ion-input type="pin" maxlength="1"></ion-input>
+                        <ion-input type="pin" maxlength="1" [(ngModel)]="otp[0]"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col size="2">
                     <ion-item class="otp-pin-input">
-                        <ion-input type="pin" maxlength="1"></ion-input>
+                        <ion-input type="pin" maxlength="1" [(ngModel)]="otp[1]"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col size="2">
                     <ion-item class="otp-pin-input">
-                        <ion-input type="pin" maxlength="1"></ion-input>
+                        <ion-input type="pin" maxlength="1" [(ngModel)]="otp[2]"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col size="2">
                     <ion-item class="otp-pin-input">
-                        <ion-input type="pin" maxlength="1"></ion-input>
+                        <ion-input type="pin" maxlength="1" [(ngModel)]="otp[3]"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col size="2">
                     <ion-item class="otp-pin-input">
-                        <ion-input type="pin" maxlength="1"></ion-input>
+                        <ion-input type="pin" maxlength="1" [(ngModel)]="otp[4]"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col size="2">
                     <ion-item class="otp-pin-input">
-                        <ion-input type="pin" maxlength="1"></ion-input>
+                        <ion-input type="pin" maxlength="1" [(ngModel)]="otp[5]"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
@@ -72,4 +72,8 @@
             </ion-toolbar>
         </ion-footer>
     </div>
+    <ion-button (click)="getHashCode()">getHashCode</ion-button>
+    <div>{{appHashString}}</div>
+    <ion-button (click)="getSMS()">getSMS</ion-button>
+    <ion-button (click)="getCheck()">Check</ion-button>
 </ion-content>

@@ -11,12 +11,12 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./signup/login/login.module').then( m => m.LoginPageModule)
   },
-  {
-    path: 'patient-appointment-booking',
-    loadChildren: () => import('./patient-flow/patient-appointment-booking/patient-appointment-booking.module').then( m => m.PatientAppointmentBookingPageModule)
-  },
+  // {
+  //   path: 'patient-appointment-booking',
+  //   loadChildren: () => import('./patient-flow/patient-appointment-booking/patient-appointment-booking.module').then( m => m.PatientAppointmentBookingPageModule)
+  // },
   {
     path: 'patient-appointments',
     loadChildren: () => import('./patient-flow/patient-appointments/patient-appointments.module').then( m => m.PatientAppointmentsPageModule)
@@ -55,11 +55,11 @@ const routes: Routes = [
   },
   {
     path: 'otp-verification',
-    loadChildren: () => import('./otp-verification/otp-verification.module').then( m => m.OtpVerificationPageModule)
+    loadChildren: () => import('./signup/otp-verification/otp-verification.module').then( m => m.OtpVerificationPageModule)
   },
   {
     path: 'help',
-    loadChildren: () => import('./help/help.module').then( m => m.HelpPageModule)
+    loadChildren: () => import('./patient-flow/help/help.module').then( m => m.HelpPageModule)
   },
   {
     path: 'patient-home',
@@ -71,11 +71,11 @@ const routes: Routes = [
   },
   {
     path: 'country-code-modal',
-    loadChildren: () => import('./modal-pages/country-code-modal/country-code-modal.module').then( m => m.CountryCodeModalPageModule)
+    loadChildren: () => import('./signup/country-code-modal/country-code-modal.module').then( m => m.CountryCodeModalPageModule)
   },
   {
     path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+    loadChildren: () => import('./patient-flow/settings/settings.module').then( m => m.SettingsPageModule)
   },
   {
     path: 'patient-hospitals-list',
@@ -87,19 +87,11 @@ const routes: Routes = [
   },
   {
     path: 'notifications',
-    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
+    loadChildren: () => import('./patient-flow/notifications/notifications.module').then( m => m.NotificationsPageModule)
   },
   {
     path: 'doctor-view',
-    loadChildren: () => import('./doctor-view/doctor-view.module').then( m => m.DoctorViewPageModule)
-  },
-  {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
-  },
-  {
-    path: 'chat-users',
-    loadChildren: () => import('./chat-users/chat-users.module').then( m => m.ChatUsersPageModule)
+    loadChildren: () => import('./patient-flow/doctor-view/doctor-view.module').then( m => m.DoctorViewPageModule)
   },
   {
     path: 'doctor-booking',
@@ -107,7 +99,7 @@ const routes: Routes = [
   },
   {
     path: 'doctor-consult',
-    loadChildren: () => import('./doctor-consult/doctor-consult.module').then( m => m.DoctorConsultPageModule)
+    loadChildren: () => import('./patient-flow/doctor-consult/doctor-consult.module').then( m => m.DoctorConsultPageModule)
   },
   {
     path: 'test-bookings',
@@ -135,66 +127,67 @@ const routes: Routes = [
   },
   {
     path: 'location',
-    loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
+    loadChildren: () => import('./patient-flow/location/location.module').then( m => m.LocationPageModule)
   },
   {
     path: 'explore-plus',
-    loadChildren: () => import('./explore-plus/explore-plus.module').then( m => m.ExplorePlusPageModule)
+    loadChildren: () => import('./patient-flow/explore-plus/explore-plus.module').then( m => m.ExplorePlusPageModule)
   },
   {
     path: 'doctors-speciality',
-    loadChildren: () => import('./doctors-speciality/doctors-speciality.module').then( m => m.DoctorsSpecialityPageModule)
+    loadChildren: () => import('./patient-flow/doctors-speciality/doctors-speciality.module').then( m => m.DoctorsSpecialityPageModule)
   },
   {
     path: 'select-doctor-time-slot',
-    loadChildren: () => import('./select-doctor-time-slot/select-doctor-time-slot.module').then( m => m.SelectDoctorTimeSlotPageModule)
+    loadChildren: () => import('./patient-flow/select-doctor-time-slot/select-doctor-time-slot.module').then( m => m.SelectDoctorTimeSlotPageModule)
   },
   {
     path: 'appointment-booking-conformation',
-    loadChildren: () => import('./appointment-booking-conformation/appointment-booking-conformation.module').then( m => m.AppointmentBookingConformationPageModule)
+    loadChildren: () => import('./patient-flow/appointment-booking-conformation/appointment-booking-conformation.module').then( m => m.AppointmentBookingConformationPageModule)
   },
   {
     path: 'hospital-specialities',
-    loadChildren: () => import('./hospital-specialities/hospital-specialities.module').then( m => m.HospitalSpecialitiesPageModule)
+    loadChildren: () => import('./patient-flow/hospital-specialities/hospital-specialities.module').then( m => m.HospitalSpecialitiesPageModule)
   },
   {
     path: 'enter-delivery-pincode',
-    loadChildren: () => import('./enter-delivery-pincode/enter-delivery-pincode.module').then( m => m.EnterDeliveryPincodePageModule)
+    loadChildren: () => import('./patient-flow/enter-delivery-pincode/enter-delivery-pincode.module').then( m => m.EnterDeliveryPincodePageModule)
   },
   {
     path: 'my-doctors',
-    loadChildren: () => import('./my-doctors/my-doctors.module').then( m => m.MyDoctorsPageModule)
+    loadChildren: () => import('./patient-flow/my-doctors/my-doctors.module').then( m => m.MyDoctorsPageModule)
   },
   {
     path: 'doctor-profile',
-    loadChildren: () => import('./doctor-profile/doctor-profile.module').then( m => m.DoctorProfilePageModule)
+    loadChildren: () => import('./doctor-flow/doctor-profile/doctor-profile.module').then( m => m.DoctorProfilePageModule)
   },
   {
     path: 'upload-record',
-    loadChildren: () => import('./upload-record/upload-record.module').then( m => m.UploadRecordPageModule)
+    loadChildren: () => import('./patient-flow/upload-record/upload-record.module').then( m => m.UploadRecordPageModule)
   },
   {
     path: 'health-checkup',
-    loadChildren: () => import('./health-checkup/health-checkup.module').then( m => m.HealthCheckupPageModule)
+    loadChildren: () => import('./patient-flow/health-checkup/health-checkup.module').then( m => m.HealthCheckupPageModule)
   },
   {
     path: 'read-about-health',
-    loadChildren: () => import('./read-about-health/read-about-health.module').then( m => m.ReadAboutHealthPageModule)
+    loadChildren: () => import('./patient-flow/read-about-health/read-about-health.module').then( m => m.ReadAboutHealthPageModule)
   },
   {
     path: 'help-center',
-    loadChildren: () => import('./help-center/help-center.module').then( m => m.HelpCenterPageModule)
-  },  {
+    loadChildren: () => import('./patient-flow/help-center/help-center.module').then( m => m.HelpCenterPageModule)
+  },
+  {
     path: 'appointment-help',
-    loadChildren: () => import('./appointment-help/appointment-help.module').then( m => m.AppointmentHelpPageModule)
+    loadChildren: () => import('./patient-flow/appointment-help/appointment-help.module').then( m => m.AppointmentHelpPageModule)
   },
   {
     path: 'appointment-cancel',
-    loadChildren: () => import('./appointment-cancel/appointment-cancel.module').then( m => m.AppointmentCancelPageModule)
+    loadChildren: () => import('./patient-flow/appointment-cancel/appointment-cancel.module').then( m => m.AppointmentCancelPageModule)
   },
   {
     path: 'hospital',
-    loadChildren: () => import('./hospital/hospital.module').then( m => m.HospitalPageModule)
+    loadChildren: () => import('./patient-flow/hospital/hospital.module').then( m => m.HospitalPageModule)
   }
 
 ];

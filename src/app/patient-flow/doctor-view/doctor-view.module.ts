@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DoctorViewPageRoutingModule } from './doctor-view-routing.module';
 
 import { DoctorViewPage } from './doctor-view.page';
-import { RatingModule } from '../components/rating/rating.module';
+import { RatingModule } from '../../components/rating/rating.module';
 
 @NgModule({
   imports: [

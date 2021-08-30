@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../model/User';
+import { User } from '../_model/User';
 import { tap } from 'rxjs/operators';
 import { HttpClient,HttpHeaders  } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -22,6 +22,7 @@ export class AuthService {
     let params={
       phoneno: mobile
     }
+    ////this.http.post<User>(`${environment.apiUrl}/user/otp-login.php`, params, { headers: headers }
       return this.http.post<User>(`${environment.apiUrl}/send-sms/phpsendsms.php?phoneno=${mobile}`, { headers: headers })
           .pipe(map(user => {
               // user['role'] = 0;
@@ -98,5 +99,16 @@ export class AuthService {
   }
   isReceptionist(){
    // return this.currentUser.role == 2;
+  }
+  public isApp(): boolean {
+    return (
+      document.URL.indexOf('http://localhost') === 0 || 
+      document.URL.indexOf('ionic') === 0 || 
+      document.URL.indexOf('https://localhost') === 0
+    );
+  }
+
+  public isBrowser(): boolean {
+    return !this.isApp();
   }
 }

@@ -73,18 +73,25 @@ export class AuthService {
     }
     return this.userSubject.asObservable();
   }
-  setUser(){
-   let user = {};
-   user['name']='';
-   user['mobile']='1111111111';
-   user['role']='0';
-   user['id']='';
-   user['username']='';
-   user['password']='';
-   user['firstName']='';
-   user['lastName']='';
-   user['token']='';
-   
+  setUser(mobile){
+    let user = {};
+    user['name']='';
+    user['id']='';
+    user['username']='';
+    user['password']='';
+    user['firstName']='';
+    user['lastName']='';
+    user['token']='';
+    if(mobile=='1111111111'){
+      user['mobile']='1111111111';
+      user['role']='0';
+    }else if(mobile=='2222222222'){
+      user['mobile']='2222222222';
+      user['role']='1';
+    }else if(mobile=='3333333333'){
+      user['mobile']='333333333';
+      user['role']='2';
+    }
     // store user details and jwt token in local storage to keep user logged in between page refreshes
     localStorage.setItem('user', JSON.stringify(user));
     this.userSubject.next(user);

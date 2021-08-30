@@ -188,7 +188,28 @@ const routes: Routes = [
   {
     path: 'hospital',
     loadChildren: () => import('./patient-flow/hospital/hospital.module').then( m => m.HospitalPageModule)
+  },
+  {
+    path: 'doctor-home',
+    loadChildren: () => import('./doctor-flow/doctor-home/doctor-home.module').then( m => m.DoctorHomePageModule)
+  },
+  {
+    path: 'my-patients',
+    loadChildren: () => import('./doctor-flow/my-patients/my-patients.module').then( m => m.MyPatientsPageModule)
+  },
+  {
+    path: 'schedule-timings',
+    loadChildren: () => import('./doctor-flow/schedule-timings/schedule-timings.module').then( m => m.ScheduleTimingsPageModule)
+  },
+  {
+    path: 'reviews',
+    loadChildren: () => import('./doctor-flow/reviews/reviews.module').then( m => m.ReviewsPageModule)
+  },
+  {
+    path: 'social-media',
+    loadChildren: () => import('./doctor-flow/social-media/social-media.module').then( m => m.SocialMediaPageModule)
   }
+
 
 ];
 

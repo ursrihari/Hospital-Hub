@@ -13,7 +13,7 @@ import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
   styleUrls: ['./otp-verification.page.scss'],
 })
 export class OtpVerificationPage implements OnInit {
-    mobile:number;
+    mobile:any;
     otp:any = [];
     otpCounter=0;
     public smsTextmessage: string = '';
@@ -38,10 +38,17 @@ export class OtpVerificationPage implements OnInit {
     }
   }
   verifyOtp(){
-    this.authService.setUser();
+    this.authService.setUser(this.mobile);
     console.log(this.route.snapshot.paramMap.get('mobile'));
     //this.router.navigateByUrl('/patient-home');
-    this.navCtrl.navigateRoot('patient-home');
+    if(this.mobile == '1111111111'){
+      this.navCtrl.navigateRoot('patient-home');
+    }else if(this.mobile == '2222222222'){
+      this.navCtrl.navigateRoot('doctor-home');
+    }else if(this.mobile == '3333333333'){
+      this.navCtrl.navigateRoot('receptionist-home');
+    }
+    
     // this.authService.verifyOtp(this.mobile,this.otp)
     //         .pipe(first())
     //         .subscribe({

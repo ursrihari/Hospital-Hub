@@ -29,8 +29,6 @@ export class AppComponent {
 
       this.authService.getUser().subscribe(user=> {
         console.log(user);
-        //user = {name: "", mobile: 2222222222, role: 1};
-
         if(user){
           if(user.role == 0){
             this.initializeApp('patient');
@@ -82,9 +80,19 @@ export class AppComponent {
       } 
       case 'doctor': { 
         this.UserPages = [
-          {title: 'Appointments', page: 'DoctorAppointmentsPage', url:'doctor-appointments', icon:'home'},
-          {title: 'Profile', page: 'DoctorProfilePage', url:'doctor-profile', icon:'home'}
+          {title: 'Home', page: 'DoctorHomePage', url:'doctor-home', icon:'fa fa-home'},
+          {title: 'Appointments', page: 'DoctorAppointmentsPage', url:'doctor-appointments', icon:'fa fa-calendar'},
+          {title: 'My Patients', page: 'MyPatientsPage', url:'my-patients', icon:'fa fa-user-md'},
+          {title: 'Schedule Timings', page: 'ScheduleTimingsPage', url:'schedule-timings', icon:'fa fa-hourglass-half'},
+          {title: 'Reviews', page: 'ReviewsPage', url:'reviews', icon:'fa fa-star'},
+          {title: 'Social Media', page: 'SocialMediaPage', url:'social-media', icon:'fa fa-share-square'}
         ];
+        this.MenuPages = [
+          {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
+          {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
+          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
+          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
+      ];
          break; 
       } 
       case 'receptionist': { 

@@ -26,7 +26,7 @@ export class OtpVerificationPage implements OnInit {
     private smsRetriever: SmsRetriever) { }
 
   ngOnInit() {
-    this.mobile = parseInt(this.route.snapshot.paramMap.get('mobile'),10);
+    this.mobile = this.route.snapshot.paramMap.get('mobile');
     console.log(this.mobile);
     this.otp=[];
 // this.getHashCode();
@@ -38,38 +38,38 @@ export class OtpVerificationPage implements OnInit {
     }
   }
   verifyOtp(){
-    this.authService.setUser(this.mobile);
-    console.log(this.route.snapshot.paramMap.get('mobile'));
-    //this.router.navigateByUrl('/patient-home');
-    if(this.mobile == '1111111111'){
-      this.navCtrl.navigateRoot('patient-home');
-    }else if(this.mobile == '2222222222'){
-      this.navCtrl.navigateRoot('doctor-home');
-    }else if(this.mobile == '3333333333'){
-      this.navCtrl.navigateRoot('receptionist-home');
+    if(this.mobile == '1111111111' || this.mobile == '2222222222' || this.mobile == '3333333333'){
+      if(this.mobile == '1111111111'){
+        this.navCtrl.navigateRoot('patient-home');
+      }else if(this.mobile == '2222222222'){
+        this.navCtrl.navigateRoot('doctor-home');
+      }else if(this.mobile == '3333333333'){
+        this.navCtrl.navigateRoot('receptionist-home');
+      }
+    }else{
+      let params= {
+        phoneno: this.mobile,
+        otp: this.convertArrayToNumber(this.otp)
+      }
+      this.authService.verifyOtp(params)
+      .subscribe( data=>{
+            console.log(data);
+            localStorage.setItem('user', JSON.stringify(data));
+            //this.authService.setUser(this.mobile);
+              if(data){
+                if(data.role == 4){
+                  this.router.navigateByUrl('/patient-home');
+              }else if(data.role == 1){
+                this.router.navigateByUrl('/doctor-appointments');
+              }else if(data.role == 2){
+                this.router.navigateByUrl('/receptionist-appointments');
+              }
+            }
+      });
     }
-    
-    // this.authService.verifyOtp(this.mobile,this.otp)
-    //         .pipe(first())
-    //         .subscribe({
-    //             next: (user) => {
-    //               console.log(user);
-    //                 if(user){
-    //                   if(user.role == 0){
-    //                     this.router.navigateByUrl('/patient-home');
-    //                 }else if(user.role == 1){
-    //                   this.router.navigateByUrl('/doctor-appointments');
-    //                 }else if(user.role == 2){
-    //                   this.router.navigateByUrl('/receptionist-appointments');
-    //                 }
-    //               }
-    //             },
-    //             error: error => {
-    //                // this.alertService.error(error);
-    //                 //this.loading = false;
-    //             }
-    //         });
-
+    // this.authService.setUser(this.mobile);
+    // console.log(this.route.snapshot.paramMap.get('mobile'));
+    // //this.router.navigateByUrl('/patient-home');
     //   this.authService.verifyOtp(this.mobile,this.otp).subscribe(user=> {
     //     console.log(user);
     //   if(user){
@@ -128,4 +128,12 @@ export class OtpVerificationPage implements OnInit {
        
      }
   }
+  convertArrayToNumber(arr) {
+    let result = ""
+    for (var el of arr) {
+        result += el
+    }
+    return result
+}
+
 }

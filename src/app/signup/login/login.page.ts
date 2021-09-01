@@ -12,7 +12,7 @@ import { PhoneNumberValidatorService } from '../../_services/phone-number-valida
 //import { Globalization } from '@ionic-native/globalization/ngx';
 import { Sim } from '@ionic-native/sim/ngx';
 import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
-
+import { LoaderService  } from '@app/_services';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -25,6 +25,7 @@ export class LoginPage implements OnInit {
     iso_code:'',
     name:''
   }
+  countries;
   numberValidators:any={
     disableButton: true,
     validNumber: true
@@ -34,34 +35,34 @@ export class LoginPage implements OnInit {
     initialSlide: 1,
     speed: 400
   };
-  radio_list = [
-    {
-      id: '1',
-      name: '+965 Kuwait',
-      value: '965',
-      iso_code: 'KW'
-    }, {
-      id: '2',
-      name: '+91 India',
-      value: '91',
-      iso_code: 'IN'
-    }, {
-      id: '3',
-      name: '+966 Saudi Arabia',
-      value: '966',
-      iso_code: 'SA'
-    }, {
-      id: '4',
-      name: '+967 Yemen',
-      value: '967',
-      iso_code: 'YE'
-    }, {
-      id: '5',
-      name: '+968 Oman',
-      value: '968',
-      iso_code: 'OM'
-    }
-  ];
+  // radio_list = [
+  //   {
+  //     id: '1',
+  //     name: '+965 Kuwait',
+  //     value: '965',
+  //     iso_code: 'KW'
+  //   }, {
+  //     id: '2',
+  //     name: '+91 India',
+  //     value: '91',
+  //     iso_code: 'IN'
+  //   }, {
+  //     id: '3',
+  //     name: '+966 Saudi Arabia',
+  //     value: '966',
+  //     iso_code: 'SA'
+  //   }, {
+  //     id: '4',
+  //     name: '+967 Yemen',
+  //     value: '967',
+  //     iso_code: 'YE'
+  //   }, {
+  //     id: '5',
+  //     name: '+968 Oman',
+  //     value: '968',
+  //     iso_code: 'OM'
+  //   }
+  // ];
   constructor(private navCtrl: NavController, 
     private authService: AuthService,
     private router:Router,
@@ -71,7 +72,8 @@ export class LoginPage implements OnInit {
     private phoneNumberValidator:PhoneNumberValidatorService,
     private menuCtrl:MenuController,
     private sim: Sim,
-    private smsRetriever: SmsRetriever
+    private smsRetriever: SmsRetriever,
+    private loader:LoaderService
   //  private globalization:Globalization
     ) { }
 
@@ -79,11 +81,12 @@ export class LoginPage implements OnInit {
     // this.globalization.getPreferredLanguage()
     // .then(res => console.log(res))
     // .catch(e => console.log(e));
-    this.getCountryDetails();
-    this.getHashCode();
+    //this.getCountryDetails();
+    //this.getHashCode();
   }
   ionViewWillEnter() {
     this.menuCtrl.enable(false);
+    //this.getCountries();
   }
   
   async presentLoading() {
@@ -97,22 +100,30 @@ export class LoginPage implements OnInit {
     const { role, data } = await loading.onDidDismiss();
     console.log('Loading dismissed!');
   }
-
+  getCountries(){
+    this.loader.show();
+    this.authService.getCountries().subscribe( data=>{
+      this.loader.hide();
+      console.log(data);
+      this.countries = data;
+    });
+  }
   loginUser(){
+    if(this.country.mobile_number == "1111111111" || this.country.mobile_number == "2222222222" || this.country.mobile_number == "3333333333"){
+      this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
+    }else{
+      let params= {
+        phoneno: Number(this.country.country_code)+this.country.mobile_number,
+        hashCode: "//gtjDse+ce"
+      }
+      this.authService.login(params).subscribe( data=>{
+        console.log(data);
+        this.router.navigate(['/otp-verification', {mobile:this.country.country_code+this.country.mobile_number}]);
+      });
+    }
+    
 
-    // this.authService.login(this.country.country_code+this.country.mobile_number)
-    //               .pipe(first())
-    //               .subscribe({
-    //                   next: () => {
-    //                       this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
-    //                   },
-    //                   error: error => {
-    //                      // this.alertService.error(error);
-    //                       //this.loading = false;
-    //                   }
-    //               });
-
-    this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
+    //this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
     //console.log(this.authService.isApp());
     // if(this.authService.isApp()){
     //   this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
@@ -171,7 +182,7 @@ export class LoginPage implements OnInit {
     this.sim.getSimInfo().then(
   (info) => {
    this.country.mobile_number=info.phoneNumber;
-   this.radio_list.filter(obj =>{ 
+   this.countries.filter(obj =>{ 
      if(obj.iso_code.toLowerCase() == info.countryCode.toLowerCase()){
       console.log(JSON.stringify(obj));
       this.country.country_code=obj.value;

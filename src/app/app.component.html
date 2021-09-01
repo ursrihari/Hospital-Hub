@@ -3,7 +3,7 @@
         <ion-menu contentId="main-content" type="overlay">
             <ion-content class="menu-content">
                 <!-- Patient Login -->
-                <div *ngIf="user_role==0" [routerLink]="['/patient-profile']" (click)="closeSidemenu()">
+                <div *ngIf="user_role==4" [routerLink]="['/patient-profile']" (click)="closeSidemenu()">
                     <div class="header-content">
                         <img src="../assets/patient/1.jfif">
                         <ion-label>
@@ -62,16 +62,15 @@
                     </ion-menu-toggle>
                 </ion-list>
 
-                <ion-list lines="none" class="side-menu-list menu-items">
+                <!-- <ion-list lines="none" class="side-menu-list menu-items">
                     <ion-menu-toggle auto-hide="false">
-                        <ion-item color="#f5f5f3" *ngFor="let page of MenuPages; let i = index" (click)="activeIndex = i" routerDirection="root" (click)="openMenuPage(page.url)" lines="none" detail="false" [class.selected]="activeIndex == i"> <!-- [routerLink]="[page.url]"-->
-                            <!-- <ion-icon class="sidemenu-icon" slot="start" color="primary" [name]="page.icon"></ion-icon> -->
+                        <ion-item color="#f5f5f3" *ngFor="let page of MenuPages; let i = index" (click)="activeIndex = i" routerDirection="root" (click)="openMenuPage(page.url)" lines="none" detail="false" [class.selected]="activeIndex == i">
                             <i [class]="page.icon" class="m-0 mr-3"></i>
                             <ion-label class="m-0">{{ page.title }}</ion-label>
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </ion-item>
                     </ion-menu-toggle>
-                </ion-list>
+                </ion-list> -->
             </ion-content>
             <!-- <ion-footer color="primary" class="sidemenu-footer">
                 <p>Version 1.0.0</p>

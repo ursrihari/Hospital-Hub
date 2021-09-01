@@ -1,5 +1,7 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
+import { AuthService } from '@app/_services';
 import { ModalController,NavParams } from '@ionic/angular';
+import { LoaderService } from '@app/_services';
 
 @Component({
   selector: 'app-country-code-modal',
@@ -8,8 +10,11 @@ import { ModalController,NavParams } from '@ionic/angular';
 })
 export class CountryCodeModalPage implements OnInit {
   countryCode:string;
-  
-  constructor(private modalController:ModalController, private navParams: NavParams) { }
+  countries=[];
+  constructor(private modalController:ModalController, 
+    private navParams: NavParams, 
+    private loader:LoaderService,
+    private authService:AuthService) { }
   public value = this.navParams.get('value');
   selectedRadioGroup:any;
   selectedRadioItem:any;
@@ -42,8 +47,18 @@ export class CountryCodeModalPage implements OnInit {
       iso_code: 'OM'
     }
   ];
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCountries();
+  }
   
+  getCountries(){
+    this.loader.show();
+    this.authService.getCountries().subscribe( data=>{
+      this.loader.hide();
+      console.log(data);
+      this.countries = data;
+    });
+  }
   radioGroupChange(event) {
     this.selectedRadioGroup = event.detail;
     console.log(event);
@@ -57,13 +72,14 @@ export class CountryCodeModalPage implements OnInit {
 
   
   closeModal(){
-      let selectedCountry:object = this.radio_list.find(x => x.value == this.countryCode);
-      if(selectedCountry && selectedCountry.hasOwnProperty('value')){
+      let selectedCountry:object = this.countries.find(x => x.dial_code == this.countryCode);
+      console.log(selectedCountry);
+      if(selectedCountry && selectedCountry.hasOwnProperty('dial_code')){
         this.modalController.dismiss({
           'dismissed': true,
           value: {
-            country_code: selectedCountry['value'],
-            iso_code: selectedCountry['iso_code'],
+            country_code: selectedCountry['dial_code'],
+            iso_code: selectedCountry['code'],
             name: selectedCountry['name']
           }
         });

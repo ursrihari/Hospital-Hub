@@ -25,14 +25,14 @@ export class AppComponent {
      //private splashScreen: SplashScreen
     ){
 
-      this.accountService.user.subscribe(x => this.user = x);
+      //this.accountService.user.subscribe(x => this.user = x);
 
-      this.authService.getUser().subscribe(user=> {
+      this.accountService.getUser().subscribe(user=> {
         console.log(user);
         if(user){
-          if(user.role == 0){
+          if(user.role == 4){
             this.initializeApp('patient');
-            this.user_role = 0;
+            this.user_role = 4;
           }else if(user.role == 1){
             this.initializeApp('doctor');
             this.user_role = 1;
@@ -67,15 +67,19 @@ export class AppComponent {
           {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-flask'},
           {title: 'Consultations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-calendar'},
           {title: 'My Doctors', page: 'MyDoctorsPage', url:'my-doctors', icon:'fa fa-user-md'},
-          {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'}
-          //{title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'}
+          {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'},
+          //{title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'},
+          {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
+          {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
+          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
+          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
         ];
-        this.MenuPages = [
-            {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
-            {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
-            {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
-            {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
-        ];
+        // this.MenuPages = [
+        //     {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
+        //     {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
+        //     {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
+        //     {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
+        // ];
          break; 
       } 
       case 'doctor': { 

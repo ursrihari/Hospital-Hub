@@ -9,9 +9,9 @@
 <ion-content>
     <ion-list>
         <ion-radio-group ngDefaultControl [(ngModel)]="countryCode" (ionChange)="radioGroupChange($event)">
-            <ion-item *ngFor="let item of radio_list" (ionSelect)="radioSelect($event)">
-                <ion-label>{{item.name}}</ion-label>
-                <ion-radio slot="end" name="{{item.name}}" value="{{item.value}}"></ion-radio>
+            <ion-item *ngFor="let country of countries" (ionSelect)="radioSelect($event)">
+                <ion-label>{{country.dial_code}} {{country.name}}</ion-label>
+                <ion-radio slot="end" name="{{country.name}}" value="{{country.dial_code}}"></ion-radio>
             </ion-item>
         </ion-radio-group>
     </ion-list>

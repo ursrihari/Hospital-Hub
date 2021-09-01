@@ -1,83 +1,106 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { environment } from '@environments/environment';
 import { User } from '@app/_model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-    private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
+    headers = new HttpHeaders();
+    private userSubject: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private router: Router,
     private http: HttpClient) {
-        //console.log(localStorage.getItem('user'));
-      this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
-        this.user = this.userSubject.asObservable();
-     }
+        this.headers.set('Access-Control-Allow-Origin', '*');
+    }
 
-     public get userValue(): User {
-      return this.userSubject.value;
-  }
-
-  login(username, password) {
-      return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
-          .pipe(map(user => {
-              // store user details and jwt token in local storage to keep user logged in between page refreshes
-              localStorage.setItem('user', JSON.stringify(user));
-              this.userSubject.next(user);
-              return user;
-          }));
-  }
-
-  logout() {
-      // remove user from local storage and set current user to null
-      localStorage.removeItem('user');
-      this.userSubject.next(null);
-      this.router.navigate(['/account/login']);
-  }
-
-  register(user: User) {
-      return this.http.post(`${environment.apiUrl}/users/register`, user);
-  }
-
-  getAll() {
-      return this.http.get<User[]>(`${environment.apiUrl}/users`);
-  }
-
-  getById(id: string) {
-      return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
-  }
-
-  update(id, params) {
-      return this.http.put(`${environment.apiUrl}/users/${id}`, params)
-          .pipe(map(x => {
-              // update stored user if the logged in user updated their own record
-              if (id == this.userValue.id) {
-                  // update local storage
-                  const user = { ...this.userValue, ...params };
-                  localStorage.setItem('user', JSON.stringify(user));
-
-                  // publish updated user to subscribers
-                  this.userSubject.next(user);
-              }
-              return x;
-          }));
-  }
-
-  delete(id: string) {
-      return this.http.delete(`${environment.apiUrl}/users/${id}`)
-          .pipe(map(x => {
-              // auto logout if the logged in user deleted their own record
-              if (id == this.userValue.id) {
-                  this.logout();
-              }
-              return x;
-          }));
-  }
+    postdata(params:object,url:string){ return this.http.post<any>(url, params, { headers: this.headers }).pipe(map(data => {return data}))}
+    getdata(url:string){return this.http.post<any>(url, { headers: this.headers }).pipe(map(data => {return data}))}
+    
+    
+    verifyOtp(params:object,url:string){
+        return this.http.post<any>(url, params, { headers: this.headers })
+            .pipe(map(user => {
+                console.log(user);  
+                localStorage.setItem('user', JSON.stringify(user));
+                this.userSubject.next(user);
+                return user;
+            }));    
+    }
+    isLoggedIn(){ return this.userSubject !=null; }
+    logout(){
+        localStorage.setItem('user',JSON.stringify({
+        name:'',
+        mobile:'',
+        role: '4',
+        id: '',
+        username: '',
+        password: '',
+        firstName: '',
+        lastName: '',
+        token: ''
+        }));
+    }
+    getUser() {
+        if(localStorage.getItem('user')!=''){
+        let user_data = JSON.parse(localStorage.getItem('user'));
+        //console.log(user_data);
+        this.userSubject.next(user_data);
+        }else{
+        this.userSubject.next('');
+        }
+        return this.userSubject.asObservable();
+    }
+    setUser(mobile){
+        let user = {};
+        user['name']='';
+        user['id']='';
+        user['username']='';
+        user['password']='';
+        user['firstName']='';
+        user['lastName']='';
+        user['token']='';
+        if(mobile=='1111111111'){
+        user['mobile']='1111111111';
+        user['role']='0';
+        }else if(mobile=='2222222222'){
+        user['mobile']='2222222222';
+        user['role']='1';
+        }else if(mobile=='3333333333'){
+        user['mobile']='333333333';
+        user['role']='2';
+        }
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        localStorage.setItem('user', JSON.stringify(user));
+        this.userSubject.next(user);
+    }
+    isPatient(){
+        
+        //return this.currentUser.role == 0;
+        //return 
+    }
+    isDoctor(){
+        //return this.currentUser.role == 1;
+    }
+    isReceptionist(){
+        // return this.currentUser.role == 2;
+    }
+    public isApp(): boolean {
+        return (
+        document.URL.indexOf('http://localhost') === 0 || 
+        document.URL.indexOf('ionic') === 0 || 
+        document.URL.indexOf('https://localhost') === 0
+        );
+    }
+    
+    public isBrowser(): boolean {
+        return !this.isApp();
+    }
+    public get userValue(): User {
+        return this.userSubject.value;
+    }
 }

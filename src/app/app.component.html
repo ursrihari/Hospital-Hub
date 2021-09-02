@@ -17,7 +17,7 @@
                 </div>
                 <!-- Patient Login -->
                 <!-- Doctor Login -->
-                <div *ngIf="user_role==1" [routerLink]="['/doctor-profile']" (click)="closeSidemenu()">
+                <div *ngIf="user_role==3" [routerLink]="['/doctor-profile']" (click)="closeSidemenu()">
                     <div class="header-content">
                         <img src="../assets/images/doctors/img6.jpg">
                         <ion-label>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <!-- Receptionist Login -->
-                <div *ngIf="user_role==2" [routerLink]="['/receptionist-profile']" (click)="closeSidemenu()">
+                <div *ngIf="user_role==5" [routerLink]="['/receptionist-profile']" (click)="closeSidemenu()">
                     <div class="header-content">
                         <img src="https://www.moh.gov.bh/Content/Upload/Image/637526916400505076-dr-fatima-al-owanati.jpg">
                         <ion-label>

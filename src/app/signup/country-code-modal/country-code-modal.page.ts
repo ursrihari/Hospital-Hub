@@ -1,7 +1,7 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
-import { AuthService } from '@app/_services';
 import { ModalController,NavParams } from '@ionic/angular';
-import { LoaderService } from '@app/_services';
+import { AccountService, AuthService, CachingService,LoaderService } from '@app/_services';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-country-code-modal',
@@ -14,6 +14,8 @@ export class CountryCodeModalPage implements OnInit {
   constructor(private modalController:ModalController, 
     private navParams: NavParams, 
     private loader:LoaderService,
+    private cachingService: CachingService,
+    private accountService:AccountService,
     private authService:AuthService) { }
   public value = this.navParams.get('value');
   selectedRadioGroup:any;
@@ -48,15 +50,19 @@ export class CountryCodeModalPage implements OnInit {
     }
   ];
   ngOnInit() {
-    this.getCountries();
+    this.getCountries(false);
   }
   
-  getCountries(){
-    this.loader.show();
-    this.authService.getCountries().subscribe( data=>{
-      this.loader.hide();
+  getCountries(forceRefresh){
+    //this.loader.show();
+    this.authService.getCountries(forceRefresh).subscribe( data=>{
       console.log(data);
       this.countries = data;
+      // let self = this;
+      // setTimeout(function(){
+      //   self.loader.hide();
+      // },1000);
+      
     });
   }
   radioGroupChange(event) {
@@ -93,7 +99,23 @@ export class CountryCodeModalPage implements OnInit {
           }
         });
       }
-      
+  }
+ 
+  async refreshData(event?) {
+    const refresh = event ? true : false;
+    this.authService.getCountries(false).pipe(
+      finalize(() => {        
+        if (event) {
+          event.target.complete();
+        }
+        let self = this;
+      })
+    ).subscribe(res => {      
+      this.countries = res;
+    })
+  }
+  async clearCache() {
+    this.cachingService.clearCachedData();
   }
 
 }

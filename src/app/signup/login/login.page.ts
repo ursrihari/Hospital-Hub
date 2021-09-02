@@ -86,7 +86,7 @@ export class LoginPage implements OnInit {
   }
   ionViewWillEnter() {
     this.menuCtrl.enable(false);
-    //this.getCountries();
+    //this.getCountries(true);
   }
   
   async presentLoading() {
@@ -100,9 +100,9 @@ export class LoginPage implements OnInit {
     const { role, data } = await loading.onDidDismiss();
     console.log('Loading dismissed!');
   }
-  getCountries(){
+  getCountries(forceRefresh){
     this.loader.show();
-    this.authService.getCountries().subscribe( data=>{
+    this.authService.getCountries(forceRefresh).subscribe( data=>{
       this.loader.hide();
       console.log(data);
       this.countries = data;

@@ -4,6 +4,8 @@ import { AuthService,AccountService } from '@app/_services';
 //import { StatusBar } from '@ionic-native/status-bar/ngx';
 //import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { User } from '@app/_model';
+import { CachingService } from './_services/caching.service';
+
 
 @Component({
   selector: 'app-root',
@@ -20,25 +22,26 @@ export class AppComponent {
     private menuCtrl:MenuController,
     private navCtrl: NavController,
     private accountService: AccountService,
-     private platform: Platform
+     private platform: Platform,
     //private statusBar: StatusBar,
-     //private splashScreen: SplashScreen
+     //private splashScreen: SplashScreen,
+     private cachingService: CachingService
     ){
 
       //this.accountService.user.subscribe(x => this.user = x);
-
+      this.cachingService.initStorage();
       this.accountService.getUser().subscribe(user=> {
         console.log(user);
         if(user){
           if(user.role == 4){
             this.initializeApp('patient');
             this.user_role = 4;
-          }else if(user.role == 1){
+          }else if(user.role == 3){
             this.initializeApp('doctor');
-            this.user_role = 1;
-          }else if(user.role == 2){
+            this.user_role = 3;
+          }else if(user.role == 5){
             this.initializeApp('receptionist');
-            this.user_role = 2;
+            this.user_role = 5;
           }
           this.menuCtrl.enable(true);
         }

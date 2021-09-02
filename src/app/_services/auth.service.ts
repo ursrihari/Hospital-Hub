@@ -10,8 +10,8 @@ export class AuthService {
   //`${environment.apiUrl}/send-sms/phpsendsms.php?phoneno=${mobile}
   //this.http.post<User>(`${environment.apiUrl}/user/otp-login.php`, params, { headers: headers }
   
-  getCountries(){
-    return this.accountService.getdata(`${environment.apiUrl}/countries.json`);
+  getCountries(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/countries.json`,forceRefresh);
   }
   login(params:object){
     return this.accountService.postdata(params,`${environment.apiUrl}/user/otp-login.php`);

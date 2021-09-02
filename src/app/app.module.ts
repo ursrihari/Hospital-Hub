@@ -9,13 +9,25 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from '@app/_services';
 import { JwtInterceptor, ErrorInterceptor } from '@app/_helpers';
 
+
+import { IonicStorageModule } from '@ionic/storage-angular';
+import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+import { Drivers } from '@ionic/storage';
+
 //plugins
 //import { Globalization } from '@ionic-native/globalization/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, 
+    HttpClientModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    IonicStorageModule.forRoot({
+      driverOrder: [CordovaSQLiteDriver._driver, Drivers.IndexedDB]
+    })
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

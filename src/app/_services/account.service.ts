@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable,from, of } from 'rxjs';
+import { map, switchMap, delay, tap } from 'rxjs/operators';
 import { User } from '@app/_model';
+import { CachingService } from './caching.service';
+import { ToastController } from '@ionic/angular';
+import { Network } from '@capacitor/network';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +15,12 @@ export class AccountService {
     public user: Observable<User>;
     headers = new HttpHeaders();
     private userSubject: BehaviorSubject<any> = new BehaviorSubject(null);
-
+    connected = true;
   constructor(private router: Router,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private cachingService: CachingService,
+    private toastController: ToastController
+    ) {
         this.headers.set('Access-Control-Allow-Origin', '*');
         this.headers.set('Content-Type', 'application/json');
         //this.headers.set('Access-Control-Allow-Origin', 'http://192.168.5.114:8100');
@@ -22,11 +28,134 @@ export class AccountService {
         //this.headers.set('Access-Control-Allow-Credentials', 'true');
         //this.headers.set('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
         //this.headers.set('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
+        Network.addListener('networkStatusChange', async status => {
+            this.connected = status.connected;
+          });
+          // Can be removed once #17450 is resolved: https://github.com/ionic-team/ionic/issues/17450
+    this.toastController.create({ animated: false }).then(t => { t.present(); t.dismiss(); });
     }
 
-    postdata(params:object,url:string){ return this.http.post<any>(url, params, { headers: this.headers }).pipe(map(data => {return data}))}
-    getdata(url:string){return this.http.post<any>(url, { headers: this.headers }).pipe(map(data => {return data}))}
-    
+    postdata(params:object,url:string){ 
+        return this.http.post<any>(url, params, { headers: this.headers })
+        .pipe(map(data => {
+            this.cachingService.cacheRequest(url, data);
+            return data;
+        }));
+    }
+    getdata(url, forceRefresh = false){
+        // Handle offline case
+    if (!this.connected) {
+        this.toastController.create({
+          message: 'You are viewing offline data.',
+          duration: 2000
+        }).then(toast => {
+          toast.present();
+        });
+        return from(this.cachingService.getCachedRequest(url));
+      }
+      // Handle connected case
+    if (forceRefresh) {
+        // Make a new API call
+        //return this.callAndCache(url);
+        return this.http.get<any>(url, { headers: this.headers })
+        .pipe(
+         tap(data => {
+             // Store our new data
+            this.cachingService.cacheRequest(url, data);
+            return data;
+        }));
+      } else {
+        // Check if we have cached data
+        const storedValue = from(this.cachingService.getCachedRequest(url));
+        return storedValue.pipe(
+          switchMap(result => {
+            if (!result) {
+              // Perform a new request since we have no data
+              //return this.callAndCache(url);
+              return this.http.get<any>(url, { headers: this.headers })
+                .pipe(
+                tap(data => {
+                    // Store our new data
+                    this.cachingService.cacheRequest(url, data);
+                    return data;
+                }));
+
+            } else {
+              // Return cached data
+              return of(result);
+            }
+          })
+        );
+      }
+
+        // return this.http.get<any>(url, { headers: this.headers })
+        // .pipe(
+        //  delay(2000), // Only for testing!
+        //  tap(data => {
+        //     this.cachingService.cacheRequest(url, data);
+        //     return data;
+        // }));
+    }
+
+    // Standard API Functions
+ 
+//   getUsers(forceRefresh: boolean) {
+//     const url = 'https://roadcreations.com/hospitalhub-kuwait/api/countries.json';
+//     return this.getData(url, forceRefresh).pipe(
+//       map(res => res['results'])
+//     );
+//   }
+ 
+//   getChuckJoke(forceRefresh: boolean) {
+//     const url = 'https://roadcreations.com/hospitalhub-kuwait/api/countries.json';
+//     return this.getData(url, forceRefresh);
+//   }
+ 
+  // Caching Functions
+ 
+//   private getData(url, forceRefresh = false): Observable<any> {
+//     // console.log();
+//     // // Handle offline case
+//     // if (!this.connected) {
+//     //   this.toastController.create({
+//     //     message: 'You are viewing offline data.',
+//     //     duration: 2000
+//     //   }).then(toast => {
+//     //     toast.present();
+//     //   });
+//     //   return from(this.cachingService.getCachedRequest(url));
+//     // }
+ 
+//     // // Handle connected case
+//     // if (forceRefresh) {
+//     //   // Make a new API call
+//     //   return this.callAndCache(url);
+//     // } else {
+//     //   // Check if we have cached data
+//     //   const storedValue = from(this.cachingService.getCachedRequest(url));
+//     //   return storedValue.pipe(
+//     //     switchMap(result => {
+//     //       if (!result) {
+//     //         // Perform a new request since we have no data
+//     //         return this.callAndCache(url);
+//     //       } else {
+//     //         // Return cached data
+//     //         return of(result);
+//     //       }
+//     //     })
+//     //   );
+//     // }
+//   }
+
+    private callAndCache(url): Observable<any> {
+        return this.http.get<any>(url, { headers: this.headers })
+        .pipe(
+         tap(data => {
+             // Store our new data
+            this.cachingService.cacheRequest(url, data);
+            return data;
+        }));
+      }
     
     verifyOtp(params:object,url:string){
         return this.http.post<any>(url, params, { headers: this.headers })
@@ -42,7 +171,7 @@ export class AccountService {
         localStorage.setItem('user',JSON.stringify({
         name:'',
         mobile:'',
-        role: '4',
+        role: '999',
         id: '',
         username: '',
         password: '',
@@ -72,13 +201,13 @@ export class AccountService {
         user['token']='';
         if(mobile=='1111111111'){
         user['mobile']='1111111111';
-        user['role']='0';
+        user['role']='4';
         }else if(mobile=='2222222222'){
         user['mobile']='2222222222';
-        user['role']='1';
+        user['role']='3';
         }else if(mobile=='3333333333'){
         user['mobile']='333333333';
-        user['role']='2';
+        user['role']='5';
         }
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('user', JSON.stringify(user));
@@ -109,4 +238,11 @@ export class AccountService {
     public get userValue(): User {
         return this.userSubject.value;
     }
+
+
+
+
+    
+ 
+  
 }

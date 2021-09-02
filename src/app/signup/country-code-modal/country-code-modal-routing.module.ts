@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { CountryCodeModalPage } from './country-code-modal.page';
 
 const routes: Routes = [

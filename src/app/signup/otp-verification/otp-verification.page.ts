@@ -61,9 +61,9 @@ export class OtpVerificationPage implements OnInit {
               if(data){
                 if(data.role == 4){
                   this.router.navigateByUrl('/patient-home');
-              }else if(data.role == 1){
+              }else if(data.role == 3){
                 this.router.navigateByUrl('/doctor-appointments');
-              }else if(data.role == 2){
+              }else if(data.role == 5){
                 this.router.navigateByUrl('/receptionist-appointments');
               }
             }
@@ -75,11 +75,11 @@ export class OtpVerificationPage implements OnInit {
     //   this.authService.verifyOtp(this.mobile,this.otp).subscribe(user=> {
     //     console.log(user);
     //   if(user){
-    //     if(user.role == 0){
+    //     if(user.role == 4){
     //       this.router.navigateByUrl('/patient-home');
-    //   }else if(user.role == 1){
+    //   }else if(user.role == 3){
     //     this.router.navigateByUrl('/doctor-appointments');
-    //   }else if(user.role == 2){
+    //   }else if(user.role == 5){
     //     this.router.navigateByUrl('/receptionist-appointments');
     //   }
     // }

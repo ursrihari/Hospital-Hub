@@ -16,6 +16,12 @@ export class AccountService {
   constructor(private router: Router,
     private http: HttpClient) {
         this.headers.set('Access-Control-Allow-Origin', '*');
+        this.headers.set('Content-Type', 'application/json');
+        //this.headers.set('Access-Control-Allow-Origin', 'http://192.168.5.114:8100');
+        //this.headers.set('Access-Control-Allow-Origin', '*');
+        //this.headers.set('Access-Control-Allow-Credentials', 'true');
+        //this.headers.set('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+        //this.headers.set('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
     }
 
     postdata(params:object,url:string){ return this.http.post<any>(url, params, { headers: this.headers }).pipe(map(data => {return data}))}

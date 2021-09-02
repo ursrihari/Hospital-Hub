@@ -89,14 +89,18 @@ export class AppComponent {
           {title: 'My Patients', page: 'MyPatientsPage', url:'my-patients', icon:'fa fa-user-md'},
           {title: 'Schedule Timings', page: 'ScheduleTimingsPage', url:'schedule-timings', icon:'fa fa-hourglass-half'},
           {title: 'Reviews', page: 'ReviewsPage', url:'reviews', icon:'fa fa-star'},
-          {title: 'Social Media', page: 'SocialMediaPage', url:'social-media', icon:'fa fa-share-square'}
-        ];
-        this.MenuPages = [
+          {title: 'Social Media', page: 'SocialMediaPage', url:'social-media', icon:'fa fa-share-square'},
           {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
           {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
           {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
           {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
-      ];
+        ];
+      //   this.MenuPages = [
+      //     {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
+      //     {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
+      //     {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
+      //     {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
+      // ];
          break; 
       } 
       case 'receptionist': { 

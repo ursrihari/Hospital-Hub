@@ -5,6 +5,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { User } from '../../_model/User';
 import { first } from 'rxjs/operators';
 import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
+import { AccountService } from '@app/_services';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class OtpVerificationPage implements OnInit {
     private router:Router,
     private route:ActivatedRoute,
     private menuCtrl:MenuController,
+    private accountService:AccountService,
     private smsRetriever: SmsRetriever) { }
 
   ngOnInit() {
@@ -67,7 +69,7 @@ export class OtpVerificationPage implements OnInit {
             }
       });
     }
-    // this.authService.setUser(this.mobile);
+     this.accountService.setUser(this.mobile);
     // console.log(this.route.snapshot.paramMap.get('mobile'));
     // //this.router.navigateByUrl('/patient-home');
     //   this.authService.verifyOtp(this.mobile,this.otp).subscribe(user=> {

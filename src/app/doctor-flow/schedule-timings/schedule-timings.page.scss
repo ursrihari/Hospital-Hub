@@ -1,0 +1,135 @@
+/** Single Appointment Sec **/
+.appointments .appointment-list { background-color: #fff; border: 1px solid #f0f0f0; border-radius: 4px; display: -webkit-box;
+    display: -ms-flexbox;display: block; flex-wrap: wrap; margin-bottom: 20px; padding: 20px; text-align: center;}
+    .appointment-list .profile-info-widget .booking-doc-img {margin: 0 0 15px; display: block;}
+    .appointment-list .profile-info-widget .booking-doc-img img { border-radius: 50%; height: 100px; width: 100px;}
+    .appointment-list .profile-det-info { margin-bottom: 15px;}
+    .profile-det-info h3 { font-size: 17px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+    .patient-details h5 i { width: 18px;}
+    .appointment-action a { font-size: 13px;}
+
+
+
+/*-----------------
+	22. Schedule Timings
+-----------------------*/
+
+.tab-content.schedule-cont .card-title {
+	margin-bottom: 10px;
+}
+.doc-times {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.doc-slot-list {
+	background-color: #d9534f;
+	border: 1px solid #d43f3a;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 14px;
+	margin: 10px 10px 0 0;
+	padding: 6px 15px;
+}
+.doc-slot-list a {
+	color: #e48784;
+	display: inline-block;
+	margin-left: 5px;
+}
+.doc-slot-list a:hover {
+	color: #fff;
+}
+.schedule-nav .nav-tabs {
+	border: 0 !important;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.schedule-nav .nav-tabs li {
+	margin: 5px 15px 5px 0; 
+	display: inline-block;
+}
+.schedule-nav .nav-tabs li:last-child {
+	margin-right: 0;
+}
+.schedule-nav .nav-tabs > li > a {
+	border: 1px solid #dcddea;
+	border-radius: 4px;
+	padding: 6px 15px;
+	text-transform: uppercase;
+}
+.schedule-nav .nav-tabs li a.active {
+	background: #ff4877;
+    border: 1px solid #ff4877 !important;
+	color: #fff;
+}
+.hours-info .form-control {
+	min-height: auto;
+}
+.hours-info .btn.btn-danger.trash {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+    height: 38px;
+    width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+}
+.edit-link {
+    color: #20c0f3;
+    font-size: 16px;
+    margin-top: 4px;
+}
+.schedule-nav .nav-tabs li {
+    display: block;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    margin-right: 0;
+}
+.schedule-nav .nav-tabs > li > a {
+    border: 1px solid #dcddea;
+    border-radius: 4px;
+    padding: 6px 15px;
+    text-transform: uppercase;
+}
+.nav-tabs > li > a {
+    margin-right: 0;
+    color: #888;
+    border-radius: 0;
+    font-size: 0.8rem;
+}
+.schedule-header {
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px 4px 0 0;
+    padding: 10px 20px;
+}
+.schedule-cont {
+    padding: 20px;
+}
+h4, .h4 {
+    font-size: 1rem;
+}
+.edit-link {
+    font-size: 14px;
+    margin-top: 2px;
+}
+// Doctor  Sec
+.mt-15 {margin-top: 15px !important;}
+.doctor-dashboard-main {width: 100%;}
+.profile-sidebar { background-color: #fff; border: 1px solid #f0f0f0; border-radius: 4px; margin-bottom: 20px; overflow: hidden;}
+.widget-profile { background-color: #fff; border-bottom: 1px solid #f0f0f0; padding: 20px; text-align: center;}
+.doctor-dashboard-main h4, .doctor-dashboard-main .h4 { font-size: 1rem;}
+.widget-profile .profile-info-widget { display: block; text-align: center;}
+.widget-profile .profile-info-widget .booking-doc-img { display: inline-block;  margin: 0 0 15px; width: auto; padding: 8px; background-color: #f7f7f7;
+ border-radius: 50%;}
+ .widget-profile .profile-info-widget .booking-doc-img img { border-radius: 50%; height: 120px;width: 120px;}
+ .profile-det-info { overflow: hidden;}
+ .profile-det-info h3 { font-size: 17px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+ .patient-details h5 { color: #757575; font-size: 13px; font-weight: normal; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap;}
+

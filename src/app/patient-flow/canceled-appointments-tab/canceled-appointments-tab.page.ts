@@ -3,12 +3,14 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '@app/_services';
 import { finalize } from 'rxjs/operators';
+
 @Component({
-  selector: 'app-patient-appointments',
-  templateUrl: './patient-appointments.page.html',
-  styleUrls: ['./patient-appointments.page.scss'],
+  selector: 'app-canceled-appointments-tab',
+  templateUrl: './canceled-appointments-tab.page.html',
+  styleUrls: ['./canceled-appointments-tab.page.scss'],
 })
-export class PatientAppointmentsPage implements OnInit {
+export class CanceledAppointmentsTabPage implements OnInit {
+
   appointments=[];
   showContent:boolean = false;
   constructor(private router:Router,
@@ -55,7 +57,7 @@ export class PatientAppointmentsPage implements OnInit {
   getAppointments(){
     let params = {
       "pMobile":"7894561230", 
-      "apType":"upcoming" 
+      "apType":"cancelled" 
     }
     this.authService.getAppointments(params,true).subscribe(data=>{
       console.log(data);
@@ -67,7 +69,7 @@ export class PatientAppointmentsPage implements OnInit {
   async refreshData(event?) {
     let params = {
       "pMobile":"7894561230", 
-      "apType":"upcoming" 
+      "apType":"cancelled" 
     }
     const refresh = event ? true : false;
     this.showContent = false;
@@ -83,5 +85,4 @@ export class PatientAppointmentsPage implements OnInit {
       this.showContent = true;
     })
   }
-
 }

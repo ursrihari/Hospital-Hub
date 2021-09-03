@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { PatientAppointmentDetailsPageRoutingModule } from './patient-appointment-details-routing.module';
-
 import { PatientAppointmentDetailsPage } from './patient-appointment-details.page';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
 
 @NgModule({
   imports: [
@@ -15,6 +13,7 @@ import { PatientAppointmentDetailsPage } from './patient-appointment-details.pag
     IonicModule,
     PatientAppointmentDetailsPageRoutingModule
   ],
-  declarations: [PatientAppointmentDetailsPage]
+  declarations: [PatientAppointmentDetailsPage],
+  providers:[LaunchNavigator]
 })
 export class PatientAppointmentDetailsPageModule {}

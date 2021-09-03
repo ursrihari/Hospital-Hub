@@ -13,7 +13,6 @@ import { JwtInterceptor, ErrorInterceptor } from '@app/_helpers';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 import { Drivers } from '@ionic/storage';
-
 //plugins
 //import { Globalization } from '@ionic-native/globalization/ngx';
 
@@ -29,7 +28,7 @@ import { Drivers } from '@ionic/storage';
     })
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AuthService

@@ -3,12 +3,14 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '@app/_services';
 import { finalize } from 'rxjs/operators';
+
 @Component({
-  selector: 'app-patient-appointments',
-  templateUrl: './patient-appointments.page.html',
-  styleUrls: ['./patient-appointments.page.scss'],
+  selector: 'app-upcomming-appointments-tab',
+  templateUrl: './upcomming-appointments-tab.page.html',
+  styleUrls: ['./upcomming-appointments-tab.page.scss'],
 })
-export class PatientAppointmentsPage implements OnInit {
+export class UpcommingAppointmentsTabPage implements OnInit {
+
   appointments=[];
   showContent:boolean = false;
   constructor(private router:Router,
@@ -23,30 +25,30 @@ export class PatientAppointmentsPage implements OnInit {
     this.router.navigate(['/patient-appointment-details', {id:appointment.apId}]);
   }
 
-  async presentCancleAppointmentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Appointment Cancel',
-      message: 'Are you want to cancel the appointment ?',
-      buttons: [
-        {
-          text: 'No',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Yes',
-          handler: () => {
-            console.log('Confirm Okay');
-          }
-        }
-      ]
-    });
+  // async presentCancleAppointmentAlert() {
+  //   const alert = await this.alertController.create({
+  //     cssClass: 'my-custom-class',
+  //     header: 'Appointment Cancel',
+  //     message: 'Are you want to cancel the appointment ?',
+  //     buttons: [
+  //       {
+  //         text: 'No',
+  //         role: 'cancel',
+  //         cssClass: 'secondary',
+  //         handler: (blah) => {
+  //           console.log('Confirm Cancel: blah');
+  //         }
+  //       }, {
+  //         text: 'Yes',
+  //         handler: () => {
+  //           console.log('Confirm Okay');
+  //         }
+  //       }
+  //     ]
+  //   });
 
-    await alert.present();
-  }
+  //   await alert.present();
+  // }
 
   openDoctorBookingPage(){
     this.router.navigateByUrl('/doctor-booking');
@@ -83,5 +85,4 @@ export class PatientAppointmentsPage implements OnInit {
       this.showContent = true;
     })
   }
-
 }

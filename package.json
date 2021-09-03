@@ -32,6 +32,7 @@
     "@capacitor/status-bar": "^1.0.2",
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/globalization": "^5.36.0",
+    "@ionic-native/launch-navigator": "^5.36.0",
     "@ionic-native/sim": "^5.36.0",
     "@ionic-native/sms-retriever": "^5.36.0",
     "@ionic-native/splash-screen": "^5.35.0",
@@ -45,10 +46,13 @@
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-sqlite-storage": "^6.0.0",
     "google-libphonenumber": "^3.2.22",
+    "ionic4-auto-complete": "^2.9.9",
     "jetifier": "^2.0.0",
     "localforage-cordovasqlitedriver": "^1.8.0",
+    "moment": "^2.29.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": "^5.0.6",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

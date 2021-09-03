@@ -9,8 +9,55 @@
 </ion-header>
 
 <ion-content>
- <!-- Appointment Details Sec  -->
- <div class="appointment-details-sec">
+    <!-- Appointment Details Sec  -->
+    <div class="appointment-details-sec" *ngIf="showContent">
+        <div class="appointments-list d-flex align-items-center">
+            <div class="appointments-list-img mr-3"><img src="assets/images/appointments/doctor-12.jpg" alt=""></div>
+            <div class="appointments-list-text">
+                <p><strong>DR. Tejaswini Nayak</strong></p>
+            </div>
+        </div>
+        <div class="cover-sec">
+            <p>Appointment is covered under <span>Prime <i class="ti-check"></i></span></p>
+        </div>
+        <div class="date-sec">
+            <small>Date and Time</small>
+            <h3>{{appointmentDetils.formated_date | date:'EEE, d MMM y, h:mm a'}}<span>{{appointmentDetils.no_of_days}}</span></h3>
+            <a (click)="openAppointmentHelpPage()">I need help with my appointment ></a>
+        </div>
+        <div class="cta-sec bt-2">
+            <img src="assets/images/appointments/add1.png" alt="">
+        </div>
+        <div class="date-sec practice-sec">
+            <small>Practice Detail</small>
+            <h3>Prime Hospitals Clinic</h3>
+            <p>#509, NTR Gardens, Outer Ring Road, Hyderabad - 500018</p>
+            <a (click)="getDirections()">Get Directions</a>
+        </div>
+        <div class="date-sec mob-consultation-sec bt-2">
+            <small>Procedure</small>
+            <h3>Consultation</h3>
+        </div>
+        <div class="benefits-sec-main">
+            <div class="benefits-sec">
+                <h3>Prime <i class="ti-check"></i> Benefits</h3>
+                <div class="list">
+                    <p>Our Promise to you:</p>
+                    <ul>
+                        <li>Fixed Consultation fees of INR 600:00</li>
+                        <li>Verified Location</li>
+                    </ul>
+                    <p class="small">Get a voucher worth INR 500 if our promise is not fulfilled. <a>Know more</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="booking-details-sec d-flex pt-0">
+            <h4><span>Booked For</span>Person Name</h4>
+            <h4 class="title"><span>Appointment ID</span>{{appointmentDetils.apId}}</h4>
+        </div>
+    </div>
+    <!--Original Design Start-->
+    <!-- <div class="appointment-details-sec">
     <div class="appointments-list d-flex align-items-center"><div class="appointments-list-img mr-3"><img src="assets/images/appointments/doctor-12.jpg" alt=""></div><div class="appointments-list-text"><p><strong>DR. Tejaswini Nayak</strong></p></div></div>
     <div class="cover-sec">
              <p>Appointment is covered under <span>Prime <i class="ti-check"></i></span></p>
@@ -50,5 +97,8 @@
      <h4><span>Booked For</span>Person Name</h4>
      <h4 class="title"><span>Appointment ID</span>152415325</h4>
  </div>
- </div>
+ </div> -->
+    <!--Original Design END-->
+
+
 </ion-content>

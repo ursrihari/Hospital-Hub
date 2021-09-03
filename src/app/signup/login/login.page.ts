@@ -116,7 +116,7 @@ export class LoginPage implements OnInit {
         phoneno: Number(this.country.country_code)+this.country.mobile_number,
         hashCode: "//gtjDse+ce"
       }
-      this.authService.login(params).subscribe( data=>{
+      this.authService.login(params,false).subscribe( data=>{
         console.log(data);
         this.router.navigate(['/otp-verification', {mobile:this.country.country_code+this.country.mobile_number}]);
       });

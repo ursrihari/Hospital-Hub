@@ -68,7 +68,7 @@ export class AppComponent {
           {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'fa fa-home'},
           {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'fa fa-calendar'},
           {title: 'Test Bookings', page: 'TestBookingsPage', url:'test-bookings', icon:'fa fa-flask'},
-          {title: 'Consultations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-calendar'},
+          //{title: 'Consultations', page: 'ConsultationsPage', url:'consultations', icon:'fa fa-calendar'},
           {title: 'My Doctors', page: 'MyDoctorsPage', url:'my-doctors', icon:'fa fa-user-md'},
           {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'},
           //{title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'},

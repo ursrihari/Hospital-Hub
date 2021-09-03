@@ -208,7 +208,8 @@ const routes: Routes = [
   {
     path: 'social-media',
     loadChildren: () => import('./doctor-flow/social-media/social-media.module').then( m => m.SocialMediaPageModule)
-  },  {
+  },
+  {
     path: 'receptionist-home',
     loadChildren: () => import('./receptioist-flow/receptionist-home/receptionist-home.module').then( m => m.ReceptionistHomePageModule)
   },
@@ -223,6 +224,18 @@ const routes: Routes = [
   {
     path: 'hospital-services',
     loadChildren: () => import('./patient-flow/hospital-services/hospital-services.module').then( m => m.HospitalServicesPageModule)
+  },
+  {
+    path: 'upcomming-appointments-tab',
+    loadChildren: () => import('./patient-flow/upcomming-appointments-tab/upcomming-appointments-tab.module').then( m => m.UpcommingAppointmentsTabPageModule)
+  },
+  {
+    path: 'completed-appointments-tab',
+    loadChildren: () => import('./patient-flow/completed-appointments-tab/completed-appointments-tab.module').then( m => m.CompletedAppointmentsTabPageModule)
+  },
+  {
+    path: 'canceled-appointments-tab',
+    loadChildren: () => import('./patient-flow/canceled-appointments-tab/canceled-appointments-tab.module').then( m => m.CanceledAppointmentsTabPageModule)
   }
 
 

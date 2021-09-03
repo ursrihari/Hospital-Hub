@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshData($event)">
+    <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+<div class="appointments-main" *ngIf="showContent">
+    <div *ngIf="appointments.length==0">
+        <div class="p-3">No appointments Available</div>
+    </div>
+    <div *ngIf="appointments.length!=0">
+        <!-- <div class="appointments-list d-flex" (click)="openAppointment()">
+        <div class="appointments-list-img mr-3"><img src="assets/images/appointments/doctor-12.jpg" alt=""></div>
+        <div class="appointments-list-text">
+            <p> Appointment with <strong>DR. Tejaswini Nayak</strong></p>
+            <p>Chinmay Child Care, Bellandur</p>
+            <p class="date">28 AUG 2021, 11:15 AM</p>
+        </div>
+    </div> -->
+        <div class="appointments-list d-flex" *ngFor="let appointment of appointments" (click)="openAppointment(appointment)">
+            <div class="appointments-list-img mr-3"><img [src]="appointment.docImage" alt=""></div>
+            <div class="appointments-list-text">
+                <p> Appointment with <strong>DR. {{appointment.docName}}</strong></p>
+                <p>Chinmay Child Care, Bellandur</p>
+                <p class="date">{{appointment.date}},{{appointment.time}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="appointments-list d-flex" (click)="openAppointment()">
+        <div class="appointments-list-img mr-3"><img src="assets/images/appointments/doctor-12.jpg" alt=""></div>
+        <div class="appointments-list-text">
+            <p> Appointment with <strong>DR. Tejaswini Nayak</strong></p>
+            <p>Chinmay Child Care, Bellandur</p>
+            <p class="date">28 AUG 2021, 11:15 AM</p>
+        </div>
+    </div> -->
+    <!-- <div class="appointments-list d-flex" (click)="openAppointment()">
+        <div class="appointments-list-img mr-3"><img src="assets/images/appointments/doctor-12.jpg" alt=""></div>
+        <div class="appointments-list-text">
+            <p> Appointment with <strong>DR. Tejaswini Nayak</strong></p>
+            <p>Chinmay Child Care, Bellandur</p>
+            <p class="date">28 AUG 2021, 11:15 AM</p>
+        </div>
+    </div> -->
+</div>
+</ion-content>

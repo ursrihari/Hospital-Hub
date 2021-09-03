@@ -1,0 +1,30 @@
+.upcoming {
+    background-color: #f1f0f5;
+    padding: 15px;
+    color: #797880;
+    font-weight: 600;
+    font-size: 16px;
+}
+.appointments-main{
+	.appointments-list-img img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 5px 0 0;
+	object-fit: cover;
+	}
+	.appointments-list{
+		padding: 15px;
+		border-bottom:1px solid #eaeaea;
+		p{
+			padding: 0;
+			margin: 0 0 5px;
+			font-size: 0.8rem;
+		}
+		p.date{
+			color:#a5a5a5;
+			font-size: 13px;
+		}
+
+	}
+}

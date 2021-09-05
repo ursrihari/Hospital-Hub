@@ -10,17 +10,10 @@
                     <div class="col">
                         <ion-title>Find & Book</ion-title>
                     </div>
-                    <div class="col">
+                    <div class="col" (click)="openLocationsModal()">
                         <p>LOCATION</p>
-                        <form>
-                            <select>
-                              <option>Banglore</option>
-                              <option>Hyderabad</option>
-                              <option>Delhi</option>
-                              <option>Mumbai</option>
-                              <option>Pune</option>
-                          </select>
-                        </form>
+                        {{location.cityName  || "Select City"}}
+                        <ion-icon name="chevron-down-outline"></ion-icon>
                     </div>
                 </div>
             </div>
@@ -70,7 +63,8 @@
                 <div class="healthcon-spec-bg" *ngFor="let speciality of specialities | customArray:'0':'18'" (click)="openHospitalsListPage(speciality)">
                     <a>
                         <img [src]="speciality.iconUrl" />
-                        <p>{{speciality.specName}}</p>
+                        <p [innerHTML]="speciality.specName"></p>
+                        <!-- <p>{{speciality.specName}}</p> -->
                     </a>
                 </div>
             </div>

@@ -9,7 +9,265 @@
 </ion-header>
 
 <ion-content>
-    <div class="hospital-list-main">
+
+    <div class="hospital-list-main" *ngIf="showContent">
+        <ion-slides class="slider-images" pager="true" [options]="slideOpts">
+            <!-- {{hospitalData[0].images | json}} -->
+            <ion-slide *ngFor="let image of hospitalData[0].images">
+                <div class="icon"><img [src]="image" alt=""></div>
+            </ion-slide>
+        </ion-slides>
+        <div class="container">
+            <div class="brand-wrapper docs-nearyou">
+                <div class="sec-title text-center mb-0">
+                    <h2>Oue Services</h2>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+                <div class="row ">
+                    <div class="col-sm-12 pb-2">
+                        <ion-slides pager="true">
+                            <ion-slide>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="two-three-grid">
+                                            <div class="healthcon-spec">
+                                                <div class="healthcon-spec-bg" *ngFor="let service of hospitalData[0].services | customArray:'0':'6'" (click)="openDoctorsListPage(service)">
+                                                    <a>
+                                                        <img [src]="service.image" />
+                                                        <p [innerHTML]="service.serviceName"></p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ion-slide>
+                            <ion-slide>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="two-three-grid">
+                                            <div class="healthcon-spec">
+                                                <div class="healthcon-spec-bg" *ngFor="let service of hospitalData[0].services | customArray:'6':'12'" (click)="openDoctorsListPage(service)">
+                                                    <a>
+                                                        <img [src]="service.image" />
+                                                        <p [innerHTML]="service.serviceName"></p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ion-slide>
+                            <ion-slide>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="two-three-grid">
+                                            <div class="healthcon-spec">
+                                                <div class="healthcon-spec-bg" *ngFor="let service of hospitalData[0].services | customArray:'12':'18'" (click)="openDoctorsListPage(service)">
+                                                    <a>
+                                                        <img [src]="service.image" />
+                                                        <p [innerHTML]="service.serviceName"></p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ion-slide>
+                        </ion-slides>
+                    </div>
+                </div>
+                <a class="view-all-symp mb-0 mt-3" (click)="openServicesListPage(hospitalData[0].hospitalId)">See All Services</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="brand-wrapper docs-nearyou">
+                <div class="sec-title text-center mb-0">
+                    <h2 class="mt-2">Available Doctors</h2>
+                    <p>Book assured appointments even during the COVID-19 pandemic</p>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+                <div class="row ">
+                    <div class="col-sm-12 pb-2">
+                        <ion-slides pager="true" [options]="doctorsSlideOpts">
+                            <ion-slide class="pb-3">
+                                <div class="item">
+                                    <a target="_blank" *ngFor="let doctor of hospitalData[0].doctors | customArray:'0':'2'" (click)="openDoctorProfilePage(doctor)">
+                                        <div class="doc-img">
+                                            <img [src]="doctor.image" alt="" title="">
+                                        </div>
+                                        <div class="doc-details">
+                                            <h3>Dr.{{doctor.name}}</h3>
+                                            <p>{{doctor.specialization}}<span>{{doctor.location}}</span></p>
+                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>{{doctor.ratePercentage}}% . {{doctor.experience}} Years Exp</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
+                            <ion-slide class="pb-3">
+                                <div class="item" >
+                                    <a target="_blank" *ngFor="let doctor of hospitalData[0].doctors | customArray:'2':'4'" (click)="openDoctorProfilePage(doctor)">
+                                        <div class="doc-img">
+                                            <img [src]="doctor.image" alt="" title="">
+                                        </div>
+                                        <div class="doc-details">
+                                            <h3>Dr.{{doctor.name}}</h3>
+                                            <p>{{doctor.specialization}}<span>{{doctor.location}}</span></p>
+                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>{{doctor.ratePercentage}}% . {{doctor.experience}} Years Exp</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
+                            <ion-slide class="pb-3">
+                                <div class="item">
+                                    <a target="_blank" *ngFor="let doctor of hospitalData[0].doctors | customArray:'4':'6'" (click)="openDoctorProfilePage(doctor)">
+                                        <div class="doc-img">
+                                            <img [src]="doctor.image" alt="" title="">
+                                        </div>
+                                        <div class="doc-details">
+                                            <h3>Dr.{{doctor.name}}</h3>
+                                            <p>{{doctor.specialization}}<span>{{doctor.location}}</span></p>
+                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>{{doctor.ratePercentage}}% . {{doctor.experience}} Years Exp</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
+                            
+                        </ion-slides>
+                    </div>
+                </div>
+                <a class="view-all-symp mb-2" (click)="openAllDoctorsInHospital(hospitalData[0].hospitalId)">See All Doctors</a>
+            </div>
+        </div>
+
+        
+
+        <div>
+
+            <div class="">
+
+                <div class="Practo-sec highly-sec border-0">
+                    <h5>
+                        Highly Recommended for
+                    </h5>
+                    <ul>
+                        <li class="d-flex" *ngFor="let recomendatation of hospitalData[0].recomendatations">
+                            <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <i class="{{recomendatation.icon}}" aria-hidden="true"></i></span>
+                            <div class="appointments-list-text">
+                                <p class="m-0"><strong>{{recomendatation.title}}</strong></p>
+                                <p class="m-0 text-muted">{{recomendatation.description}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Practo-sec highly-sec border-0">
+                    <h5 class="mb-2">Patient Stories</h5>
+                    <p class="text-muted">These stories represent patient opinions and experiences. They do not reflect the doctor's medical capabilities</p>
+                    <p></p>
+                </div>
+                <div class="border-bot pb-3">
+                    <div class="review-chat">
+                        <div class="mb-3 border-bottom" *ngFor="let review of hospitalRevies">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img *ngIf="review.profileImg" [src]="review.profileImg" />
+                                        <div *ngIf="!review.profileImg" class="name">{{review.name | subString:'0':'1'}}</div>
+                                    </div>
+                                    <div>
+                                        <h5 class="m-0">{{review.name}}</h5>
+                                        <p class="m-0 text-muted">{{review.date | date:'d MMM y, h:mm a'}}</p>
+                                    </div>
+                                </div>
+                                <div><i class="fa fa-thumbs-up grren"></i></div>
+                            </div>
+                            <h5 class="mb-1">{{review.title}}</h5>
+                            <p>{{review.text}}</p>
+                        </div>
+                        <!-- <div class="d-flex justify-content-center">
+                            <button>Share Your Story</button>
+                            <button>Share Your Story</button>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="mb-3 map-sec">
+                    <h5>Location</h5>
+                    <div class="map-sec-img">
+                        <img src="../assets/images/my-doctors/map.jpg">
+                        <p class="text-muted">Tap on the map for complate address</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-1">
+                <div class="acc-sec mr-3">
+                    <div>
+                        <h5 class="border-bottom mt-0">More about Hospital</h5>
+                        <p class="mr-0">{{hospitalData[0].aboutHospital}}</p>
+                    </div>
+                    <!-- <ion-list>
+                        <div>
+                            <ion-item data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                <ion-label><strong>Specializations</strong></ion-label>
+                                <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+                            </ion-item>
+                            <div id="faq1" class="collapse hide" aria-labelledby="faqhead1" data-parent="#faq">
+                                <ul>
+                                    <li>Oral and maxilloFacial Surgeon</li>
+                                    <li>Implantologist</li>
+                                    <li>Hair Transplant Surgoen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ion-item data-toggle="collapse" data-target="#faq2" aria-expanded="true" aria-controls="faq2">
+                            <ion-label><strong>Education</strong></ion-label>
+                            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+                        </ion-item>
+                        <div id="faq2" class="collapse hide" aria-labelledby="faqhead1" data-parent="#faq">
+                            <ul>
+                                <li>BDS - Ragiv Gandhi University of Health Sciences, Bengalore, India -2009</li>
+                                <li>MDS - Oral & Maxillofacial Surgery - Vydehi Institute Of Dental Sciences Research -2015</li>
+
+                            </ul>
+                        </div>
+
+                        <ion-item data-toggle="collapse" data-target="#faq3" aria-expanded="true" aria-controls="faq3">
+                            <ion-label><strong>Experience</strong></ion-label>
+                            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+                        </ion-item>
+                        <div id="faq3" class="collapse hide" aria-labelledby="faqhead1" data-parent="#faq">
+                            <ul>
+                                <li>2010 - 2012 Senior Dental Surgeon at 32 Smiles Dental Clinic</li>
+                                <li>2012 -2015 Oral Surgeon at Vydehi Dental Hospital</li>
+
+                            </ul>
+                        </div>
+                        <ion-item data-toggle="collapse" data-target="#faq4" aria-expanded="true" aria-controls="faq4">
+                            <ion-label><strong>Registration</strong></ion-label>
+                            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+                        </ion-item>
+                        <div id="faq4" class="collapse hide" aria-labelledby="faqhead1" data-parent="#faq">
+                            <ul>
+                                <li>26101-A Karnataka State Dental Council, 2010</li>
+
+                            </ul>
+                        </div>
+
+                    </ion-list> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- <div class="hospital-list-main">
         <ion-slides class="slider-images" pager="true" [options]="slideOpts">
             <ion-slide>
                 <div class="icon"><img src="../assets/images/hospital/hospital-img.jpg" alt=""></div>
@@ -22,113 +280,8 @@
             </ion-slide>
         </ion-slides>
 
-        <!-- <div class="row">
-            <div class="col-sm-12">
-                <div class="two-three-grid">
-                    <h4 class="m-0 pb-3">our services </h4>
-                    <div class="healthcon-spec">
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Women's<br/>Health</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Skin & Hair</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Child<br/>Specialist</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>General<br/>Physician</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Brain and<br/>Nerves</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Uriniary<br/>Issues</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Kidney<br/>Issues</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Ayurveda</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Women's<br/>Health</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Skin & Hair</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Child<br/>Specialist</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>General<br/>Physician</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Brain and<br/>Nerves</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Uriniary<br/>Issues</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Kidney<br/>Issues</p>
-                            </a>
-                        </div>
-                        <div class="healthcon-spec-bg" (click)="openDoctorsListPage()">
-                            <a>
-                                <img src="assets/images/hospital/img2.jpg" />
-                                <p>Ayurveda</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         
-        <!-- Services List-->
+        
         <div class="container">
             <div class="brand-wrapper docs-nearyou">
                 <div class="sec-title text-center mb-0">
@@ -282,7 +435,7 @@
                 <a class="view-all-symp mb-0 mt-3" (click)="openServicesListPage()">See All Services</a>
             </div>
         </div>
-        <!-- Doctors List-->
+        
         <div class="container">
             <div class="brand-wrapper docs-nearyou">
                 <div class="sec-title text-center mb-0">
@@ -396,7 +549,7 @@
             </div>
         </div>
 
-        <!-- Hospital view -->
+        
 
         <div>
 
@@ -545,9 +698,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <footer>
-        <ion-button class="w-100 mb-2" (click)="openDoctorProfilePage()">Open Doctor Profile</ion-button>
-        <ion-button class="w-100 mb-2" (click)="bookAppointmentPage()">Book Appointment</ion-button>
-    </footer>
+    </div> -->
+    
 </ion-content>
+<!-- <footer>
+    <ion-button class="w-100 mb-2" (click)="openDoctorProfilePage()">Open Doctor Profile</ion-button>
+    <ion-button class="w-100 mb-2" (click)="bookAppointmentPage()">Book Appointment</ion-button>
+</footer> -->

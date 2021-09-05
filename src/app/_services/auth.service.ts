@@ -31,7 +31,7 @@ export class AuthService {
   updateAppointments(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/appointments/update-appointment.php`,forceRefresh);
   }
-  addAppointments(params:object,forceRefresh:boolean){
+  addAppointment(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/appointments/add-appointment.php`,forceRefresh);
   }
   getAppointmentDetails(params:object,forceRefresh:boolean){
@@ -42,6 +42,21 @@ export class AuthService {
   }
   getSpecialities(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/get-specialities.php`,forceRefresh);
+  }
+
+
+  /*Pending*/
+  getAppCities(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
+  }
+  getHospital(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
+  getHospitalReviews(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
+  getDoctorDetails(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
 
   

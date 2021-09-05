@@ -1,64 +1,77 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start" >
-      <ion-back-button *ngIf="canGoBack"></ion-back-button>
-      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Book In-Clinic Appointment</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button *ngIf="canGoBack"></ion-back-button>
+            <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Book In-Clinic Appointment</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-<div class="container p-0">
-  <div class="appointments-list d-flex align-items-center justify-content-between">
- 
-    <div class="appointments-list-text"><p><strong>DR. Tejaswini <br/>Nayak</strong></p>
-      <p class="date">Pediatrician</p>
-    </div>
-    <div class="appointments-list-img">
-      <img src="assets/images/appointments/doctor-12.jpg" alt="">
-    </div>
-  </div>
-  <div class="date-sec">
-    <p class="d-flex align-items-center mb-2"><span class="mr-1"><img src="assets/images/appointments/home.jpg" alt=""></span> <small class="mb-0">Book In-Clinic appointment-time</small></p>
-    <h3 class="d-flex align-items-center mr-2">Today, 2:00 PM <span class="m-0 pl-2"><img src="assets/images/appointments/time.jpg" alt=""> 11 hours</span> </h3> 
-    <p>Chinmayi Child Care Clinic, <br>Bellandur</p>
-    <p class="Procto-pro"> <a href=""><strong>Procto promise</strong></a> Appointment confirmed instantly</p>
-</div>
+    <div class="container p-0">
+        <div class="appointments-list d-flex align-items-center justify-content-between">
 
-<div class="Practo-sec">
-  <h4><i class="ti-check"></i> Practo promise</h4>
-  <ul>
-    <li class="d-flex"><i class="ti-check ml-2"></i> <span>Appointment confirmed instantly with the doctor</span> </li>
-    <li class="d-flex"> <i class="ti-check ml-2"></i> <span>We assure we will connect you to the doctor if your consultion does not happen for unforeseen reasons, we will give you 100% money back</span></li>
-    <li class="d-flex"><i class="ti-check ml-2"></i> <span>Appointment confirmed instantly with the doctor</span> </li>
-    <li class="d-flex"> <i class="ti-check ml-2"></i> <span>We assure we will connect you to the doctor if your consultion does not happen for unforeseen reasons, we will give you 100% money back</span></li>
-  </ul>
-</div>
+            <div class="appointments-list-text">
+                <p><strong>DR. Tejaswini <br/>Nayak</strong></p>
+                <p class="date">Pediatrician</p>
+            </div>
+            <div class="appointments-list-img">
+                <img src="assets/images/appointments/doctor-12.jpg" alt="">
+            </div>
+        </div>
+        <div class="date-sec">
+            <p class="d-flex align-items-center mb-2"><span class="mr-1"><img src="assets/images/appointments/home.jpg" alt=""></span> <small class="mb-0">Book In-Clinic appointment-time</small></p>
+            <h3 class="d-flex align-items-center mr-2">Today, 2:00 PM <span class="m-0 pl-2"><img src="assets/images/appointments/time.jpg" alt=""> 11 hours</span> </h3>
+            <p>Chinmayi Child Care Clinic, <br>Bellandur</p>
+            <p class="Procto-pro"> <a href=""><strong>Procto promise</strong></a> Appointment confirmed instantly</p>
+        </div>
 
-<div class="appointments-list d-flex align-items-center justify-content-between">
-  <div class="appointments-list-img d-flex align-items-center">
-    <img src="assets/images/appointments/patient1.jpg" alt="">
-    <div class="ml-3">
-      <h5 class="m-0">Appointment for</h5>
-    <p class="m-0">User name</p>
-    </div>
-  </div>
-  <!-- <div class="appointments-list-text" style="text-transform: uppercase; color: #0069b4;"><p>Change</p>
+        <div class="Practo-sec">
+            <h4><i class="ti-check"></i> Practo promise</h4>
+            <ul>
+                <li class="d-flex"><i class="ti-check ml-2"></i> <span>Appointment confirmed instantly with the doctor</span> </li>
+                <li class="d-flex"> <i class="ti-check ml-2"></i> <span>We assure we will connect you to the doctor if your consultion does not happen for unforeseen reasons, we will give you 100% money back</span></li>
+                <li class="d-flex"><i class="ti-check ml-2"></i> <span>Appointment confirmed instantly with the doctor</span> </li>
+                <li class="d-flex"> <i class="ti-check ml-2"></i> <span>We assure we will connect you to the doctor if your consultion does not happen for unforeseen reasons, we will give you 100% money back</span></li>
+            </ul>
+        </div>
+
+        <div class="appointments-list d-flex align-items-center justify-content-between">
+            <div class="appointments-list-img d-flex align-items-center">
+                <img src="assets/images/appointments/patient1.jpg" alt="">
+                <div class="ml-3">
+                    <h5 class="m-0">Appointment for</h5>
+                    <p class="m-0">User name</p>
+                </div>
+            </div>
+            <!-- <div class="appointments-list-text" style="text-transform: uppercase; color: #0069b4;"><p>Change</p>
   </div> -->
-  
-</div>
 
-<div class="appointments-list d-flex align-items-center justify-content-between">
-  <div class="appointments-list-img d-flex align-items-center">
-    <div class="ml-3">
-      <h5 class="m-0">&#36; 700.00</h5>
+        </div>
+
+        <!-- <div class="appointments-list d-flex align-items-center justify-content-between">
+            <div class="appointments-list-img d-flex align-items-center">
+                <div class="ml-3">
+                    <h5 class="m-0">&#36; 700.00</h5>
+                </div>
+            </div>
+            <div class="c-package-book" (click)="bookAppointment()"><span>Confirm Appointment</span>
+            </div>
+
+        </div> -->
     </div>
-  </div>
-  <div class="c-package-book" (click)="openAppointmentsPage()"><span>Confirm Appointment</span>
-  </div>
-  
-</div>
-</div>
 </ion-content>
+<ion-footer>
+    <div class="appointments-list d-flex align-items-center justify-content-between">
+        <div class="appointments-list-img d-flex align-items-center">
+            <div class="ml-3">
+                <h5 class="m-0">&#36; 700.00</h5>
+            </div>
+        </div>
+        <div class="c-package-book" (click)="bookAppointment()"><span>Confirm Appointment</span>
+        </div>
+
+    </div>
+</ion-footer>

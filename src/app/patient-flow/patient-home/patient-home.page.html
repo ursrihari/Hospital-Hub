@@ -22,7 +22,7 @@
     </ion-toolbar>
     <ion-button fill="clear" size="small" (click)="openLocationsModal()" class="location-name">
         <ion-icon slot="icon-only" slot="start" name="location-outline"></ion-icon>
-        Bengalore
+        {{location.cityName || "Select City"}}
         <ion-icon slot="icon-only" slot="end" name="chevron-down-outline"></ion-icon>
     </ion-button>
 </ion-header>

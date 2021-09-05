@@ -13,6 +13,8 @@ import { PhoneNumberValidatorService } from '../../_services/phone-number-valida
 import { Sim } from '@ionic-native/sim/ngx';
 import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
 import { LoaderService  } from '@app/_services';
+import { Plugins } from '@capacitor/core';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',

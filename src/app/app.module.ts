@@ -13,8 +13,9 @@ import { JwtInterceptor, ErrorInterceptor } from '@app/_helpers';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 import { Drivers } from '@ionic/storage';
+
 //plugins
-//import { Globalization } from '@ionic-native/globalization/ngx';
+import { NativeGeocoder} from '@ionic-native/native-geocoder/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +32,7 @@ import { Drivers } from '@ionic/storage';
     
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService
+    AuthService,NativeGeocoder
   //  Globalization
   ],
   bootstrap: [AppComponent],

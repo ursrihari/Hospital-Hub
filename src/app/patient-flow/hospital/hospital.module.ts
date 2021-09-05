@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { HospitalPageRoutingModule } from './hospital-routing.module';
 
 import { HospitalPage } from './hospital.page';
+import { CustomArrayPipe } from '@app/pipe/custom-array.pipe';
+import { SubStringPipe } from '@app/pipe/sub-string.pipe';
+import { CustomDatePipe } from '@app/pipe/custom-date.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { HospitalPage } from './hospital.page';
     IonicModule,
     HospitalPageRoutingModule
   ],
-  declarations: [HospitalPage]
+  declarations: [HospitalPage,CustomArrayPipe,SubStringPipe,CustomDatePipe]
 })
 export class HospitalPageModule {}

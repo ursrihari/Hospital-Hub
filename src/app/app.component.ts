@@ -5,7 +5,8 @@ import { AuthService,AccountService } from '@app/_services';
 //import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { User } from '@app/_model';
 import { CachingService } from './_services/caching.service';
-
+//import { SplashScreen } from '@capacitor/splash-screen';
+//import { StatusBar, Style } from '@capacitor/status-bar';
 
 @Component({
   selector: 'app-root',
@@ -22,10 +23,10 @@ export class AppComponent {
     private menuCtrl:MenuController,
     private navCtrl: NavController,
     private accountService: AccountService,
-     private platform: Platform,
+    private platform: Platform,
     //private statusBar: StatusBar,
-     //private splashScreen: SplashScreen,
-     private cachingService: CachingService
+    //private splashScreen: SplashScreen,
+    private cachingService: CachingService
     ){
 
       //this.accountService.user.subscribe(x => this.user = x);
@@ -50,17 +51,17 @@ export class AppComponent {
   
   initializeApp(role){
     
-   // this.platform.ready().then(() => {
+   this.platform.ready().then(() => {
       //this.statusBar.overlaysWebView(true);
-      //this.statusBar.backgroundColorByHexString('#ffffff');
+      //this.statusBar.backgroundColorByHexString('#0069b4');
       //this.statusBar.styleDefault();
-      // //this.splashScreen.hide();
-      // //this.splashScreen.show();
+      //this.splashScreen.hide();
+      //this.splashScreen.show();
       // this.splashScreen.show({
       //   showDuration: 2000,
       //   autoHide: true
       // });
-    //});
+    });
     //role= 'doctor';
     switch(role) { 
       case 'patient': { 

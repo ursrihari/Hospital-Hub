@@ -1,10 +1,11 @@
+<header>
 <ion-toolbar color="primary">
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
         <ion-button (click)="closeModal()">
             <ion-icon name="close"></ion-icon>
         </ion-button>
     </ion-buttons>
-    <div class="find-searchbar">
+    <div class="find-searchbar location-modal" color="primary">
         <form>
             <div class="form-group">
                 <label><i class="fa fa-search"></i></label>
@@ -13,7 +14,28 @@
         </form>
     </div>
 </ion-toolbar>
-
+</header>
 <ion-content>
+    <div class="">
+        <ion-list lines="full">
+        <ion-item button class="current-location-item" (click)="getCurrentLocation()">
+            <ion-label color="primary">Use current location</ion-label>
+            <ion-icon slot="end" color="primary" name="locate-outline"></ion-icon>
+        </ion-item>
+    </ion-list>
+    </div>
 
+    <ion-list lines="full">
+        <ion-item-divider>
+            <ion-label>
+              Available Cities
+            </ion-label>
+          </ion-item-divider>
+        <ion-radio-group ngDefaultControl [(ngModel)]="cityid">
+            <ion-item *ngFor="let city of cities" (click)="selectCity(city)">
+                <ion-label>{{city.cityName}}</ion-label>
+                <ion-radio id="locationRadio" slot="end" name="{{city.cityName}}" value="{{city.cityId}}"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
 </ion-content>

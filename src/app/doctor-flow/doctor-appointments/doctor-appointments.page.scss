@@ -1,31 +1,30 @@
- /** Single Appointment Sec **/
- .appointments .appointment-list { background-color: #fff; border: 1px solid #f0f0f0; border-radius: 4px; display: -webkit-box;
-    display: -ms-flexbox;display: block; flex-wrap: wrap; margin-bottom: 20px; padding: 20px; text-align: center;}
-    .appointment-list .profile-info-widget .booking-doc-img {margin: 0 0 15px; display: block;}
-    .appointment-list .profile-info-widget .booking-doc-img img { border-radius: 50%; height: 100px; width: 100px;}
-    .appointment-list .profile-det-info { margin-bottom: 15px;}
-    .profile-det-info h3 { font-size: 17px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
-    .patient-details h5 i { width: 18px;}
-    .appointment-action a { font-size: 13px;}
-  
-     /*** Schedule Timings Sec ***/
-     .doctor-appointment-main {width:100%; margin: 15px 0 0;}
-
- .avatar > img { width: 100%; height: 100%;-o-object-fit: cover; object-fit: cover;}
-.bg-info-light { background-color: rgba(2, 182, 179,0.12) !important; color: #1db9aa !important;}
-.bg-success-light { background-color: rgba(15, 183, 107,0.12) !important; color: #26af48 !important;}
-.btn-group-sm>.btn, .btn-sm { padding: .25rem .5rem; font-size: .875rem; line-height: 1.5; border-radius: .2rem;}
-.bg-danger-light { background-color: rgba(242, 17, 54,0.12) !important; color: #e63c3c !important;}
-.btn { display: inline-block; font-weight: 400; color: #212529; text-align: center;vertical-align: middle; cursor: pointer;-webkit-user-select: none;
-  -moz-user-select: none; -ms-user-select: none; user-select: none; background-color: transparent; border: 1px solid transparent;padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .25rem; transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;}
-  .profile-det-info h5 {
-    font-size: 15px;
-    margin: 8px 0;
-    padding: 0;
-    font-weight: 300;
-    color: #757575;
+.upcoming {
+  background-color: #f1f0f5;
+  padding: 15px;
+  color: #797880;
+  font-weight: 600;
+  font-size: 16px;
 }
-.appointment-action a {
-  margin: 2px;
-  font-size: 1rem;
+.appointments-main{
+.appointments-list-img img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 5px 0 0;
+object-fit: cover;
+}
+.appointments-list{
+  padding: 15px;
+  border-bottom:1px solid #eaeaea;
+  p{
+    padding: 0;
+    margin: 0 0 5px;
+    font-size: 0.8rem;
+  }
+  p.date{
+    color:#a5a5a5;
+    font-size: 13px;
+  }
+
+}
 }

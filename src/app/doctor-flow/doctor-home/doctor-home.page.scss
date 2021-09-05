@@ -454,11 +454,12 @@
 	margin-right: 4px;
   }
   .footer-btn button {
-	background-color: #3880ff;
 	padding: 15px;
-	color: #fff;
+	color: #3880ff;
 	border-radius: 6px;
 	margin: 5px;
+
+	font-size: 1rem;
   }
   
   .map-sec {
@@ -553,8 +554,7 @@
 }
 .doctors-main .button{
   padding: 5px 15px;
-  background: #14bef0;
-  color: #fff;
+  color: #14bef0;
   border-radius: 2px;
   cursor: pointer;
 }
@@ -593,8 +593,9 @@ border-bottom: 1px solid #ccc;
   padding-bottom: 15px;
 }
 .doctor-main {
-  background-color: #f9fafb;
-  padding: 15px;
+    border-top: 5px solid #f5f5f5;
+    padding: 15px;
+    border-bottom: 5px solid #f5f5f5;
 }
 .dash-widget {
   text-align: center;

@@ -671,3 +671,22 @@ footer p span {
     font-size: 1rem;
     text-align: left;
 }
+
+.covid-assist img,
+.banner-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid #cfd8dd;
+}
+.banner-img {
+    margin: 20px 0 0;
+    float: left;
+}
+
+.banner-img img {
+    border-radius: 10px;
+}
+.doctor-dashboard-main .card.dash-card {
+    border: 0;
+}

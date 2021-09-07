@@ -7,7 +7,8 @@ import { User } from '@app/_model';
 import { CachingService } from './_services/caching.service';
 //import { SplashScreen } from '@capacitor/splash-screen';
 //import { StatusBar, Style } from '@capacitor/status-bar';
-
+import { AppLauncher } from '@capacitor/app-launcher';
+import { Browser } from '@capacitor/browser';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -75,8 +76,9 @@ export class AppComponent {
           //{title: 'Reminders', page: 'RemindersPage', url:'reminders', icon:'fa fa-clock-o'},
           {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
           {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
-          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
-          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
+          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'},
+          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'}
+          
         ];
         // this.MenuPages = [
         //     {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
@@ -96,8 +98,8 @@ export class AppComponent {
           {title: 'Social Media', page: 'SocialMediaPage', url:'social-media', icon:'fa fa-share-square'},
           {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
           {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
-          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
-          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
+          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'},
+          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'}
         ];
       //   this.MenuPages = [
       //     {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
@@ -116,8 +118,9 @@ export class AppComponent {
         this.MenuPages = [
           {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
           {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
-          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'},
-          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'}
+          {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'},
+          {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'}
+          
       ];
          break; 
       } 
@@ -125,11 +128,22 @@ export class AppComponent {
   }
   openMenuPage(pageurl){
     if(pageurl == 'like-us-give-5-star'){
-        alert("open playstore to give rating");
+        //alert("open playstore to give rating");
+       AppLauncher.canOpenUrl({ url: 'com.facebook.katana' }).then(data=>{
+         console.log(data);
+       });
+    }else if(pageurl == 'read-about-health'){
+      const openCapacitorSite = async () => {
+        await Browser.open({ url: 'https://www.practo.com/healthfeed' });
+      };
     }else{
       this.navCtrl.navigateRoot(pageurl);
     }
       
+  }
+  openPractoPlus(){
+    this.menuCtrl.close();
+    this.navCtrl.navigateRoot('explore-plus');
   }
   openProfile(){
     this.menuCtrl.close();

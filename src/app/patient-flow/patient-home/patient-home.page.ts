@@ -30,6 +30,9 @@ export class PatientHomePage implements OnInit {
       
     });
   }
+  openCovidAssistncePage(){
+    this.router.navigateByUrl('/covid-assist');
+  }
   openAppointment(){
     this.router.navigateByUrl('/patient-appointment-details');
   }

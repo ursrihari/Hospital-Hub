@@ -236,7 +236,15 @@ const routes: Routes = [
   {
     path: 'canceled-appointments-tab',
     loadChildren: () => import('./patient-flow/canceled-appointments-tab/canceled-appointments-tab.module').then( m => m.CanceledAppointmentsTabPageModule)
+  },  {
+    path: 'about-app',
+    loadChildren: () => import('./about-app/about-app.module').then( m => m.AboutAppPageModule)
+  },
+  {
+    path: 'covid-assist',
+    loadChildren: () => import('./patient-flow/covid-assist/covid-assist.module').then( m => m.CovidAssistPageModule)
   }
+
 
 
 

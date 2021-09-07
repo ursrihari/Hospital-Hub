@@ -58,6 +58,9 @@ export class AuthService {
   getDoctorDetails(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
+  getDoctorReviews(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
 
   
 

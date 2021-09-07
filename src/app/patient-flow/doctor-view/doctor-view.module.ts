@@ -8,6 +8,7 @@ import { DoctorViewPageRoutingModule } from './doctor-view-routing.module';
 
 import { DoctorViewPage } from './doctor-view.page';
 import { RatingModule } from '../../components/rating/rating.module';
+import { SubStringPipe } from '@app/pipe/sub-string.pipe';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { RatingModule } from '../../components/rating/rating.module';
     DoctorViewPageRoutingModule,
     RatingModule
   ],
-  declarations: [DoctorViewPage]
+  declarations: [DoctorViewPage,SubStringPipe]
 })
 export class DoctorViewPageModule {}

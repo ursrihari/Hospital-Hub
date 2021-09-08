@@ -31,6 +31,7 @@ canGoBack: boolean = false;
       "apTime": "11:00 AM",
       "createdBy": "7894561230"
     }
+    this.router.navigateByUrl('/patient-appointments');
     this.authService.addAppointment(params,true).subscribe(data=>{
       console.log(data);
       //this.appointments = data;

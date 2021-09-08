@@ -61,6 +61,15 @@ export class AuthService {
   getDoctorReviews(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
+  getMedicalRecords(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
+  shareMedicalRecord(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
+  deleteMEdicalRecord(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
 
   
 

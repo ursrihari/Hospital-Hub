@@ -1,0 +1,130 @@
+/** Schedule Timings Sec **/
+ul{
+padding: 0px;
+margin: 0px;
+}
+.clinic-pro-sec-main {width: 100%;}
+.clinic-banner:before { z-index: -9; bottom: 0; content: ""; left: 0; opacity: 0.8; position: absolute; right: 0; top: 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 37%);}
+.clinic-banner { z-index: 9; padding:190px 16px 15px; width: 100%; min-height: 600px; background:url(/../assets/images/doctor-07.jpg) center top no-repeat; position: relative;}
+.clinic-banner > span {
+display: inline-block;
+background:#e20c14;
+padding: 2px 15px;
+color: #fff;
+font-size: 13px;
+font-weight: 500;
+letter-spacing: 0.3px;
+margin: 0 0 10px;
+border-radius: 4px;}
+.clinic-pro-sec-main {
+padding:0;
+}
+.text {
+    font-size: 0.9rem;
+}
+.pricing-table-header {
+text-align: center;
+padding: 10px 0 10px;
+}
+.pricing-table-header p {
+margin-bottom: 0px;
+}
+p.save {
+color: #01a400;
+font-size: 13px;
+}
+.clinic-banner h1 {color: #fff; font-size:1.6rem; font-weight: 500; line-height: 38px;}
+.pricing-sec {width: 100%; margin: 25px 0 0;}
+.pricing-table-agency { padding:15px 8px 0; background-color: #fff; box-shadow: 0 40px 125px rgba(0, 0, 0, 0.07); border-radius:8px; border-bottom: 4px solid #0069b4;}
+.pricing-table-agency .pricing-table-header h5 {  margin: 0; font-size: 14px; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 10px;}
+.pricing-table-agency .pricing-table-body { padding: 0 5px; margin-bottom:0;	}
+.pricing-table-agency .pricing-table-body ul {padding: 0 0 8px;}
+.pricing-table-agency .pricing-table-body li { padding: 15px 0 5px; border-top: 1px solid #ebeff1; font-size: 12px; line-height: 1.5em;
+letter-spacing: 0.05em; color: #666; }
+.pricing-table-agency .pricing-table-featured-label {    padding: 1px 12px;
+border-radius: 4px;
+position: absolute;
+top: -7px;
+left: 47%;
+background: #0069b4;
+transform: translateX(-50%);
+font-size: 12px;
+line-height: 1.2em;
+color: #fff;}
+.ml-3px {margin-left: 4px !important;}
+.mr-3px {margin-right: 4px !important;}
+.pricing-table-agency .pricing { font-size: 25px;  line-height: 1.2em; font-weight: 700; color: #000; margin: 0;}
+.pricing-table-agency .pricing small {font-size: 65%;
+margin: 0 0 0 5px;
+color: #787887;
+font-size: 14px;}
+
+/** Clinic ratings Sec **/
+.clinic-ratings-sec {width: 100%;
+padding: 16px;
+margin: 10px 0 0;}
+.clinic-ratings-sec .normal-txt {padding: 0 0 30px;}
+p {font-size: 0.9rem; line-height: 20px; color: #787887;}
+.user-ratings-sec {width: 80%; margin: 0 auto; padding: 0;}
+//   Individual bars 
+.bar-5 {width: 60%; height: 10px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 10px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 10px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 10px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 10px; background-color: #646161;}
+
+.clinic-ratings-sec .side { float: left; width: 15%; margin-top:5px; }
+.clinic-ratings-sec .middle { margin-top:13px; float: left; width: 70%; }
+.clinic-ratings-sec .right { text-align: right; }
+.clinic-ratings-sec .bar-container { width: 100%; background-color: #f1f1f1; text-align: center; color: white; border-radius: 8px; }
+.clinic-ratings-sec .bar-container > div {border-radius: 8px;}
+.user-ratings-sec-left {padding: 15px 40px 0 0; text-align: center; width: 60%;}
+.user-ratings-sec-left .heading {display: block; font-size: 70px; font-weight: 400; line-height: 60px; margin: 0 0 10px;}
+.user-ratings-sec-right {width: 60%;}
+.user-ratings-sec-right .side-sec {clear: both;}
+.user-ratings-sec-left small {font-size: 10px; display: block;}
+.user-ratings-sec-left .checked { color: orange;}
+.numbering-sec {padding: 10px 10%; margin: 30px 0 0;}
+.numbering-sec .single-number-sec {margin: 0 0 25px;}
+.numbering-sec .single-number-sec h4 {font-size: 18px; font-weight: 600; margin-bottom: 5px;}
+.single-number-sec .icon { width: 50px;  height: 50px;  background: #1a76d1;  border-radius: 50%; line-height: 50px; margin: 0 0 0px; display: inline-block; text-align: center; color: #fff; font-size: 20px;}
+.numbering-sec .single-number-sec p {font-size: 16px;}
+/** Clinic Pro Doctor Cons543ultaiton Sec **/
+.clinic-pro-doctor-consultaiton-sec {padding: 16px;}
+.clinic-pro-doctor-consultaiton-sec-list h4 {font-size: 16px; margin: 0 0 5px;}
+.clinic-pro-doctor-consultaiton-sec-list ol {     margin: 0;
+padding: 10px 16px 0;}
+.clinic-pro-doctor-consultaiton-sec-list ol li {font-size: 14px; color: #000; padding: 0 0 5px; list-style: inherit;}
+.clinic-pro-testimonials-sec {width: 100%; margin: 25px 0 0;}
+.clinic-pro-testimonials-sec h2 {font-size: 25px;
+color: #212121;
+margin: 0 0 10px;
+line-height: 32px;
+font-weight: 300; }
+.clinic-pro-testimonials-sec h2 span {display: inline-block; background:#e20c14; padding: 0px 15px; color: #fff; font-size: 16px; border-radius: 8px;}
+
+.single-testimonials-sec {background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .1); margin: 25px 0 0; padding: 12px;}
+.testi-item { position: relative;padding: 12px 0; margin: 15px 0 0;}
+.testi-item img { width: 40px!important;height: 40px;line-height: 40px;border-radius: 50%; margin: 0 10px 0 0;}
+.testi-content h3 { font-size: 16px; display: block; font-weight: 600; margin: 0 0 7px; }
+.testi-content span { display: inline-block;
+    display: inline-block;
+    font-size: 12px;
+    background: #f7d4d6;
+    padding: 1px 10px;
+    color: #cc000c;
+    border-radius: 5px;}
+    
+// frequently
+.frequently-sec h2{
+    padding:10px 16px;
+    margin-bottom: 0px;
+}
+.frequently-sec ul {
+    padding: 16px;
+    margin: 0px;
+    list-style: none;
+}
+.frequently-sec{
+    padding-right: 16px;
+}

@@ -17,23 +17,26 @@
   <ion-button (click)="openDoctorProfilePage()">View Doctor</ion-button>
   <ion-button (click)="bookAppointmentPage()">Book Appointment</ion-button>
 </div> -->
-<div class="mb-4 col-sm-12">
-  <div class="d-flex align-items-center justify-content-between doctors-main">
+<div class="mb-4 col-sm-12" *ngIf="showContent">
+  <div *ngFor="let doctor of doctorsData" class="d-flex align-items-center justify-content-between doctors-main">
       <div class="ms-3 d-flex align-items-center doctors-list" (click)="openDoctorProfilePage()">
-        <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/my-doctors/doctor-12.jpg" class="rounded-circle"></span>
+        <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="{{doctor.profileImg}}" class="rounded-circle"></span>
         <div>
-          <h4>Dr. Tejaswini Nayak</h4>
-        <p>Pediatrician<br/>Chinmayi Child Care Clinic</p>
-        <div class="d-flex d-flex align-items-center"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
+          <h4>{{doctor.name}}</h4>
+        <p>{{doctor.specialization}}<br/>{{doctor.clinic}}</p>
+        <div class="d-flex d-flex align-items-center" *ngIf="doctor.isPrime"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
         </div>
       </div>
-      <div class="button" (click)="bookAppointmentPage()">Book</div>
+      <div class="button" (click)="bookAppointmentPage(doctor)">Book</div>
   </div>
-  <div class="d-flex align-items-center justify-content-between doctors-main">
+</div>
+  <!-- 
+    <div class="mb-4 col-sm-12">
+    <div class="d-flex align-items-center justify-content-between doctors-main">
     <div class="ms-3 d-flex align-items-center doctors-list">
       <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/my-doctors/doctor-12.jpg" class="rounded-circle"></span>
       <div>
-        <h4>Dr. Tejaswini Nayak</h4>
+        <h4>Dr. Tejaswini Nayaksss</h4>
       <p>Pediatrician<br/>Chinmayi Child Care Clinic</p>
       <div class="d-flex d-flex align-items-center"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
       </div>
@@ -84,6 +87,8 @@
   </div>
   <div class="button">Book</div>
 </div>
-
 </div>
+ -->
+
+
   </ion-content>

@@ -71,6 +71,18 @@ export class AuthService {
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
 
+  /*Peter*/
+  getMyDoctors(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
+
+  getDoctorTimeSlots(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
+
+  getPractoPractices(){
+    return this.accountService.getdata(`${environment.apiUrl}/`);
+  }
   
 
  

@@ -10,9 +10,62 @@
 
 <ion-content>
 
+  <div class="appointment-details-sec visit-sec" *ngIf="showContent">
+    <div class="appointments-list d-flex align-items-center">
+      <div class="appointments-list-img mr-3"><img src="{{doctor.profileImg}}" alt=""></div>
+    <div class="appointments-list-text"><p><strong>{{doctor.name}}</strong></p></div></div>
+    <div class="date-sec mob-consultation-sec bt-2">
+        <h3>Purpose of Visit</h3>
+        <p>Consultation</p>
+    </div>
+    <div class="future-appointment-sec d-flex flex-nowrap">
+        <div *ngFor="let day of timeSlots" class="single-future-appointment-sec" (click)="avaialbleSlots(day)">
+            <h4>{{day.date | date: 'd MMM, y'}}</h4>
+            <h5>{{day.avaialableSlots}} slots available</h5>
+        </div>
+    </div>
+    <div class="current-appointment-sec">
+        <h3>{{selectedDate | date: 'd MMM, y' }}</h3>
+        <div class="single-appointment-sec">
+            <h3>Morning <span>{{selectedAvaialbleSlots}} slots</span></h3>
+            <ion-button [fill]="slot.allocated?'solid':'outline'" *ngFor="let slot of selectedSlots" (click)="openBookingConformationPage(slot)">{{slot.time}}</ion-button>
+            <!-- <a *ngFor="let slot of selectedSlots" [fill]="slot.allocated?'solid':'outline'" (click)="openBookingConformationPage()">{{slot.time}}</a> -->
+            <!-- <a (click)="openBookingConformationPage()">03:00 PM</a>
+            <a (click)="openBookingConformationPage()">04:00 PM</a>
+            <a (click)="openBookingConformationPage()">05:00 PM</a>
+            <a (click)="openBookingConformationPage()">06:00 PM</a>
+            <a (click)="openBookingConformationPage()">07:00 PM</a>
+            <a (click)="openBookingConformationPage()">08:00 PM</a>
+            <a (click)="openBookingConformationPage()">09:00 PM</a>
+            <a (click)="openBookingConformationPage()">10:00 PM</a>
+            <a (click)="openBookingConformationPage()">11:00 PM</a>
+            <a (click)="openBookingConformationPage()">02:00 PM</a>
+            <a (click)="openBookingConformationPage()">02:00 PM</a> -->
+        </div>
+        <!-- <div class="single-appointment-sec mt-3">
+            <h3>Afternoon <span>8 slots</span></h3>
+            <a (click)="openBookingConformationPage()">02:00 PM</a>
+            <a (click)="openBookingConformationPage()">03:00 PM</a>
+            <a (click)="openBookingConformationPage()">04:00 PM</a>
+            <a (click)="openBookingConformationPage()">05:00 PM</a>
+            <a (click)="openBookingConformationPage()">06:00 PM</a>
+            <a (click)="openBookingConformationPage()">07:00 PM</a>
+            <a (click)="openBookingConformationPage()">08:00 PM</a>
+            <a (click)="openBookingConformationPage()">09:00 PM</a>
+            <a (click)="openBookingConformationPage()">10:00 PM</a>
+            <a (click)="openBookingConformationPage()">11:00 PM</a>
+            <a (click)="openBookingConformationPage()">02:00 PM</a>
+            <a (click)="openBookingConformationPage()">02:00 PM</a>
+        </div> -->
+    </div>
+    
+</div>
+
    <!-- Appointment Visit Sec  -->
-   <div class="appointment-details-sec visit-sec">
-    <div class="appointments-list d-flex align-items-center"><div class="appointments-list-img mr-3"><img src="assets/images/appointments/doctor-12.jpg" alt=""></div><div class="appointments-list-text"><p><strong>DR. Tejaswini Nayak</strong></p></div></div>
+   <!-- <div class="appointment-details-sec visit-sec">
+    <div class="appointments-list d-flex align-items-center">
+      <div class="appointments-list-img mr-3"><img src="{{doctor.profileImg}}" alt=""></div>
+    <div class="appointments-list-text"><p><strong>{{doctor.name}}</strong></p></div></div>
     <div class="date-sec mob-consultation-sec bt-2">
         <h3>Purpose of Visit</h3>
         <p>Consultation</p>
@@ -69,7 +122,7 @@
         </div>
     </div>
     
-</div>
+</div> -->
 <!-- <p>Doctor details & Time slots</p>
 <ion-card>
   Tomorrow 22 Aug

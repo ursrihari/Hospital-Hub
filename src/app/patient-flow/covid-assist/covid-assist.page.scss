@@ -169,3 +169,26 @@
         font-weight: 600;}
 	.article-content p {font-size: 13px; line-height: 18px; color:#9a9a9a; margin: 0 0 7px;}
 	.article-content span.cat-head {color:#717171 ;}
+    .instant-consulation-sec h3{
+        color: #2d2d32;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: left;
+        margin: 30px 0 0px;
+        line-height: 24px;
+    }
+    .instant-consulation-sec img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+    
+    .instant-consulation-sec a, .instant-consulation-sec p{
+        color: #787887;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        word-wrap: anywhere;
+        margin: 5px 0 20px;
+    }

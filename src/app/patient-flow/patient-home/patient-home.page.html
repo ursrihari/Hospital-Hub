@@ -48,7 +48,7 @@
                     </a>
                 </div>
             </div>
-            <div class="lab-test-main">
+            <!-- <div class="lab-test-main">
                 <a>
                     <p>Lab tests & health checkup</p>
                     <div class="lab-test-img">
@@ -63,20 +63,20 @@
                         <img src="assets/images/medicines.jpg" />
                     </div>
                 </a>
-            </div>
+            </div> -->
 
-            <div class="icons-main">
+            <div class="icons-main" *ngIf="showCovidSymptomsContent">
                 <h5>Instant Video Consultation for COVID-19 Sympotoms
                     <span>Connect with top medical experts, 24/7</span>
                 </h5>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-3" *ngFor="let symptom of covidSymptoms">
                         <a>
-                            <img src="assets/images/Dental.svg" />
-                            <p>Fever</p>
+                            <img src="{{symptom.image}}" />
+                            <p>{{symptom.title}}</p>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <!-- <div class="col-3">
                         <a>
                             <img src="assets/images/Heart.svg" />
                             <p>Dry Cough</p>
@@ -117,7 +117,7 @@
                             <img src="assets/images/corona-symp/img7.jpg" />
                             <p>Breathing Dif..</p>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -135,7 +135,7 @@
 
         </div>
 
-        <div class="brand-wrapper">
+        <div class="brand-wrapper" *ngIf="showOffersContent">
             <div class="sec-title text-center mb-0">
                 <h2>In the Spotlight</h2>
                 <p>Explore deals, offers, health updates and more</p>
@@ -168,12 +168,12 @@
                         </div>
                     </div> -->
                     <ion-slides pager="true" [options]="spotlightSlideOpts" class="spot-slid-btm-pad">
-                        <ion-slide>
+                        <ion-slide *ngFor="let offer of offers">
                             <div class="item">
-                                <a target="_blank"> <img src="assets/images/spotlight-carousel/img1.jpg" alt="" title=""></a>
+                                <a target="_blank"> <img src="{{offer.offerImage}}" alt="" title=""></a>
                             </div>
                         </ion-slide>
-                        <ion-slide>
+                        <!-- <ion-slide>
                             <div class="item">
                                 <a target="_blank"> <img src="assets/images/spotlight-carousel/img2.jpg" alt="" title=""></a>
                             </div>
@@ -197,27 +197,27 @@
                             <div class="item">
                                 <a target="_blank"> <img src="assets/images/spotlight-carousel/img4.jpg" alt="" title=""></a>
                             </div>
-                        </ion-slide>
+                        </ion-slide> -->
                     </ion-slides>
                 </div>
             </div>
         </div>
 
 
-        <div class="container">
+        <div class="container" *ngIf="showSymptomsContent">
 
             <div class="icons-main">
                 <h5>Not feeling too well?
                     <span>Treat common symptoms instantly via video consultation</span>
                 </h5>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-3" *ngFor="let symptom of symptoms">
                         <a>
-                            <img src="assets/images/corona-symp/img1.jpg" />
-                            <p>Fever</p>
+                            <img src="{{symptom.image}}" />
+                            <p>{{symptom.title}}</p>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <!-- <div class="col-3">
                         <a>
                             <img src="assets/images/corona-symp/img2.jpg" />
                             <p>Dry Cough</p>
@@ -258,12 +258,12 @@
                             <img src="assets/images/corona-symp/img7.jpg" />
                             <p>Breathing Dif..</p>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <a class="view-all-symp">View All Symptoms</a>
             </div>
 
-            <div class="brand-wrapper docs-nearyou">
+            <div class="brand-wrapper docs-nearyou" *ngIf="showDoctorsContent">
                 <div class="sec-title text-center mb-0">
                     <h2>Find Doctors Available Near You</h2>
                     <p>Book assured appointments even during the COVID-19 pandemic</p>
@@ -274,97 +274,56 @@
                         <ion-slides pager="true" [options]="doctorsSlideOpts">
                             <ion-slide>
                                 <div class="item">
-                                    <a target="_blank">
+                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'0':'2'">
                                         <div class="doc-img">
-                                            <img src="assets/images/doctors/img1.jpg" alt="" title="">
+                                            <img src="{{doctor.image}}" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>Dr.James Adult</h3>
-                                            <p>Geriatrician<span>HSR Layout</span></p>
-                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
-                                        </div>
-                                    </a>
-                                    <a target="_blank">
-                                        <div class="doc-img">
-                                            <img src="assets/images/doctors/img2.jpg" alt="" title="">
-                                        </div>
-                                        <div class="doc-details">
-                                            <h3>Dr.James Alison</h3>
-                                            <p>Geriatrician<span>HSR Layout</span></p>
-                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>80% . 19 Years Exp</h6>
+                                            <h3>{{doctor.name}}</h3>
+                                            <p>{{doctor.specialization}}<span>{{doctor.location}}</span></p>
+                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>{{doctor.rating}} . {{doctor.experience}}</h6>
                                         </div>
                                     </a>
                                 </div>
                             </ion-slide>
                             <ion-slide>
                                 <div class="item">
-                                    <a target="_blank">
+                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'2':'4'">
                                         <div class="doc-img">
-                                            <img src="assets/images/doctors/img1.jpg" alt="" title="">
+                                            <img src="{{doctor.image}}" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>Dr.James Adult</h3>
-                                            <p>Geriatrician<span>HSR Layout</span></p>
-                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
-                                        </div>
-                                    </a>
-                                    <a target="_blank">
-                                        <div class="doc-img">
-                                            <img src="assets/images/doctors/img2.jpg" alt="" title="">
-                                        </div>
-                                        <div class="doc-details">
-                                            <h3>Dr.James Alison</h3>
-                                            <p>Geriatrician<span>HSR Layout</span></p>
-                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>80% . 19 Years Exp</h6>
+                                            <h3>{{doctor.name}}</h3>
+                                            <p>{{doctor.specialization}}<span>{{doctor.location}}</span></p>
+                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>{{doctor.rating}} . {{doctor.experience}}</h6>
                                         </div>
                                     </a>
                                 </div>
                             </ion-slide>
                             <ion-slide>
                                 <div class="item">
-                                    <a target="_blank">
+                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'4':'6'">
                                         <div class="doc-img">
-                                            <img src="assets/images/doctors/img3.jpg" alt="" title="">
+                                            <img src="{{doctor.image}}" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>Dr.Sharat Honnat</h3>
-                                            <p>Geriatrician<span>HSR Layout</span></p>
-                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
-                                        </div>
-                                    </a>
-
-                                    <a target="_blank">
-                                        <div class="doc-img">
-                                            <img src="assets/images/doctors/img4.jpg" alt="" title="">
-                                        </div>
-                                        <div class="doc-details">
-                                            <h3>Dr.Sharat Honnat</h3>
-                                            <p>Geriatrician<span>HSR Layout</span></p>
-                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
+                                            <h3>{{doctor.name}}</h3>
+                                            <p>{{doctor.specialization}}<span>{{doctor.location}}</span></p>
+                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>{{doctor.rating}} . {{doctor.experience}}</h6>
                                         </div>
                                     </a>
                                 </div>
                             </ion-slide>
                             <ion-slide>
                                 <div class="item">
-                                    <a target="_blank">
+                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'6':'8'">
                                         <div class="doc-img">
-                                            <img src="assets/images/doctors/img3.jpg" alt="" title="">
+                                            <img src="{{doctor.image}}" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>Dr.Sharat Honnat</h3>
-                                            <p>Geriatrician<span>HSR Layout</span></p>
-                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
-                                        </div>
-                                    </a>
-                                    <a target="_blank">
-                                        <div class="doc-img">
-                                            <img src="assets/images/doctors/img2.jpg" alt="" title="">
-                                        </div>
-                                        <div class="doc-details">
-                                            <h3>Dr.Sharat Honnat</h3>
-                                            <p>Geriatrician<span>HSR Layout</span></p>
-                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>96% . 18 Years Exp</h6>
+                                            <h3>{{doctor.name}}</h3>
+                                            <p>{{doctor.specialization}}<span>{{doctor.location}}</span></p>
+                                            <h6><i class="fa fa-thumbs-up" aria-hidden="true"></i>{{doctor.rating}} . {{doctor.experience}}</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -444,7 +403,7 @@
                 <a class="view-all-symp">See All Doctors</a>
             </div>
 
-            <div class="brand-wrapper hosp-nearyou">
+            <div class="brand-wrapper hosp-nearyou" *ngIf="showHospitalsContent">
                 <div class="sec-title text-center mb-0">
                     <h2>Top Hospitals that are open and safe</h2>
                     <p>Maximum safety followed for you and your family</p>
@@ -453,75 +412,58 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <ion-slides pager="true" [options]="hospitalsSlideOpts">
-                            <ion-slide>
-                                <div class="item">
-                                    <a target="_blank">
+                            <ion-slide >
+                                <div class="item" >
+                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'0':'2'">
                                         <div class="doc-img">
-                                            <img src="assets/images/hospitals/img1.jpg" alt="" title="">
+                                            <img src="{{hospital.image}}" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>Motherhood Hospital</h3>
-                                            <p>Multispeciality Hospital<span>Indiranagar</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
-                                        </div>
-                                    </a>
-                                    <a target="_blank">
-                                        <div class="doc-img">
-                                            <img src="assets/images/hospitals/img2.jpg" alt="" title="">
-                                        </div>
-                                        <div class="doc-details">
-                                            <h3>Koshys Hospital</h3>
-                                            <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
+                                            <h3>{{hospital.name}}</h3>
+                                            <p>{{hospital.type}}<span>{{hospital.location}}</span></p>
+                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.no_of_doctors}} Doctors</h6>
                                         </div>
                                     </a>
                                 </div>
                             </ion-slide>
                             <ion-slide>
-                                <div class="item">
-                                    <a target="_blank">
+                                <div class="item" >
+                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'2':'4'">
                                         <div class="doc-img">
-                                            <img src="assets/images/hospitals/img2.jpg" alt="" title="">
+                                            <img src="{{hospital.image}}" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>Koshys Hospital</h3>
-                                            <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
-                                        </div>
-                                    </a>
-
-                                    <a target="_blank">
-                                        <div class="doc-img">
-                                            <img src="assets/images/hospitals/img1.jpg" alt="" title="">
-                                        </div>
-                                        <div class="doc-details">
-                                            <h3>Motherhood Hospital</h3>
-                                            <p>Multispeciality Hospital<span>Indiranagar</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
+                                            <h3>{{hospital.name}}</h3>
+                                            <p>{{hospital.type}}<span>{{hospital.location}}</span></p>
+                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.no_of_doctors}} Doctors</h6>
                                         </div>
                                     </a>
                                 </div>
                             </ion-slide>
                             <ion-slide>
-                                <div class="item">
-                                    <a target="_blank">
+                                <div class="item" >
+                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'4':'6'">
                                         <div class="doc-img">
-                                            <img src="assets/images/hospitals/img1.jpg" alt="" title="">
+                                            <img src="{{hospital.image}}" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>Koshys Hospital</h3>
-                                            <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
+                                            <h3>{{hospital.name}}</h3>
+                                            <p>{{hospital.type}}<span>{{hospital.location}}</span></p>
+                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.no_of_doctors}} Doctors</h6>
                                         </div>
                                     </a>
-                                    <a target="_blank">
+                                </div>
+                            </ion-slide>
+                            <ion-slide>
+                                <div class="item" >
+                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'6':'8'">
                                         <div class="doc-img">
-                                            <img src="assets/images/hospitals/img2.jpg" alt="" title="">
+                                            <img src="{{hospital.image}}" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>Motherhood Hospital</h3>
-                                            <p>Multispeciality Hospital<span>Indiranagar</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
+                                            <h3>{{hospital.name}}</h3>
+                                            <p>{{hospital.type}}<span>{{hospital.location}}</span></p>
+                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.no_of_doctors}} Doctors</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -645,7 +587,7 @@
             </div>
 
 
-            <div class="brand-wrapper test-wrapper">
+            <div class="brand-wrapper test-wrapper" *ngIf="showQuestionsContent">
                 <div class="sec-title text-center mb-0">
                     <h2>Free expert answers to your health questions</h2>
                     <span class="decor"><span class="inner"></span></span>
@@ -653,6 +595,42 @@
                 <div class="row justify-content-center test-wrapper-inn">
                     <div class="col-lg-10">
                         <ion-slides pager="true" [options]="questionsSlideOpts">
+                            <ion-slide *ngFor="let question of questions">
+                                <div class="item">
+                                    <a target="_blank">
+                                        <div class="test-top">
+                                            <img src="{{question.image}}" />
+                                            <p>{{question.question_for}}</p>
+                                            <p><span>{{question.date | customDate:'in-days'}}</span></p>
+                                        </div>
+                                        <div class="test-mid">
+                                            <h2><span>{{question.title}}</span></h2>
+                                            <p>{{question.description}}</p>
+                                        </div>
+                                        <div class="test-btm">
+                                            <p>{{question.answers_count}} answers from doctors <img *ngFor="let img of question.doctors" src="{{img.profileImg}}" /></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
+                            <!-- <ion-slide>
+                                <div class="item">
+                                    <a target="_blank">
+                                        <div class="test-top">
+                                            <img src="assets/images/testimonial-icon.jpg" />
+                                            <p>Asked for Fe...</p>
+                                            <p><span>1h ago</span></p>
+                                        </div>
+                                        <div class="test-mid">
+                                            <h2><span>Acne, irregular perio...</span></h2>
+                                            <p>I have acne problem it is spreading on my cheeks and neck as well i ususally get hand cramps and now a days its very frequent can you advice me if isotr...</p>
+                                        </div>
+                                        <div class="test-btm">
+                                            <p>2 answers from doctors <img src="assets/images/doctors/doctor-thumb-01.jpg" /><img src="assets/images/doctors/doctor-thumb-02.jpg" /></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
                             <ion-slide>
                                 <div class="item">
                                     <a target="_blank">
@@ -688,43 +666,7 @@
                                         </div>
                                     </a>
                                 </div>
-                            </ion-slide>
-                            <ion-slide>
-                                <div class="item">
-                                    <a target="_blank">
-                                        <div class="test-top">
-                                            <img src="assets/images/testimonial-icon.jpg" />
-                                            <p>Asked for Fe...</p>
-                                            <p><span>1h ago</span></p>
-                                        </div>
-                                        <div class="test-mid">
-                                            <h2><span>CLAMP SUSPENSION...</span></h2>
-                                            <p>I have acne problem it is spreading on my cheeks and neck as well i ususally get hand cramps and now a days its very frequent can you advice me if isotr..</p>
-                                        </div>
-                                        <div class="test-btm">
-                                            <p>2 answers from doctors <img src="assets/images/doctors/doctor-thumb-01.jpg" /><img src="assets/images/doctors/doctor-thumb-02.jpg" /></p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </ion-slide>
-                            <ion-slide>
-                                <div class="item">
-                                    <a target="_blank">
-                                        <div class="test-top">
-                                            <img src="assets/images/testimonial-icon.jpg" />
-                                            <p>Asked for Fe...</p>
-                                            <p><span>1h ago</span></p>
-                                        </div>
-                                        <div class="test-mid">
-                                            <h2><span>Acne, irregular perio...</span></h2>
-                                            <p>I have acne problem it is spreading on my cheeks and neck as well i ususally get hand cramps and now a days its very frequent can you advice me if isotr...</p>
-                                        </div>
-                                        <div class="test-btm">
-                                            <p>2 answers from doctors <img src="assets/images/doctors/doctor-thumb-01.jpg" /><img src="assets/images/doctors/doctor-thumb-02.jpg" /></p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </ion-slide>
+                            </ion-slide> -->
                         </ion-slides>
                         <!-- <div class="owl-carousel owl-theme brand-slider">
                             <div class="item">

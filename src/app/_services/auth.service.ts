@@ -80,12 +80,33 @@ export class AuthService {
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
 
-  getPractoPractices(){
-    return this.accountService.getdata(`${environment.apiUrl}/`);
+  getPractoPractices(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
   }
   
+  getNearDoctors(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
 
+  getNearHospitals(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
+
+  getQuestions(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
+  }
  
+  getCovidSymptoms(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
+  }
+
+  getSymptoms(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
+  }
+
+  getOffers(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
+  }
   
 
 

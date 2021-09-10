@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { IonRouterOutlet } from '@ionic/angular';
 import { AuthService } from '@app/_services';
+import { truncateSync } from 'fs';
 @Component({
   selector: 'app-appointment-booking-conformation',
   templateUrl: './appointment-booking-conformation.page.html',
@@ -62,7 +63,7 @@ showContent:boolean = false;
   getPractoPromises() {
     this.practoPromises = this.getPractoPromisesDemo();
     
-    // this.authService.getPractoPractices().subscribe((data) => {
+    // this.authService.getPractoPractices(true).subscribe((data) => {
     //     console.log(data);
     //     this.practoPromises = data;
     //     this.showContent = true;      

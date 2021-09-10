@@ -61,7 +61,7 @@
             <h3>Search by Speciality</h3>
             <div class="healthcon-spec">
                 <div class="healthcon-spec-bg" *ngFor="let speciality of specialities | customArray:'0':'18'" (click)="openHospitalsListPage(speciality)">
-                    <a>
+                    <a class="d-flex d-flex align-items-center">
                         <img [src]="speciality.iconUrl" />
                         <p [innerHTML]="speciality.specName"></p>
                         <!-- <p>{{speciality.specName}}</p> -->

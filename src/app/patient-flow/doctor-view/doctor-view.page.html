@@ -86,7 +86,7 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
                               <div>
-                                <img *ngIf="review.profileImg" [src]="review.profileImg" />
+                               <div class="nameimg"> <img *ngIf="review.profileImg" [src]="review.profileImg" /></div>
                                 <div *ngIf="!review.profileImg" class="name">{{review.name | subString:'0':'1'}}</div>
                             </div>
                             <div>

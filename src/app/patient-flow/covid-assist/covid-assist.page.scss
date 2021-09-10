@@ -24,6 +24,55 @@
     margin: 30px 0 0;
     font-size: 24px;
 }
+.clinic-pro-covid-test-sec h4 {
+    font-size: 17px;
+}
+.covid-banner button {
+    background-color: #0069b4;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+   
+}
+.covid-banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0 8px 8px 0;
+}
+.covid-banner p {
+    font-size: 14px;
+}
+.covid-banner {
+    border-radius: 6px;
+    padding: 0;
+    display: inline-block;
+    margin: 16px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    border: 1px solid #8abce0;
+}
+.care-plan {
+    font-size: 9px;
+    background-color: #0069b4;
+    padding: 3px 5px;
+    color: #c8e0f1;
+    border-radius: 6px;
+    width: 64%;
+    line-height: 10px;
+
+}
+.care-plan i {
+    font-size: 20px;
+    color: #fff;
+}
+.covid-text {
+    background-color: #b9ddf7;
+    padding: 16px;
+    border-radius:8px 0px 0px 8px;
+}
    ul{padding: 0px; margin: 0px;}
    .clinic-pro-sec-main {width: 100%;}
    .clinic-banner:before { z-index: -9; bottom: 0; content: ""; left: 0; opacity: 0.8; position: absolute; right: 0; top: 0; background: linear-gradient( 180deg, rgba(0,0,0,0) 0%, #000000 100%);}

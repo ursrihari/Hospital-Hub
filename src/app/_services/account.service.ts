@@ -7,6 +7,7 @@ import { User } from "@app/_model";
 import { CachingService } from "./caching.service";
 import { ToastController } from "@ionic/angular";
 import { Network } from "@capacitor/network";
+import { element } from "protractor";
 
 @Injectable({
   providedIn: "root",
@@ -37,6 +38,7 @@ export class AccountService {
       t.present();
       t.dismiss();
     });
+    
   }
 
   postdata(params: object, url: string, forceRefresh) {
@@ -167,20 +169,49 @@ export class AccountService {
   }
   logout() {
     localStorage.setItem(
-      "user",
-      JSON.stringify({
-        name: "",
-        mobile: "",
-        role: "999",
-        id: "",
-        username: "",
-        password: "",
-        firstName: "",
-        lastName: "",
-        token: "",
-      })
-    );
+      "user",JSON.stringify({
+      name:'',
+    mobile:'',
+    role: '999',
+    id: '',
+    username: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    token: '',
+    contactNo: '',
+    email: '',
+    gender: '',
+    dateOfBirth: '',
+    maritalStatus: '',
+    height: '',
+    weight: '',
+    emergencyContact: '',
+    location: '',
+    allergies: '',
+    currentMedications: '',
+    pastMedications: '',
+    chronicDiseases: '',
+    injuries: '',
+    surgeies:'',
+    smokingHabits: '',
+    alcoholConumption: '',
+    activityLevel: '',
+    foodPreference: '',
+    occupation: '',
+      }));
   }
+  // // JSON.stringify({
+  //   name: "",
+  //   mobile: "",
+  //   role: "999",
+  //   id: "",
+  //   username: "",
+  //   password: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   token: "",
+  //})
   getUser() {
     if (localStorage.getItem("user") != "") {
       let user_data = JSON.parse(localStorage.getItem("user"));
@@ -191,15 +222,148 @@ export class AccountService {
     }
     return this.userSubject.asObservable();
   }
-  setUser(mobile) {
+  setUser(mobile,userData) {
     let user = {};
-    user["name"] = "";
-    user["id"] = "";
-    user["username"] = "";
-    user["password"] = "";
-    user["firstName"] = "";
-    user["lastName"] = "";
-    user["token"] = "";
+    if(userData.hasOwnProperty('name') && userData.name!=''){
+      user["name"] = userData.name;
+    }else{
+      user["name"] = '';
+    }
+    if(userData.hasOwnProperty('mobile') && userData.mobile!=''){
+      user["mobile"] = userData.mobile;
+    }else{
+      user["mobile"] = '';
+    }
+    if(userData.hasOwnProperty('role') && userData.role!=''){
+      user["role"] = userData.role;
+    }else{
+      user["role"] = '';
+    }
+    if(userData.hasOwnProperty('id') && userData.id!=''){
+      user["id"] = userData.id;
+    }else{
+      user["id"] = '';
+    }
+    if(userData.hasOwnProperty('username') && userData.username!=''){
+      user["username"] = userData.username;
+    }else{
+      user["username"] = '';
+    }
+    if(userData.hasOwnProperty('password') && userData.password!=''){
+      user["password"] = userData.password;
+    }else{
+      user["password"] = '';
+    }
+    if(userData.hasOwnProperty('token') && userData.token!=''){
+      user["token"] = userData.token;
+    }else{
+      user["token"] = '';
+    }
+    if(userData.hasOwnProperty('contactNo') && userData.contactNo!=''){
+      user["contactNo"] = userData.contactNo;
+    }else{
+      user["contactNo"] = '';
+    }
+    if(userData.hasOwnProperty('email') && userData.email!=''){
+      user["email"] = userData.email;
+    }else{
+      user["email"] = '';
+    }
+    if(userData.hasOwnProperty('gender') && userData.gender!=''){
+      user["gender"] = userData.gender;
+    }else{
+      user["gender"] = '';
+    }
+    if(userData.hasOwnProperty('dateOfBirth') && userData.dateOfBirth!=''){
+      user["dateOfBirth"] = userData.dateOfBirth;
+    }else{
+      user["dateOfBirth"] = '';
+    }
+    if(userData.hasOwnProperty('bloodGroup') && userData.bloodGroup!=''){
+      user["bloodGroup"] = userData.bloodGroup;
+    }else{
+      user["bloodGroup"] = '';
+    }
+    if(userData.hasOwnProperty('maritalStatus') && userData.maritalStatus!=''){
+      user["maritalStatus"] = userData.maritalStatus;
+    }else{
+      user["maritalStatus"] = '';
+    }
+    if(userData.hasOwnProperty('height') && userData.height!=''){
+      user["height"] = userData.height;
+    }else{
+      user["height"] = '';
+    }
+    if(userData.hasOwnProperty('weight') && userData.weight!=''){
+      user["weight"] = userData.weight;
+    }else{
+      user["weight"] = '';
+    }
+    if(userData.hasOwnProperty('emergencyContact') && userData.emergencyContact!=''){
+      user["emergencyContact"] = userData.emergencyContact;
+    }else{
+      user["emergencyContact"] = '';
+    }
+    if(userData.hasOwnProperty('location') && userData.location!=''){
+      user["location"] = userData.location;
+    }else{
+      user["location"] = '';
+    }
+    if(userData.hasOwnProperty('allergies') && userData.allergies!=''){
+      user["allergies"] = userData.allergies;
+    }else{
+      user["allergies"] = '';
+    }
+    if(userData.hasOwnProperty('currentMedications') && userData.currentMedications!=''){
+      user["currentMedications"] = userData.currentMedications;
+    }else{
+      user["currentMedications"] = '';
+    }
+    if(userData.hasOwnProperty('pastMedications') && userData.pastMedications!=''){
+      user["pastMedications"] = userData.pastMedications;
+    }else{
+      user["pastMedications"] = '';
+    }
+    if(userData.hasOwnProperty('chronicDiseases') && userData.chronicDiseases!=''){
+      user["chronicDiseases"] = userData.chronicDiseases;
+    }else{
+      user["chronicDiseases"] = '';
+    }
+    if(userData.hasOwnProperty('injuries') && userData.injuries!=''){
+      user["injuries"] = userData.injuries;
+    }else{
+      user["injuries"] = '';
+    }
+    if(userData.hasOwnProperty('surgeies') && userData.surgeies!=''){
+      user["surgeies"] = userData.surgeies;
+    }else{
+      user["surgeies"] = '';
+    }
+    if(userData.hasOwnProperty('smokingHabits') && userData.smokingHabits!=''){
+      user["smokingHabits"] = userData.smokingHabits;
+    }else{
+      user["smokingHabits"] = '';
+    }
+    if(userData.hasOwnProperty('alcoholConumption') && userData.alcoholConumption!=''){
+      user["alcoholConumption"] = userData.alcoholConumption;
+    }else{
+      user["alcoholConumption"] = '';
+    }
+    if(userData.hasOwnProperty('activityLevel') && userData.activityLevel!=''){
+      user["activityLevel"] = userData.activityLevel;
+    }else{
+      user["activityLevel"] = '';
+    }
+    if(userData.hasOwnProperty('foodPreference') && userData.foodPreference!=''){
+      user["foodPreference"] = userData.foodPreference;
+    }else{
+      user["foodPreference"] = '';
+    }
+    if(userData.hasOwnProperty('occupation') && userData.occupation!=''){
+      user["occupation"] = userData.occupation;
+    }else{
+      user["occupation"] = '';
+    }
     if (mobile == "1111111111") {
       user["mobile"] = "1111111111";
       user["role"] = "4";

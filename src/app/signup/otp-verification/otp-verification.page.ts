@@ -56,8 +56,8 @@ export class OtpVerificationPage implements OnInit {
       this.authService.verifyOtp(params)
       .subscribe( data=>{
             console.log(data);
-            localStorage.setItem('user', JSON.stringify(data));
-            //this.authService.setUser(this.mobile);
+            //localStorage.setItem('user', JSON.stringify(data));
+            //this.authService.setUser(this.mobile,data);
               if(data){
                 if(data.role == 4){
                   this.router.navigateByUrl('/patient-home');
@@ -69,7 +69,7 @@ export class OtpVerificationPage implements OnInit {
             }
       });
     }
-     this.accountService.setUser(this.mobile);
+     this.accountService.setUser(this.mobile,{});
     // console.log(this.route.snapshot.paramMap.get('mobile'));
     // //this.router.navigateByUrl('/patient-home');
     //   this.authService.verifyOtp(this.mobile,this.otp).subscribe(user=> {

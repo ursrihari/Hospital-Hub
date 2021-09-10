@@ -3,6 +3,68 @@
         <div class="title d-flex justify-content-between">
             <div>
                 <label class="text-muted">Name</label>
+                <p>{{profilePersonalDetails.name}}</p>
+            </div>
+            <div><img  src="assets/images/speciality/img2.jpg" alt=""></div>
+        </div>
+
+        <div class="profile-list mb-4">
+            <ul class="p-0">
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Contact number</label>
+                    <label class="text-muted">{{profilePersonalDetails.mobile}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Email id</label>
+                    <label class="text-muted">{{profilePersonalDetails.email}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Gender</label>
+                    <label class="text-muted">{{profilePersonalDetails.gender}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Date of birth</label>
+                    <label class="text-muted">{{profilePersonalDetails.dateOfBirth}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Blood group</label>
+                    <label class="text-muted">{{profilePersonalDetails.bloodGroup}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Marital status</label>
+                    <label class="text-muted">{{profilePersonalDetails.maritalStatus}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Height</label>
+                    <label class="text-muted">{{profilePersonalDetails.height}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Weight</label>
+                    <label class="text-muted">{{profilePersonalDetails.weight}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Emergency contact </label>
+                    <label class="text-muted">{{profilePersonalDetails.emergencyContact}}</label>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <label class="text-muted">Location</label>
+                    <label class="text-muted">{{profilePersonalDetails.location}}</label>
+                </li>
+            </ul>
+            <div class="complate-profile" (click)="openModal()">
+                <div class="complate-profile-inner">
+                <h4> Complete profile</h4>
+                <p class="m-0">{{completeProfile}}% Completed</p>
+            </div>
+            </div>
+        </div>
+</div>
+
+
+<!-- <div class="profile-main">
+        <div class="title d-flex justify-content-between">
+            <div>
+                <label class="text-muted">Name</label>
                 <p>DR. Reshu Saraogi</p>
             </div>
             <div><img  src="assets/images/speciality/img2.jpg" alt=""></div>
@@ -58,7 +120,6 @@
             </div>
             </div>
         </div>
-</div>
-
+</div> -->
 
 </ion-content>

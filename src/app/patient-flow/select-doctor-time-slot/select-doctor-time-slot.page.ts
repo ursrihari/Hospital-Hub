@@ -11,7 +11,7 @@ import * as internal from 'stream';
 })
 export class SelectDoctorTimeSlotPage implements OnInit {
   canGoBack: boolean = false;
-  doctor:any;
+  doctor:any={"name":"","profileImg":""};
   constructor(private router:Router,
     private routerOutlet: IonRouterOutlet,
     private authService:AuthService,
@@ -31,8 +31,10 @@ export class SelectDoctorTimeSlotPage implements OnInit {
     this.canGoBack = this.routerOutlet &&
                      this.routerOutlet.canGoBack();
     this.route.queryParams.subscribe(params => {
+      console.log(JSON.stringify(params.doctor));
     if (params && params.doctor) {
       this.doctor = JSON.parse(params.doctor);
+      console.log(JSON.stringify(this.doctor));
     }
     });
         

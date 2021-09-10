@@ -159,7 +159,7 @@ ion-segment-button#segment-0 {
         margin: 0;
     }
     
-    .Practo-sec h4 {
+    .Practo-sec h4,h5,h6 {
         margin: 0;
         background-color: #e5f4ff;
         font-size: 16px;
@@ -168,7 +168,11 @@ ion-segment-button#segment-0 {
         border-radius: 8px 8px 0 0;
         font-weight: normal;
     }
-    
+    .doctor-fee{
+        position: relative;
+        float: right;
+        right: 0;
+    }
     .Practo-sec ul li {
         padding:10px 9px 5px;
         font-size: 14px;

@@ -12,7 +12,7 @@
 
   <div class="appointment-details-sec visit-sec" *ngIf="showContent">
     <div class="appointments-list d-flex align-items-center">
-      <div class="appointments-list-img mr-3"><img src="{{doctor.profileImg}}" alt=""></div>
+      <div class="appointments-list-img mr-3"><img [src]="doctor.profileImg" alt=""></div>
     <div class="appointments-list-text"><p><strong>{{doctor.name}}</strong></p></div></div>
     <div class="date-sec mob-consultation-sec bt-2">
         <h3>Purpose of Visit</h3>

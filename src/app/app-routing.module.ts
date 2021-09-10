@@ -243,6 +243,10 @@ const routes: Routes = [
   {
     path: 'covid-assist',
     loadChildren: () => import('./patient-flow/covid-assist/covid-assist.module').then( m => m.CovidAssistPageModule)
+  },
+  {
+    path: 'profile-edit',
+    loadChildren: () => import('./profile-edit/profile-edit.module').then( m => m.ProfileEditPageModule)
   }
 
 

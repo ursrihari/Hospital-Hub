@@ -1,0 +1,122 @@
+
+   /*** Clinic ratings Sec ***/
+   .item {
+    text-align: left;
+}
+.header-bg {
+    padding: 16px;
+    background-color: #055d9c;
+    color: #fff;
+    font-size: 14px;
+}
+.header-bg h3 {
+    background-color: #39aafb;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 18px;
+    color: #043f69;
+    margin: 10px 0;
+    padding: 5px 10px;
+}
+.header-bg h2 {
+    padding: 0;
+    margin: 30px 0 0;
+    font-size: 24px;
+}
+   ul{padding: 0px; margin: 0px;}
+   .clinic-pro-sec-main {width: 100%;}
+   .clinic-banner:before { z-index: -9; bottom: 0; content: ""; left: 0; opacity: 0.8; position: absolute; right: 0; top: 0; background: linear-gradient( 180deg, rgba(0,0,0,0) 0%, #000000 100%);}
+   .clinic-banner { z-index: 9; padding:250px 20px 15px; width: 100%; min-height: 600px; background: url(/../assets/images/doctor-07.jpg) center top no-repeat; position: relative;}
+   .clinic-banner > span {display: inline-block; background: #116fb5; padding: 8px 15px; color: #fff; font-size: 16px; font-weight: 500;
+    letter-spacing: 0.3px; margin: 0 0 3px;}
+	.clinic-banner h1 {color: #fff; font-size: 28px; font-weight: 500; line-height: 42px;}
+	.pricing-sec {width: 100%; margin: 25px 0 0;}
+	.pricing-table-agency { padding:15px 8px 0; background-color: #fff; box-shadow: 0 40px 125px rgba(0, 0, 0, 0.07); border-radius:8px}
+	.pricing-table-agency .pricing-table-header h5 {  margin: 0; font-size: 18px; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 10px;}
+	.pricing-table-agency .pricing-table-body { padding: 0 5px; margin-bottom: 1.5rem;	}
+	.pricing-table-agency .pricing-table-body ul {padding: 0 0 8px;}
+	.pricing-table-agency .pricing-table-body li { padding: 15px 0 5px; border-top: 1px solid #ebeff1; font-size: 12px; line-height: 1.5em;
+	 letter-spacing: 0.05em; color: #666; }
+	 .pricing-table-agency .pricing-table-featured-label { padding: 3px 12px; border-radius: 10px; position: absolute; top: -7px; left: 47%; background:#e63c3c;-webkit-transform: translateX(-50%);transform: translateX(-50%);font-size: 12px;
+	 line-height: 1.2em;	color: #fff;}
+	 .ml-3px {margin-left: 3px !important;}
+	 .mr-3px {margin-right: 3px !important;}
+	 .pricing-table-agency .pricing { font-size: 30px;  line-height: 1.2em; font-weight: 700; color: #000; margin: 0;}
+	 .pricing-table-agency .pricing small {font-size: 65%; margin: 0 0 0 5px;}
+
+   /*** Clinic ratings Sec ***/
+   .clinic-ratings-sec {width: 100%; padding: 12px;}
+   .clinic-ratings-sec .normal-txt {padding: 0 0 30px;}
+   .clinic-ratings-sec .normal-txt p {font-size: 12px; line-height: 18px; color: #333;}
+   .user-ratings-sec {width: 80%; margin: 0 auto; padding: 0;}
+   /* Individual bars */
+   .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+   .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+   .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+   .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+   .bar-1 {width: 15%; height: 18px; background-color: #646161;}
+
+   .clinic-ratings-sec .side { float: left; width: 15%; margin-top:5px; }
+   .clinic-ratings-sec .middle { margin-top:5px; float: left; width: 70%; }
+   .clinic-ratings-sec .right { text-align: right; }
+   .clinic-ratings-sec .bar-container { width: 100%; background-color: #f1f1f1; text-align: center; color: white; border-radius: 8px; }
+   .clinic-ratings-sec .bar-container > div {border-radius: 8px;}
+   .user-ratings-sec-left {padding: 15px 40px 0 0; text-align: center; width: 60%;}
+   .user-ratings-sec-left .heading {display: block; font-size: 70px; font-weight: 400; line-height: 60px; margin: 0 0 10px;}
+   .user-ratings-sec-right {width: 60%;}
+   .user-ratings-sec-right .side-sec {clear: both;}
+   .user-ratings-sec-left small {font-size: 10px; display: block;}
+   .user-ratings-sec-left .checked { color: orange;}
+   .numbering-sec {padding: 10px 10%; margin: 20px 0 0;}
+   .numbering-sec .single-number-sec {margin: 0 0 25px;}
+   .numbering-sec .single-number-sec h4 {font-size: 20px; font-weight: 600; margin-bottom: 5px;}
+   .single-number-sec .icon { width: 50px;  height: 50px;  background: #1a76d1;  border-radius: 50%; line-height: 50px; margin: 0 0 10px; display: inline-block; text-align: center; color: #fff; font-size: 20px;}
+   .numbering-sec .single-number-sec p {font-size: 12px;}
+
+
+   /*** Clinic Pro Covid Tesst Sec ***/
+   .clinic-pro-covid-test-sec {width: 100%; }
+   .single-clinic-pro-covid-test-sec {margin: 20px 0 10px;}
+   .single-clinic-pro-covid-test-sec .service-icon {padding: 30px 12px; background: #f1f0f5; text-align: center; border-radius: 8px;}
+   .single-clinic-pro-covid-test-sec-desc {padding: 20px 0 0;}	
+   .single-clinic-pro-covid-test-sec-desc h3 {color: #333; font-size: 16px; line-height: 22px; margin: 0 0 5px; font-weight: 600;}
+   .single-clinic-pro-covid-test-sec-desc p {font-size: 13px; line-height: 18px; color:#9a9a9a; margin: 0 0 10px;}
+   .single-clinic-pro-covid-test-sec-desc a {color: #116fb5; font-size: 14px;}
+   .clinic-pro-covid-test-sec .sec-head {margin: 30px 0 8px;}
+   .clinic-pro-covid-test-sec .sec-head h2 {color: #333; font-size: 20px; line-height: 22px; margin: 0 0 5px; font-weight: 600;}
+   .single-book-covid-test-sec {margin: 10px 0 0;}  
+   .single-book-covid-test-sec .clinic-banner:before {background: linear-gradient( 180deg, rgba(0,0,0,0.2) 0%, #000000 100%);}
+   .single-book-covid-test-sec .clinic-banner {min-height: inherit; padding: 80px 12px 15px;}
+   .single-book-covid-test-sec .clinic-banner > span { color: #349a34; position: absolute; top: 20px; left: 12px; margin: 0; padding: 4px 15px; background: #fff; border-radius: 6px;}
+   .single-book-covid-test-sec .clinic-banner h2 { font-size: 18px; font-weight: 500; line-height: 28px; color: #fff;}
+   .single-book-covid-test-sec .clinic-banner p { font-size: 14px; font-weight: 500; line-height: 20px; color: #fff;}
+   .single-book-covid-test-sec-desc {padding: 15px 0 0;}
+   .single-book-covid-test-sec-desc h3 {color: #333; font-size: 16px; line-height: 22px; margin: 0 0 5px; font-weight: 600;}
+// .single-book-covid-test-sec-desc ul li::before { position: absolute; left: 0; content: ""; background: #216db7; height: 6px;width: 6px; border-radius: 30px; top: 7px;}
+   .single-book-covid-test-sec-desc ul li { font-size: 14px; color: #565872; margin-bottom: 0px;  padding-left: 14px;
+    position: relative; display: inline-block; padding-right: 15px; width: 50%;}
+   .single-book-covid-test-sec-desc .bttn {
+    width: auto;
+    padding: 0px 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    line-height: 30px;
+    background-color: #0069b4;
+   }
+
+
+    /*** Clinic Pro Covid Tesst Sec ***/
+	.clinic-pro-article-sec {width: 100%; margin: 15px 0 0;}
+	.clinic-pro-article-sec .sec-head h2 {color: #333; font-size: 18px; line-height: 22px; margin: 0 0 5px; font-weight: 600;}
+    .single-clinic-pro-article-sec {width: 100%; margin: 8px 0 10px; } 
+	.single-clinic-pro-article-sec .article-img img  {width: 100%; border-radius: 8px;}
+	.article-content {padding: 10px 0 0;}
+	.article-content .cat-head {color: #8386ad; font-weight: 500; font-size: 13px;}
+	.article-content h3 {color: #212121;
+        font-size: 13px;
+        line-height: 19px;
+        margin: 0 0 5px;
+        font-weight: 600;}
+	.article-content p {font-size: 13px; line-height: 18px; color:#9a9a9a; margin: 0 0 7px;}
+	.article-content span.cat-head {color:#717171 ;}

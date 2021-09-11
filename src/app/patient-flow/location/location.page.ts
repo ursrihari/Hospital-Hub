@@ -25,8 +25,9 @@ export class LocationPage implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.getCities();
+    //this.cities = this.getAppAvailableLocations();
     //this.getCities();
-    this.cities = this.getAppAvailableLocations();
   }
   closeModal(){
       this.modalController.dismiss({

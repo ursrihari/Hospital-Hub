@@ -43,15 +43,15 @@ export class AuthService {
   getSpecialities(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/get-specialities.php`,forceRefresh);
   }
-
-
-  /*Pending*/
   getAppCities(forceRefresh:boolean){
-    return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
+    return this.accountService.getdata(`${environment.apiUrl}/get-cities.php`,forceRefresh);
   }
   getHospital(params:object,forceRefresh:boolean){
-    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+    return this.accountService.postdata(params,`${environment.apiUrl}/get-hospital.php`,forceRefresh);
   }
+  /*Pending*/
+  
+  
   getHospitalReviews(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }

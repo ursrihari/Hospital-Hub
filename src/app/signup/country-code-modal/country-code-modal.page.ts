@@ -11,6 +11,7 @@ import { finalize } from 'rxjs/operators';
 export class CountryCodeModalPage implements OnInit {
   countryCode:string;
   countries=[];
+  countryPreferences=[];
   constructor(private modalController:ModalController, 
     private navParams: NavParams, 
     private loader:LoaderService,
@@ -20,35 +21,7 @@ export class CountryCodeModalPage implements OnInit {
   public value = this.navParams.get('value');
   selectedRadioGroup:any;
   selectedRadioItem:any;
-
-  radio_list = [
-    {
-      id: '1',
-      name: '+965 Kuwait',
-      value: '965',
-      iso_code: 'KW'
-    }, {
-      id: '2',
-      name: '+91 India',
-      value: '91',
-      iso_code: 'IN'
-    }, {
-      id: '3',
-      name: '+966 Saudi Arabia',
-      value: '966',
-      iso_code: 'SA'
-    }, {
-      id: '4',
-      name: '+967 Yemen',
-      value: '967',
-      iso_code: 'YE'
-    }, {
-      id: '5',
-      name: '+968 Oman',
-      value: '968',
-      iso_code: 'OM'
-    }
-  ];
+  
   ngOnInit() {
     this.getCountries(false);
   }

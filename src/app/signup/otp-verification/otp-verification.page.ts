@@ -6,7 +6,7 @@ import { User } from '../../_model/User';
 import { first } from 'rxjs/operators';
 import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
 import { AccountService } from '@app/_services';
-
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-otp-verification',
@@ -17,6 +17,8 @@ export class OtpVerificationPage implements OnInit {
     mobile:any;
     otp:any = [];
     otpCounter=0;
+    showResend:boolean = false;
+    count:number=59;
     public smsTextmessage: string = '';
     public appHashString: string = '';
   constructor(private navCtrl: NavController, 
@@ -29,10 +31,16 @@ export class OtpVerificationPage implements OnInit {
 
   ngOnInit() {
     this.mobile = this.route.snapshot.paramMap.get('mobile');
+    let otp = this.route.snapshot.paramMap.get('otp');
     console.log(this.mobile);
     this.otp=[];
 // this.getHashCode();
-    // this.getSMS();
+if(otp){
+  //this.populateOtp(otp);
+}else{
+  this.getSMS();
+}
+this.coundownTimer();
   }
   ngOnDestroy() {
     for(var i=0;i<5;i++){
@@ -118,6 +126,13 @@ export class OtpVerificationPage implements OnInit {
         console.error(error);
       });
   }
+  populateOtp(otp){
+    console.log(otp);
+    otp = ""+otp;
+    for(var i=0;i<otp.length;i++){
+      this.otp[i]=otp[i];
+    }
+  }
   getCheck(){
     var string = "Sent from your Twilio trail account - 924070 //gtjDse+ce";
     var regex = /(?<!\d)\d{6}(?!\d)/;
@@ -136,6 +151,31 @@ export class OtpVerificationPage implements OnInit {
         result += el
     }
     return result
+}
+coundownTimer(){
+  this.count = 59;
+  let self =this;
+  var x = setInterval(function() {
+    self.count = self.count -1;
+    self.showResend = false;
+    if (self.count <= 0) {
+      clearInterval(x);
+      self.showResend = true;
+    }
+  },1000);
+}
+resendOtp(){
+  this.showResend = false;
+  this.coundownTimer();
+  let params= {
+    phoneno: Number(this.mobile),
+    hashCode: this.appHashString    //"//gtjDse+ce"
+  }
+  console.log(params);
+  this.authService.login(params,true).subscribe( data=>{
+    console.log(JSON.stringify(data));
+    this.populateOtp(data.otp);
+  });
 }
 
 }

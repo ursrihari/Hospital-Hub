@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:'https://roadcreations.com/hospitalhub-kuwait/api'
+  apiUrl:'https://clinicskwt.com/api'
   //apiUrl:'https://roadcreations.com/hospitalhub-kuwait/api'
   //apiUrl:'http://localhost'
 };

@@ -58,7 +58,7 @@ segmentChanged() {
 }
 
 getHospitalData(){
-  this.hospitalData = this.getHospitalDataDemo();
+  //this.hospitalData = this.getHospitalDataDemo();
   let params={
     hospitalid:''
   }

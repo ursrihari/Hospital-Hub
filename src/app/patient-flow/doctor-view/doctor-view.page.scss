@@ -159,7 +159,16 @@ ion-segment-button#segment-0 {
         margin: 0;
     }
     
-    .Practo-sec h4,h5,h6 {
+    .Practo-sec h4 {
+        margin: 0;
+        background-color: #e5f4ff;
+        font-size: 16px;
+        color: #0069b4;
+        padding: 15px;
+        border-radius: 8px 8px 0 0;
+        font-weight: normal;
+    }
+    .Practo-sec h6 {
         margin: 0;
         background-color: #e5f4ff;
         font-size: 16px;
@@ -201,10 +210,12 @@ ion-segment-button#segment-0 {
     background-color: transparent;
 }
 .Practo-sec.highly-sec h5{
-    
     font-size: 20px;
     margin: 22px 15px 5px;
     font-weight: 600;
+    background-color: transparent;
+    color: #212121;
+    padding: 0;
 
 }
 .Practo-sec.highly-sec p {
@@ -295,4 +306,8 @@ ion-segment-button#segment-0 {
     }
     .review-chat h5 {
         font-size: 1rem;
+    background-color: transparent;
+    color: #212121;
+    padding: 0;
     }
+    

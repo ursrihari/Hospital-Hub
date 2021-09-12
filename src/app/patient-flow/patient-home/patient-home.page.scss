@@ -70,10 +70,13 @@ margin-inline-end: 12px;
 .banner-img {
     margin: 20px 0 0;
     float: left;
+    width: 100%;
 }
 
 .banner-img img {
     border-radius: 10px;
+    width: 100%;
+    background-size: cover;
 }
 .find-doc-main {
     margin: 20px 0;

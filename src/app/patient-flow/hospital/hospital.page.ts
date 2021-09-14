@@ -64,19 +64,19 @@ getHospitalData(){
   }
   this.authService.getHospital(params,true).subscribe((data) => {
       console.log(data);
-      //this.hospitalData = data;
-      //this.showContent = true;      
+      this.hospitalData = data;
+      this.showContent = true;      
   });
   this.showContent = true;
 }
 getHospitalReviews(){
-  this.hospitalRevies = this.getHospitalReviewsDemo();
+  //this.hospitalRevies = this.getHospitalReviewsDemo();
   let params={
     hospitalid:''
   }
   this.authService.getHospitalReviews(params,true).subscribe((data) => {
       console.log(data);
-      //this.hospitalRevies = data;      
+      this.hospitalRevies = data;      
   });
 }
 

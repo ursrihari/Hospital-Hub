@@ -52,7 +52,7 @@ export class LoginPage implements OnInit {
   }
   ionViewWillEnter() {
     this.menuCtrl.enable(false);
-    this.getCountries(false);
+    this.getCountries(true);
     this.getHashCode();
   }
   
@@ -69,24 +69,24 @@ export class LoginPage implements OnInit {
   }
   getCountries(forceRefresh){
     this.authService.getCountries(forceRefresh).subscribe( data=>{
-      console.log(data);
+      console.log(JSON.stringify(data));
       this.countries = data;
       this.getCountryDetails();
     });
   }
   loginUser(){
-    if(this.country.mobile_number == "1111111111" || this.country.mobile_number == "2222222222" || this.country.mobile_number == "3333333333"){
-      this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
-    }else{
+    // if(this.country.mobile_number == "1111111111" || this.country.mobile_number == "2222222222" || this.country.mobile_number == "3333333333"){
+    //   this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
+    // }else{
       let params= {
         phoneno: Number(this.country.country_code)+this.country.mobile_number,
         hashCode: this.appHashString    //"//gtjDse+ce"
       }
       this.authService.login(params,true).subscribe( data=>{
         console.log(JSON.stringify(data));
-        this.router.navigate(['/otp-verification', {mobile:this.country.country_code+this.country.mobile_number,otp:data.otp}]);
+        this.router.navigate(['/otp-verification', {mobile:Number(this.country.country_code)+this.country.mobile_number,otp:data.otp}]);
       });
-    }
+   // }
     
 
     //this.router.navigate(['/otp-verification', {mobile:this.country.mobile_number}]);
@@ -167,15 +167,17 @@ export class LoginPage implements OnInit {
       (info) => {
         console.log(JSON.stringify(info));
        this.country.mobile_number=info.phoneNumber;
+       console.log(JSON.stringify(this.countries));
        if(this.countries.length>0){
         this.countries.filter(obj =>{ 
           console.log(JSON.stringify(obj));
-          if(obj.code.toLowerCase() == info.countryCode.toLowerCase()){
+          if(obj.iso_code.toLowerCase() == info.countryCode.toLowerCase()){
            console.log(JSON.stringify(obj));
-           this.country.country_code=obj.dial_code;
-           this.country.iso_code=obj.code;
-           this.country.name=obj.name;
-           this.country.country_code = obj.dial_code;
+           this.country.country_code=obj.country_code;
+           this.country.iso_code=obj.iso_code;
+           this.country.name=obj.country_name;
+           console.log("Srinivas "+JSON.stringify(this.country));
+           //this.country.country_code = obj.country_code;
            this.inputChange(this.country.mobile_number); 
           };
        });

@@ -23,7 +23,7 @@ export class CountryCodeModalPage implements OnInit {
   selectedRadioItem:any;
   
   ngOnInit() {
-    this.getCountries(false);
+    this.getCountries(true);
   }
   
   getCountries(forceRefresh){
@@ -51,15 +51,15 @@ export class CountryCodeModalPage implements OnInit {
 
   
   closeModal(){
-      let selectedCountry:object = this.countries.find(x => x.dial_code == this.countryCode);
+      let selectedCountry:object = this.countries.find(x => x.country_code == this.countryCode);
       console.log(selectedCountry);
-      if(selectedCountry && selectedCountry.hasOwnProperty('dial_code')){
+      if(selectedCountry && selectedCountry.hasOwnProperty('country_code')){
         this.modalController.dismiss({
           'dismissed': true,
           value: {
-            country_code: selectedCountry['dial_code'],
+            country_code: selectedCountry['country_code'],
             iso_code: selectedCountry['code'],
-            name: selectedCountry['name']
+            name: selectedCountry['country_name']
           }
         });
       }else{

@@ -48,7 +48,15 @@ export class PatientHomePage implements OnInit {
     this.getNearDoctors();
     this.getNearHospitals();
     this.getQuestions();
-
+    this.getHomePageData();
+  }
+  getHomePageData(){
+    let params={
+      phoneno: ''
+    };
+    this.authService.getHomePageData(params,false).subscribe(data=>{
+        console.log(data);
+    });
   }
   openCovidAssistncePage(){
     this.router.navigateByUrl('/covid-assist');
@@ -104,13 +112,13 @@ export class PatientHomePage implements OnInit {
   }
   
     getOffers(){
-      this.offers = this.getOffersDemo();
-      //  this.authService.getOffers(true).subscribe((data) => {
-      //     console.log(data);
-      //     this.offers = data;
-      //     this.showOffersContent = true;      
-      // });
-      this.showOffersContent = true;   
+      //this.offers = this.getOffersDemo();
+       this.authService.getOffers(true).subscribe((data) => {
+          console.log(data);
+          this.offers = data;
+          this.showOffersContent = true;      
+      });
+     // this.showOffersContent = true;   
     }
 
     getOffersDemo(){
@@ -125,28 +133,28 @@ export class PatientHomePage implements OnInit {
     }
 
     getNearDoctors(){
-      this.nearDoctors = this.getNearDoctorsDemo();
+     // this.nearDoctors = this.getNearDoctorsDemo();
       let params={
         location:''
       }
-      // this.authService.getNearDoctors(params,true).subscribe((data) => {
-      //     console.log(data);
-      //     this.nearDoctors = data;
-      //     this.showDoctorsContent = true;      
-      // });
+      this.authService.getNearDoctors(params,true).subscribe((data) => {
+          console.log(data);
+          this.nearDoctors = data;
+          this.showDoctorsContent = true;      
+      });
       this.showDoctorsContent = true;  
     }
 
     getCovidSymptoms(){
-      this.covidSymptoms = this.getCovidSymptomsDemo();
+      //this.covidSymptoms = this.getCovidSymptomsDemo();
       
-      // this.authService.getCovidSymptoms(true).subscribe((data) => {
-      //     console.log(data);
-      //     this.covidSymptoms = data;
-      //     this.showCovidSymptomsContent = true;      
-      // });
+      this.authService.getCovidSymptoms(true).subscribe((data) => {
+          console.log(data);
+          this.covidSymptoms = data;
+          this.showCovidSymptomsContent = true;      
+      });
       
-      this.showCovidSymptomsContent = true;
+      //this.showCovidSymptomsContent = true;
     }
 
     getCovidSymptomsDemo(){
@@ -163,13 +171,13 @@ export class PatientHomePage implements OnInit {
     }
 
     getSymptoms(){
-      this.symptoms = this.getSymptomsDemo();
+      //this.symptoms = this.getSymptomsDemo();
       
-      // this.authService.getSymptoms(true).subscribe((data) => {
-      //     console.log(data);
-      //     this.symptoms = data;
-      //     this.showSymptomsContent = true;      
-      // });
+      this.authService.getSymptoms(true).subscribe((data) => {
+          console.log(data);
+          this.symptoms = data;
+          this.showSymptomsContent = true;      
+      });
       
       this.showSymptomsContent = true;
     }
@@ -203,16 +211,16 @@ export class PatientHomePage implements OnInit {
    
 
     getNearHospitals(){
-      this.nearHospitals = this.getNearHospitalsDemo();
-      // let params={
-      //   location:''
-      // }
-      // this.authService.getNearHospitals(params,true).subscribe((data) => {
-      //     console.log(data);
-      //     this.nearHospitals = data;
-      //     this.showHospitalsContent = true;      
-      // });
-      this.showHospitalsContent = true;     
+      //this.nearHospitals = this.getNearHospitalsDemo();
+      let params={
+        location:''
+      }
+      this.authService.getNearHospitals(params,true).subscribe((data) => {
+          console.log(data);
+          this.nearHospitals = data;
+          this.showHospitalsContent = true;      
+      });
+      //this.showHospitalsContent = true;     
     }
 
     getNearHospitalsDemo(){
@@ -229,13 +237,13 @@ export class PatientHomePage implements OnInit {
     }
 
     getQuestions(){
-      this.questions = this.getQuestionsDemo();
+      //this.questions = this.getQuestionsDemo();
       
-      // this.authService.getQuestions(true).subscribe((data) => {
-      //     console.log(data);
-      //     this.questions = data;
-      //     this.showQuestionsContent = true;      
-      // });
+      this.authService.getQuestions(true).subscribe((data) => {
+          console.log(data);
+          this.questions = data;
+          this.showQuestionsContent = true;      
+      });
       this.showQuestionsContent = true;     
     }
 

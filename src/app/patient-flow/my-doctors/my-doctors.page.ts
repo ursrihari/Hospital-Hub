@@ -38,15 +38,15 @@ bookAppointmentPage(doctor){
 }
 
 getDoctorsData() {
-  this.doctorsData = this.getDoctorsDataDemo();
+  //this.doctorsData = this.getDoctorsDataDemo();
   let params={
     patientid:''
   }
-  // this.authService.getMyDoctors(params,true).subscribe((data) => {
-      // console.log(data);
-      //this.hospitalData = data;
-      //this.showContent = true;      
-  // });
+  this.authService.getMyDoctors(params,true).subscribe((data) => {
+      console.log(data);
+      this.doctorsData = data;
+      this.showContent = true;      
+  });
   this.showContent = true;
 }
 

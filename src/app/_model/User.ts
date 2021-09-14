@@ -1,7 +1,10 @@
 export interface User{
     name:string;
+    patientImage:string;
     mobile:number;
     role: number;
+    role_name: string;
+    role_id:string;
     id: string;
     username: string;
     password: string;
@@ -9,8 +12,8 @@ export interface User{
     contactNo: string;
     email: string;
     gender: string;
-    dateOfBirth: string;
-    bloodGroup: string;
+    dob: string;
+    bloodgroup: string;
     maritalStatus: string;
     height: string;
     weight: string;
@@ -27,5 +30,5 @@ export interface User{
     activityLevel: string;
     foodPreference: string;
     occupation: string;
-    length:24;
+    length:30;
 }

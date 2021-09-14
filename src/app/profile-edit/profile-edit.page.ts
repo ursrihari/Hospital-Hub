@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from '@app/_services';
+import { AccountService, AuthService } from '@app/_services';
 import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
@@ -12,6 +12,7 @@ export class ProfileEditPage implements OnInit {
   mobile;
   constructor(private modalController:ModalController,
     private navParams: NavParams,
+    private authService:AuthService,
     private accountService: AccountService) { }
 
   ngOnInit() {
@@ -34,7 +35,16 @@ export class ProfileEditPage implements OnInit {
         userData[element.model] = element.value;
     });
     this.accountService.setUser(this.mobile,userData);
-      console.log(this.dataFromParent);
-      this.closeModal();
+      //console.log(this.dataFromParent);
+      let data={
+        mobile: this.mobile,
+      }
+      let params ={...data, ...userData};
+      console.log(JSON.stringify(params));
+      this.authService.addProfileData(params,true).subscribe(data=>{
+           this.closeModal();
+      });
   }
+  
+
 }

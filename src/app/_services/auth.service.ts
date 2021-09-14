@@ -11,7 +11,7 @@ export class AuthService {
   //this.http.post<User>(`${environment.apiUrl}/user/otp-login.php`, params, { headers: headers }
   
   getCountries(forceRefresh:boolean){
-    return this.accountService.getdata(`${environment.apiUrl}/countries.json`,forceRefresh);
+    return this.accountService.getdata(`${environment.apiUrl}/get-countries.php`,forceRefresh);
   }
   login(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/user/otp-login.php`,forceRefresh);
@@ -49,6 +49,13 @@ export class AuthService {
   getHospital(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/get-hospital.php`,forceRefresh);
   }
+  addProfileData(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/patients/add-patient.php`,forceRefresh);
+  }
+  getHomePageData(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/home/get-home-banners.php`,forceRefresh);
+  }
+  
   /*Pending*/
   
   

@@ -61,14 +61,14 @@ showContent:boolean = false;
   }
 
   getPractoPromises() {
-    this.practoPromises = this.getPractoPromisesDemo();
+    //this.practoPromises = this.getPractoPromisesDemo();
     
-    // this.authService.getPractoPractices(true).subscribe((data) => {
-    //     console.log(data);
-    //     this.practoPromises = data;
-    //     this.showContent = true;      
-    // });
-    this.showContent = true;  
+    this.authService.getPractoPractices(true).subscribe((data) => {
+        console.log(data);
+        this.practoPromises = data;
+        this.showContent = true;      
+    });
+   //this.showContent = true;  
   }
 
   getPractoPromisesDemo(){

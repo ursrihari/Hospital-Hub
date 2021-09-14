@@ -58,8 +58,8 @@ export class HospitalSpecialitiesPage implements OnInit {
     console.log(params);
     this.authService.getHospitals(params, true).subscribe((data) => {
       console.log(data);
-      //this.hospitals = data;
-      this.hospitals = this.getHospitalListDemo();
+      this.hospitals = data;
+      //this.hospitals = this.getHospitalListDemo();
       this.showContent = true;
       this.getHospitalSpecialities();
     });
@@ -67,8 +67,8 @@ export class HospitalSpecialitiesPage implements OnInit {
   getHospitalSpecialities() {
     this.authService.getSpecialities(true).subscribe((data) => {
       console.log(data);
-      //this.specialities = data;
-      this.specialities = this.getSpecialitiesListDemo();
+      this.specialities = data;
+      //this.specialities = this.getSpecialitiesListDemo();
       this.showContent = true;
     });
   }

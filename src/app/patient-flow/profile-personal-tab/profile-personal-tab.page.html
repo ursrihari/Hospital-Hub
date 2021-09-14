@@ -5,9 +5,11 @@
                 <label class="text-muted">Name</label>
                 <p>{{profilePersonalDetails.name}}</p>
             </div>
-            <div><img  src="assets/images/speciality/img2.jpg" alt=""></div>
+            <div class="add-profile-img" (click)="openCamera()">
+                <img  *ngIf="profilePersonalDetails.patientImage!=''" [src]="profilePersonalDetails.patientImage" alt="">
+                <img  *ngIf="profilePersonalDetails.patientImage==''" src="assets/images/add-image.png" alt="">
+            </div>
         </div>
-
         <div class="profile-list mb-4">
             <ul class="p-0">
                 <li class="d-flex justify-content-between">

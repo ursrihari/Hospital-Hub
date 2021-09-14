@@ -65,16 +65,16 @@ export class SelectDoctorTimeSlotPage implements OnInit {
   }
 
   getDoctorTimeSlots(id){
-   this.timeSlots = this.getDoctorTimeSlotsDemo();
+   //this.timeSlots = this.getDoctorTimeSlotsDemo();
     let params={
       doctorid:id
     }
-    // this.authService.getDoctorTimeSlots(params,true).subscribe((data) => {
-    //     console.log(data);
-    //     this.timeSlots = data;
-    //     this.showContent = true;      
-    // });
-    this.showContent = true;  
+    this.authService.getDoctorTimeSlots(params,true).subscribe((data) => {
+        console.log(data);
+        this.timeSlots = data;
+        this.showContent = true;      
+    });
+   // this.showContent = true;  
   }
 
   getDoctorTimeSlotsDemo() {

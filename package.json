@@ -25,6 +25,7 @@
     "@capacitor/app": "1.0.2",
     "@capacitor/app-launcher": "^1.0.4",
     "@capacitor/browser": "^1.0.2",
+    "@capacitor/camera": "^1.0.5",
     "@capacitor/core": "^3.2.0",
     "@capacitor/geolocation": "^1.1.0",
     "@capacitor/haptics": "1.0.2",

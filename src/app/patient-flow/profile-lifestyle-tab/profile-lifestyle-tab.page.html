@@ -5,23 +5,23 @@
             <ul class="p-0">
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Smoking habits</label>
-                    <label class="text-muted">Add details</label>
+                    <label class="text-muted">{{profileLifeStyleDetails.smokingHabits}}</label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Alcohol conumption</label>
-                    <label class="text-muted">Add medications</label>
+                    <label class="text-muted">{{profileLifeStyleDetails.alcoholConumption}}</label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Activity level</label>
-                    <label class="text-muted">Add details</label>
+                    <label class="text-muted">{{profileLifeStyleDetails.activityLevel}}</label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Food preference</label>
-                    <label class="text-muted">Add details </label>
+                    <label class="text-muted">{{profileLifeStyleDetails.foodPreference}} </label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Occupation</label>
-                    <label class="text-muted">Add details</label>
+                    <label class="text-muted">{{profileLifeStyleDetails.occupation}}</label>
                 </li>
                 
                
@@ -29,7 +29,7 @@
             <div class="complate-profile">
                 <div class="complate-profile-inner">
                 <h4> Complete profile</h4>
-                <p class="m-0">13% Completed</p>
+                <p class="m-0" (click)="openModal()">{{completeProfile}}% Completed</p>
             </div>
             </div>
         </div>

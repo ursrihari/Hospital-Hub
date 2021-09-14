@@ -12,9 +12,9 @@
       </ion-refresher>
     <ion-list>
         <ion-radio-group ngDefaultControl [(ngModel)]="countryCode" (ionChange)="radioGroupChange($event)">
-            <ion-item *ngFor="let country of countries | orderBy: 'name'" (ionSelect)="radioSelect($event)">
-                <ion-label>{{country.dial_code}} {{country.name}}</ion-label>
-                <ion-radio slot="end" name="{{country.name}}" value="{{country.dial_code}}"></ion-radio>
+            <ion-item *ngFor="let country of countries | orderBy: 'country_name'" (ionSelect)="radioSelect($event)">
+                <ion-label>{{country.country_code}} {{country.country_name}}</ion-label>
+                <ion-radio slot="end" name="{{country.country_name}}" value="{{country.country_code}}"></ion-radio>
             </ion-item>
         </ion-radio-group>
     </ion-list>

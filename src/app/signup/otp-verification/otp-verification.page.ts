@@ -36,7 +36,11 @@ export class OtpVerificationPage implements OnInit {
     this.otp=[];
 // this.getHashCode();
 if(otp){
-  //this.populateOtp(otp);
+  let self= this;
+  setTimeout(function(){
+    self.populateOtp(otp);
+  },3000);
+  
 }else{
   this.getSMS();
 }
@@ -48,50 +52,27 @@ this.coundownTimer();
     }
   }
   verifyOtp(){
-    if(this.mobile == '1111111111' || this.mobile == '2222222222' || this.mobile == '3333333333'){
-      if(this.mobile == '1111111111'){
-        this.navCtrl.navigateRoot('patient-home');
-      }else if(this.mobile == '2222222222'){
-        this.navCtrl.navigateRoot('doctor-home');
-      }else if(this.mobile == '3333333333'){
-        this.navCtrl.navigateRoot('receptionist-home');
-      }
-    }else{
-      let params= {
+    let params= {
         phoneno: this.mobile,
         otp: this.convertArrayToNumber(this.otp)
       }
       this.authService.verifyOtp(params)
-      .subscribe( data=>{
-            console.log(data);
+      .subscribe( response=>{
+            console.log(response);
+            let data = response.data;
+            this.accountService.setUser(this.mobile,data);
             //localStorage.setItem('user', JSON.stringify(data));
             //this.authService.setUser(this.mobile,data);
               if(data){
-                if(data.role == 4){
+                if(data.role_name == 'patient'){
                   this.router.navigateByUrl('/patient-home');
-              }else if(data.role == 3){
+              }else if(data.role_name == 'doctor'){
                 this.router.navigateByUrl('/doctor-appointments');
-              }else if(data.role == 5){
+              }else if(data.role_name == 'receptionist'){
                 this.router.navigateByUrl('/receptionist-appointments');
               }
             }
       });
-    }
-     this.accountService.setUser(this.mobile,{});
-    // console.log(this.route.snapshot.paramMap.get('mobile'));
-    // //this.router.navigateByUrl('/patient-home');
-    //   this.authService.verifyOtp(this.mobile,this.otp).subscribe(user=> {
-    //     console.log(user);
-    //   if(user){
-    //     if(user.role == 4){
-    //       this.router.navigateByUrl('/patient-home');
-    //   }else if(user.role == 3){
-    //     this.router.navigateByUrl('/doctor-appointments');
-    //   }else if(user.role == 5){
-    //     this.router.navigateByUrl('/receptionist-appointments');
-    //   }
-    // }
-    // });
   }
   backToLoginPage(){
     this.router.navigateByUrl('/login');

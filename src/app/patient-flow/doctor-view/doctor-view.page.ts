@@ -26,7 +26,8 @@ export class DoctorViewPage implements OnInit {
   ngOnInit() {
     this.canGoBack = this.routerOutlet &&
                      this.routerOutlet.canGoBack();
-    this.tabs = ["Today","Tomorrow","25th Aug","26th Aug","27th Aug","28th Aug","29th Aug","30th Aug","31th Aug"];
+    //this.tabs = ["Today","Tomorrow","25th Aug","26th Aug","27th Aug","28th Aug","29th Aug","30th Aug","31th Aug"];
+    this.tabs = [];
     this.activeIndex =0;
     this.getDoctorDetails(this.route.snapshot.paramMap.get('id'));  
     this.getDoctorReviews(this.route.snapshot.paramMap.get('id'));
@@ -53,27 +54,27 @@ export class DoctorViewPage implements OnInit {
     });
 }
 getDoctorDetails(id){
-  this.doctorData = this.getDoctorDetailsDemo();
-  this.timeSlots = this.doctorData[0].timeSlots[0].slots;
-  this.showContent = true; 
+  //this.doctorData = this.getDoctorDetailsDemo();
+  //this.timeSlots = this.doctorData[0].timeSlots[0].slots;
+  //this.showContent = true; 
   let params={
     doctorId:id
   }
   this.authService.getDoctorDetails(params,true).subscribe((data) => {
       console.log(data);
-      //this.doctorData = data;
-      //this.showContent = true;      
+      this.doctorData = data;
+      this.showContent = true;      
   });
 
 }
 getDoctorReviews(doctorId){
-  this.doctorReviews = this.getDoctorReviewsDemo();
+  //this.doctorReviews = this.getDoctorReviewsDemo();
   let params={
     doctorId:doctorId
   }
   this.authService.getDoctorReviews(params,true).subscribe((data) => {
       console.log(data);
-      //this.doctorReviews = data;      
+      this.doctorReviews = data;      
   });
 }
 

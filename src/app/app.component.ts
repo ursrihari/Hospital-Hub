@@ -8,7 +8,8 @@ import { CachingService } from './_services/caching.service';
 //import { SplashScreen } from '@capacitor/splash-screen';
 //import { StatusBar, Style } from '@capacitor/status-bar';
 import { AppLauncher } from '@capacitor/app-launcher';
-import { Browser } from '@capacitor/browser';
+
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -18,32 +19,30 @@ export class AppComponent {
   activePageTitle = 'appointment-details';
   UserPages=[];
   MenuPages=[];
-  user: User;
-  user_role;
+  userProfile:object={};
+  profileCompleteness;
   constructor(private authService: AuthService,
     private menuCtrl:MenuController,
     private navCtrl: NavController,
     private accountService: AccountService,
     private platform: Platform,
+    private router:Router,
     //private statusBar: StatusBar,
     //private splashScreen: SplashScreen,
     private cachingService: CachingService
     ){
-
-      //this.accountService.user.subscribe(x => this.user = x);
       this.cachingService.initStorage();
       this.accountService.getUser().subscribe(user=> {
-        console.log(user);
+        this.userProfile = {...user};
+        this.profileCompleteness = this.accountService.profileCompleteness(user);
         if(user){
           if(user.role == 4){
-            this.initializeApp('patient');
-            this.user_role = 4;
+            this.initializeApp(this.userProfile['role_name']);
           }else if(user.role == 3){
-            this.initializeApp('doctor');
-            this.user_role = 3;
+            this.initializeApp(this.userProfile['role_name']);
           }else if(user.role == 5){
-            this.initializeApp('receptionist');
-            this.user_role = 5;
+            this.initializeApp(this.userProfile['role_name']);
+            
           }
           this.menuCtrl.enable(true);
         }
@@ -51,7 +50,7 @@ export class AppComponent {
   }
   
   initializeApp(role){
-    
+    console.log(role)
    this.platform.ready().then(() => {
       //this.statusBar.overlaysWebView(true);
       //this.statusBar.backgroundColorByHexString('#0069b4');
@@ -62,10 +61,20 @@ export class AppComponent {
       //   showDuration: 2000,
       //   autoHide: true
       // });
+      if(role=='patient'){
+        this.router.navigate(["/patient-home"], { skipLocationChange: true });
+      }else if(role=='doctor'){
+        this.router.navigate(["/doctor-appointments"], { skipLocationChange: true }); 
+      }else if(role=='receptionist'){
+        this.router.navigate(["/receptionist-appointments"], { skipLocationChange: true }); 
+      }else{
+        this.router.navigate(["/login"], { skipLocationChange: true });
+      }
     });
     //role= 'doctor';
     switch(role) { 
       case 'patient': { 
+
         this.UserPages = [
           {title: 'Home', page: 'PatientHomePage', url:'patient-home', icon:'fa fa-home'},
           {title: 'Appointments', page: 'PatientAppointmentsPage', url:'patient-appointments', icon:'fa fa-calendar'},
@@ -132,11 +141,13 @@ export class AppComponent {
        AppLauncher.canOpenUrl({ url: 'com.facebook.katana' }).then(data=>{
          console.log(data);
        });
-    }else if(pageurl == 'read-about-health'){
-      const openCapacitorSite = async () => {
-        await Browser.open({ url: 'https://www.practo.com/healthfeed' });
-      };
-    }else{
+    }
+    // else if(pageurl == 'read-about-health'){
+    //   const openCapacitorSite = async () => {
+    //     await Browser.open({ url: 'https://www.practo.com/healthfeed' });
+    //   };
+    // }
+    else{
       this.navCtrl.navigateRoot(pageurl);
     }
       
@@ -155,4 +166,5 @@ export class AppComponent {
 closeSidemenu(){
   this.menuCtrl.close();
 }
+
 }

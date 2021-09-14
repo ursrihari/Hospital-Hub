@@ -15,8 +15,10 @@
       <ion-list >
         <ion-item *ngFor="let input of dataFromParent">
           <ion-label position="floating">{{input.label}}</ion-label>
-          <ion-input [type]="input.type" [(ngModel)]="input.value"></ion-input>
+          <ion-input *ngIf="input.type!='textarea'" [type]="input.type" [(ngModel)]="input.value"></ion-input>
+          <ion-textarea *ngIf="input.type=='textarea'"  [(ngModel)]="input.value"></ion-textarea>
         </ion-item>
+        
       </ion-list>
     
 </ion-content>

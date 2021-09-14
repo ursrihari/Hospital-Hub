@@ -1,45 +1,45 @@
 <ion-content>
     <div class="profile-main">
-        <div class="title d-flex justify-content-between">
+        <!-- <div class="title d-flex justify-content-between">
             <div>
                 <label class="text-muted">Name</label>
                 <p>DR. Reshu Saraogi</p>
             </div>
             <div><img  src="assets/images/speciality/img2.jpg" alt=""></div>
-        </div>
+        </div> -->
 
         <div class="profile-list mb-4">
             <ul class="p-0">
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Allergies</label>
-                    <label class="text-muted">Add allergies</label>
+                    <label class="text-muted">{{profileMedicalDetails.allergies}}</label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Current medications</label>
-                    <label class="text-muted">Add medications</label>
+                    <label class="text-muted">{{profileMedicalDetails.currentMedications}}</label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Past medications</label>
-                    <label class="text-muted">Add medications</label>
+                    <label class="text-muted">{{profileMedicalDetails.pastMedications}}</label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Chronic diseases</label>
-                    <label class="text-muted">Add diseases </label>
+                    <label class="text-muted">{{profileMedicalDetails.chronicDiseases}} </label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Injuries</label>
-                    <label class="text-muted">Add incident</label>
+                    <label class="text-muted">{{profileMedicalDetails.injuries}}</label>
                 </li>
                 <li class="d-flex justify-content-between">
                     <label class="text-muted">Surgeies</label>
-                    <label class="">No</label>
+                    <label class="">{{profileMedicalDetails.surgeies}}</label>
                 </li>
                
             </ul>
             <div class="complate-profile">
                 <div class="complate-profile-inner">
                 <h4> Complete profile</h4>
-                <p class="m-0">13% Completed</p>
+                <p class="m-0">{{completeProfile}}% Completed</p>
             </div>
             </div>
         </div>

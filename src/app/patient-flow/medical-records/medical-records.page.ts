@@ -38,11 +38,10 @@ viewRecord(){
 }
 
 getMedicalRecords(){
-  this.medicalRecords = this.getMedicalRecordsDemo();
+  //this.medicalRecords = this.getMedicalRecordsDemo();
   this.showContent = true;
-
   let params={
-
+    
   }
   this.authService.getMedicalRecords(params,true).subscribe((data) => {
     console.log(data);

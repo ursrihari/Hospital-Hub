@@ -172,7 +172,9 @@ export class AccountService {
       "user",JSON.stringify({
       name:'',
     mobile:'',
-    role: '999',
+    role: '',
+    role_name: '',
+    role_id:'',
     id: '',
     username: '',
     password: '',
@@ -229,6 +231,11 @@ export class AccountService {
     }else{
       user["name"] = '';
     }
+    if(userData.hasOwnProperty('name') && userData.patientImage!=''){
+      user["patientImage"] = userData.patientImage;
+    }else{
+      user["patientImage"] = '';
+    }
     if(userData.hasOwnProperty('mobile') && userData.mobile!=''){
       user["mobile"] = userData.mobile;
     }else{
@@ -238,6 +245,16 @@ export class AccountService {
       user["role"] = userData.role;
     }else{
       user["role"] = '';
+    }
+    if(userData.hasOwnProperty('role_name') && userData.role_name!=''){
+      user["role_name"] = userData.role_name;
+    }else{
+      user["role_name"] = '';
+    }
+    if(userData.hasOwnProperty('role_id') && userData.role_id!=''){
+      user["role_id"] = userData.role_id;
+    }else{
+      user["role_id"] = '';
     }
     if(userData.hasOwnProperty('id') && userData.id!=''){
       user["id"] = userData.id;
@@ -274,10 +291,10 @@ export class AccountService {
     }else{
       user["gender"] = '';
     }
-    if(userData.hasOwnProperty('dateOfBirth') && userData.dateOfBirth!=''){
-      user["dateOfBirth"] = userData.dateOfBirth;
+    if(userData.hasOwnProperty('dob') && userData.dob!=''){
+      user["dob"] = userData.dob;
     }else{
-      user["dateOfBirth"] = '';
+      user["dob"] = '';
     }
     if(userData.hasOwnProperty('bloodGroup') && userData.bloodGroup!=''){
       user["bloodGroup"] = userData.bloodGroup;
@@ -359,10 +376,11 @@ export class AccountService {
     }else{
       user["foodPreference"] = '';
     }
-    if(userData.hasOwnProperty('occupation') && userData.occupation!=''){
-      user["occupation"] = userData.occupation;
+    
+    if(userData.hasOwnProperty('profile_completeness') && userData.profile_completeness!=''){
+      user["profile_completeness"] = userData.profile_completeness;
     }else{
-      user["occupation"] = '';
+      user["profile_completeness"] = '';
     }
     if (mobile == "1111111111") {
       user["mobile"] = "1111111111";
@@ -401,5 +419,18 @@ export class AccountService {
   }
   public get userValue(): User {
     return this.userSubject.value;
+  }
+  profileCompleteness(user){
+    //this.getUser().subscribe(user=>{
+      let count_total=0;
+      for (const k in user) {  
+        if(user[k]!=''){
+          console.log(user[k]);
+          count_total = count_total+1;
+           console.log(count_total);
+           return Math.round(((count_total)/30)*100);
+        }
+     }
+   // });
   }
 }

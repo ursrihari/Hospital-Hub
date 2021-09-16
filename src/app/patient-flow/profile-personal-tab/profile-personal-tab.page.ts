@@ -20,10 +20,10 @@ export class ProfilePersonalTabPage implements OnInit {
     private authService:AuthService) { }
 
   ngOnInit() {
-    this.accountService.getUser().subscribe(user=> {
-      this.profilePersonalDetails = user;
-      this.completeProfile = this.accountService.profileCompleteness(user);
-    });
+    let user = this.profilePersonalDetails = this.accountService.getUser();
+    this.completeProfile = this.accountService.profileCompleteness(user);
+    console.log(this.profilePersonalDetails);
+    
   }
 
   async openModal() {

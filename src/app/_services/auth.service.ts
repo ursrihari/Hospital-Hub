@@ -52,10 +52,15 @@ export class AuthService {
   addProfileData(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/patients/add-patient.php`,forceRefresh);
   }
-  getHomePageData(params:object,forceRefresh:boolean){
-    return this.accountService.postdata(params,`${environment.apiUrl}/home/get-home-banners.php`,forceRefresh);
+  getHomePageData(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/home/get-home-banners.php`,forceRefresh);
   }
-  
+  getCovidSymptoms(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/covid-assist/get-covid-symptoms.php`,forceRefresh);
+  }
+  getDiseaseSymptoms(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/diseases/get-disease-symptoms.php`,forceRefresh);
+  }
   /*Pending*/
   
   
@@ -103,9 +108,7 @@ export class AuthService {
     return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
   }
  
-  getCovidSymptoms(forceRefresh:boolean){
-    return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
-  }
+  
 
   getSymptoms(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);

@@ -18,9 +18,10 @@ export class ProfileEditPage implements OnInit {
   ngOnInit() {
     console.log(this.navParams.data);
     this.dataFromParent = this.navParams.data.data;
-    this.accountService.getUser().subscribe(user=> {
-      this.mobile= user.mobile;
-    });
+    console.log(this.accountService.getUser());
+    //this.accountService.getUser().subscribe(user=> {
+      this.mobile= this.accountService.getUser().mobile;
+    //});
   }
   closeModal(){
     this.modalController.dismiss({
@@ -36,8 +37,10 @@ export class ProfileEditPage implements OnInit {
     });
     this.accountService.setUser(this.mobile,userData);
       //console.log(this.dataFromParent);
+      let user = this.accountService.getUser();
       let data={
-        mobile: this.mobile,
+        mobile: user.mobile,
+        uid: user.uid
       }
       let params ={...data, ...userData};
       console.log(JSON.stringify(params));

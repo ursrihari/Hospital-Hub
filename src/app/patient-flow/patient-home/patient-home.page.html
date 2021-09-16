@@ -30,98 +30,41 @@
     <div class="content">
         <div class="container">
             <div class="covid-assist mt-4" (click)="openCovidAssistncePage()">
-                <a><img src="assets/images/covid-assist-img.jpg" /></a>
+                <a><img [src]="covidAssists.image" /></a>
             </div>
             <div class="find-doc-main">
                 <div class="find-doc-inn">
-                    <a (click)="openDoctorsPage()">
-                        <img src="assets/images/find-docs-img.jpg" />
-                        <h3>Find Doctors Near You</h3>
-                        <p>Book Video or in-clinic appointments</p>
+                    <a (click)="openDoctorsPage()" >
+                        <img [src]="findNearDoctor.image" />
+                        <h3>{{findNearDoctor.title}}</h3>
+                        <p>{{findNearDoctor.description}}</p>
                     </a>
                 </div>
+            </div>
+            <div class="find-doc-main">
                 <div class="find-doc-inn">
                     <a (click)="openHospitalsPage()">
-                        <img src="assets/images/hospital-img.jpg" />
-                        <h3>Find Hospitals Near You</h3>
-                        <p>Connect within 60secs</p>
+                        <img [src]="findNearHospital.image" />
+                        <h3>{{findNearHospital.title}}</h3>
+                        <p>{{findNearHospital.description}}</p>
                     </a>
                 </div>
             </div>
-            <!-- <div class="lab-test-main">
-                <a>
-                    <p>Lab tests & health checkup</p>
-                    <div class="lab-test-img">
-                        <img src="assets/images/lab-test-img.jpg" />
-                    </div>
-                </a>
-            </div>
-            <div class="lab-test-main mr-0">
-                <a>
-                    <p>Medicines & Essentials</p>
-                    <div class="lab-test-img">
-                        <img src="assets/images/medicines.jpg" />
-                    </div>
-                </a>
-            </div> -->
-
-            <div class="icons-main" *ngIf="showCovidSymptomsContent">
-                <h5>Instant Video Consultation for COVID-19 Sympotoms
+            <div class="icons-main" *ngIf="covidSymptoms.length>0">
+                <h5>Instant Consultation for COVID-19 Symptoms
                     <span>Connect with top medical experts, 24/7</span>
                 </h5>
                 <div class="row">
                     <div class="col-3" *ngFor="let symptom of covidSymptoms">
                         <a>
-                            <img src="{{symptom.image}}" />
-                            <p>{{symptom.title}}</p>
+                            <img [src]="symptom.image" />
+                            <p>{{symptom.symptom}}</p>
                         </a>
                     </div>
-                    <!-- <div class="col-3">
-                        <a>
-                            <img src="assets/images/Heart.svg" />
-                            <p>Dry Cough</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/Kidney.svg" />
-                            <p>Tiredness</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/Lungs.svg" />
-                            <p>Runny Nose</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img5.jpg" />
-                            <p>Sore Throat</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img6.jpg" />
-                            <p>Pneumonia</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img7.jpg" />
-                            <p>Corona Virus</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img7.jpg" />
-                            <p>Breathing Dif..</p>
-                        </a>
-                    </div> -->
                 </div>
             </div>
 
-            <div class="rt-pcr-main">
+            <!-- <div class="rt-pcr-main">
                 <img src="assets/images/covid-test-img.jpg" />
                 <h3>RT-PCR Test</h3>
                 <p>RT-PCR is the preferred test for detecting Covid infection in the body</p>
@@ -131,11 +74,10 @@
                     <li><span class="li-red">10% HealthCash back</span></li>
                 </ul>
                 <a href="#">View Details</a>
-            </div>
-
+            </div> -->
         </div>
 
-        <div class="brand-wrapper" *ngIf="showOffersContent">
+        <div class="brand-wrapper" *ngIf="spolights.length>0">
             <div class="sec-title text-center mb-0">
                 <h2>In the Spotlight</h2>
                 <p>Explore deals, offers, health updates and more</p>
@@ -144,121 +86,30 @@
 
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <!-- <div class="owl-carousel owl-theme brand-slider">
-                        <div class="item">
-                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/images/spotlight-carousel/img1.jpg" alt="" title=""></a>
-                        </div>
-                        <div class="item">
-                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/images/spotlight-carousel/img2.jpg" alt="" title=""></a>
-                        </div>
-                        <div class="item">
-                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/images/spotlight-carousel/img3.jpg" alt="" title=""></a>
-                        </div>
-                        <div class="item">
-                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/images/spotlight-carousel/img4.jpg" alt="" title=""></a>
-                        </div>
-                        <div class="item">
-                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/images/spotlight-carousel/img2.jpg" alt="" title=""></a>
-                        </div>
-                        <div class="item">
-                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/images/spotlight-carousel/img3.jpg" alt="" title=""></a>
-                        </div>
-                        <div class="item">
-                            <a target="_blank" href="JavaScript:Void(0)"> <img src="assets/images/spotlight-carousel/img4.jpg" alt="" title=""></a>
-                        </div>
-                    </div> -->
                     <ion-slides pager="true" [options]="spotlightSlideOpts" class="spot-slid-btm-pad">
-                        <ion-slide *ngFor="let offer of offers">
+                        <ion-slide *ngFor="let spot of spolights">
                             <div class="item">
-                                <a target="_blank"> <img src="{{offer.offerImage}}" alt="" title=""></a>
+                                <a target="_blank"> <img [src]="spot.image" alt="" title=""></a>
                             </div>
                         </ion-slide>
-                        <!-- <ion-slide>
-                            <div class="item">
-                                <a target="_blank"> <img src="assets/images/spotlight-carousel/img2.jpg" alt="" title=""></a>
-                            </div>
-                        </ion-slide>
-                        <ion-slide>
-                            <div class="item">
-                                <a target="_blank"> <img src="assets/images/spotlight-carousel/img3.jpg" alt="" title=""></a>
-                            </div>
-                        </ion-slide>
-                        <ion-slide>
-                            <div class="item">
-                                <a target="_blank"> <img src="assets/images/spotlight-carousel/img4.jpg" alt="" title=""></a>
-                            </div>
-                        </ion-slide>
-                        <ion-slide>
-                            <div class="item">
-                                <a target="_blank"> <img src="assets/images/spotlight-carousel/img3.jpg" alt="" title=""></a>
-                            </div>
-                        </ion-slide>
-                        <ion-slide>
-                            <div class="item">
-                                <a target="_blank"> <img src="assets/images/spotlight-carousel/img4.jpg" alt="" title=""></a>
-                            </div>
-                        </ion-slide> -->
                     </ion-slides>
                 </div>
             </div>
         </div>
 
 
-        <div class="container" *ngIf="showSymptomsContent">
-
+        <div class="container">
             <div class="icons-main">
                 <h5>Not feeling too well?
-                    <span>Treat common symptoms instantly via video consultation</span>
+                    <span>Treat common symptoms instantly via phone consultation</span>
                 </h5>
                 <div class="row">
-                    <div class="col-3" *ngFor="let symptom of symptoms">
+                    <div class="col-3" *ngFor="let symptom of commonDeseaseSymptoms">
                         <a>
-                            <img src="{{symptom.image}}" />
-                            <p>{{symptom.title}}</p>
+                            <img [src]="symptom.image" />
+                            <p>{{symptom.symptom}}</p>
                         </a>
                     </div>
-                    <!-- <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img2.jpg" />
-                            <p>Dry Cough</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img3.jpg" />
-                            <p>Tiredness</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img4.jpg" />
-                            <p>Runny Nose</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img5.jpg" />
-                            <p>Sore Throat</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img6.jpg" />
-                            <p>Pneumonia</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img7.jpg" />
-                            <p>Corona Virus</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a>
-                            <img src="assets/images/corona-symp/img7.jpg" />
-                            <p>Breathing Dif..</p>
-                        </a>
-                    </div> -->
                 </div>
                 <a class="view-all-symp">View All Symptoms</a>
             </div>
@@ -329,7 +180,7 @@
                                 </div>
                             </ion-slide>
                         </ion-slides>
-                        <!-- <div class="owl-carousel owl-theme brand-slider near-doctors-slider">
+                        <div class="owl-carousel owl-theme brand-slider near-doctors-slider">
                             <div class="item">
                                 <a target="_blank" href="JavaScript:Void(0)">
                                     <div class="doc-img">
@@ -397,7 +248,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <a class="view-all-symp">See All Doctors</a>

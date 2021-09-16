@@ -29,6 +29,13 @@ export class PatientHomePage implements OnInit {
   showQuestionsContent:boolean = false;
   showCovidSymptomsContent:boolean = false;
   showSymptomsContent:boolean = false;
+
+  homePageData=[];
+  findNearHospital = {};
+  findNearDoctor={};
+  covidAssists={};
+  spolights=[];
+  commonDeseaseSymptoms=[];
   constructor(private router:Router,
     public modalController: ModalController,
     private authService:AuthService,
@@ -40,22 +47,49 @@ export class PatientHomePage implements OnInit {
       if(data){
         this.location = data;
       }
-      
     });
-    this.getCovidSymptoms();
-    this.getSymptoms();
-    this.getOffers();
-    this.getNearDoctors();
-    this.getNearHospitals();
-    this.getQuestions();
+    this.getCovodSymptoms();
+    this.getCommonDeseaseSymptoms();
+    //this.getCovodSymptoms();
+    //this.getOffers();
+    //this.getNearDoctors();
+    //this.getNearHospitals();
+    //this.getQuestions();
     this.getHomePageData();
   }
   getHomePageData(){
-    let params={
-      phoneno: ''
-    };
-    this.authService.getHomePageData(params,false).subscribe(data=>{
+    this.authService.getHomePageData(true).subscribe(data=>{
         console.log(data);
+        this.homePageData = data;
+        if(data.length>0){
+            data.forEach(element => {
+              if(element.type=='covid_assits'){
+                this.covidAssists = element;
+              }
+              if(element.type=='find_doctors'){
+                this.findNearDoctor = element;
+              }
+              if(element.type=='find_hospitals'){
+                this.findNearHospital = element;
+              }
+              if(element.type=='spotlight'){
+                this.spolights.push(element);
+              }
+            });
+        }
+    });
+  }
+
+  getCovodSymptoms(){
+    this.authService.getCovidSymptoms(true).subscribe(data=>{
+      this.covidSymptoms = data;
+     // console.log(JSON.stringify(data));
+    });
+  }
+  getCommonDeseaseSymptoms(){
+    this.authService.getDiseaseSymptoms(true).subscribe(data=>{
+      this.commonDeseaseSymptoms = data;
+      //console.log(JSON.stringify(data));
     });
   }
   openCovidAssistncePage(){
@@ -111,26 +145,26 @@ export class PatientHomePage implements OnInit {
     return await modal.present();
   }
   
-    getOffers(){
-      //this.offers = this.getOffersDemo();
-       this.authService.getOffers(true).subscribe((data) => {
-          console.log(data);
-          this.offers = data;
-          this.showOffersContent = true;      
-      });
-     // this.showOffersContent = true;   
-    }
+    // getOffers(){
+    //   //this.offers = this.getOffersDemo();
+    //    this.authService.getOffers(true).subscribe((data) => {
+    //       console.log(data);
+    //       this.offers = data;
+    //       this.showOffersContent = true;      
+    //   });
+    //  // this.showOffersContent = true;   
+    // }
 
-    getOffersDemo(){
-      return [
-        {"offerImage":"assets/images/spotlight-carousel/img1.jpg"},
-        {"offerImage":"assets/images/spotlight-carousel/img2.jpg"},
-        {"offerImage":"assets/images/spotlight-carousel/img3.jpg"},
-        {"offerImage":"assets/images/spotlight-carousel/img4.jpg"},
-        {"offerImage":"assets/images/spotlight-carousel/img3.jpg"},
-        {"offerImage":"assets/images/spotlight-carousel/img4.jpg"}
-      ];
-    }
+    // getOffersDemo(){
+    //   return [
+    //     {"offerImage":"assets/images/spotlight-carousel/img1.jpg"},
+    //     {"offerImage":"assets/images/spotlight-carousel/img2.jpg"},
+    //     {"offerImage":"assets/images/spotlight-carousel/img3.jpg"},
+    //     {"offerImage":"assets/images/spotlight-carousel/img4.jpg"},
+    //     {"offerImage":"assets/images/spotlight-carousel/img3.jpg"},
+    //     {"offerImage":"assets/images/spotlight-carousel/img4.jpg"}
+    //   ];
+    // }
 
     getNearDoctors(){
      // this.nearDoctors = this.getNearDoctorsDemo();

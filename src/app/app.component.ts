@@ -32,7 +32,8 @@ export class AppComponent {
     private cachingService: CachingService
     ){
       this.cachingService.initStorage();
-      this.accountService.getUser().subscribe(user=> {
+      //this.accountService.getUser().subscribe(user=> {
+        let user = this.accountService.getUser();
         this.userProfile = {...user};
         this.profileCompleteness = this.accountService.profileCompleteness(user);
         if(user){
@@ -46,7 +47,7 @@ export class AppComponent {
           }
           this.menuCtrl.enable(true);
         }
-      });
+     // });
   }
   
   initializeApp(role){

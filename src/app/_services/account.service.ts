@@ -218,14 +218,32 @@ export class AccountService {
     if (localStorage.getItem("user") != "") {
       let user_data = JSON.parse(localStorage.getItem("user"));
       //console.log(user_data);
-      this.userSubject.next(user_data);
-    } else {
-      this.userSubject.next("");
-    }
-    return this.userSubject.asObservable();
+      //this.userSubject.next(user_data);
+      return user_data; 
+    } 
+      //else {
+    //   //this.userSubject.next("");
+    // }
+    //return this.userSubject.asObservable();
   }
   setUser(mobile,userData) {
     let user = {};
+    
+    if(userData.hasOwnProperty('uid') && userData.uid!=''){
+      user["uid"] = userData.uid;
+    }else{
+      user["uid"] = '';
+    }
+    if(userData.hasOwnProperty('user_id') && userData.user_id!=''){
+      user["user_id"] = userData.user_id;
+    }else{
+      user["user_id"] = '';
+    }
+    if(userData.hasOwnProperty('pid') && userData.pid!=''){
+      user["pid"] = userData.pid;
+    }else{
+      user["pid"] = '';
+    }
     if(userData.hasOwnProperty('name') && userData.name!=''){
       user["name"] = userData.name;
     }else{

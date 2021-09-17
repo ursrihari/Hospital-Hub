@@ -21,7 +21,7 @@ export class OtpVerificationPage implements OnInit {
     count:number=59;
     public smsTextmessage: string = '';
     public appHashString: string = '';
-  constructor(private navCtrl: NavController, 
+  constructor(private navCtrl: NavController,
     private authService: AuthService,
     private router:Router,
     private route:ActivatedRoute,
@@ -40,7 +40,7 @@ if(otp){
   setTimeout(function(){
     self.populateOtp(otp);
   },3000);
-  
+
 }else{
   this.getSMS();
 }
@@ -64,12 +64,21 @@ this.coundownTimer();
             //localStorage.setItem('user', JSON.stringify(data));
             //this.authService.setUser(this.mobile,data);
               if(data){
-                if(data.role_name == 'patient'){
-                  this.router.navigateByUrl('/patient-home');
-              }else if(data.role_name == 'doctor'){
-                this.router.navigateByUrl('/doctor-appointments');
-              }else if(data.role_name == 'receptionist'){
-                this.router.navigateByUrl('/receptionist-appointments');
+              //   if(data.role_name == 'patient'){
+              //     this.router.navigateByUrl('/patient-home');
+              // }else if(data.role_name == 'doctor'){
+              //   this.router.navigateByUrl('/doctor-appointments');
+              // }else if(data.role_name == 'receptionist'){
+              //   this.router.navigateByUrl('/receptionist-home');
+              // }
+              if(data.role_name =='patient'){
+                this.router.navigate(["/patient-home"], { skipLocationChange: true });
+              }else if(data.role_name =='doctor'){
+                this.router.navigate(["/doctor-appointments"], { skipLocationChange: true });
+              }else if(data.role_name =='receptionist'){
+                this.router.navigate(["/receptionist-home"], { skipLocationChange: true });
+              }else{
+                this.router.navigate(["/login"], { skipLocationChange: true });
               }
             }
       });
@@ -123,7 +132,7 @@ this.coundownTimer();
         this.otp[i]=matches[0][i];
       }
      } else {
-       
+
      }
   }
   convertArrayToNumber(arr) {

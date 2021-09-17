@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { IonRouterOutlet } from '@ionic/angular';
 @Component({
   selector: 'app-receptionist-home',
   templateUrl: './receptionist-home.page.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReceptionistHomePage implements OnInit {
 
-  constructor() { }
+
+
+canGoBack: boolean = false;
+  constructor(private routerOutlet: IonRouterOutlet) { }
 
   ngOnInit() {
-  }
+    this.canGoBack = this.routerOutlet &&
+                     this.routerOutlet.canGoBack();
+}
+
 
 }

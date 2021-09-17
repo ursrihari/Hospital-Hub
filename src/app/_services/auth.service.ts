@@ -82,7 +82,10 @@ export class AuthService {
   deleteMEdicalRecord(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
-
+  getPatients(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+  }
+  
   /*Peter*/
   getMyDoctors(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);

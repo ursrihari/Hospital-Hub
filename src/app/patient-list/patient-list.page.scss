@@ -1,0 +1,78 @@
+.upcoming {
+    background-color: #f1f0f5;
+    padding: 15px;
+    color: #797880;
+    font-weight: 600;
+    font-size: 16px;
+}
+.appointments-main{
+	.appointments-list-img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 5px 0 0;
+	}
+	.appointments-list{
+		padding: 15px;
+		border-bottom:1px solid #eaeaea;
+		p{
+			padding: 0;
+			margin: 0 0 5px;
+			font-size: 14px;
+		}
+		p.date{
+			color:#a5a5a5;
+			font-size: 13px;
+		}
+
+	}
+}
+.doctors-main .rounded-circle {
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 60px;
+    margin-right: 10px;
+
+}
+.doctors-main .button{
+		padding: 5px 15px;
+		background: #14bef0;
+		color: #fff;
+		border-radius: 2px;
+		cursor: pointer;
+}
+.doctors-list h4 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.doctors-list p {
+    margin: 0px 0 10px;
+    font-size: 14px;
+    color: #868686;
+    line-height: 20px;
+}
+.doctors-list .plus{
+	background: #e20c14;
+    padding: 4px 8px 8px;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 11px;
+    border-radius: 2px;
+    height: 20px;
+
+}
+.prime{
+	color: #0069b4;
+	margin-right: 10px;
+}
+.doctor-list{
+	border-bottom: 1px solid #ccc;
+
+}
+.doctors-main {
+    margin: 15px 0;
+    border-bottom: 1px solid #f3f3f3;
+    padding-bottom: 15px;
+}

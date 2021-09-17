@@ -247,6 +247,14 @@ const routes: Routes = [
   {
     path: 'profile-edit',
     loadChildren: () => import('./profile-edit/profile-edit.module').then( m => m.ProfileEditPageModule)
+  },
+  {
+    path: 'patient-list',
+    loadChildren: () => import('./patient-list/patient-list.module').then( m => m.PatientListPageModule)
+  },
+  {
+    path: 'patient-details',
+    loadChildren: () => import('./patient-details/patient-details.module').then( m => m.PatientDetailsPageModule)
   }
 
 

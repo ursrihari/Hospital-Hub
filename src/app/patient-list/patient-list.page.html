@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button *ngIf="canGoBack"></ion-back-button>
+            <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Patients</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="content-finddoc-page">
+    <div class="find-searchbar">
+        <form>
+            <div class="form-group">
+                <label><i class="fa fa-search"></i></label>
+                <input type="text" class="form-control" placeholder="Search patients...">
+            </div>
+        </form>
+    </div>
+</div>
+    <div class="mb-4 col-sm-12" *ngIf="showContent">
+        <div class="mb-4 col-sm-12" (click)="openPatientDetailsPage()">
+            <div class="d-flex align-items-center justify-content-between doctors-main">
+                <div class="ms-3 d-flex align-items-center doctors-list">
+                    <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="assets/images/appointments/patient1.jpg" class="rounded-circle"></span>
+                    <div>
+                        <h4>Patient Name 1</h4>
+                        <p>Appointment with <span>Dr. Srinivasarao</span></p>
+                        <p>City</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()">
+            <div class="d-flex align-items-center justify-content-between doctors-main">
+                <div class="ms-3 d-flex align-items-center doctors-list">
+                    <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="assets/images/appointments/patient1.jpg" class="rounded-circle"></span>
+                    <div>
+                        <h4>Patient Name 1</h4>
+                        <p>Appointment with <span>Dr. Srinivasarao</span></p>
+                        <p>City</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()">
+            <div class="d-flex align-items-center justify-content-between doctors-main">
+                <div class="ms-3 d-flex align-items-center doctors-list">
+                    <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="assets/images/appointments/patient1.jpg" class="rounded-circle"></span>
+                    <div>
+                        <h4>Patient Name 1</h4>
+                        <p>Appointment with <span>Dr. Srinivasarao</span></p>
+                        <p>City</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()">
+            <div class="d-flex align-items-center justify-content-between doctors-main">
+                <div class="ms-3 d-flex align-items-center doctors-list">
+                    <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="assets/images/appointments/patient1.jpg" class="rounded-circle"></span>
+                    <div>
+                        <h4>Patient Name 1</h4>
+                        <p>Appointment with <span>Dr. Srinivasarao</span></p>
+                        <p>City</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</ion-content>

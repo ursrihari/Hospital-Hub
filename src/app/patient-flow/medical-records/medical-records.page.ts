@@ -29,24 +29,24 @@ openAddRecordPage(){
   //this.router.navigateByUrl('/patient-appointment-details');
   //this.presentActionSheet();
 }
-// openUploadRecordPage(){
-//   this.router.navigateByUrl('/upload-record');
-// }
+openUploadRecordPage(){
+  this.router.navigateByUrl('/upload-record');
+}
 
 viewRecord(){
   this.router.navigateByUrl('/view-record');
 }
+openPatientsListPage(){
+  this.router.navigateByUrl('/patient-list');
+}
 
 getMedicalRecords(){
-  //this.medicalRecords = this.getMedicalRecordsDemo();
-  this.showContent = true;
-  let params={
-    
+  let params={  
   }
   this.authService.getMedicalRecords(params,true).subscribe((data) => {
     console.log(data);
-    //this.medicalRecords = data;
-    //this.showContent = true;
+    this.medicalRecords = data;
+    this.showContent = true;
   });
 }
 

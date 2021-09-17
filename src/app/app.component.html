@@ -20,27 +20,39 @@
                 <!-- Doctor Login -->
                 <div *ngIf="userProfile.role_name=='doctor'" [routerLink]="['/doctor-profile']" (click)="closeSidemenu()">
                     <div class="header-content">
-                        <img src="../assets/images/doctors/img6.jpg">
+                        <img *ngIf="userProfile.patientImage!=''" [src]="userProfile.patientImage">
+                        <img *ngIf="userProfile.patientImage==''" src="assets/images/profile.png">
                         <ion-label>
-                            <h2>Dr. Seema Vazeer<i class="ti-angle-right"></i></h2>
+                            <h2>{{userProfile.name}} <i class="ti-angle-right"></i></h2>
                             <div>
-                                <p>View and Edit Profile<span>20% Completed</span></p>
+                                <p>View and Edit Profile<span>{{profileCompleteness}}% Completed</span></p>
                             </div>
-                            <h3>Cardiologist</h3>
 
                         </ion-label>
                     </div>
                 </div>
-                <!-- Receptionist Login -->
+                <div *ngIf="userProfile.role_name=='patient'" [routerLink]="['/patient-profile']" (click)="closeSidemenu()">
+                    <div class="header-content">
+                        <img *ngIf="userProfile.patientImage!=''" [src]="userProfile.patientImage">
+                        <img *ngIf="userProfile.patientImage==''" src="assets/images/profile.png">
+                        <ion-label>
+                            <h2>{{userProfile.name}} <i class="ti-angle-right"></i></h2>
+                            <div>
+                                <p>View and Edit Profile<span>{{profileCompleteness}}% Completed</span></p>
+                            </div>
+
+                        </ion-label>
+                    </div>
+                </div>
                 <div *ngIf="userProfile.role_name=='receptionist'" [routerLink]="['/receptionist-profile']" (click)="closeSidemenu()">
                     <div class="header-content">
-                        <img src="https://www.moh.gov.bh/Content/Upload/Image/637526916400505076-dr-fatima-al-owanati.jpg">
+                        <img *ngIf="userProfile.patientImage!=''" [src]="userProfile.patientImage">
+                        <img *ngIf="userProfile.patientImage==''" src="assets/images/profile.png">
                         <ion-label>
-                            <h2>Raja Ahmed Saleh Noaimi<i class="ti-angle-right"></i></h2>
+                            <h2>{{userProfile.name}} <i class="ti-angle-right"></i></h2>
                             <div>
-                                <p>View and Edit Profile<span>20% Completed</span></p>
+                                <p>View and Edit Profile<span>{{profileCompleteness}}% Completed</span></p>
                             </div>
-                            <h3>Receptionist</h3>
                         </ion-label>
                     </div>
                 </div>

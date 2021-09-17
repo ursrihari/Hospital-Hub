@@ -67,7 +67,7 @@ export class AppComponent {
       }else if(role=='doctor'){
         this.router.navigate(["/doctor-appointments"], { skipLocationChange: true }); 
       }else if(role=='receptionist'){
-        this.router.navigate(["/receptionist-appointments"], { skipLocationChange: true }); 
+        this.router.navigate(["/receptionist-home"], { skipLocationChange: true }); 
       }else{
         this.router.navigate(["/login"], { skipLocationChange: true });
       }
@@ -123,15 +123,19 @@ export class AppComponent {
         this.UserPages = [
           {title: 'Home', page: 'ReceptionistHomePage', url:'receptionist-home', icon:'fa fa-home'},
           {title: 'Appointments', page: 'ReceptionistAppointmentsPage', url:'receptionist-appointments', icon:'fa fa-calendar'},
-
-        ];
-        this.MenuPages = [
+          {title: 'Medical Records', page: 'MedicalRecordsPage', url:'medical-records', icon:'fa fa-home'},
           {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
           {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
           {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'},
           {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'}
+        ];
+      //   this.MenuPages = [
+      //     {title: 'Read about health', page: 'ReadAboutHealthPage', url:'read-about-health', icon:'fa fa-heartbeat'},
+      //     {title: 'Hep Center', page: 'HelpCenterPage', url:'help-center', icon:'fa fa-question-circle'},
+      //     {title: 'Like us? Give us 5 stars', page: 'like-us-give-5-star', url:'like-us-give-5-star', icon:'fa fa-thumbs-o-up'},
+      //     {title: 'Settings', page: 'SettingsPage', url:'settings', icon:'fa fa-cog'}
           
-      ];
+      // ];
          break; 
       } 
    }

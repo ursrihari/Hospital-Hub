@@ -16,9 +16,10 @@ import { Drivers } from '@ionic/storage';
 
 //plugins
 import { NativeGeocoder} from '@ionic-native/native-geocoder/ngx';
+import { ReceiptionistMedicalRecordsPipe } from './receiptionist-medical-records.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ReceiptionistMedicalRecordsPipe],
   entryComponents: [],
   imports: [BrowserModule, 
     HttpClientModule, 

@@ -7,7 +7,7 @@ ion-label{
   padding: 0;
 }
 ion-item {
-    height: 45px;
+    height: 40px;
     box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.08);
     --highlight-height: 0px;
   
@@ -25,13 +25,13 @@ ion-item {
     }
   }
   .otp-pin-input{
-    border: #cccccc 1px solid;
-    border-radius: 15px;
+    border-bottom:#0069b4 1px solid;
+    border-radius: 0;
     max-width: 70px;
   }
   ion-button {
-    margin-top: 10px;
-    height: 40px;
+    margin-top:0px;
+    height: 45px;
     font-size: 18px;
     text-transform: initial;
     border-radius: 50px;
@@ -67,8 +67,8 @@ ion-input .native-input.sc-ion-input-md{
 }
 ion-item ion-input{
   font-size: 18px;
-  --padding-top: 9px;
-  --padding-bottom: 2px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
   --padding-start: 0px;
   border: 0;
 }
@@ -78,5 +78,6 @@ ion-item ion-input{
 }
 .hydrated {
   visibility: inherit;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  color: #212121;
 }

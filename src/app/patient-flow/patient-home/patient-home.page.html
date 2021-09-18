@@ -29,25 +29,32 @@
 <ion-content>
     <div class="content">
         <div class="container">
-            <div class="covid-assist mt-4" (click)="openCovidAssistncePage()">
+            <div class="covid-assist mt-4 col p-0" (click)="openCovidAssistncePage()">
                 <a><img [src]="covidAssists.image" /></a>
             </div>
-            <div class="find-doc-main">
-                <div class="find-doc-inn">
-                    <a (click)="openDoctorsPage()" >
-                        <img [src]="findNearDoctor.image" />
-                        <h3>{{findNearDoctor.title}}</h3>
-                        <p>{{findNearDoctor.description}}</p>
-                    </a>
+            <div class="row">
+                <div class="col">
+                    <div class="find-doc-main">
+                        <div class="find-doc-inn">
+                            <a (click)="openDoctorsPage()" >
+                                <img [src]="findNearDoctor.image" />
+                                <h3>{{findNearDoctor.title}}</h3>
+                                <p>{{findNearDoctor.description}}</p>
+                            </a>
+                        </div>
+                    </div>
+                   
                 </div>
-            </div>
-            <div class="find-doc-main">
-                <div class="find-doc-inn">
-                    <a (click)="openHospitalsPage()">
-                        <img [src]="findNearHospital.image" />
-                        <h3>{{findNearHospital.title}}</h3>
-                        <p>{{findNearHospital.description}}</p>
-                    </a>
+                <div class="col">
+                    <div class="find-doc-main">
+                        <div class="find-doc-inn">
+                            <a (click)="openHospitalsPage()">
+                                <img [src]="findNearHospital.image" />
+                                <h3>{{findNearHospital.title}}</h3>
+                                <p>{{findNearHospital.description}}</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="icons-main" *ngIf="covidSymptoms.length>0">
@@ -87,29 +94,33 @@
 
 
         <div class="container">
-            <div class="icons-main">
-                <h5>Not feeling too well?
-                    <span>Treat common symptoms instantly via phone consultation</span>
-                </h5>
-                <div class="row">
-                    <div class="col-3" *ngFor="let symptom of commonDeseaseSymptoms">
-                        <a>
-                            <img [src]="symptom.image" />
-                            <p>{{symptom.symptom}}</p>
-                        </a>
+        <div class="row">
+            <div class="col">
+                <div class="icons-main">
+                    <h5>Not feeling too well?
+                        <span>Treat common symptoms instantly via phone consultation</span>
+                    </h5>
+                    <div class="row">
+                        <div class="col-3" *ngFor="let symptom of commonDeseaseSymptoms">
+                            <a>
+                                <img [src]="symptom.image" />
+                                <p>{{symptom.symptom}}</p>
+                            </a>
+                        </div>
                     </div>
+                    <a class="view-all-symp">View All Symptoms</a>
                 </div>
-                <a class="view-all-symp">View All Symptoms</a>
             </div>
+        </div>
 
             <div class="brand-wrapper docs-nearyou" *ngIf="showDoctorsContent">
-                <div class="sec-title text-center mb-0">
+                <div class="sec-title text-left mb-0">
                     <h2>Find Doctors Available Near You</h2>
                     <p>Book assured appointments even during the COVID-19 pandemic</p>
                     <span class="decor"><span class="inner"></span></span>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <ion-slides pager="true" [options]="doctorsSlideOpts">
                             <ion-slide>
                                 <div class="item">
@@ -180,7 +191,7 @@
                     <span class="decor"><span class="inner"></span></span>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <ion-slides pager="true" [options]="hospitalsSlideOpts">
                             <ion-slide >
                                 <div class="item" >

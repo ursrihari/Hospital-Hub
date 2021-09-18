@@ -30,23 +30,27 @@ ion-card {
 }
 
 .menu-header-bg {
-    height: 207px;
-    width: 450px;
+    height: 268px;
+    width: 490px;
     background: #0069b4;
-    background: linear-gradient(90deg, #0069b4 0%, #0069b4 100%);
+    background: linear-gradient(
+90deg, #0069b4 0%, #0069b4 100%);
     box-shadow: 0px 1px 10px rgb(98 140 255 / 50%);
-    transform: rotate( -25deg);
+    transform: rotate(
+-25deg);
     margin-left: -87px;
-    margin-top: -55px;
+    margin-top: -160px;
 }
 
 .menu-header-bg-2 {
     position: absolute;
-    height: 207px;
-    width: 450px;
+    height: 241px;
+    width: 486px;
     background: #ccd7e8;
-    background: linear-gradient( 90deg, #ccd7e8 0%, #ccd7e8 100%);
-    transform: rotate( 25deg);
+    background: linear-gradient(
+90deg, #ccd7e8 0%, #ccd7e8 100%);
+    transform: rotate(
+25deg);
     margin-top: -22px;
 }
 

@@ -59,8 +59,8 @@ ion-content {
 }
 
 .country-code-modal .modal-wrapper {
-    height: 80%;
-    top: 20%;
+    height: 100%;
+    top: 0;
     position: absolute;
     display: block;
 }
@@ -361,4 +361,54 @@ ion-segment.ng-untouched.ng-pristine.ng-valid.ion-untouched.ion-pristine.ion-val
 }
 .item-native {
     font-size: 0.9rem;
+}
+.sc-ion-input-ios-h {
+    --padding-top: 0px;
+    --padding-end: 0;
+    --padding-bottom: 0px;
+    --padding-start: 0;
+    font-size: inherit;
+}
+
+.ios ion-header.ios.header-ios.header-collapse-none.hydrated {
+    border-bottom: 1px solid #ccc !important;
+}
+.ios .header-ios ion-toolbar:last-of-type {
+    --border-width: 0;
+}
+.ios ion-icon.ios.hydrated {
+    color: #ababab;
+    font-size: 24px;
+}
+@media (min-width: 768px){ 
+    .find-doc-inn {
+        padding-bottom: 34px !important;
+    }
+    .icons-main {
+        margin: 30px 0 10px !important;
+    }
+    .explore {
+        font-size: 15px !important;
+    }
+    .explore .plus{
+        font-size: 14px !important;
+    }
+    .ios .explore {
+        height: 30px !important;
+        padding: 5px !important;
+    }
+    .count-main{
+        padding: 30px 36px 50px !important;
+    }
+    footer{
+        padding: 36px 20px !important;
+    }
+    .icons-main a {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 16px;
+        padding: 5px 0 0;
+        background-color: #f6fbff;
+        border-radius: 6px;
+    }
 }

@@ -34,8 +34,11 @@ export class PatientHomePage implements OnInit {
   findNearHospital = {};
   findNearDoctor={};
   covidAssists={};
+  onlineConsultation={};
   spolights=[];
   commonDeseaseSymptoms=[];
+  appInformarion={};
+  specialists=[];
   constructor(private router:Router,
     public modalController: ModalController,
     private authService:AuthService,
@@ -52,10 +55,12 @@ export class PatientHomePage implements OnInit {
     this.getCommonDeseaseSymptoms();
     //this.getCovodSymptoms();
     //this.getOffers();
-    //this.getNearDoctors();
+    this.getNearDoctors();
     //this.getNearHospitals();
     //this.getQuestions();
     this.getHomePageData();
+    this.getAppInformation();
+    this.getSpecialists();
   }
   getHomePageData(){
     this.authService.getHomePageData(true).subscribe(data=>{
@@ -65,6 +70,9 @@ export class PatientHomePage implements OnInit {
             data.forEach(element => {
               if(element.type=='covid_assits'){
                 this.covidAssists = element;
+              }
+              if(element.type=='online_consultation'){
+                this.onlineConsultation = element;
               }
               if(element.type=='find_doctors'){
                 this.findNearDoctor = element;
@@ -90,6 +98,21 @@ export class PatientHomePage implements OnInit {
     this.authService.getDiseaseSymptoms(true).subscribe(data=>{
       this.commonDeseaseSymptoms = data;
       //console.log(JSON.stringify(data));
+    });
+  }
+  getAppInformation(){
+    this.authService.getAppInformation(true).subscribe(data=>{
+      this.appInformarion = data[0];
+      console.log(JSON.stringify(data));
+    });
+  }
+  getSpecialists(){
+    let params={
+      limit:4
+    }
+    this.authService.getSpecialists(params,true).subscribe(data=>{
+      this.specialists = data;
+      console.log(JSON.stringify(data));
     });
   }
   openCovidAssistncePage(){
@@ -167,16 +190,19 @@ export class PatientHomePage implements OnInit {
     // }
 
     getNearDoctors(){
-     // this.nearDoctors = this.getNearDoctorsDemo();
+      
       let params={
-        location:''
+        cityId:'1',
+        latitude:'17.385',
+        longitude:'78.486',
+        limit:'LIMIT 0,10'
       }
-      this.authService.getNearDoctors(params,true).subscribe((data) => {
+      this.authService.getLocationWiseDoctors(params,true).subscribe((data) => {
           console.log(data);
           this.nearDoctors = data;
           this.showDoctorsContent = true;      
       });
-      this.showDoctorsContent = true;  
+      
     }
 
     getCovidSymptoms(){

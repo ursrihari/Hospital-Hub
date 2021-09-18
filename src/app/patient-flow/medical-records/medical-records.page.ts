@@ -4,6 +4,8 @@ import { IonRouterOutlet, PopoverController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
 import { MedicalRecordPopoverComponent } from '@app/components/medical-record-popover/medical-record-popover.component';
 import { AuthService } from '@app/_services';
+import { AccountService } from '@app/_services';
+
 
 @Component({
   selector: 'app-medical-records',
@@ -17,12 +19,14 @@ export class MedicalRecordsPage implements OnInit {
   constructor(private routerOutlet: IonRouterOutlet, private router:Router,
     public actionSheetController: ActionSheetController,
     public popoverController: PopoverController,
+    private accountService: AccountService,
     private authService:AuthService) { }
 
   ngOnInit() {
     this.canGoBack = this.routerOutlet &&
                      this.routerOutlet.canGoBack();
                      this.getMedicalRecords();
+    console.log(this.accountService.getUser());
 }
 
 openAddRecordPage(){
@@ -41,7 +45,8 @@ openPatientsListPage(){
 }
 
 getMedicalRecords(){
-  let params={  
+  let params={ 
+     hospitalId:''
   }
   this.authService.getMedicalRecords(params,true).subscribe((data) => {
     console.log(data);

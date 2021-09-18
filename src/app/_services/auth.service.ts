@@ -61,6 +61,15 @@ export class AuthService {
   getDiseaseSymptoms(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/diseases/get-disease-symptoms.php`,forceRefresh);
   }
+  getAppInformation(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/app/get-app-info.php`,forceRefresh);
+  }
+  getSpecialists(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-departments.php`,forceRefresh);
+  }
+  getLocationWiseDoctors(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-doctors-location-wise.php`,forceRefresh);
+  }
   /*Pending*/
   
   
@@ -74,7 +83,7 @@ export class AuthService {
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
   getMedicalRecords(params:object,forceRefresh:boolean){
-    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
+    return this.accountService.postdata(params,`${environment.apiUrl}/medical-records/get-medical-records.php`,forceRefresh);
   }
   shareMedicalRecord(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
@@ -99,9 +108,7 @@ export class AuthService {
     return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
   }
   
-  getNearDoctors(params:object,forceRefresh:boolean){
-    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
-  }
+  
 
   getNearHospitals(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);

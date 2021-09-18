@@ -15,6 +15,7 @@ import * as moment from 'moment';
 })
 export class OtpVerificationPage implements OnInit {
     mobile:any;
+    userData:any;
     otp:any = [];
     otpCounter=0;
     showResend:boolean = false;
@@ -30,9 +31,14 @@ export class OtpVerificationPage implements OnInit {
     private smsRetriever: SmsRetriever) { }
 
   ngOnInit() {
-    this.mobile = this.route.snapshot.paramMap.get('mobile');
-    let otp = this.route.snapshot.paramMap.get('otp');
-    console.log(this.mobile);
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.userData = this.router.getCurrentNavigation().extras.state.user;
+        console.log(this.userData);
+        this.mobile = this.userData.phoneno;
+      }
+    });
+    let otp = this.userData.otp;
     this.otp=[];
 // this.getHashCode();
 if(otp){
@@ -52,33 +58,26 @@ this.coundownTimer();
     }
   }
   verifyOtp(){
-    let params= {
-        phoneno: this.mobile,
-        otp: this.convertArrayToNumber(this.otp)
-      }
-      this.authService.verifyOtp(params)
+    let data = {
+      otp: this.convertArrayToNumber(this.otp)
+    };
+    let params = {...this.userData,...data};
+    console.log(JSON.stringify(params));
+    this.authService.verifyOtp(params)
       .subscribe( response=>{
             console.log(response);
             let data = response.data;
             this.accountService.setUser(this.mobile,data);
-            //localStorage.setItem('user', JSON.stringify(data));
-            //this.authService.setUser(this.mobile,data);
+            
               if(data){
-              //   if(data.role_name == 'patient'){
-              //     this.router.navigateByUrl('/patient-home');
-              // }else if(data.role_name == 'doctor'){
-              //   this.router.navigateByUrl('/doctor-appointments');
-              // }else if(data.role_name == 'receptionist'){
-              //   this.router.navigateByUrl('/receptionist-home');
-              // }
               if(data.role_name =='patient'){
-                this.router.navigate(["/patient-home"], { skipLocationChange: true });
+                this.navCtrl.navigateRoot(["/patient-home"], { skipLocationChange: true });
               }else if(data.role_name =='doctor'){
-                this.router.navigate(["/doctor-appointments"], { skipLocationChange: true });
+                this.navCtrl.navigateRoot(["/doctor-appointments"], { skipLocationChange: true });
               }else if(data.role_name =='receptionist'){
-                this.router.navigate(["/receptionist-home"], { skipLocationChange: true });
+                this.navCtrl.navigateRoot(["/receptionist-home"], { skipLocationChange: true });
               }else{
-                this.router.navigate(["/login"], { skipLocationChange: true });
+                this.navCtrl.navigateRoot(["/login"], { skipLocationChange: true });
               }
             }
       });

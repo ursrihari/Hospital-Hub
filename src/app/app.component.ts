@@ -32,8 +32,8 @@ export class AppComponent {
     private cachingService: CachingService
     ){
       this.cachingService.initStorage();
-      //this.accountService.getUser().subscribe(user=> {
-        let user = this.accountService.getUser();
+      this.accountService.listenUser().subscribe(user=> {
+        //let user = this.accountService.getUser();
         this.userProfile = {...user};
         this.profileCompleteness = this.accountService.profileCompleteness(user);
         if(user){
@@ -47,7 +47,7 @@ export class AppComponent {
           }
           this.menuCtrl.enable(true);
         }
-     // });
+      });
   }
   
   initializeApp(role){
@@ -63,13 +63,13 @@ export class AppComponent {
       //   autoHide: true
       // });
       if(role=='patient'){
-        this.router.navigate(["/patient-home"], { skipLocationChange: true });
+        this.navCtrl.navigateRoot(["/patient-home"], { skipLocationChange: true });
       }else if(role=='doctor'){
-        this.router.navigate(["/doctor-appointments"], { skipLocationChange: true }); 
+        this.navCtrl.navigateRoot(["/doctor-appointments"], { skipLocationChange: true }); 
       }else if(role=='receptionist'){
-        this.router.navigate(["/receptionist-home"], { skipLocationChange: true }); 
+        this.navCtrl.navigateRoot(["/receptionist-home"], { skipLocationChange: true }); 
       }else{
-        this.router.navigate(["/login"], { skipLocationChange: true });
+        this.navCtrl.navigateRoot(["/login"], { skipLocationChange: true });
       }
     });
     //role= 'doctor';

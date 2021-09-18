@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, IonMenu,MenuController } from '@ionic/angular';
 import { AuthService } from '../../_services/auth.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute,NavigationExtras } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CountryCodeModalPage } from '../country-code-modal/country-code-modal.page';
 import { LoadingController } from '@ionic/angular';
@@ -84,7 +84,12 @@ export class LoginPage implements OnInit {
       }
       this.authService.login(params,true).subscribe( data=>{
         console.log(JSON.stringify(data));
-        this.router.navigate(['/otp-verification', {mobile:Number(this.country.country_code)+this.country.mobile_number,otp:data.otp}]);
+        let navigationExtras: NavigationExtras = {
+          state: {
+            user: data
+          }
+        };
+        this.router.navigate(['/otp-verification'],navigationExtras);
       });
    // }
     

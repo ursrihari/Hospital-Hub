@@ -31,19 +31,6 @@
                         </ion-label>
                     </div>
                 </div>
-                <div *ngIf="userProfile.role_name=='patient'" [routerLink]="['/patient-profile']" (click)="closeSidemenu()">
-                    <div class="header-content">
-                        <img *ngIf="userProfile.patientImage!=''" [src]="userProfile.patientImage">
-                        <img *ngIf="userProfile.patientImage==''" src="assets/images/profile.png">
-                        <ion-label>
-                            <h2>{{userProfile.name}} <i class="ti-angle-right"></i></h2>
-                            <div>
-                                <p>View and Edit Profile<span>{{profileCompleteness}}% Completed</span></p>
-                            </div>
-
-                        </ion-label>
-                    </div>
-                </div>
                 <div *ngIf="userProfile.role_name=='receptionist'" [routerLink]="['/receptionist-profile']" (click)="closeSidemenu()">
                     <div class="header-content">
                         <img *ngIf="userProfile.patientImage!=''" [src]="userProfile.patientImage">

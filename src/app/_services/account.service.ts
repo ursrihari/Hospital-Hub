@@ -214,6 +214,16 @@ export class AccountService {
   //   lastName: "",
   //   token: "",
   //})
+  listenUser(){
+    if (localStorage.getItem("user") != "") {
+      let user_data = JSON.parse(localStorage.getItem("user"));
+      //console.log(user_data);
+      this.userSubject.next(user_data);
+    }else {
+       this.userSubject.next("");
+    }
+    return this.userSubject.asObservable();
+}
   getUser() {
     if (localStorage.getItem("user") != "") {
       let user_data = JSON.parse(localStorage.getItem("user"));
@@ -414,6 +424,7 @@ export class AccountService {
     localStorage.setItem("user", JSON.stringify(user));
     this.userSubject.next(user);
   }
+ 
   isPatient() {
     //return this.currentUser.role == 4;
     //return

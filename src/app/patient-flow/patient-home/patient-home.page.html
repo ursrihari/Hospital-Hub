@@ -186,12 +186,12 @@
                                 <div class="item" >
                                     <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'0':'2'">
                                         <div class="doc-img">
-                                            <img src="{{hospital.image}}" alt="" title="">
+                                            <img [src]="hospital.hLogo" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>{{hospital.name}}</h3>
-                                            <p>{{hospital.type}}<span>{{hospital.location}}</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.no_of_doctors}} Doctors</h6>
+                                            <h3>{{hospital.hospitalName}}</h3>
+                                            <p>{{hospital.type}}<span>{{hospital.branchName}}</span></p>
+                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.noOfDoctors}} Doctors</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -200,12 +200,12 @@
                                 <div class="item" >
                                     <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'2':'4'">
                                         <div class="doc-img">
-                                            <img src="{{hospital.image}}" alt="" title="">
+                                            <img [src]="hospital.hLogo" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>{{hospital.name}}</h3>
-                                            <p>{{hospital.type}}<span>{{hospital.location}}</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.no_of_doctors}} Doctors</h6>
+                                            <h3>{{hospital.hospitalName}}</h3>
+                                            <p>{{hospital.type}}<span>{{hospital.branchName}}</span></p>
+                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.noOfDoctors}} Doctors</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -214,12 +214,12 @@
                                 <div class="item" >
                                     <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'4':'6'">
                                         <div class="doc-img">
-                                            <img src="{{hospital.image}}" alt="" title="">
+                                            <img [src]="hospital.hLogo" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>{{hospital.name}}</h3>
-                                            <p>{{hospital.type}}<span>{{hospital.location}}</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.no_of_doctors}} Doctors</h6>
+                                            <h3>{{hospital.hospitalName}}</h3>
+                                            <p>{{hospital.type}}<span>{{hospital.branchName}}</span></p>
+                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.noOfDoctors}} Doctors</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -228,93 +228,21 @@
                                 <div class="item" >
                                     <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'6':'8'">
                                         <div class="doc-img">
-                                            <img src="{{hospital.image}}" alt="" title="">
+                                            <img [src]="hospital.hLogo" alt="" title="">
                                         </div>
                                         <div class="doc-details">
-                                            <h3>{{hospital.name}}</h3>
-                                            <p>{{hospital.type}}<span>{{hospital.location}}</span></p>
-                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.no_of_doctors}} Doctors</h6>
+                                            <h3>{{hospital.hospitalName}}</h3>
+                                            <p>{{hospital.type}}<span>{{hospital.branchName}}</span></p>
+                                            <h6><i class="fa fa-star" aria-hidden="true"></i>{{hospital.rating}}({{hospital.ratingCount}}) . {{hospital.noOfDoctors}} Doctors</h6>
                                         </div>
                                     </a>
                                 </div>
                             </ion-slide>
                         </ion-slides>
-                        <!-- <div class="owl-carousel owl-theme brand-slider near-doctors-slider">
-                            <div class="item">
-                                <a target="_blank" href="JavaScript:Void(0)">
-                                    <div class="doc-img">
-                                        <img src="assets/images/hospitals/img1.jpg" alt="" title="">
-                                    </div>
-                                    <div class="doc-details">
-                                        <h3>Motherhood Hospital</h3>
-                                        <p>Multispeciality Hospital<span>Indiranagar</span></p>
-                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
-                                    </div>
-                                </a>
-                                <a target="_blank" href="JavaScript:Void(0)">
-                                    <div class="doc-img">
-                                        <img src="assets/images/hospitals/img2.jpg" alt="" title="">
-                                    </div>
-                                    <div class="doc-details">
-                                        <h3>Koshys Hospital</h3>
-                                        <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
-                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a target="_blank" href="JavaScript:Void(0)">
-                                    <div class="doc-img">
-                                        <img src="assets/images/hospitals/img2.jpg" alt="" title="">
-                                    </div>
-                                    <div class="doc-details">
-                                        <h3>Koshys Hospital</h3>
-                                        <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
-                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
-                                    </div>
-                                </a>
-
-                                <a target="_blank" href="JavaScript:Void(0)">
-                                    <div class="doc-img">
-                                        <img src="assets/images/hospitals/img1.jpg" alt="" title="">
-                                    </div>
-                                    <div class="doc-details">
-                                        <h3>Motherhood Hospital</h3>
-                                        <p>Multispeciality Hospital<span>Indiranagar</span></p>
-                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a target="_blank" href="JavaScript:Void(0)">
-                                    <div class="doc-img">
-                                        <img src="assets/images/hospitals/img1.jpg" alt="" title="">
-                                    </div>
-                                    <div class="doc-details">
-                                        <h3>Koshys Hospital</h3>
-                                        <p>Multispeciality Hospital<span>Ramamurthy Nagar</span></p>
-                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.0(1362) . 18 Doctors</h6>
-                                    </div>
-                                </a>
-                                <a target="_blank" href="JavaScript:Void(0)">
-                                    <div class="doc-img">
-                                        <img src="assets/images/hospitals/img2.jpg" alt="" title="">
-                                    </div>
-                                    <div class="doc-details">
-                                        <h3>Motherhood Hospital</h3>
-                                        <p>Multispeciality Hospital<span>Indiranagar</span></p>
-                                        <h6><i class="fa fa-star" aria-hidden="true"></i>4.5(1234) . 25 Doctors</h6>
-                                    </div>
-                                </a>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
                 <a class="view-all-symp">See All Hospitals</a>
             </div>
-
-
-
             <div class="banner-img">
                 <a><img [src]="onlineConsultation.image" /></a>
             </div>

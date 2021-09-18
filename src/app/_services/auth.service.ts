@@ -70,6 +70,9 @@ export class AuthService {
   getLocationWiseDoctors(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-doctors-location-wise.php`,forceRefresh);
   }
+  getLocationWiseHospitals(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/get-hospitals-location-wise.php`,forceRefresh);
+  }
   /*Pending*/
   
   

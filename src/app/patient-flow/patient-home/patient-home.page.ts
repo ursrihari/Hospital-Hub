@@ -56,7 +56,7 @@ export class PatientHomePage implements OnInit {
     //this.getCovodSymptoms();
     //this.getOffers();
     this.getNearDoctors();
-    //this.getNearHospitals();
+    this.getNearHospitals();
     //this.getQuestions();
     this.getHomePageData();
     this.getAppInformation();
@@ -205,6 +205,7 @@ export class PatientHomePage implements OnInit {
       
     }
 
+   
     getCovidSymptoms(){
       //this.covidSymptoms = this.getCovidSymptomsDemo();
       
@@ -269,18 +270,20 @@ export class PatientHomePage implements OnInit {
     }
 
    
+    
 
     getNearHospitals(){
-      //this.nearHospitals = this.getNearHospitalsDemo();
       let params={
-        location:''
+        cityId:'',
+        latitude:'17.385',
+        longitude:'78.486',
+        limit:'LIMIT 0,10'
       }
-      this.authService.getNearHospitals(params,true).subscribe((data) => {
+      this.authService.getLocationWiseHospitals(params,true).subscribe((data) => {
           console.log(data);
           this.nearHospitals = data;
           this.showHospitalsContent = true;      
       });
-      //this.showHospitalsContent = true;     
     }
 
     getNearHospitalsDemo(){

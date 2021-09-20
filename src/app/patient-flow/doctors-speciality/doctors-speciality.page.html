@@ -58,12 +58,16 @@
               </div>
           </div>
       </div> -->
+      
 
       <div class="find-searchbar">
           <form>
               <div class="form-group">
-                  <label><i class="fa fa-search"></i></label>
-                  <input type="text" class="form-control" placeholder="Search doctors, specialities etc...">
+                  <ion-auto-complete 
+                  [dataProvider]="autocompleteSearchService" 
+                  [options]="{ placeholder : 'Search doctors, specialities etc...',input:'text' }" 
+                  (itemSelected)="openDoctorsPage($event)"
+                  #searchbar></ion-auto-complete>
               </div>
           </form>
       </div>

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { IonRouterOutlet } from '@ionic/angular';
-import { AuthService } from '@app/_services';
-import { truncateSync } from 'fs';
+import { AccountService, AuthService } from '@app/_services';
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-appointment-booking-conformation',
   templateUrl: './appointment-booking-conformation.page.html',
@@ -11,30 +12,38 @@ import { truncateSync } from 'fs';
 export class AppointmentBookingConformationPage implements OnInit {
 canGoBack: boolean = false;
 bookingDetails:any;
-doctor:any;
 bookingDate:any;
 timeSlot:any;
 practoPromises:any;
 showContent:boolean = false;
+showAppPromisesContent:boolean = false;
+doctorData:any;
+userDetails;
   constructor(private router:Router,
     private routerOutlet: IonRouterOutlet,
     private authService:AuthService,
+    private accountService:AccountService,
     private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.canGoBack = this.routerOutlet &&
                      this.routerOutlet.canGoBack();
-    this.route.queryParams.subscribe(params => {
-    if (params && params.bookingDetails) {
-      console.log(params.bookingDetails);
-      this.bookingDetails = JSON.parse(params.bookingDetails);
+      this.userDetails = this.accountService.getUser();
+      console.log(JSON.stringify(this.userDetails));
+      if (this.router.getCurrentNavigation().extras.state) {
+      this.doctorData = this.router.getCurrentNavigation().extras.state.doctorData;
+      console.log(JSON.stringify(this.doctorData));
+      let bookingDate = this.router.getCurrentNavigation().extras.state.bookingDate;
+      this.bookingDate = moment(bookingDate, "DD-MM-YYYY");
+      console.log(JSON.stringify(this.bookingDate));
+       this.timeSlot = this.router.getCurrentNavigation().extras.state.slot;
+       console.log(JSON.stringify(this.timeSlot));
+      let self=this;
+       setTimeout(function(){
+        self.showContent = true;
+      },1000);
+       
     }
-    });
-    console.log(this.bookingDetails);
-
-    this.doctor = this.bookingDetails.doctor;
-    this.bookingDate = this.bookingDetails.bookingDate;
-    this.timeSlot = this.bookingDetails.slot.time;
     this.getPractoPromises();
   }
 
@@ -43,30 +52,31 @@ showContent:boolean = false;
   }
   bookAppointment(){
     let params = {
-      "pMobile": "7894561230",
-      "docMobile": "321654987",
-      "hid": "1",
-      "fee": "200",
+      "pMobile": this.userDetails.mobile,
+      "pId": this.userDetails.uid,
+      "docId": this.doctorData[0].doctorDetails.docId,
+      "docMobile": "",
+      "hid": this.doctorData[0].clinicAddress.hid,
+      "fee": this.doctorData[0].doctorDetails.fee,
       "comment": "test Comment",
-      "apDate": this.bookingDetails.bookingDate,
-      "apTime":  this.bookingDetails.slot.time,
-      "createdBy": "7894561230"
+      "apDate": moment(this.bookingDate).format("DD-MM-YYYY"),
+      "apTime":   this.timeSlot.time,
+      "createdBy": this.userDetails.uid
     }
-    this.router.navigateByUrl('/patient-appointments');
+    console.log(JSON.stringify(params));
+    
     this.authService.addAppointment(params,true).subscribe(data=>{
       console.log(data);
-      //this.appointments = data;
-      //this.showContent = true;
+      this.router.navigateByUrl('/patient-appointments');
     });    
   }
 
   getPractoPromises() {
     //this.practoPromises = this.getPractoPromisesDemo();
-    
-    this.authService.getPractoPractices(true).subscribe((data) => {
+    this.authService.getAppPractices(true).subscribe((data) => {
         console.log(data);
         this.practoPromises = data;
-        this.showContent = true;      
+        this.showAppPromisesContent = true;      
     });
    //this.showContent = true;  
   }

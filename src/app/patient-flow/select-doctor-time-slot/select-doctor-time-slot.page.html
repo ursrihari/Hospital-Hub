@@ -12,23 +12,23 @@
 
   <div class="appointment-details-sec visit-sec" *ngIf="showContent">
     <div class="appointments-list d-flex align-items-center">
-      <div class="appointments-list-img mr-3"><img [src]="doctor.profileImg" alt=""></div>
-    <div class="appointments-list-text"><p><strong>{{doctor.name}}</strong></p></div></div>
+      <div class="appointments-list-img mr-3"><img [src]="doctorData[0].doctorDetails.docImage" alt=""></div>
+    <div class="appointments-list-text"><p><strong>{{doctorData[0].doctorDetails.docName}}</strong></p></div></div>
     <div class="date-sec mob-consultation-sec bt-2">
         <h3>Purpose of Visit</h3>
         <p>Consultation</p>
     </div>
     <div class="future-appointment-sec d-flex flex-nowrap">
-        <div *ngFor="let day of timeSlots" class="single-future-appointment-sec" (click)="avaialbleSlots(day)">
-            <h4>{{day.date | date: 'd MMM, y'}}</h4>
+        <div *ngFor="let day of daySlots" class="single-future-appointment-sec" (click)="avaialbleSlots(day)">
+            <h4>{{day.date}}</h4> <!-- | date: 'd MMM, y'-->
             <h5>{{day.avaialableSlots}} slots available</h5>
         </div>
     </div>
     <div class="current-appointment-sec">
-        <h3>{{selectedDate | date: 'd MMM, y' }}</h3>
+        <h3>{{selectedDate}}</h3> <!--  | date: 'd MMM, y' -->
         <div class="single-appointment-sec">
-            <h3>Morning <span>{{selectedAvaialbleSlots}} slots</span></h3>
-            <ion-button [fill]="slot.allocated?'solid':'outline'" *ngFor="let slot of selectedSlots" (click)="openBookingConformationPage(slot)">{{slot.time}}</ion-button>
+            <h3>Choose Time slot</h3>
+            <ion-button [fill]="slot.allocated?'solid':'outline'" *ngFor="let slot of timeSlots" (click)="openBookingConformationPage(slot)">{{slot.time}}</ion-button>
             <!-- <a *ngFor="let slot of selectedSlots" [fill]="slot.allocated?'solid':'outline'" (click)="openBookingConformationPage()">{{slot.time}}</a> -->
             <!-- <a (click)="openBookingConformationPage()">03:00 PM</a>
             <a (click)="openBookingConformationPage()">04:00 PM</a>

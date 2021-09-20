@@ -4,33 +4,33 @@
             <ion-back-button *ngIf="canGoBack"></ion-back-button>
             <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
         </ion-buttons>
-        <ion-title>Book In-Clinic Appointment</ion-title>
+        <ion-title>Book Appointment</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <div class="container p-0">
+    <div class="container p-0" *ngIf="showContent">
         <div class="appointments-list d-flex align-items-center justify-content-between">
 
             <div class="appointments-list-text">
-                <p><strong>{{doctor.name}}</strong></p>
-                <p class="date">{{doctor.specialization}}</p>
+                <p><strong>{{doctorData[0].doctorDetails.docName}}</strong></p>
+                <p class="date">{{doctorData[0].doctorDetails.department}}</p>
             </div>
             <div class="appointments-list-img">
-                <img src="{{doctor.profileImg}}" alt="">
+                <img [src]="doctorData[0].doctorDetails.docImage" alt="">
             </div>
         </div>
         <div class="date-sec">
             <p class="d-flex align-items-center mb-2"><span class="mr-1"><img src="assets/images/appointments/home.jpg" alt=""></span> <small class="mb-0">Book In-Clinic appointment-time</small></p>
-            <h3 class="d-flex align-items-center mr-2">{{bookingDate  | date: 'd MMM, y' }},  <span class="m-0 pl-2"><img src="assets/images/appointments/time.jpg" alt=""> {{timeSlot}}</span> </h3>
-            <p>{{doctor.clinic}}, <br>Bellandur</p>
+            <h3 class="d-flex align-items-center mr-2">{{bookingDate  | date: 'd MMM, y' }},  <span class="m-0 pl-2"><img src="assets/images/appointments/time.jpg" alt=""> {{timeSlot.time}}</span> </h3>
+            <p>{{doctorData[0].clinicAddress.hospitalName}}, <br>{{doctorData[0].clinicAddress.address}}</p>
             <p class="Procto-pro"> <a href=""><strong>Procto promise</strong></a> Appointment confirmed instantly</p>
         </div>
 
-        <div class="Practo-sec" *ngIf="showContent">
+        <div class="Practo-sec" *ngIf="showAppPromisesContent">
             <h4><i class="ti-check"></i> Practo promise</h4>
             <ul>
-                <li *ngFor="let practoPromise of practoPromises" class="d-flex"><i class="ti-check ml-2"></i> <span>{{practoPromise.title}}</span> </li>
+                <li *ngFor="let practoPromise of practoPromises" class="d-flex"><i class="ti-check ml-2"></i> <span>{{practoPromise.promise}}</span> </li>
             </ul>
         </div>
 
@@ -39,7 +39,7 @@
                 <img src="assets/images/appointments/patient1.jpg" alt="">
                 <div class="ml-3">
                     <h5 class="m-0">Appointment for</h5>
-                    <p class="m-0">User name</p>
+                    <p class="m-0">{{userDetails.name}}</p>
                 </div>
             </div>
             <!-- <div class="appointments-list-text" style="text-transform: uppercase; color: #0069b4;"><p>Change</p>
@@ -115,7 +115,7 @@
     <div class="appointments-list d-flex align-items-center justify-content-between">
         <div class="appointments-list-img d-flex align-items-center">
             <div class="ml-3">
-                <h5 class="m-0">&#36; 700.00</h5>
+                <h5 class="m-0">{{doctorData[0].doctorDetails.fee}}</h5>
             </div>
         </div>
         <div class="c-package-book" (click)="bookAppointment()"><span>Confirm Appointment</span>

@@ -10,6 +10,9 @@ import { CachingService } from './_services/caching.service';
 import { AppLauncher } from '@capacitor/app-launcher';
 
 import { Router } from '@angular/router';
+import { PatientHomePage } from './patient-flow/patient-home/patient-home.page';
+import { DoctorHomePage } from './doctor-flow/doctor-home/doctor-home.page';
+import { ReceptionistHomePage } from './receptioist-flow/receptionist-home/receptionist-home.page';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -21,6 +24,7 @@ export class AppComponent {
   MenuPages=[];
   userProfile:object={};
   profileCompleteness;
+  rootPage: any;
   constructor(private authService: AuthService,
     private menuCtrl:MenuController,
     private navCtrl: NavController,
@@ -63,10 +67,13 @@ export class AppComponent {
       //   autoHide: true
       // });
       if(role=='patient'){
+        this.rootPage = PatientHomePage;
         this.navCtrl.navigateRoot(["/patient-home"], { skipLocationChange: true });
       }else if(role=='doctor'){
+        this.rootPage = DoctorHomePage;
         this.navCtrl.navigateRoot(["/doctor-appointments"], { skipLocationChange: true }); 
       }else if(role=='receptionist'){
+        this.rootPage = ReceptionistHomePage;
         this.navCtrl.navigateRoot(["/receptionist-home"], { skipLocationChange: true }); 
       }else{
         this.navCtrl.navigateRoot(["/login"], { skipLocationChange: true });

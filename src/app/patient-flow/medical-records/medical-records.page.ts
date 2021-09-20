@@ -46,7 +46,7 @@ openPatientsListPage(){
 
 getMedicalRecords(){
   let params={ 
-     hospitalId:''
+    hospital_id:'3'
   }
   this.authService.getMedicalRecords(params,true).subscribe((data) => {
     console.log(data);

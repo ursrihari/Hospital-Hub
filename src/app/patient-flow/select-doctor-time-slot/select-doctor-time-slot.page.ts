@@ -20,44 +20,50 @@ export class SelectDoctorTimeSlotPage implements OnInit {
     }
 
     @ViewChild('slides') slider: IonSlides;
-    
+    doctorData = [];
+    timeSlots = [];
+    daySlots = [];
     selectedDate;
     selectedSlots=[];
     selectedAvaialbleSlots = 0;
     showContent:boolean = false;
-    timeSlots=[];
+    
    
   ngOnInit() {
     this.canGoBack = this.routerOutlet &&
                      this.routerOutlet.canGoBack();
     this.route.queryParams.subscribe(params => {
-      console.log(JSON.stringify(params.doctor));
-    if (params && params.doctor) {
-      this.doctor = JSON.parse(params.doctor);
-      console.log(JSON.stringify(this.doctor));
-    }
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.doctorData = this.router.getCurrentNavigation().extras.state.doctorData;
+        this.daySlots = this.router.getCurrentNavigation().extras.state.daySlots;
+        this.timeSlots = this.router.getCurrentNavigation().extras.state.timeSlots;
+        this.showContent = true;
+      }
     });
+
+    // this.route.queryParams.subscribe(params => {
+    //   console.log(JSON.stringify(params.doctor));
+    // if (params && params.doctor) {
+    //   this.doctor = JSON.parse(params.doctor);
+    //   console.log(JSON.stringify(this.doctor));
+    // }
+    // });
         
-    this.showContent = true;
-    this.selectedDate =  "2021-09-10";
-    this.selectedAvaialbleSlots = 10;
-    this.selectedSlots =  [{"time":"09:00 AM","allocated":true}, {"time":"10:00 AM","allocated":false},{"time":"11:00 AM","allocated":false},{"time":"12:00 AM","allocated":false},{"time":"13:00 AM","allocated":false},{"time":"09:00 AM","allocated":false}];
-    console.log(this.selectedDate);
-    this.getDoctorTimeSlots(this.doctor.id);
+   // this.showContent = true;
+   // this.selectedDate =  "2021-09-10";
+   // this.selectedAvaialbleSlots = 10;
+   // this.selectedSlots =  [{"time":"09:00 AM","allocated":true}, {"time":"10:00 AM","allocated":false},{"time":"11:00 AM","allocated":false},{"time":"12:00 AM","allocated":false},{"time":"13:00 AM","allocated":false},{"time":"09:00 AM","allocated":false}];
+   // console.log(this.selectedDate);
+   // this.getDoctorTimeSlots(this.doctor.id);
 }
 
   openBookingConformationPage(slot){
     if(!slot.allocated){
-      let params = {
-        doctor:this.doctor,
-        bookingDate:this.selectedDate,
+      let navigationExtras: NavigationExtras = { state: { 
+        doctorData:this.doctorData,
+        bookingDate:this.selectedDate, 
         slot:slot
-      };
-      let navigationExtras: NavigationExtras = {
-        queryParams: {
-          bookingDetails: JSON.stringify(params)
-        }
-      };
+      }};
       this.router.navigate(['/appointment-booking-conformation'], navigationExtras);
       // this.router.navigateByUrl('/appointment-booking-conformation');
     }

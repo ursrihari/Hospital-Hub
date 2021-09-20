@@ -73,18 +73,29 @@ export class AuthService {
   getLocationWiseHospitals(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/get-hospitals-location-wise.php`,forceRefresh);
   }
+  getDoctorsSpecilities(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/search-doctors-specialities.php`,forceRefresh);
+  }
+  getDoctorsSpecilities1(params:object,forceRefresh:boolean){
+    return this.accountService.getdata('https://restcountries.eu/rest/v2/all',forceRefresh);
+  }
+  getDoctorDetails(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-doctor-details.php`,forceRefresh);
+  }
+  getDoctorReviews(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-doctor-reviews.php`,forceRefresh);
+  }
+  getAppPractices(forceRefresh:boolean){
+    return this.accountService.getdata(`${environment.apiUrl}/app/get-app-promises.php`,forceRefresh);
+  }
   /*Pending*/
   
   
   getHospitalReviews(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
-  getDoctorDetails(params:object,forceRefresh:boolean){
-    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
-  }
-  getDoctorReviews(params:object,forceRefresh:boolean){
-    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
-  }
+  
+  
   getMedicalRecords(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/medical-records/get-medical-records.php`,forceRefresh);
   }

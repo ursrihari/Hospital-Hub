@@ -81,3 +81,14 @@ ion-item ion-input{
   font-size: 1rem;
   color: #212121;
 }
+input.native-input.sc-ion-input-md {
+  text-align: center;
+}
+
+
+@media (min-width: 768px){
+ .icons-main {
+    margin: 30px 0 10px !important;
+    text-align:center;
+}
+}

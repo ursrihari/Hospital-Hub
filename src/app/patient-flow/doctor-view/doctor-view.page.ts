@@ -21,6 +21,7 @@ export class DoctorViewPage implements OnInit {
   timeSlots = [];
   daySlots = [];
   selectedDoctor = {};
+  selectedDate='';
   constructor(
     private routerOutlet: IonRouterOutlet,
     private router: Router,
@@ -38,19 +39,25 @@ export class DoctorViewPage implements OnInit {
     this.route.queryParams.subscribe((params) => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.selectedDoctor = this.router.getCurrentNavigation().extras.state.data;
+        console.log(JSON.stringify(this.selectedDoctor));
         this.getDoctorDetails(this.selectedDoctor["id"]);
         this.getDoctorReviews(this.selectedDoctor["id"]);
       }
     });
   }
   openBookAppointmentPage() {
-    let navigationExtras: NavigationExtras = { state: { doctorData: this.doctorData, daySlots:this.daySlots, timeSlots:this.timeSlots }};
+    let navigationExtras: NavigationExtras = { state: { id: this.selectedDoctor["id"]}};
     this.router.navigate(['/select-doctor-time-slot'],navigationExtras);
 
     //this.router.navigateByUrl("/select-doctor-time-slot");
   }
-  openBookAppointmentConformationPage() {
-    this.router.navigateByUrl("/appointment-booking-conformation");
+  openBookAppointmentConformationPage(slot) {
+    let navigationExtras: NavigationExtras = { state: { 
+      doctorData:this.doctorData,
+      bookingDate:this.selectedDate, 
+      slot:slot
+    }};
+    this.router.navigate(['/appointment-booking-conformation'],navigationExtras);
   }
   openGoogleMap(location){
       let lat = this.doctorData[0].clinicAddress.latitude;
@@ -62,6 +69,7 @@ export class DoctorViewPage implements OnInit {
   selectTab(index) {
     this.activeIndex = index;
     this.timeSlots = this.daySlots[index].slots;
+    this.selectedDate = this.daySlots[index].date;
   }
   segmentChanged() {
     document.getElementById("segment-" + this.activeIndex).scrollIntoView({

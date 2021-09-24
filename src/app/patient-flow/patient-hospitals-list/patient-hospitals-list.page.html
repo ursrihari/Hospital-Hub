@@ -29,6 +29,64 @@
 </ion-header>
 
 <ion-content>
+  <div class="find-searchbar">
+    <form>
+        <div class="form-group">
+            <ion-auto-complete 
+            [dataProvider]="autocompleteSearchService" 
+            [options]="{ placeholder : 'Search hospital...',input:'text'}" 
+            (itemSelected)="openDoctorsPage($event)"
+            (focus)="searchbarFocused()"
+            maxResults="0"
+            #searchbar></ion-auto-complete>
+        </div>
+    </form>
+</div>
+<div class="filters" *ngIf="searchText!=''">
+  <div>
+    <ion-button size="small" shape="round" fill="outline">{{searchText}}</ion-button>
+  </div>
+</div>
+
+<div class="hospital-list-main" *ngIf="!showLoader">
+<div class="single-hospital-sec item" (click)="openHospitalPage(hospital)" *ngFor="let hospital of hospitals">
+    <div class="icon">
+        <div class="icon"><img  [src]="hospital.hLogo" alt=""></div>
+      </div>
+      <div class="title">
+        <h3><a href="javascript:void(0)">{{hospital.hospitalName}}</a></h3>
+        <div class="text">
+            <ul class="info-detail p-0">
+                <li><i class="fa fa-phone" aria-hidden="true"></i>{{hospital.mobile}}</li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i>{{hospital.email}}</li>
+                <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{hospital.address}}</li>
+            </ul>
+          </div>
+      </div>
+</div>
+</div>
+
+<div class="hospital-list-main" *ngIf="showLoader">
+  <div class="single-hospital-sec item" *ngFor="let i of [].constructor(10)">
+      <div class="icon">
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        </div>
+        <div class="title">
+          <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
+          <div class="text">
+              <ul class="info-detail p-0">
+                  <li><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></li>
+                  <li><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></li>
+                  <li><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></li>
+              </ul>
+            </div>
+        </div>
+  </div>
+  </div>
+
+
     <!-- <div class="content-finddoc-page">
         <div class="find-searchbar">
             <form>

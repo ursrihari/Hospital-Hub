@@ -62,7 +62,7 @@
                     <span>Connect with top medical experts, 24/7</span>
                 </h5>
                 <div class="row">
-                    <div class="col-3" *ngFor="let symptom of covidSymptoms">
+                    <div class="col-3" *ngFor="let symptom of covidSymptoms" (click)="openCovidAssistncePage(symptom)">
                         <a>
                             <img [src]="symptom.image" />
                             <p>{{symptom.symptom}}</p>
@@ -101,14 +101,14 @@
                         <span>Treat common symptoms instantly via phone consultation</span>
                     </h5>
                     <div class="row">
-                        <div class="col-3" *ngFor="let symptom of commonDeseaseSymptoms">
+                        <div class="col-3" *ngFor="let symptom of commonDeseaseSymptoms" (click)="openDoctorsListPageBydisease(symptom)">
                             <a>
                                 <img [src]="symptom.image" />
-                                <p>{{symptom.symptom}}</p>
+                                <p>{{symptom.name}}</p>
                             </a>
                         </div>
                     </div>
-                    <a class="view-all-symp">View All Symptoms</a>
+                    <a class="view-all-symp" (click)="openDiseasesPage()">View All Symptoms</a>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
                         <ion-slides pager="true" [options]="doctorsSlideOpts">
                             <ion-slide>
                                 <div class="item">
-                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'0':'2'">
+                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'0':'2'" (click)="openDoctorViewPage(doctor)">
                                         <div class="doc-img">
                                             <img [src]="doctor.docImage" alt="" title="">
                                         </div>
@@ -138,7 +138,7 @@
                             </ion-slide>
                             <ion-slide>
                                 <div class="item">
-                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'2':'4'">
+                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'2':'4'" (click)="openDoctorViewPage(doctor)">
                                         <div class="doc-img">
                                             <img [src]="doctor.docImage" alt="" title="">
                                         </div>
@@ -152,7 +152,7 @@
                             </ion-slide>
                             <ion-slide>
                                 <div class="item">
-                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'4':'6'">
+                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'4':'6'" (click)="openDoctorViewPage(doctor)">
                                         <div class="doc-img">
                                             <img [src]="doctor.docImage" alt="" title="">
                                         </div>
@@ -166,7 +166,7 @@
                             </ion-slide>
                             <ion-slide>
                                 <div class="item">
-                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'6':'8'">
+                                    <a target="_blank" *ngFor="let doctor of nearDoctors | customArray:'6':'8'" (click)="openDoctorViewPage(doctor)">
                                         <div class="doc-img">
                                             <img [src]="doctor.docImage" alt="" title="">
                                         </div>
@@ -181,7 +181,7 @@
                         </ion-slides>
                     </div>
                 </div>
-                <a class="view-all-symp">See All Doctors</a>
+                <a class="view-all-symp" (click)="openDoctorsListPage()">See All Doctors</a>
             </div>
 
             <div class="brand-wrapper hosp-nearyou" *ngIf="showHospitalsContent">
@@ -195,7 +195,7 @@
                         <ion-slides pager="true" [options]="hospitalsSlideOpts">
                             <ion-slide >
                                 <div class="item" >
-                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'0':'2'">
+                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'0':'2'" (click)="openHospitalPageByHospital(hospital)">
                                         <div class="doc-img">
                                             <img [src]="hospital.hLogo" alt="" title="">
                                         </div>
@@ -209,7 +209,7 @@
                             </ion-slide>
                             <ion-slide>
                                 <div class="item" >
-                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'2':'4'">
+                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'2':'4'" (click)="openHospitalPageByHospital(hospital)">
                                         <div class="doc-img">
                                             <img [src]="hospital.hLogo" alt="" title="">
                                         </div>
@@ -223,7 +223,7 @@
                             </ion-slide>
                             <ion-slide>
                                 <div class="item" >
-                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'4':'6'">
+                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'4':'6'" (click)="openHospitalPageByHospital(hospital)">
                                         <div class="doc-img">
                                             <img [src]="hospital.hLogo" alt="" title="">
                                         </div>
@@ -237,7 +237,7 @@
                             </ion-slide>
                             <ion-slide>
                                 <div class="item" >
-                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'6':'8'">
+                                    <a target="_blank" *ngFor="let hospital of nearHospitals | customArray:'6':'8'" (click)="openHospitalPageByHospital(hospital)">
                                         <div class="doc-img">
                                             <img [src]="hospital.hLogo" alt="" title="">
                                         </div>
@@ -252,7 +252,7 @@
                         </ion-slides>
                     </div>
                 </div>
-                <a class="view-all-symp">See All Hospitals</a>
+                <a class="view-all-symp" (click)="openHospitalsPage()">See All Hospitals</a>
             </div>
             <div class="banner-img">
                 <a><img [src]="onlineConsultation.image" /></a>
@@ -265,22 +265,22 @@
                     <span class="decor"><span class="inner"></span></span>
                 </div>
                 <div class="row book-appointment">
-                    <div class="col" *ngFor="let department of specialists | customArray:'0':'2'">
-                        <img [src]="department.image" />
-                        <h3>{{department.department}}</h3>
-                        <p>{{department.description}}</p>
+                    <div class="col" *ngFor="let department of specialists | customArray:'0':'2'" (click)="openDoctorsPageBySpeciality(department)">
+                        <img [src]="department.departmentImage" />
+                        <h3>{{department.specName}}</h3>
+                        <p>{{department.aboutSpeciality}}</p>
                         <h6><i class="fa fa-user" aria-hidden="true"></i>{{department.noOfDoctors}} Doctors a...</h6>
                     </div>
                 </div>
                 <div class="row book-appointment">
-                    <div class="col" *ngFor="let department of specialists | customArray:'2':'4'">
-                        <img [src]="department.image" />
-                        <h3>{{department.department}}</h3>
-                        <p>{{department.description}}</p>
+                    <div class="col" *ngFor="let department of specialists | customArray:'2':'4'" (click)="openDoctorsPageBySpeciality(department)">
+                        <img [src]="department.departmentImage" />
+                        <h3>{{department.specName}}</h3>
+                        <p>{{department.aboutSpeciality}}</p>
                         <h6><i class="fa fa-user" aria-hidden="true"></i>{{department.noOfDoctors}} Doctors a...</h6>
                     </div>
                 </div>
-                <a class="view-all-symp">View All Specialists</a>
+                <a class="view-all-symp" (click)="openSpecilitiesPage()">View All Specialists</a>
             </div>
         </div>
 

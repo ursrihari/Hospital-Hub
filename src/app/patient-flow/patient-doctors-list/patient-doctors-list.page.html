@@ -35,29 +35,59 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <div class="content-finddoc-page">
-        <!-- <div class="find-topbar">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <a href="index.html"><i class="ti-arrow-left"></i></a>
-                        <h3>Find & Book</h3>
-                    </div>
-                    <div class="col">
-                        <p>LOCATION</p>
-                        <form>
-                            <select>
-                                <option>Banglore</option>
-                                <option>Hyderabad</option>
-                                <option>Delhi</option>
-                                <option>Mumbai</option>
-                                <option>Pune</option>
-                            </select>
-                        </form>
-                    </div>
-                </div>
+  <div class="find-searchbar">
+    <form>
+        <div class="form-group">
+            <ion-auto-complete 
+            [dataProvider]="autocompleteSearchService" 
+            [options]="{ placeholder : 'Search doctors, specialities etc...',input:'text' }" 
+            (itemSelected)="loadDoctorsList()"
+            (focus)="searchbarFocused()"
+            maxResults="0"
+            #searchbar></ion-auto-complete>
+        </div>
+    </form>
+</div>
+<div class="filters" *ngIf="searchText!=''">
+  <div>
+    <ion-button size="small" shape="round" fill="outline">{{searchText}}</ion-button>
+  </div>
+</div>
+  <div class="content-finddoc-page" *ngIf="!showLoader">
+    <div class="mb-4 col-sm-12" *ngIf="doctorsData.length>0">
+        <div class="d-flex align-items-center justify-content-between doctors-main" *ngFor="let doctor of doctorsData">
+            <div class="ms-3 d-flex align-items-center doctors-list" (click)="openDoctorViewPage(doctor)">
+              <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img [src]="doctor.docImage" class="rounded-circle"></span>
+              <div>
+                <h4>{{doctor.docName}}</h4>
+              <p>{{doctor.department}}<br/>{{doctor.address}}</p>
+              <div class="d-flex d-flex align-items-center" *ngIf="doctor.featured==1"><span class="prime">Prime </span> <button class="plus">PLUS</button></div>
+              </div>
             </div>
-        </div> -->
+            <div class="button" (click)="openSelectDoctorTimeSlotPage(doctor)">Book</div>
+        </div>
+      </div>
+      <div class="mb-4 col-sm-12" *ngIf="doctorsData.length==0">
+        <p>No Docotors Available</p>
+      </div>
+</div>
+<div *ngIf="showLoader">
+  <div class="" *ngFor="let i of [].constructor(10)">
+    <div class="row">
+      <div class="col-3" style="margin-top: auto;margin-bottom: auto;"><ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar></div>
+      <div class="col-6" style="margin-top: auto;margin-bottom: auto;">
+        <h4><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h4>
+        <h4><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h4>
+        <h4><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h4>
+        
+    </div>
+      <div class="col-3" style="margin-top: auto;margin-bottom: auto;"><ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></div>
+    </div>
+</div>
+</div>
+    <!-- <div class="content-finddoc-page">
 
         <div class="find-searchbar">
             <form>
@@ -134,10 +164,6 @@
             </div>
             <div class="button" (click)="openSelectDoctorTimeSlotPage()">Book</div>
           </div>
-          
           </div>
-        
-
-        <!-- <ion-button expand="block" (click)="openSelectDoctorTimeSlotPage()">Book Appointment</ion-button> -->
-    </div>
+    </div> -->
 </ion-content>

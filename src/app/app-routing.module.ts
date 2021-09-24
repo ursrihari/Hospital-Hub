@@ -255,6 +255,10 @@ const routes: Routes = [
   {
     path: 'patient-details',
     loadChildren: () => import('./patient-details/patient-details.module').then( m => m.PatientDetailsPageModule)
+  },
+  {
+    path: 'diseases',
+    loadChildren: () => import('./diseases/diseases.module').then( m => m.DiseasesPageModule)
   }
 
 

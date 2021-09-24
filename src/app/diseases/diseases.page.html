@@ -19,11 +19,11 @@
 </div>
 
 <ion-list lines="full" *ngIf="showContent">
-  <ion-item (click)="openDoctorsListPage(speciality)" *ngFor="let speciality of specialities">
+  <ion-item (click)="openDoctorsListPage(speciality)" *ngFor="let disease of diseases" (click)="openDoctorsListPage(disease)">
     <ion-avatar class="avatar-img" slot="start">
-      <img [src]="speciality.image" />
+      <img [src]="disease.image" />
     </ion-avatar>
-    <ion-label>{{speciality.specName}}</ion-label>
+    <ion-label>{{disease.name}}</ion-label>
     <ion-icon name="chevron-forward-outline"></ion-icon>
   </ion-item>
 </ion-list>

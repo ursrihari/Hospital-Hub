@@ -8,6 +8,7 @@ import { PatientDoctorsListPageRoutingModule } from './patient-doctors-list-rout
 import { PatientDoctorsListPage } from './patient-doctors-list.page';
 import { RatingModule } from '../../components/rating/rating.module';
 import { PopoverModule } from '../../components/popover/popover.module';
+import { AutoCompleteModule } from 'ionic4-auto-complete';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { PopoverModule } from '../../components/popover/popover.module';
     IonicModule,
     PopoverModule,
     PatientDoctorsListPageRoutingModule,
-    RatingModule
+    RatingModule,
+    AutoCompleteModule
   ],
   declarations: [PatientDoctorsListPage]
 })

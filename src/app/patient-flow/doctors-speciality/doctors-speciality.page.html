@@ -35,31 +35,81 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div class="content-finddoc-page">
-      <!-- <div class="find-topbar">
-          <div class="container">
-              <div class="row">
-                  <div class="col">
-                      <a href="index.html"><i class="ti-arrow-left"></i></a>
-                      <h3>Find & Book</h3>
-                  </div>
-                  <div class="col">
-                      <p>LOCATION</p>
-                      <form>
-                          <select>
-                              <option>Banglore</option>
-                              <option>Hyderabad</option>
-                              <option>Delhi</option>
-                              <option>Mumbai</option>
-                              <option>Pune</option>
-                          </select>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div> -->
-      
+    
+<div class="content-finddoc-page">
+    <!-- <div class="find-topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="index.html"><i class="ti-arrow-left"></i></a>
+                    <h3>Find & Book</h3>
+                </div>
+                <div class="col">
+                    <p>LOCATION</p>
+                    <form>
+                        <select>
+                            <option>Banglore</option>
+                            <option>Hyderabad</option>
+                            <option>Delhi</option>
+                            <option>Mumbai</option>
+                            <option>Pune</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
 
+    <div class="find-searchbar">
+        <form>
+            <div class="form-group">
+                <ion-auto-complete 
+                [dataProvider]="autocompleteSearchService" 
+                [options]="{ placeholder : 'Search hospitals, specialities etc...',input:'text' }" 
+                (itemSelected)="openDoctorsPage($event)"
+                #searchbar></ion-auto-complete>
+            </div>
+        </form>
+    </div>
+
+    <div class="two-three-grid" *ngIf="showDiseaseContent">
+        <h3>Search by Health concern<a>Explore More</a></h3>
+        <div class="row healthcon-icons">
+            <div class="col" (click)="openDoctorsPageByDisease(disease)" *ngFor="let disease of diseasesData | customArray:'0':'3'">
+                <img [src]="disease.image" />
+                <p>{{disease.name}}</p>
+            </div>
+        </div>
+
+        <div class="row healthcon-icons">
+            <div class="col" (click)="openDoctorsPageByDisease(disease)" *ngFor="let disease of diseasesData | customArray:'3':'6'">
+                <img [src]="disease.image" />
+                <p>{{disease.name}}</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="two-three-grid" *ngIf="showSpecialityContent">
+        <h3>Search by Speciality</h3>
+        <div class="healthcon-spec">
+            <div class="healthcon-spec-bg" (click)="openDoctorsPageBySpeciality(speciality)" *ngFor="let speciality of specialitiesData">
+                <a>
+                    <img [src]="speciality.image" />
+                    <p>{{speciality.specName}}</p>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="looking-search"><a>Looking for more? Search</a></div>
+    </div>
+
+
+</div>
+     
+  <!-- <div class="content-finddoc-page">
       <div class="find-searchbar">
           <form>
               <div class="form-group">
@@ -222,5 +272,5 @@
       </div>
 
 
-  </div>
+  </div> -->
 </ion-content>

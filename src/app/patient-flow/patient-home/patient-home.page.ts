@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { GlobalValuesService,AuthService } from '@app/_services';
 
 import { ModalController } from '@ionic/angular';
@@ -95,7 +95,10 @@ export class PatientHomePage implements OnInit {
     });
   }
   getCommonDeseaseSymptoms(){
-    this.authService.getDiseaseSymptoms(true).subscribe(data=>{
+    let params ={
+      limit:'limit 0,8'
+    };
+    this.authService.getDiseases(params,true).subscribe(data=>{
       this.commonDeseaseSymptoms = data;
       //console.log(JSON.stringify(data));
     });
@@ -115,6 +118,39 @@ export class PatientHomePage implements OnInit {
       console.log(JSON.stringify(data));
     });
   }
+  openDoctorsPageBySpeciality(speciality){
+    let obj = {"name":speciality.specName,"id":speciality.specId,"type":"speciality"};
+    let navigationExtras: NavigationExtras = { state: { data: obj }};
+    this.router.navigate(['/patient-doctors-list'],navigationExtras);
+  }
+  openHospitalPageByHospital(hospital){
+    let obj = {"name":hospital.hospitalName,"id":hospital.hid,"type":"hospital"};
+    let navigationExtras: NavigationExtras = { state: { data: obj }};
+    this.router.navigate(['/hospital'],navigationExtras);
+  }
+  openHospitalsPage(){
+    let obj = {"name":'',"id":'all',"type":"hospital"};
+    let navigationExtras: NavigationExtras = { state: { data: obj }};
+    this.router.navigate(['/patient-hospitals-list'],navigationExtras);
+  }
+  openDoctorsListPage(){
+    let obj = {"name":'',"id":'all',"type":"doctors"};
+    let navigationExtras: NavigationExtras = { state: { data: obj }};
+    this.router.navigate(['/patient-doctors-list'],navigationExtras);
+  }
+  openDoctorViewPage(doctor){
+    let navigationExtras: NavigationExtras = { state: {  data: { id: doctor.docId }}};
+    this.router.navigate(['/doctor-view'],navigationExtras);
+  }
+  openDiseasesPage(){
+    this.router.navigate(['/diseases']);
+  }
+  openDoctorsListPageBydisease(disease){
+    let obj = {"name":disease.name,"id":disease.specId,"type":"speciality"};
+    let navigationExtras: NavigationExtras = { state: { data: obj }};
+    this.router.navigate(['/patient-doctors-list'],navigationExtras);
+  }
+
   openCovidAssistncePage(){
     this.router.navigateByUrl('/covid-assist');
   }
@@ -140,9 +176,8 @@ export class PatientHomePage implements OnInit {
   openNotificationsPage(){
     this.router.navigateByUrl('/notifications');
   }
-  openHospitalsPage(){
-    //this.router.navigateByUrl('/patient-hospitals-list');
-    this.router.navigateByUrl('/hospital-specialities');
+  openSpecilitiesPage(){
+    this.router.navigateByUrl('/hospital-services');
   }
   
   openPaymentsPage(){

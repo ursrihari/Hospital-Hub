@@ -30,6 +30,7 @@ userDetails;
                      this.routerOutlet.canGoBack();
       this.userDetails = this.accountService.getUser();
       console.log(JSON.stringify(this.userDetails));
+      console.log(this.router.getCurrentNavigation().extras.state);
       if (this.router.getCurrentNavigation().extras.state) {
       this.doctorData = this.router.getCurrentNavigation().extras.state.doctorData;
       console.log(JSON.stringify(this.doctorData));

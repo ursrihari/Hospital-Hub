@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { HospitalPageRoutingModule } from './hospital-routing.module';
-
 import { HospitalPage } from './hospital.page';
 import { CustomArrayPipe } from '@app/pipe/custom-array.pipe';
 import { SubStringPipe } from '@app/pipe/sub-string.pipe';
 import { CustomDatePipe } from '@app/pipe/custom-date.pipe';
+import { LaunchNavigator} from '@ionic-native/launch-navigator/ngx';
 
 @NgModule({
   imports: [
@@ -18,6 +16,7 @@ import { CustomDatePipe } from '@app/pipe/custom-date.pipe';
     IonicModule,
     HospitalPageRoutingModule
   ],
-  declarations: [HospitalPage,CustomArrayPipe,SubStringPipe,CustomDatePipe]
+  declarations: [HospitalPage,CustomArrayPipe,SubStringPipe,CustomDatePipe],
+  providers:[LaunchNavigator]
 })
 export class HospitalPageModule {}

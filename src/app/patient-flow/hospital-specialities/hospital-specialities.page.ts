@@ -1,10 +1,12 @@
-import { Component, ElementRef, OnInit, ViewChildren } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, ElementRef, OnInit, ViewChild, ViewChildren } from "@angular/core";
+import { NavigationExtras, Router } from "@angular/router";
 import { AuthService } from "@app/_services";
 import { IonRouterOutlet, ModalController } from "@ionic/angular";
-import { AutocompleteSearchService } from "@app/_services/autocomplete-search.service";
+import { AutocompleteSearchService } from '@app/_services/autocomplete-search.service';
 import { GlobalValuesService } from "@app/_services";
 import { LocationPage } from "../location/location.page";
+import { CustomArrayPipe } from '@app/pipe/custom-array.pipe';
+
 @Component({
   selector: "app-hospital-specialities",
   templateUrl: "./hospital-specialities.page.html",
@@ -16,47 +18,59 @@ export class HospitalSpecialitiesPage implements OnInit {
   specialities = [];
   location:object={};
   showContent: boolean = false;
-  @ViewChildren ("searchInput") searchInput:ElementRef;
+  @ViewChild('searchbar') searchbar: AutocompleteSearchService;
   constructor(
     private router: Router,
     private routerOutlet: IonRouterOutlet,
     private authService: AuthService,
     private modalController:ModalController,
-    private globalValues:GlobalValuesService
+    private globalValues:GlobalValuesService,
+    public autocompleteSearchService: AutocompleteSearchService
   ) {
     this.getNearestHospitals();
   }
 
   ngOnInit() {
+    this.autocompleteSearchService.searchType = 'search-hospital-speciality-diseases';
     this.globalValues.getLocation().subscribe(data=>{
       this.location = data;
     });
     this.canGoBack = this.routerOutlet && this.routerOutlet.canGoBack();
+    
   }
-  openHospitalsListPage() {
-    this.router.navigateByUrl("/patient-hospitals-list");
-  }
-  openHospitalPage(hospital) {
-    this.router.navigate(["/hospital",{id:hospital.hid}]);
-  }
-  openDoctorBookingPage() {
-    this.router.navigateByUrl("/doctor-booking");
 
+  openHospitalPage(data){
+  let navigationExtras: NavigationExtras = { state: { data: data }};
+   if(data.type=='hospital'){
+    this.router.navigate(['/hospital'],navigationExtras);
+   }else if(data.type=='speciality'){
+    this.router.navigate(['/patient-hospitals-list'],navigationExtras);
+   }
   }
+  openHospitalPageByHospital(hospital){
+    let obj = {"name":hospital.hospitalName,"id":hospital.hid,"type":"hospital"};
+    let navigationExtras: NavigationExtras = { state: { data: obj }};
+    this.router.navigate(['/hospital'],navigationExtras);
+  }
+  openDoctorsPageBySpeciality(speciality){
+    let obj = {"name":speciality.specName,"id":speciality.specId,"type":"speciality"};
+    let navigationExtras: NavigationExtras = { state: { data: obj }};
+    this.router.navigate(['/patient-hospitals-list'],navigationExtras);
+  }
+
   getNearestHospitals() {
     let params = { 
       pMobile: "7894561230",
       speciality:'',
-      limit: '6'
+      limit: 'limit 0,6'
      };
     this.globalValues.getLocation().subscribe(data=>{
-      params['locationId'] = data.cityId;
+      params['cityId'] = data.cityId;
       params['latitude'] = data.latitude;
       params['longitude'] = data.longitude;
-      params['locationId'] = data.cityId;
     });
     console.log(params);
-    this.authService.getHospitals(params, true).subscribe((data) => {
+    this.authService.getLocationWiseHospitals(params, true).subscribe((data) => {
       console.log(data);
       this.hospitals = data;
       //this.hospitals = this.getHospitalListDemo();
@@ -65,7 +79,10 @@ export class HospitalSpecialitiesPage implements OnInit {
     });
   }
   getHospitalSpecialities() {
-    this.authService.getSpecialities(true).subscribe((data) => {
+    let params={
+    limit:"limit 0,16"
+    }
+    this.authService.getSpecialities(params,true).subscribe((data) => {
       console.log(data);
       this.specialities = data;
       //this.specialities = this.getSpecialitiesListDemo();
@@ -73,7 +90,8 @@ export class HospitalSpecialitiesPage implements OnInit {
     });
   }
   focusSearchInput(){
-    this.searchInput['first'].nativeElement.focus();
+   // this.searchInput['first'].nativeElement.focus();
+  
   }
   async openLocationsModal() {
     const modal = await this.modalController.create({

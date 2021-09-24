@@ -40,14 +40,17 @@ export class AuthService {
   getDepartments(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/user/get-departments.php`,forceRefresh);
   }
-  getSpecialities(forceRefresh:boolean){
-    return this.accountService.getdata(`${environment.apiUrl}/get-specialities.php`,forceRefresh);
+  getSpecialities(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-specialities.php`,forceRefresh);
   }
   getAppCities(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/get-cities.php`,forceRefresh);
   }
   getHospital(params:object,forceRefresh:boolean){
-    return this.accountService.postdata(params,`${environment.apiUrl}/get-hospital.php`,forceRefresh);
+    return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/get-hospital.php`,forceRefresh);
+  }
+  getHospitalReviews(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/get-hospital-reviews.php`,forceRefresh);
   }
   addProfileData(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/patients/add-patient.php`,forceRefresh);
@@ -76,9 +79,7 @@ export class AuthService {
   getDoctorsSpecilities(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/doctors/search-doctors-specialities.php`,forceRefresh);
   }
-  getDoctorsSpecilities1(params:object,forceRefresh:boolean){
-    return this.accountService.getdata('https://restcountries.eu/rest/v2/all',forceRefresh);
-  }
+
   getDoctorDetails(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-doctor-details.php`,forceRefresh);
   }
@@ -88,12 +89,30 @@ export class AuthService {
   getAppPractices(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/app/get-app-promises.php`,forceRefresh);
   }
+  getDoctorsBySpeciality(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-doctors-by-speciality.php`,forceRefresh);
+  }
+  getDiseases(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params, `${environment.apiUrl}/doctors/get-diseases.php`,forceRefresh);
+  }
+  getHospitalsSpecilities(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/search-hospitals-specialities-diseases.php`,forceRefresh);
+  }
+  getHospitalsBySpeciality(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/get-hospitals-by-speciality.php`,forceRefresh);
+  }
+  getSpecialitiesInHospital(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/get-specialities-in-hospital.php`,forceRefresh);
+  }
+  getDoctorsInHospital(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/get-doctors-in-hospital.php`,forceRefresh);
+  }
+
+  
   /*Pending*/
   
   
-  getHospitalReviews(params:object,forceRefresh:boolean){
-    return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
-  }
+  
   
   
   getMedicalRecords(params:object,forceRefresh:boolean){

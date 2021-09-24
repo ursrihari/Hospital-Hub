@@ -26,31 +26,24 @@
         <div class="find-searchbar">
             <form>
                 <div class="form-group">
-                    <label><i class="fa fa-search"></i></label>
-                    <input type="text" class="form-control" #searchInput placeholder="Search hospitals, specialities etc...">
+                    <ion-auto-complete 
+                    [dataProvider]="autocompleteSearchService" 
+                    [options]="{ placeholder : 'Search hospitals, specialities etc...',input:'text' }" 
+                    (itemSelected)="openDoctorsPage($event)"
+                    #searchbar></ion-auto-complete>
                 </div>
             </form>
-            <!-- <ng-template #withFlags let-attrs="attrs">
-                <img src="assets/image/flags/{{attrs.data.name}}.png" 
-                     class="flag"/>
-                 <span [innerHTML]="attrs.data.name | boldprefix:attrs.keyword"></span>
-              </ng-template> -->
-              
-              <!-- <ion-auto-complete [dataProvider]="AutocompleteSearchService" 
-                                 [template]="withFlags"></ion-auto-complete>
-            -->
-                                 
         </div>
         <div class="two-three-grid">
             <h3>Search by Hospital<a class="explore-more" (click)="openHospitalsListPage()">Explore More</a></h3>
             <div class="row healthcon-icons hospitals-img">
-                <div class="col" *ngFor="let hospital of hospitals | customArray:'0':'3'" (click)="openHospitalPage(hospital)">
+                <div class="col" *ngFor="let hospital of hospitals | customArray:'0':'3'" (click)="openHospitalPageByHospital(hospital)">
                     <img [src]="hospital.hLogo" />
                     <p>{{hospital.hospitalName}}</p>
                 </div>
             </div>
             <div class="row healthcon-icons hospitals-img">
-                <div class="col" *ngFor="let hospital of hospitals | customArray:'3':'6'" (click)="openHospitalPage(hospital)">
+                <div class="col" *ngFor="let hospital of hospitals | customArray:'3':'6'" (click)="openHospitalPageByHospital(hospital)">
                     <img [src]="hospital.hLogo" />
                     <p>{{hospital.hospitalName}}</p>
                 </div>
@@ -60,9 +53,9 @@
         <div class="two-three-grid">
             <h3>Search by Speciality</h3>
             <div class="healthcon-spec">
-                <div class="healthcon-spec-bg" *ngFor="let speciality of specialities | customArray:'0':'18'" (click)="openHospitalsListPage(speciality)">
+                <div class="healthcon-spec-bg" *ngFor="let speciality of specialities | customArray:'0':'18'" (click)="openDoctorsPageBySpeciality(speciality)">
                     <a class="d-flex d-flex align-items-center">
-                        <img [src]="speciality.iconUrl" />
+                        <img [src]="speciality.image" />
                         <p [innerHTML]="speciality.specName"></p>
                         <!-- <p>{{speciality.specName}}</p> -->
                     </a>

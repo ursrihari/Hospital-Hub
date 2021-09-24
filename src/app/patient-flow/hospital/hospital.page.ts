@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AuthService } from '@app/_services';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
 import { IonRouterOutlet } from '@ionic/angular';
 
 @Component({
@@ -13,35 +14,56 @@ export class HospitalPage implements OnInit {
   canGoBack: boolean = false;
   constructor(private routerOutlet: IonRouterOutlet,
     private router:Router,
+    private route:ActivatedRoute,
+    private launchNavigator:LaunchNavigator,
     private authService:AuthService) { }
   tabs:any=[];
   activeIndex;
   segment = 0;
   hospitalData = [];
-  hospitalRevies = [];
+  hospitalReviews = [];
   showContent:boolean= false;
+  selectedHospital = {};
   ngOnInit() {
     this.canGoBack = this.routerOutlet &&
                      this.routerOutlet.canGoBack();
                      this.tabs = ["Today","Tomorrow","25th Aug","26th Aug","27th Aug","28th Aug","29th Aug","30th Aug","31th Aug"];
     this.activeIndex =0;
-    this.getHospitalData();
-    this.getHospitalReviews();
+    this.route.queryParams.subscribe((params) => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.selectedHospital = this.router.getCurrentNavigation().extras.state.data;
+        console.log(JSON.stringify(this.selectedHospital));
+        this.getHospitalData(this.selectedHospital["id"]);
+        this.getHospitalReviews(this.selectedHospital["id"]);
+      }
+    });
 }
 openDoctorProfilePage(doctor){
-  this.router.navigate(['/doctor-view',{id: doctor.doctorId}]);
+  console.log(doctor);
+  let navigationExtras: NavigationExtras = { state: { 
+    data: {
+      id: doctor.docId
+    }
+  }};
+  this.router.navigate(['/doctor-view'],navigationExtras);
 }
 bookAppointmentPage(doctor){
   this.router.navigate(['/select-doctor-time-slot',{id: doctor.doctorId}]);
 }
-openDoctorsListPage(service){
-  this.router.navigate(['/patient-doctors-list',{id:service.serviceId,name:service.serviceName}]);
+openDoctorsPageBySpeciality(speciality){
+  let obj = {"name":speciality.specName,"id":speciality.specId,"type":"speciality"};
+  let navigationExtras: NavigationExtras = { state: { data: obj }};
+  this.router.navigate(['/patient-doctors-list'],navigationExtras);
 }
-openAllDoctorsInHospital(hospitalid){
-  this.router.navigate(['/patient-doctors-list',{id:hospitalid}]);
+openAllDoctorsInHospital(hospital){
+  console.log(hospital);
+  let obj = {"name":hospital.hospitalName,"id":hospital.hid,"type":"hospital"};
+  let navigationExtras: NavigationExtras = { state: { data: obj }};
+  this.router.navigate(['/patient-doctors-list'],navigationExtras);
 }
-openServicesListPage(hospitalId){
-  this.router.navigate(['/hospital-services',{id:hospitalId}]);
+openServicesListPage(hospital){
+  let navigationExtras: NavigationExtras = { state: { data: this.selectedHospital }};
+  this.router.navigate(['/hospital-services'],navigationExtras);
 }
 
 selectTab(index){
@@ -56,79 +78,31 @@ segmentChanged() {
    inline: 'center'
  });
 }
-
-getHospitalData(){
-  //this.hospitalData = this.getHospitalDataDemo();
+openGoogleMap(location){
+  let lat = this.hospitalData[0].hospitalDetails.latitude;
+  let long = this.hospitalData[0].hospitalDetails.longitude;
+  this.launchNavigator.navigate([lat, long], {}).then(
+    success => console.log('Launched navigator'),
+    error => console.log('Error launching navigator', error));
+}
+getHospitalData(hospitalId){
   let params={
-    hospitalid:''
+    hid:hospitalId
   }
   this.authService.getHospital(params,true).subscribe((data) => {
       console.log(data);
       this.hospitalData = data;
       this.showContent = true;      
   });
-  this.showContent = true;
 }
-getHospitalReviews(){
-  //this.hospitalRevies = this.getHospitalReviewsDemo();
+getHospitalReviews(hospitalId){
   let params={
-    hospitalid:''
+    hid:hospitalId
   }
   this.authService.getHospitalReviews(params,true).subscribe((data) => {
       console.log(data);
-      this.hospitalRevies = data;      
+      this.hospitalReviews = data;      
   });
 }
-
-
-/**Demo data */
-getHospitalDataDemo(){
-return [{
-  images:["assets/images/hospital/hospital-img.jpg","assets/images/hospital/hospital-profile-2.jpeg","assets/images/hospital/hospital-profile-3.jpeg"],
-  services: [
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Womens<br/>Health'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Skin & Hair'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Child<br/>Specialist'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'General<br/>Physician'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Brain and<br/>Nerves'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Uriniary<br/>Issues'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Kidney<br/>Issues'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Ayurveda'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Womens<br/>Health'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Skin & Hair'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Child<br/>Specialist'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'General<br/>Physician'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Brain and<br/>Nerves'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Uriniary<br/>Issues'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Kidney<br/>Issues'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Ayurveda'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Skin & Hair'},
-    {image:'assets/images/hospital/img2.jpg',serviceName:'Child<br/>Specialist'}
-  ],
-  doctors:[
-    {image:'assets/images/doctors/img1.jpg',name:'James Adult',specialization:'Geriatrician',experience:'18 Years',location:'HSR Layout',rate_percentage:'96'},
-    {image:'assets/images/doctors/img2.jpg',name:'James Alison',specialization:'Geriatrician',experience:'19 Years',location:'HSR Layout',rate_percentage:'80'},
-    {image:'assets/images/doctors/img3.jpg',name:'Sharat Honnat',specialization:'Geriatrician',experience:'18 Years',location:'HSR Layout',rate_percentage:'96'},
-    {image:'assets/images/doctors/img4.jpg',name:'Sharat Honnat',specialization:'Geriatrician',experience:'19 Years',location:'HSR Layout',rate_percentage:'80'},
-    {image:'assets/images/doctors/img1.jpg',name:'James Adult',specialization:'Geriatrician',experience:'18 Years',location:'HSR Layout',rate_percentage:'96'},
-    {image:'assets/images/doctors/img2.jpg',name:'James Alison',specialization:'Geriatrician',experience:'19 Years',location:'HSR Layout',rate_percentage:'80'}
-  ],
-  recomendatations:[
-    {title:'Doctor Friendliness', icon:'fa fa-heart-o',description:'93% patients find the doctor friendly and approachable'},
-    {title:'Detailded Treatment Explanation',icon:'fa fa-comments-o',description:'89% patients recommend the doctor for in-depth explanation of their issues'},
-  ],
-  location:[{latitude:'',longitude:''}],
-  aboutHospital:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
-}];
-}
-getHospitalReviewsDemo(){
-  return [
-    {profileImg:'',name:'Vazeer Nayomi',date:'10-09-2021 10:20 AM',title:'Visited for Adolescent Followup & Vaccinations',text:'Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple'},
-    {profileImg:'assets/images/hospital/img2.jpg',name:'Ramalinga',date:'10-09-2021 10:20 AM',title:'Visited for Adolescent Followup & Vaccinations',text:'Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple'},
-    {profileImg:'',name:'Ramalinga',date:'10-09-2021 10:20 AM',title:'Visited for Adolescent Followup & Vaccinations',text:'Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple'},
-    {profileImg:'assets/images/hospital/img2.jpg',name:'Ramalinga',date:'10-09-2021 10:20 AM',title:'Visited for Adolescent Followup & Vaccinations',text:'Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple'}
-  ];
-}
-/**Demo data */
 
 }

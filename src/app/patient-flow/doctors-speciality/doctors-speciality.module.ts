@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { DoctorsSpecialityPageRoutingModule } from './doctors-speciality-routing.module';
 import { DoctorsSpecialityPage } from './doctors-speciality.page';
 import { AutoCompleteModule } from 'ionic4-auto-complete';
+import { CustomArrayPipe } from '@app/pipe/custom-array.pipe';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { AutoCompleteModule } from 'ionic4-auto-complete';
     AutoCompleteModule,
     DoctorsSpecialityPageRoutingModule
   ],
-  declarations: [DoctorsSpecialityPage]
+  declarations: [DoctorsSpecialityPage,CustomArrayPipe]
 })
 export class DoctorsSpecialityPageModule {}

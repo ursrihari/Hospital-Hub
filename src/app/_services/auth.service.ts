@@ -9,7 +9,7 @@ export class AuthService {
   constructor(private accountService:AccountService) {}
   //`${environment.apiUrl}/send-sms/phpsendsms.php?phoneno=${mobile}
   //this.http.post<User>(`${environment.apiUrl}/user/otp-login.php`, params, { headers: headers }
-  
+
   getCountries(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/get-countries.php`,forceRefresh);
   }
@@ -17,7 +17,7 @@ export class AuthService {
     return this.accountService.postdata(params,`${environment.apiUrl}/user/otp-login.php`,forceRefresh);
   }
   verifyOtp(params:object){
-    return this.accountService.verifyOtp(params,`${environment.apiUrl}/user/verify-otp.php`); 
+    return this.accountService.verifyOtp(params,`${environment.apiUrl}/user/verify-otp.php`);
   }
   getPatientDetails(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/patients/get-patient-details.php`,forceRefresh);
@@ -107,14 +107,16 @@ export class AuthService {
   getDoctorsInHospital(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/hospitals/get-doctors-in-hospital.php`,forceRefresh);
   }
+  getMedicalRecordsDetails(params: object, forceRefresh: boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/medical-records/get-medical-record-details.php`,forceRefresh);
+  }
 
-  
   /*Pending*/
-  
-  
-  
-  
-  
+
+
+
+
+
   getMedicalRecords(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/medical-records/get-medical-records.php`,forceRefresh);
   }
@@ -127,7 +129,7 @@ export class AuthService {
   getPatients(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
   }
-  
+
   /*Peter*/
   getMyDoctors(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
@@ -140,8 +142,8 @@ export class AuthService {
   getPractoPractices(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
   }
-  
-  
+
+
 
   getNearHospitals(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/`,forceRefresh);
@@ -150,8 +152,8 @@ export class AuthService {
   getQuestions(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
   }
- 
-  
+
+
 
   getSymptoms(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
@@ -160,7 +162,7 @@ export class AuthService {
   getOffers(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/`,forceRefresh);
   }
-  
+
 
 
 

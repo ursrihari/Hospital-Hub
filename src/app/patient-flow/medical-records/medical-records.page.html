@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content>
-    
+
 <div class="medical-recods" *ngIf="showContent">
     <div class="medical-recods" *ngIf="medicalRecords.length==0">
         No medical Records Found
@@ -19,8 +19,8 @@
       <div class="d-flex">
         <div>
             <div class="medical-date">
-                <h4>{{record.recordAddedDate | customDate:'format':'DD'}}</h4>
-                <h5>{{record.recordAddedDate | customDate:'format':'MMM'}}</h5>
+                <h4>{{record.createdDate | customDate:'format':'DD'}}</h4>
+                <h5>{{record.createdDate | customDate:'format':'MMM'}}</h5>
             </div>
             <div class="medical-news">New</div>
           </div>
@@ -36,7 +36,7 @@
    </div>
 </div>
 
-<div class="medical-recods">
+<!-- <div class="medical-recods">
    <div class="medical-title">2021</div>
    <div class="d-flex medical-recods-list">
       <div class="d-flex">
@@ -57,15 +57,15 @@
         <i class="fa fa-ellipsis-v text-muted" aria-hidden="true"></i>
        </div>
    </div>
-</div>
+</div> -->
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="openPatientsListPage()">
         <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  
+
 </ion-content>
 <ion-footer>
     <!-- <ion-button expand="block" (click)="presentActionSheet()">Add a record</ion-button> -->
-    
+
 </ion-footer>

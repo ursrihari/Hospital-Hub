@@ -45,9 +45,10 @@ openPatientsListPage(){
 }
 
 getMedicalRecords(){
-  let params={ 
+  const params={
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     hospital_id:'3'
-  }
+  };
   this.authService.getMedicalRecords(params,true).subscribe((data) => {
     console.log(data);
     this.medicalRecords = data;
@@ -76,7 +77,7 @@ getMedicalRecords(){
 //       }
 //     }, {
 //       text: 'Upload Files',
-//       icon: 'document-text-outline', 
+//       icon: 'document-text-outline',
 //       handler: () => {
 //         console.log('Play clicked');
 //         this.openUploadRecordPage();

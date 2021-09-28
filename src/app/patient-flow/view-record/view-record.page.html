@@ -9,11 +9,11 @@
 </ion-header>
 
 <ion-content>
-<div class="view-record-sec">
+<div class="view-record-sec" *ngFor="let recordDetails of medicalRecordsdetails" >
   <div class="title">
-    <p>20 AUG 2021</p>
-    <h5>Records added by yo</h5>
-    <p class="text-muted">1 record for Srinivas</p>
+    <p>{{recordDetails.createdDate}}</p>
+    <h5>Records added by {{recordDetails.createdBy}}</h5>
+    <p class="text-muted">1 record for {{recordDetails.patientName}}</p>
   </div>
 
   <div class="Prescription">

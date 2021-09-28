@@ -15,24 +15,24 @@ export class PatientListPage implements OnInit {
     private router:Router,
     private authService:AuthService) { }
     patientsData = [];
-    showContent:boolean= false; 
+    showContent:boolean= false;
     ngOnInit() {
       this.canGoBack = this.routerOutlet &&
                        this.routerOutlet.canGoBack();
-    this.getPatientsData();                     
+    this.getPatientsData();
   }
   openPatientDetailsPage(){
     this.router.navigateByUrl('/patient-details');
   }
-  
+
   getPatientsData() {
-    let params={
-      receptionistId:''
-    }
+    const params={
+      hid:'3'
+    };
     this.authService.getPatients(params,true).subscribe((data) => {
-        console.log(data);
+        console.log('patientsData:',data);
         this.patientsData = data;
-        this.showContent = true;      
+        this.showContent = true;
     });
   }
 }

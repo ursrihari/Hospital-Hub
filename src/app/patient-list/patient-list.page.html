@@ -31,7 +31,19 @@
                 </div>
             </div>
         </div>
-        <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()">
+        <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()" *ngFor="let patientsData of patientsData" >
+            <div class="d-flex align-items-center justify-content-between doctors-main">
+                <div class="ms-3 d-flex align-items-center doctors-list">
+                    <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="assets/images/appointments/patient1.jpg" class="rounded-circle"></span>
+                    <div>
+                        <h4>{{patientsData.patientName}}</h4>
+                        <p>Appointment with <span>Dr. Srinivasarao</span></p>
+                        <p>City</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()">
             <div class="d-flex align-items-center justify-content-between doctors-main">
                 <div class="ms-3 d-flex align-items-center doctors-list">
                     <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="assets/images/appointments/patient1.jpg" class="rounded-circle"></span>
@@ -42,8 +54,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()">
+        </div> -->
+        <!-- <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()">
             <div class="d-flex align-items-center justify-content-between doctors-main">
                 <div class="ms-3 d-flex align-items-center doctors-list">
                     <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="assets/images/appointments/patient1.jpg" class="rounded-circle"></span>
@@ -54,19 +66,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mb-4 col-sm-12"  (click)="openPatientDetailsPage()">
-            <div class="d-flex align-items-center justify-content-between doctors-main">
-                <div class="ms-3 d-flex align-items-center doctors-list">
-                    <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="assets/images/appointments/patient1.jpg" class="rounded-circle"></span>
-                    <div>
-                        <h4>Patient Name 1</h4>
-                        <p>Appointment with <span>Dr. Srinivasarao</span></p>
-                        <p>City</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> -->
     </div>
 
 

@@ -42,12 +42,9 @@ export class MedicalRecordPopoverComponent implements OnInit {
           }
         ]
       });
-  
       await deleterecord.present();
     }
     async DismissClick() {
       await this.popoverController.dismiss();
     }
-  
-
 }

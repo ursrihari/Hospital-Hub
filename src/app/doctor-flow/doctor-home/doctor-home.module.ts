@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { DoctorHomePageRoutingModule } from './doctor-home-routing.module';
 
 import { DoctorHomePage } from './doctor-home.page';
+import { CustomDatePipe } from '@app/pipe/custom-date.pipe';
+import { SubStringPipe } from '@app/pipe/sub-string.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { DoctorHomePage } from './doctor-home.page';
     IonicModule,
     DoctorHomePageRoutingModule
   ],
-  declarations: [DoctorHomePage]
+  declarations: [DoctorHomePage,CustomDatePipe,SubStringPipe]
 })
 export class DoctorHomePageModule {}

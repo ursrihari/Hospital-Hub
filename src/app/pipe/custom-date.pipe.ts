@@ -12,6 +12,10 @@ export class CustomDatePipe implements PipeTransform {
       console.log(value);
       console.log(moment(value,"dd-mm-yyyy"));
       return moment(new Date(value), "dd-mm-yyyy").format(""+args[1]+"");
+    }else if(args[0] == 'format2'){
+      console.log(value);
+      console.log(moment(value,"dd-mm-yyyy"));
+      return moment(new Date(value), ""+args[2]+"").format(""+args[1]+"");
     }else{
       return value;
     }

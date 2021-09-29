@@ -113,6 +113,9 @@ export class AuthService {
   getMedicalRecordsDetails(params: object, forceRefresh: boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/medical-records/get-medical-record-details.php`,forceRefresh);
   }
+  getDoctorHomePageData(params: object, forceRefresh: boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/get-doctor-home-data.php`,forceRefresh);
+  }
 
   /*Pending*/
 

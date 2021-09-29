@@ -1,238 +1,169 @@
 <ion-header>
-<ion-toolbar>
-<ion-buttons slot="start" >
-<ion-menu-button></ion-menu-button>
-</ion-buttons>
-<ion-title></ion-title>
-</ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content p-1>
 
-<div class="">
+    <div class="" *ngIf="showContent">
 
 
-<!-- Doctor Dashhboard Sec  -->
+        <!-- Doctor Dashhboard Sec  -->
 
-<div class="doctor-dashboard-main"> 
-   
-<!-- Page Content -->
-<div class="content">
-<div class="">
-<div class="row">
-<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar"> 
+        <div class="doctor-dashboard-main">
+
+            <!-- Page Content -->
+            <div class="content">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
 
 
-</div>
-<div class="col-md-7 col-lg-8 col-xl-9">
-<div class="row">
-<div class="col-md-12">
-<div class="card dash-card">
-<div class="card-body">
-<div class="row d-flex">
-<div class="">
-<div class="dash-widget dct-border-rht">
-<div class="circle-bar circle-bar1">
-<div class="circle-graph1" data-percent="75"><img src="../assets/images/doctor-home/icon-01.png" alt="" class="img-fluid" alt="patient"> </div>
+                        </div>
+                        <div class="col-md-7 col-lg-8 col-xl-9">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card dash-card">
+                                        <div class="card-body">
+                                            <div class="row d-flex">
+                                                <div class="">
+                                                    <div class="dash-widget dct-border-rht">
+                                                        <div class="circle-bar circle-bar1">
+                                                            <div class="circle-graph1" data-percent="75"><img src="../assets/images/doctor-home/icon-01.png" alt="" class="img-fluid" alt="patient"> </div>
 
-</div>
-<div class="dash-widget-info">
-<h6>Total Patient</h6>
-<h3>1500</h3>
-<p class="text-muted">Till Today</p>
-</div>
-</div>
-</div>
-<div class="">
-<div class="dash-widget dct-border-rht">
-<div class="circle-bar circle-bar2">
-<div class="circle-graph2" data-percent="65"> <img src="../assets/images/doctor-home/icon-02.png" alt="" class="img-fluid" alt="patient">
-  
-  </div>
-</div>
-<div class="dash-widget-info">
-<h6>Today Patient</h6>
-<h3>160</h3>
-<p class="text-muted">06, Nov 2019</p>
-</div>
-</div>
-</div>
-<div class="">
-<div class="dash-widget">
-<div class="circle-bar circle-bar3">
-<div class="circle-graph3" data-percent="50"><img src="../assets/images/doctor-home/icon-03.png" alt="" class="img-fluid" alt="patient"> </div>
-</div>
-<div class="dash-widget-info">
-<h6>Appoinments</h6>
-<h3>85</h3>
-<p class="text-muted">06, Apr 2019</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+                                                        </div>
+                                                        <div class="dash-widget-info">
+                                                            <h6>Patients</h6>
+                                                            <h3>{{data[0].counts.totalPatients}}</h3>
+                                                            <p class="text-muted">Total</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <div class="dash-widget dct-border-rht">
+                                                        <div class="circle-bar circle-bar2">
+                                                            <div class="circle-graph2" data-percent="65"> <img src="../assets/images/doctor-home/icon-02.png" alt="" class="img-fluid" alt="patient">
 
-</div>
-</div>
-</div>
-</div>
-<!-- /Page Content --> 
-<!-- bookings -->
-<div class="mb-4 doctor-main">
-    <h4 class="m-0 pt-0 pb-2">Upcoming Bookings</h4>
-    <div class="d-flex align-items-center justify-content-between doctors-main">
-        <div class="ms-3 d-flex align-items-center doctors-list">
-          <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/patient1.jpg" class="rounded-circle"></span>
-          <div>
-            <h4>Aswini Nayak</h4>
-          <p>Hyderabad<br/>+91 8142487714</p>
-          <div class="d-flex d-flex align-items-center"> <button class="plus">PLUS</button></div>
-          </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash-widget-info">
+                                                            <h6>Appointments</h6>
+                                                            <h3>{{data[0].counts.todayAppointments}}</h3>
+                                                            <p class="text-muted">Today</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <div class="dash-widget">
+                                                        <div class="circle-bar circle-bar3">
+                                                            <div class="circle-graph3" data-percent="50"><img src="../assets/images/doctor-home/icon-03.png" alt="" class="img-fluid" alt="patient"> </div>
+                                                        </div>
+                                                        <div class="dash-widget-info">
+                                                            <h6>Appoinments</h6>
+                                                            <h3>{{data[0].counts.totalAppointments}}</h3>
+                                                            <p class="text-muted">Total</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Content -->
+            <!-- bookings -->
+            <div class="mb-4 doctor-main">
+                <h4 class="m-0 pt-0 pb-2">Upcoming Bookings</h4>
+                <div class="d-flex align-items-center justify-content-between doctors-main" *ngFor="let appointment of data[0].upcommingAppointments">
+                    <div class="ms-3 d-flex align-items-center doctors-list">
+                        <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 ">
+                             <img *ngIf="appointment.patientImage!=''" [src]="appointment.patientImage" class="rounded-circle">
+                             <img *ngIf="appointment.patientImage==''" src="assets/images/profile.png" class="rounded-circle">
+                        </span>
+                        <div>
+                            <h4>{{appointment.patientName}}</h4>
+                            <p>{{appointment.address}}<br/>+{{appointment.pMobile}}</p>
+                        </div>
+                    </div>
+                    <div class="button">{{appointment.date | customDate:'format2':'DD MMM YYYY':'dd-mm-yyyy HH:MM:SS'}}<br>{{ appointment.date | customDate:'format2':'HH:MM a':'dd-mm-yyyy HH:MM:SS'}}</div>
+                </div>
+            </div>
+            <!-- reviews -->
+            <div class="border-bot pb-3 mt-4">
+
+                <div class="review-chat">
+                    <h4 class="m-0 pt-0 pb-4">Recent Reviews</h4>
+
+                    <ion-slides pager="true" [options]="spotlightSlideOpts" class="spot-slid-btm-pad">
+                        <ion-slide *ngFor="let review of data[0].reviews">
+                            <div class="mb-3 border-bottom">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                      <div>
+                                       <div class="nameimg"> <img *ngIf="review.patientImage" [src]="review.patientImage" /></div>
+                                        <div *ngIf="!review.patientImage" class="name">{{review.patientName | subString:'0':'1'}}</div>
+                                    </div>
+                                    <div>
+                                        <h5 class="m-0">{{review.patientName}}</h5>
+                                        <p class="mb-3 text-muted">{{review.createdDate | date:'d MMM y, h:mm a'}}</p>
+                                    </div>
+                                    </div>
+                                    <div><i class="fa fa-thumbs-up grren"></i></div>
+                                </div>
+                                <h5 class="mb-2">{{review.purposeToVisit}}</h5>
+                                <p>{{review.description}}</p>
+                            </div>
+                        </ion-slide>
+                    </ion-slides>
+
+                </div>
+            </div>
+
         </div>
-        <div class="button">Today <br/> 10 AM</div>
-      </div>
-    <div class="d-flex align-items-center justify-content-between doctors-main">
-        <div class="ms-3 d-flex align-items-center doctors-list">
-          <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/patient1.jpg" class="rounded-circle"></span>
-          <div>
-            <h4>Aswini Nayak</h4>
-          <p>Hyderabad<br/>+91 8142487714</p>
-          <div class="d-flex d-flex align-items-center"> <button class="plus">PLUS</button></div>
-          </div>
+
+
+        <div class="count-main">
+            <p>Our Community of doctors and patients drive us to create technologies for better and affordable healthcare</p>
+            <div class="count-main-inn">
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <p>Our Users</p>
+                        <h3>{{appInformarion.noOfUsers}}</h3>
+                    </div>
+                    <div class="col">
+                        <i class="fa fa-medkit" aria-hidden="true"></i>
+                        <p>Our Doctors</p>
+                        <h3>{{appInformarion.noOfDoctors}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-medkit" aria-hidden="true"></i>
+                        <p>Hospitals</p>
+                        <h3>{{appInformarion.noOfHospitals}}</h3>
+                    </div>
+                    <div class="col">
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                        <p>Patient Stories</p>
+                        <h3>{{appInformarion.noOfPatientStories}}</h3>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="button">Today <br/> 10 AM</div>
-      </div>
 
-  <div class="d-flex align-items-center justify-content-between doctors-main border-bottom-0">
-    <div class="ms-3 d-flex align-items-center doctors-list">
-      <span class="icon-sahpe icon-lg bg-light-warning  text-center text-dark-warning fs-4 "> <img src="../assets/images/patient1.jpg" class="rounded-circle"></span>
-      <div>
-        <h4>Aswini Nayak</h4>
-      <p>Hyderabad<br/>+91 8142487714</p>
-      <div class="d-flex d-flex align-items-center"> <button class="plus">PLUS</button></div>
-      </div>
+        <footer>
+            <p class="footer-logo-img">Logo Here</p>
+            <p>Our vision is to help mankind live healthier, longer lives by making quality healthcare accessible, affordable and convenient.<span>Made by ClinicKWT @ Kuwait.</span></p>
+        </footer>
     </div>
-    <div class="button">Today <br/> 10 AM</div>
-  </div>
-  
-  </div>
-<!-- reviews -->
-<div class="border-bot pb-3 mt-4">
-
-    <div class="review-chat">
-        <h4 class="m-0 pt-0 pb-4">Recent Reviews</h4>
-
-        <ion-slides pager="true" [options]="spotlightSlideOpts" class="spot-slid-btm-pad">
-            <ion-slide>
-                <div class="mb-3">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <div class="name">V</div>
-                            <div>
-                                <h5 class="m-0">Verified Doctor </h5>
-                                <p class="m-0 text-muted">23 days ago</p>
-                            </div>
-                        </div>
-                        <div><i class="fa fa-thumbs-up grren"></i></div>
-                    </div>
-                    <h5 class="mb-1 text-left">Visited for Adolescent Followup & Vaccinations</h5>
-                    <p class="text-left">Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple</p>
-                </div>
-            </ion-slide>
-            <ion-slide>
-                <div class="mb-3 ">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <div class="name">V</div>
-                            <div>
-                                <h5 class="m-0">Verified Doctor </h5>
-                                <p class="m-0 text-muted">23 days ago</p>
-                            </div>
-                        </div>
-                        <div><i class="fa fa-thumbs-up grren"></i></div>
-                    </div>
-                    <h5 class="mb-1 text-left">Visited for Adolescent Followup & Vaccinations</h5>
-                    <p class="text-left mt-2">Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple</p>
-                </div>
-            </ion-slide>
-            <ion-slide>
-                <div class="mb-3">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <div class="name">V</div>
-                            <div>
-                                <h5 class="m-0">Verified Doctor </h5>
-                                <p class="m-0 text-muted">23 days ago</p>
-                            </div>
-                        </div>
-                        <div><i class="fa fa-thumbs-up grren"></i></div>
-                    </div>
-                    <h5 class="mb-1 text-left">Visited for Adolescent Followup & Vaccinations</h5>
-                    <p class="text-left mt-2">Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple</p>
-                </div>
-            </ion-slide>
-            <ion-slide>
-                <div class="mb-3">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <div class="name">V</div>
-                            <div>
-                                <h5 class="m-0">Verified Doctor </h5>
-                                <p class="m-0 text-muted">23 days ago</p>
-                            </div>
-                        </div>
-                        <div><i class="fa fa-thumbs-up grren"></i></div>
-                    </div>
-                    <h5 class="mb-1 text-left">Visited for Adolescent Followup & Vaccinations</h5>
-                    <p class="text-left mt-2">Really warm person! Took time to explain the situation-reasons, possiblity, etc. she went the extra mile and gave us a couple</p>
-                </div>
-            </ion-slide>
-         
-            
-        </ion-slides>
-      
-    </div>
-</div>
-
-</div>
-
-
-<div class="count-main">
-  <p>Our Community of doctors and patients drive us to create technologies for better and affordable healthcare</p>
-  <div class="count-main-inn">
-      <div class="row">
-          <div class="col">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <p>Our Users</p>
-              <h3>30 Crores</h3>
-          </div>
-          <div class="col">
-              <i class="fa fa-medkit" aria-hidden="true"></i>
-              <p>Our Doctors</p>
-              <h3>1 Lakh</h3>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col">
-              <i class="fa fa-medkit" aria-hidden="true"></i>
-              <p>Hospitals</p>
-              <h3>20,000</h3>
-          </div>
-          <div class="col">
-              <i class="fa fa-comment" aria-hidden="true"></i>
-              <p>Patient Stories</p>
-              <h3>40 Lakh</h3>
-          </div>
-      </div>
-  </div>
-</div>
-
-<footer>
-  <p class="footer-logo-img">Logo Here</p>
-  <p>Our vision is to help mankind live healthier, longer lives by making quality healthcare accessible, affordable and convenient.<span>Made by ClinicKWT @ Kuwait.</span></p>
-</footer>
-</div>
 </ion-content>

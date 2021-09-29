@@ -30,5 +30,13 @@ export interface User{
     activityLevel: string;
     foodPreference: string;
     occupation: string;
+    
+    // Doctor
+    speciality: string;
+    experience: string;
+    hospitalName: string;
+    fee:string;
+    address:string;
+    
     length:30;
 }

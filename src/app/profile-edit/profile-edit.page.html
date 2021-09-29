@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Ecit Personal Details</ion-title>
+    <ion-title>Edit Profile</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="closeModal()">
           <ion-icon name="close"></ion-icon>
@@ -17,8 +17,25 @@
           <ion-label position="floating">{{input.label}}</ion-label>
           <ion-input *ngIf="input.type!='textarea'" [type]="input.type" [(ngModel)]="input.value"></ion-input>
           <ion-textarea *ngIf="input.type=='textarea'"  [(ngModel)]="input.value"></ion-textarea>
+          <ion-radio-group value="input.value" [(ngModel)]="input.value">
+          <ion-row *ngIf="input.type=='radio'">
+            
+            <ion-col>
+              <ion-item>
+                <ion-label> Male </ion-label>
+                <ion-radio name="male" value="male"></ion-radio>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+               <ion-label> Female </ion-label>
+                <ion-radio name="female" value="female"></ion-radio>
+              </ion-item>
+            </ion-col>
+         
+          </ion-row>
+        </ion-radio-group>
         </ion-item>
-        
       </ion-list>
     
 </ion-content>

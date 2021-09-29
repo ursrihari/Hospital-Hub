@@ -44,7 +44,7 @@ export class ProfileEditPage implements OnInit {
       }
       let params ={...data, ...userData};
       console.log(JSON.stringify(params));
-      this.authService.addProfileData(params,true).subscribe(data=>{
+      this.authService.addDoctorProfileData(params,true).subscribe(data=>{
            this.closeModal();
       });
   }

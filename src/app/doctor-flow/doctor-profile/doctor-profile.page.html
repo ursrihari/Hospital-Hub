@@ -1,6 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>doctor-profile</ion-title>
+  <ion-toolbar color="primary">
+      
+<ion-buttons slot="start" >
+      <ion-back-button *ngIf="canGoBack"></ion-back-button>
+      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+    </ion-buttons>      
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,58 +14,53 @@
       <div class="title d-flex justify-content-between">
           <div>
               <label class="text-muted">Name</label>
-              <p>DR. Reshu Saraogi</p>
+              <p>DR. {{profileDetails.name}}</p>
           </div>
-          <div><img  src="assets/images/speciality/img2.jpg" alt=""></div>
+          <div class="add-profile-img" (click)="openCamera()">
+            <img  *ngIf="profileDetails.profileImage!=''" [src]="profileDetails.profileImage" alt="">
+            <img  *ngIf="profileDetails.profileImage==''" src="assets/images/add-image.png" alt="">
+        </div>
       </div>
 
       <div class="profile-list mb-4">
           <ul class="p-0">
               <li class="d-flex justify-content-between">
                   <label class="text-muted">Contact number</label>
-                  <label class="text-muted">+91 9912293800</label>
+                  <label class="text-muted">{{profileDetails.mobile}}</label>
               </li>
               <li class="d-flex justify-content-between">
+                <label class="text-muted">Speciality</label>
+                <label class="text-muted">{{profileDetails.speciality}}</label>
+            </li>
+            <li class="d-flex justify-content-between">
+                <label class="text-muted">Consultation Fee</label>
+                <label class="text-muted">{{profileDetails.fee}}</label>
+            </li>
+              <li class="d-flex justify-content-between">
                   <label class="text-muted">Email id</label>
-                  <label class="text-muted">Add email</label>
+                  <label class="text-muted">{{profileDetails.email}}</label>
               </li>
               <li class="d-flex justify-content-between">
                   <label class="text-muted">Gender</label>
-                  <label class="text-muted">Add gender</label>
+                  <label class="text-muted">{{profileDetails.gender}}</label>
               </li>
               <li class="d-flex justify-content-between">
-                  <label class="text-muted">Date of birth</label>
-                  <label class="text-muted">yyyy mm dd</label>
+                  <label class="text-muted">Experience</label>
+                  <label class="text-muted">{{profileDetails.experience}}</label>
               </li>
               <li class="d-flex justify-content-between">
-                  <label class="text-muted">Blood group</label>
-                  <label class="text-muted">Add blood group</label>
+                  <label class="text-muted">Hospital Name</label>
+                  <label class="text-muted">{{profileDetails.hospitalName}}</label>
               </li>
               <li class="d-flex justify-content-between">
-                  <label class="text-muted">Marital status</label>
-                  <label class="text-muted">Add marital status</label>
-              </li>
-              <li class="d-flex justify-content-between">
-                  <label class="text-muted">Height</label>
-                  <label class="text-muted">Add height</label>
-              </li>
-              <li class="d-flex justify-content-between">
-                  <label class="text-muted">Weight</label>
-                  <label class="text-muted">Add weight</label>
-              </li>
-              <li class="d-flex justify-content-between">
-                  <label class="text-muted">Emergency contact </label>
-                  <label class="text-muted">Emergency contact details</label>
-              </li>
-              <li class="d-flex justify-content-between">
-                  <label class="text-muted">Location</label>
-                  <label class="text-muted">Add details</label>
+                  <label class="text-muted">Address</label>
+                  <label class="text-muted">{{profileDetails.address}}</label>
               </li>
           </ul>
-          <div class="complate-profile">
+          <div class="complate-profile" (click)="openModal()">
               <div class="complate-profile-inner">
               <h4> Complete profile</h4>
-              <p class="m-0">13% Completed</p>
+              <p class="m-0">{{completeProfile}}% Completed</p>
           </div>
           </div>
       </div>

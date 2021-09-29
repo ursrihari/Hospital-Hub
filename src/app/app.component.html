@@ -20,8 +20,8 @@
                 <!-- Doctor Login -->
                 <div *ngIf="userProfile.role_name=='doctor'" [routerLink]="['/doctor-profile']" (click)="closeSidemenu()">
                     <div class="header-content">
-                        <img *ngIf="userProfile.patientImage!=''" [src]="userProfile.patientImage">
-                        <img *ngIf="userProfile.patientImage==''" src="assets/images/profile.png">
+                        <img *ngIf="userProfile.docImage!=''" [src]="userProfile.docImage">
+                        <img *ngIf="userProfile.docImage==''" src="assets/images/profile.png">
                         <ion-label>
                             <h2>{{userProfile.name}} <i class="ti-angle-right"></i></h2>
                             <div>

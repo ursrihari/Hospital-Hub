@@ -55,6 +55,9 @@ export class AuthService {
   addProfileData(params:object,forceRefresh:boolean){
     return this.accountService.postdata(params,`${environment.apiUrl}/patients/add-patient.php`,forceRefresh);
   }
+  addDoctorProfileData(params:object,forceRefresh:boolean){
+    return this.accountService.postdata(params,`${environment.apiUrl}/doctors/add-doctor-profile.php`,forceRefresh);
+  }
   getHomePageData(forceRefresh:boolean){
     return this.accountService.getdata(`${environment.apiUrl}/home/get-home-banners.php`,forceRefresh);
   }

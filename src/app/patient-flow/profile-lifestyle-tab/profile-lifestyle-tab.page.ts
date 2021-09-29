@@ -16,10 +16,8 @@ export class ProfileLifestyleTabPage implements OnInit {
     private accountService:AccountService) { }
 
   ngOnInit() {
-    this.accountService.getUser().subscribe(user=> {
-      this.profileLifeStyleDetails = user;
-      this.completeProfile = this.accountService.profileCompleteness(user);
-    });
+    let user = this.profileLifeStyleDetails = this.accountService.getUser();
+    this.completeProfile = this.accountService.profileCompleteness(user);
   }
   async openModal() {
     let dataToChild = [

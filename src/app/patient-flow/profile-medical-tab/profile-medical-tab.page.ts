@@ -16,10 +16,8 @@ export class ProfileMedicalTabPage implements OnInit {
     private accountService:AccountService) { }
 
   ngOnInit() {
-    this.accountService.getUser().subscribe(user=> {
-      this.profileMedicalDetails = user;
-      this.completeProfile = this.accountService.profileCompleteness(user);
-    });
+    let user = this.profileMedicalDetails = this.accountService.getUser();
+    this.completeProfile = this.accountService.profileCompleteness(user);
   }
   async openModal() {
     let dataToChild = [

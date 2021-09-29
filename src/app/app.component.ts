@@ -37,18 +37,12 @@ export class AppComponent {
     ){
       this.cachingService.initStorage();
       this.accountService.listenUser().subscribe(user=> {
+        console.log(JSON.stringify(user));
         //let user = this.accountService.getUser();
         this.userProfile = {...user};
         this.profileCompleteness = this.accountService.profileCompleteness(user);
         if(user){
-          if(user.role == 4){
-            this.initializeApp(this.userProfile['role_name']);
-          }else if(user.role == 3){
-            this.initializeApp(this.userProfile['role_name']);
-          }else if(user.role == 5){
-            this.initializeApp(this.userProfile['role_name']);
-            
-          }
+          this.initializeApp(this.userProfile['role_name']);
           this.menuCtrl.enable(true);
         }
       });
@@ -71,7 +65,7 @@ export class AppComponent {
         this.navCtrl.navigateRoot(["/patient-home"], { skipLocationChange: true });
       }else if(role=='doctor'){
         this.rootPage = DoctorHomePage;
-        this.navCtrl.navigateRoot(["/doctor-appointments"], { skipLocationChange: true }); 
+        this.navCtrl.navigateRoot(["/doctor-home"], { skipLocationChange: true }); 
       }else if(role=='receptionist'){
         this.rootPage = ReceptionistHomePage;
         this.navCtrl.navigateRoot(["/receptionist-home"], { skipLocationChange: true }); 
